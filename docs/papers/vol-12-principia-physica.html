@@ -1,0 +1,598 @@
+<section class="paper-abstract" id="abstract"><h2>Abstract</h2>
+This paper assembles the registered results of the Classification of Mathematical Representations of Physical Systems into the three-layer architecture of Principia Physica: mathematical classification, physical realization, and empirical selection. The assembly keeps the three layers apart and separates proved statements from conjectural ones. Twenty background classification theorems and seven obstruction theorems are organized into seven classification regimes; a finite case analysis of the twenty-eight domains of the program comparison spine, with one boundary case, shows that fifteen carry a classification theorem with a finite or explicitly parameterized invariant, one is complete but unparameterized, one is a complete obstruction classification, seven remain open or claimed, three are impossible in the stated generality, one is undecidable, and one is decidable but unclassified. Eight reconstruction theorems recover objects from probes, each under hypotheses that cannot be dropped. The empirical layer admits no unique monotone metric in the quantum case, and no record validates the physical layer: the announced four-dimensional existence result carries the status existence claimed; manuscript and formalization withheld; verification pending, and the mass gap problem remains open. The structural classification statement enters only as a declared hypothesis, and a conditional reduction records what its five proof obligations would deliver. No record in the series carries a completed computer-checked proof.
+</section>
+<h2 id="introduction">Introduction</h2>
+<p>A unified structural theory of mathematical physics would answer three questions at once: which mathematical structures can represent physical systems, how those structures realize concrete physical theories, and how observation selects among the theories that survive. The Classification of Mathematical Representations of Physical Systems (CMRPS) program treats the three questions as three layers of a single architecture and studies them separately. This paper is the assembly layer of that program. It takes the registered results of the eleven preceding volumes and states, at exactly the strength the evidence supports, what a unified structural theory would require. It proves no new classification theorem; its formal statements are deductions about the assembled evidence and about what the central conjecture would deliver. The program documents and the eleven preceding volumes are works of this series and are available from the program site <a href="https://yonedalabs.ai" class="uri">https://yonedalabs.ai</a>. They organize citations and claim statuses and add no authority of their own: every mathematical statement used below is cited to the external literature, with a resolvable primary source for each citation.</p>
+<p>The assembly reveals that empirical validation remains unachieved. The program has established mathematical formulations and rigorous theorems; it has not established physical validation of the architecture itself. Three levels of mathematical achievement separate formulation, rigorous theorem, and physical validation, and the evidence base reaches the second level only. Every claim below is calibrated to that ladder.</p>
+<p>The central object is the identity <span class="math display">\[\mathrm{Phys}_{\mathrm{adm}} \simeq \langle \mathfrak{F}_\alpha \rangle_{\mathfrak{C}},\]</span> which asserts that every admissible physical system is generated from a collection of fundamental structural families under admissible constructions. The identity is a conjecture and is never used here as a lemma. The results assembled around it are the classification regimes where theorems exist, the obstruction theorems that forbid classification elsewhere, the reconstruction theorems that recover objects from probes, and the empirical constraints that no mathematical classification can discharge.</p>
+<p>This assembly establishes four results. Twenty-eight mathematical domains fall into six realized classification regimes, with complete invariants appearing only where the invariant is finite or explicitly parameterized. Seven impossibility theorems show that wild representation categories, non-amenable factors, and generic four-manifolds admit no uniform classification. Every reconstruction theorem on record requires its full algebraic hypotheses, and dropping the symmetric or monoidal structure admits non-isomorphic counterexamples. Resolving the structural classification conjecture would complete the mathematical classification alone, leaving physical realization and empirical selection unconstrained.</p>
+<p>A mathematical classification is never stated as a physical realization, and neither is ever stated as empirical selection. The strongest defensible claim on record is the founding program’s own calibration: the architecture is precise enough to organize a substantial, long-term mathematical research program, and its individual components produce valuable results even if a universal classification theorem ultimately proves unattainable.</p>
+<h2 id="definitions">Definitions</h2>
+<p>Stipulated notions are marked as such; established mathematics is cited to primary sources.</p>
+<div id="def:representation" class="definition">
+<p><strong>Definition 1</strong> (Representation of a physical system).  A representation of a physical system is a tuple <span class="math display">\[P = (X, \mathcal{O}, \mathcal{D}, \mathcal{S}, \mathcal{C}),\]</span> comprising a state space or geometric structure <span class="math inline">\(X\)</span>, an observable algebra or collection <span class="math inline">\(\mathcal{O}\)</span>, dynamical laws <span class="math inline">\(\mathcal{D}\)</span>, symmetry and constraint data <span class="math inline">\(\mathcal{S}\)</span>, and composition rules <span class="math inline">\(\mathcal{C}\)</span>. The five components need not be independent.</p>
+</div>
+<p><a href="#def:representation" data-reference-type="ref+Label" data-reference="def:representation">1</a> is a stipulative schema, not a theorem. Instances of <span class="math inline">\(X\)</span> range over symplectic manifolds <a class="citation" href="#bib-corpus-6">[6]</a>, <a class="citation" href="#bib-corpus-7">[7]</a>, Hilbert spaces <a class="citation" href="#bib-corpus-9">[9]</a>, probability spaces, smooth manifolds <a class="citation" href="#bib-corpus-50">[46]</a>, <a class="citation" href="#bib-corpus-51">[47]</a>, and lattice configurations. The intended ambient structure <span class="math inline">\(\mathrm{Phys}\)</span> takes these representations as objects and admissible relationships as morphisms. Coarse-graining, equivalences, embeddings, dualities, and limiting procedures are candidate morphism kinds, and their preservation laws and composition rules are not fixed. Until they are fixed, <span class="math inline">\(\mathrm{Phys}\)</span> is a schema rather than a category, and every construction below is read at the level of object classes: no categorical subcategory, limit, or colimit construction is invoked.</p>
+<div id="def:equivalence" class="definition">
+<p><strong>Definition 2</strong> (Equivalences).  Mathematical equivalence is isomorphism of the tuples of <a href="#def:representation" data-reference-type="ref+label" data-reference="def:representation">1</a> in the ambient category of each component. Physical equivalence <span class="math inline">\(\simeq\)</span> is a chosen equivalence relation on the objects of <span class="math inline">\(\mathrm{Phys}\)</span>; the classification problem is <span class="math inline">\(\mathrm{Classify}(\mathrm{Ob}(\mathrm{Phys})/\simeq)\)</span>.</p>
+</div>
+<p>Physical equivalence is stipulative and the choice is open. Two mathematical descriptions may be physically equivalent without being mathematically isomorphic. Any equivalence used to identify systems must state which layer of structure it preserves; equivalences that forget the monoidal or symmetric layer are provably insufficient <a class="citation" href="#bib-corpus-12">[12]</a>.</p>
+<div id="def:admissible" class="definition">
+<p><strong>Definition 3</strong> (Admissible systems and family closure).  An admissible physical system is an object of the schema of <a href="#def:representation" data-reference-type="ref+label" data-reference="def:representation">1</a> satisfying explicitly stated consistency conditions; <span class="math inline">\(\mathrm{Phys}_{\mathrm{adm}}\)</span> denotes the class of such objects. A structural family collection <span class="math inline">\(\mathfrak{F} = \{\mathfrak{F}_\alpha\}_{\alpha \in A}\)</span> is a collection of classes of objects singled out by their underlying mathematical structure, and <span class="math inline">\(\langle \mathfrak{F} \rangle_{\mathfrak{C}}\)</span> denotes the smallest class of objects containing <span class="math inline">\(\mathfrak{F}\)</span> and closed under a set of admissible constructions <span class="math inline">\(\mathfrak{C}\)</span>: tensor product, direct sum, extension, limits and colimits, and factorization.</p>
+</div>
+<p>The admissibility conditions are the first deliverable of the foundations volume and remain unfixed. Every statement quantified over <span class="math inline">\(\mathrm{Phys}_{\mathrm{adm}}\)</span> is therefore conditional on the chosen conditions. The ten candidate structural families are named in the shared ontology and range from symplectic and Poisson structures through operator algebras, manifolds, bundles, probability, higher categories, dynamical systems, tensor categories, combinatorial structures, and derived structures. They are candidate organizing families, and some may later be unified.</p>
+<div id="def:irreducible" class="definition">
+<p><strong>Definition 4</strong> (Irreducibility and decomposition).  An object <span class="math inline">\(P\)</span> is irreducible relative to a specified composition operation when it admits no nontrivial decomposition under that operation. A decomposition is an expression <span class="math inline">\(P \simeq \mathcal{F}(I_1, \ldots, I_n)\)</span> with each <span class="math inline">\(I_i\)</span> irreducible and <span class="math inline">\(\mathcal{F}\)</span> an admissible construction. Irreducibility is always relative to the composition data <span class="math inline">\(\mathcal{C}\)</span> and to the decomposition notion in force.</p>
+</div>
+<p>Interacting physical systems need not admit unique decompositions. Entanglement, emergence, gauge redundancy, and nontrivial interactions all complicate the notion, so existence-and-uniqueness theorems belong only to restricted subclasses.</p>
+<div id="def:layers" class="definition">
+<p><strong>Definition 5</strong> (The three layers).  The Principia architecture consists of three layers. The mathematical layer is <span class="math inline">\(\mathcal{M} = \mathrm{Classify}(\text{admissible structures})\)</span>. The realization layer is a map <span class="math inline">\(\mathcal{R} : \mathcal{M} \to \mathcal{P}\)</span> into physical theories. The selection layer is a map <span class="math inline">\(\mathcal{E} : \mathcal{P} \to \mathcal{E}_{\mathrm{obs}}\)</span> into observational constraints or predictions. The object <span class="math inline">\(\mathcal{E}_{\mathrm{obs}}\)</span> records observational data; the map <span class="math inline">\(\mathcal{E}\)</span> does not assert that every model maps to a single observational object.</p>
+</div>
+<div id="def:grades" class="definition">
+<p><strong>Definition 6</strong> (Evidence grades).  A statement carries grade 1 when it is a mathematical formulation, grade 2 when a rigorous proof exists in the literature, and grade 3 when the statement has achieved physical validation, meaning that its physical realization and its empirical selection have been established for the systems it describes.</p>
+</div>
+<div id="def:regimes" class="definition">
+<p><strong>Definition 7</strong> (Classification regimes).  A domain of mathematical structures is assigned to exactly one of seven regimes. Regime 1 is complete and parameterized: a classification theorem exists and a finite or explicitly described parameter class determines the object. Parameter classes range from finite data such as dimension vectors to infinite function classes such as operator monotone functions, and the classification is a bijection with the parameter class in either case. Regime 2 is complete but unparameterized: a classification theorem exists and no uniform parameterization is known. Regime 3 is complete as obstruction: the classification content is the obstruction itself. Regime 4 is open: partial results, normal forms, or claims only. Regime 5 is impossible in the stated generality: a theorem forbids the classification. Regime 6 is undecidable: no algorithm can carry the classification. Regime 7 is decidable but unclassified.</p>
+</div>
+<div class="remark">
+<p><strong>Remark 8</strong>.  The regime assignment is an organizing device for the evidence base. It does not assert that the regimes are mathematically exhaustive of all possible classification situations. The unknot recognition problem, in <span class="math inline">\(\mathrm{NP}\)</span> and co-<span class="math inline">\(\mathrm{NP}\)</span> with the complexity-class membership open <a class="citation" href="#bib-corpus-61">[57]</a>, is the registered instance of regime 7, and <a href="#tab:regimes" class="reflink">3</a> carries it as a boundary case beyond the twenty-eight spine domains.</p>
+</div>
+<div id="def:invariants" class="definition">
+<p><strong>Definition 9</strong> (Structural invariant record).  For a theory <span class="math inline">\(T\)</span>, the structural invariant record is the tuple <span class="math display">\[\mathcal{I}(T) = (\mathcal{S}_T, \mathcal{O}_T, \mathcal{D}_T, \mathcal{G}_T, \mathcal{R}_T),\]</span> describing states, observables, dynamics, symmetries, and representations. The classification question is which of these invariants suffice to distinguish theories up to the chosen equivalence of <a href="#def:equivalence" data-reference-type="ref+label" data-reference="def:equivalence">2</a>.</p>
+</div>
+<div id="def:observational" class="definition">
+<p><strong>Definition 10</strong> (Observational equivalence).  Given a regime <span class="math inline">\(E\)</span> of accessible experiments, two theories satisfy <span class="math inline">\(T_1 \sim_E T_2\)</span> when they give identical predictions in <span class="math inline">\(E\)</span>. The relation <span class="math inline">\(\sim_E\)</span> is an equivalence relation on theories, and the selection layer <span class="math inline">\(\mathcal{E}\)</span> is the map whose induced quotient computes it.</p>
+</div>
+<table class="paper-table" id="tab:families">
+<caption><span class="tbl-num">Table 1.</span> The ten candidate structural families with representative systems and defining invariants. The families are candidates and some may later be unified.</caption>
+<thead>
+<tr>
+<th style="text-align: left;">Family</th>
+<th style="text-align: left;">Underlying structure</th>
+<th style="text-align: left;">Representative systems</th>
+<th style="text-align: left;">Defining invariants</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;">I</td>
+<td style="text-align: left;">Symplectic and Poisson structures</td>
+<td style="text-align: left;">Classical mechanics</td>
+<td style="text-align: left;">Symplectic form and splitting data</td>
+</tr>
+<tr>
+<td style="text-align: left;">II</td>
+<td style="text-align: left;">Hilbert spaces and operator algebras</td>
+<td style="text-align: left;">Quantum mechanics</td>
+<td style="text-align: left;">Dimension vector and factor type</td>
+</tr>
+<tr>
+<td style="text-align: left;">III</td>
+<td style="text-align: left;">Smooth manifolds and geometry</td>
+<td style="text-align: left;">Relativity</td>
+<td style="text-align: left;">Holonomy group and causal class</td>
+</tr>
+<tr>
+<td style="text-align: left;">IV</td>
+<td style="text-align: left;">Principal bundles and connections</td>
+<td style="text-align: left;">Gauge theories</td>
+<td style="text-align: left;">Characteristic and obstruction classes</td>
+</tr>
+<tr>
+<td style="text-align: left;">V</td>
+<td style="text-align: left;">Probability and measure theory</td>
+<td style="text-align: left;">Statistical physics</td>
+<td style="text-align: left;">Fisher metric up to constant</td>
+</tr>
+<tr>
+<td style="text-align: left;">VI</td>
+<td style="text-align: left;">Topological and higher categories</td>
+<td style="text-align: left;">Topological field theories</td>
+<td style="text-align: left;">Fully dualizable objects</td>
+</tr>
+<tr>
+<td style="text-align: left;">VII</td>
+<td style="text-align: left;">Dynamical systems and semigroups</td>
+<td style="text-align: left;">Dissipative systems</td>
+<td style="text-align: left;">Normal-form dilation data</td>
+</tr>
+<tr>
+<td style="text-align: left;">VIII</td>
+<td style="text-align: left;">Tensor categories and composition</td>
+<td style="text-align: left;">Quantum information</td>
+<td style="text-align: left;">Symmetric structure and conjugates</td>
+</tr>
+<tr>
+<td style="text-align: left;">IX</td>
+<td style="text-align: left;">Discrete combinatorial structures</td>
+<td style="text-align: left;">Lattice models</td>
+<td style="text-align: left;">Lattice data and tame or wild class</td>
+</tr>
+<tr>
+<td style="text-align: left;">X</td>
+<td style="text-align: left;">Derived and homotopical structures</td>
+<td style="text-align: left;">Higher gauge theories</td>
+<td style="text-align: left;">Derived-tame or wild class</td>
+</tr>
+</tbody>
+</table>
+<h2 id="the-three-layers-of-the-assembly">The three layers of the assembly</h2>
+<p>The three layers of <a href="#def:layers" data-reference-type="ref+label" data-reference="def:layers">5</a> are stipulated as separate maps, and the evidence base treats them as separate.</p>
+<p>Under the architecture of <a href="#def:layers" data-reference-type="ref+label" data-reference="def:layers">5</a>, classification data determines neither realization nor selection. The architecture stipulates <span class="math inline">\(\mathcal{R}\)</span> and <span class="math inline">\(\mathcal{E}\)</span> as maps with separate domains and codomains, and the founding documents stipulate that several mathematically distinct theories may produce identical predictions within an experimentally accessible regime. The registry of the program, examined record by record, contains classification theorems, reconstruction theorems, and obstruction theorems, and it contains no observation functor and no construction of <span class="math inline">\(\mathcal{E}\)</span>: every record lives at the mathematical layer or at the interface between the mathematical and realization layers. Classification data therefore underdetermines empirical selection.</p>
+<p>Empirical selection is not a corollary of classification. Let <span class="math inline">\(T_1\)</span> and <span class="math inline">\(T_2\)</span> be mathematically distinct theories whose predictions agree in an accessible regime <span class="math inline">\(E\)</span>, as the architecture stipulates; write <span class="math inline">\(T_1 \sim_E T_2\)</span> for that agreement. A classification at <span class="math inline">\(\mathcal{M}\)</span> distinguishes <span class="math inline">\(T_1\)</span> from <span class="math inline">\(T_2\)</span>, so the classification map is not constant on <span class="math inline">\(\sim_E\)</span>-classes and cannot compute them. Deciding <span class="math inline">\(\sim_E\)</span> requires the map <span class="math inline">\(\mathcal{E}\)</span>, which the classification layer does not supply.</p>
+<p><a href="#tab:grades" class="reflink">2</a> places the record types of the program at the evidence grades of <a href="#def:grades" data-reference-type="ref+label" data-reference="def:grades">6</a>. The grade-3 column is empty.</p>
+<table class="paper-table" id="tab:grades">
+<caption><span class="tbl-num">Table 2.</span> Evidence grades of the record types of the program registry. Physical validation is empty for every record type.</caption>
+<thead>
+<tr>
+<th style="text-align: left;">Record type</th>
+<th style="text-align: left;">Grade</th>
+<th style="text-align: left;">Example</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;">Stipulated definitions and architecture</td>
+<td style="text-align: left;"></td>
+<td style="text-align: left;">The three layers of <a href="#def:layers" data-reference-type="ref+label" data-reference="def:layers">5</a></td>
+</tr>
+<tr>
+<td style="text-align: left;">Classification theorems</td>
+<td style="text-align: left;"></td>
+<td style="text-align: left;">Dimension vector classification of finite-dimensional <span class="math inline">\(C^*\)</span>-algebras</td>
+</tr>
+<tr>
+<td style="text-align: left;">Reconstruction theorems</td>
+<td style="text-align: left;"></td>
+<td style="text-align: left;">Doplicher-Roberts reconstruction under its hypotheses</td>
+</tr>
+<tr>
+<td style="text-align: left;">Obstruction theorems</td>
+<td style="text-align: left;"></td>
+<td style="text-align: left;">Uncountably many non-isomorphic separable type <span class="math inline">\(\mathrm{II}_1\)</span> factors</td>
+</tr>
+<tr>
+<td style="text-align: left;">Claim-ledger entries</td>
+<td style="text-align: left;"></td>
+<td style="text-align: left;">The announced existence claim of <a href="#tab:claims" class="reflink">5</a></td>
+</tr>
+<tr>
+<td style="text-align: left;">Physical validation of the architecture</td>
+<td style="text-align: left;"></td>
+<td style="text-align: left;">No record on file</td>
+</tr>
+</tbody>
+</table>
+<p>A complete mathematical classification <span class="math inline">\(\mathcal{M}\)</span> leaves empirical selection <span class="math inline">\(\mathcal{E}\)</span> underdetermined whenever distinct mathematical models yield identical observational predictions. Because the mathematical, realization, and empirical layers possess distinct domains and quotient structures, each layer imposes independent constraints on physical admissibility.</p>
+<h2 id="sec:mathlayer">The mathematical layer</h2>
+<p>The mathematical layer <span class="math inline">\(\mathcal{M}\)</span> is where the evidence base is strongest. It is also where the limits of classification are theorems rather than difficulties. <a href="#tab:regimes" class="reflink">3</a> assigns every domain of the program comparison spine to a regime of <a href="#def:regimes" data-reference-type="ref+label" data-reference="def:regimes">7</a>.</p>
+<table class="paper-table" id="tab:regimes">
+<caption><span class="tbl-num">Table 3.</span> The twenty-eight domains of the program comparison spine and the unknot-recognition boundary case, with classifying invariant and classification regime. Regime 1 is complete and parameterized, 2 is complete but unparameterized, 3 is complete as obstruction, 4 is open or claimed, 5 is impossible in the stated generality, 6 is undecidable, and 7 is decidable but unclassified.</caption>
+<tr><th>Domain</th><th>Classifying invariant</th><th>Regime</th></tr>
+<tr><td>Finite simple groups</td><td>Character table and companion atlas data</td><td>2</td></tr>
+<tr><td>Simple Lie groups and Lie algebras</td><td>Dynkin and Satake diagrams</td><td>1</td></tr>
+<tr><td>Irreducible representations of semisimple Lie algebras</td><td>Dominant integral weights</td><td>1</td></tr>
+<tr><td>Symplectic manifolds in the local category</td><td>The empty local invariant</td><td>1</td></tr>
+<tr><td>Poisson manifolds in the local category</td><td>Weinstein splitting data</td><td>1</td></tr>
+<tr><td>Finite-dimensional complex <span class="math inline">\(C^*\)</span>-algebras</td><td>Dimension vector</td><td>1</td></tr>
+<tr><td>Amenable factors</td><td>Murray-von Neumann type and Connes invariants</td><td>1</td></tr>
+<tr><td>General type <span class="math inline">\(\mathrm{II}\)</span> and type <span class="math inline">\(\mathrm{III}\)</span> factors</td><td>Coarse Connes-spectrum strata only</td><td>5</td></tr>
+<tr><td>Quantum channels</td><td>Kraus rank as normal-form data</td><td>4</td></tr>
+<tr><td>Principal <span class="math inline">\(G\)</span>-bundles</td><td>Homotopy classes of maps into the classifying space</td><td>1</td></tr>
+<tr><td>Anomalies</td><td>Cohomological obstruction classes</td><td>3</td></tr>
+<tr><td>DHR superselection sectors</td><td>Compact supergroup from the reconstruction</td><td>1</td></tr>
+<tr><td>Symmetric tensor categories of subexponential growth</td><td>Supergroup representation category</td><td>1</td></tr>
+<tr><td>Fusion categories</td><td>Weak Hopf algebra presentation</td><td>4</td></tr>
+<tr><td>Extended topological quantum field theories</td><td>Fully dualizable objects</td><td>4</td></tr>
+<tr><td>Lorentzian holonomy groups</td><td>Holonomy group</td><td>1</td></tr>
+<tr><td>Spacetime causality conditions</td><td>Causal class on the causal ladder</td><td>1</td></tr>
+<tr><td>Holographic entropy cone with at most four regions</td><td>Subadditivity and monogamy inequality data</td><td>1</td></tr>
+<tr><td>Holographic entropy cone with five or more regions</td><td>One infinite inequality family known</td><td>4</td></tr>
+<tr><td>Monotone metrics in the classical case</td><td>Fisher metric up to constant</td><td>1</td></tr>
+<tr><td>Monotone metrics in the quantum case</td><td>Operator monotone functions (infinite parameter class)</td><td>1</td></tr>
+<tr><td>Emergent spacetime and the Ryu-Takayanagi formula</td><td>No established invariant</td><td>4</td></tr>
+<tr><td>Four-dimensional Yang-Mills and QCD existence</td><td>Balaban-program methods</td><td>4</td></tr>
+<tr><td>Four-dimensional Yang-Mills mass gap</td><td>No invariant established</td><td>4</td></tr>
+<tr><td>Closed three-manifolds</td><td>Thurston geometry type</td><td>1</td></tr>
+<tr><td>Four-manifolds</td><td>Restricted classes only</td><td>5</td></tr>
+<tr><td>Finitely presented groups under Markov properties</td><td>No invariant can exist</td><td>6</td></tr>
+<tr><td>Wild representation categories</td><td>No finite-variety parameterization exists</td><td>5</td></tr>
+<tr><td>Unknot recognition</td><td>Decidable with complexity class open</td><td>7</td></tr>
+</table>
+<p>The twenty-nine rows of <a href="#tab:regimes" class="reflink">3</a> carry the regime counts <span class="math inline">\(15, 1, 1, 7, 3, 1, 1\)</span> over regimes 1 to 7. Every regime-1 domain carries a finite or explicitly parameterized classifying invariant; parameter classes range from dimension vectors to the infinite class of operator monotone functions. Every domain whose objects include wild, non-amenable, or algorithmically unrecognizable sectors lies in regime 4, 5, or 6, and none of those domains carries a classification theorem. The counts hold by inspection of the table, where row 29 carries regime 7. Regime 1 contains the rows for simple Lie theory <a class="citation" href="#bib-corpus-4">[4]</a>, its representation theory <a class="citation" href="#bib-corpus-5">[5]</a>, local symplectic and Poisson geometry, finite-dimensional <span class="math inline">\(C^*\)</span>-algebras, amenable factors, principal bundles, DHR sectors, subexponential symmetric tensor categories, Lorentzian holonomy, the causal ladder, the at-most-four-region entropy cone, monotone metrics, and closed three-manifolds. Each invariant listed for those rows is finite data or parametric data: diagrams, weights, dimension vectors, types and Connes invariants, homotopy-class data, supergroup data, holonomy groups, causal classes, inequality data, metrics up to constant, and geometry type. Regime 2 is finite simple groups, where the classification theorem exists and no uniform parameterization is known. Regime 3 is anomalies, where the classification content is the obstruction classes. Regime 4 contains quantum channels, fusion categories, extended topological field theories, the entropy cone from five regions up, emergent spacetime, and the two Yang-Mills rows. Regime 5 contains general type <span class="math inline">\(\mathrm{II}\)</span> and type <span class="math inline">\(\mathrm{III}\)</span> factors <a class="citation" href="#bib-corpus-8">[8]</a>, four-manifolds <a class="citation" href="#bib-corpus-54">[50]</a>, and wild representation categories <a class="citation" href="#bib-corpus-55">[51]</a>, <a class="citation" href="#bib-corpus-56">[52]</a>, <a class="citation" href="#bib-corpus-58">[54]</a>. Regime 6 contains Markov properties of finitely presented groups <a class="citation" href="#bib-corpus-53">[49]</a>. The wild, non-amenable, and unrecognizable sectors appear exactly in rows that <a href="#thm:obstructions" data-reference-type="ref+label" data-reference="thm:obstructions">12</a> below covers, and those rows carry partial data or nothing at all where a classification theorem would sit.</p>
+<p>The regime-4 rows are partial in four distinct ways. Quantum channels carry only normal-form data <a class="citation" href="#bib-corpus-10">[10]</a>, <a class="citation" href="#bib-corpus-11">[11]</a>. Fusion categories are open <a class="citation" href="#bib-corpus-14">[14]</a>. Extended topological quantum field theories are claimed through the cobordism hypothesis <a class="citation" href="#bib-corpus-34">[34]</a>, whose 2009 proof is an informal sketch <a class="citation" href="#bib-corpus-35">[35]</a>, while functorial topological field theory is tractable under the Atiyah axioms <a class="citation" href="#bib-corpus-36">[36]</a>. The entropy cone from five regions up has one infinite inequality family and no complete list <a class="citation" href="#bib-corpus-47">[43]</a>. The two Yang-Mills rows carry the claim register of <a href="#tab:claims" class="reflink">5</a>.</p>
+<div class="remark">
+<p><strong>Remark 11</strong>.  Row 21 records a proved parametric classification: quantum monotone metrics are classified by operator monotone functions <a class="citation" href="#bib-corpus-52">[48]</a>. The parameter class here is an infinite-dimensional class of functions, not the finite or discrete data of the other regime-1 rows, and uniqueness fails in the quantum case. The program periodic table lists the same domain among open classification problems because the classification is not a finite list. Both statements stand together: the classification theorem is proved, and the classification is not finite.</p>
+</div>
+<p>Within the evidence base, classification is sharp exactly where the invariant is finite or explicitly parameterized, and the classification content can be entirely global. Every regime-1 and regime-2 row of <a href="#tab:regimes" class="reflink">3</a> has a finite or explicitly parameterized invariant, and the domains without such invariants are exactly the domains with no classification theorem. The global character of symplectic classification is Darboux’s theorem <a class="citation" href="#bib-corpus-6">[6]</a>: any two symplectic manifolds of the same dimension are locally symplectomorphic, so the local invariant is empty and the classifying data must be global. The contrast with Riemannian geometry, where curvature supplies local invariants, is structural rather than incidental.</p>
+<h3 id="classification-parameterization-recognition">Classification, parameterization, recognition</h3>
+<p>Three classification achievements are often conflated. A parameterization assigns uniform finite data to each object. A classification lists the objects exhaustively. A recognition procedure identifies an object algorithmically from companion data.</p>
+<p>The classification of finite simple groups delivers the second achievement and only part of the third. The list of families and sporadic groups is complete <a class="citation" href="#bib-corpus-1">[1]</a>, <a class="citation" href="#bib-corpus-2">[2]</a>, and practical identification runs through companion data of atlas type: order, Schur multiplier, outer automorphism group, presentations, and character tables with power maps <a class="citation" href="#bib-corpus-3">[3]</a>. No clean uniform parameterization analogous to Dynkin diagrams is known <a class="citation" href="#bib-corpus-1">[1]</a>. The template program itself therefore sits in regime 2 of <a href="#def:regimes" data-reference-type="ref+label" data-reference="def:regimes">7</a>, and a periodic table of physical structures cannot expect more from its analogy than the template delivers.</p>
+<p>The analogy between the two classification problems is architectural rather than evidentiary. The finite simple groups share one definition; physical systems have no universally accepted mathematical definition, and the schema of <a href="#def:representation" data-reference-type="ref+label" data-reference="def:representation">1</a> is a candidate. The founding documents warn against assuming that physical theories possess a finite collection of exceptional objects analogous to the twenty-six sporadic groups <a class="citation" href="#bib-corpus-1">[1]</a>. Exceptional mathematics exists and the taxonomy must accommodate it: the exceptional Lie algebras <a class="citation" href="#bib-corpus-4">[4]</a>, the type <span class="math inline">\(\mathrm{III}\)</span> factors and the hyperfinite <span class="math inline">\(\mathrm{II}_1\)</span> factor <a class="citation" href="#bib-corpus-8">[8]</a>, the eight Thurston geometries <a class="citation" href="#bib-corpus-60">[56]</a>, and the isocategorical group pairs <a class="citation" href="#bib-corpus-12">[12]</a>. Whether any two of the ten families of <a href="#tab:families" class="reflink">1</a> are logically independent is open, and no theorem on record settles it.</p>
+<h2 id="sec:obstructions">Obstruction theorems</h2>
+<p>Obstructions are theorems. Seven of them are registered, and each forbids a classification objective that one might otherwise pursue.</p>
+<div id="thm:obstructions" class="theorem">
+<p><strong>Theorem 12</strong> (Survey: non-classification outside tame regimes, assembled from McDuff, Adyan-Rabin, the wildness results, Tancer, Etingof-Gelaki, and Grochow-Qiao).  <em>The following classification objectives are forbidden by proved results. Separable type <span class="math inline">\(\mathrm{II}_1\)</span> factors admit no total classification outside the amenable case, and their isomorphism relation admits no classification by countable invariants. Wild representation categories admit no finite-variety parameterization. Markov properties of finitely presented groups, including finiteness and simplicity, are algorithmically undecidable. Homeomorphism of compact four-manifolds is algorithmically unrecognizable in general. A finite group is not determined by its representation category as a plain tensor category. Group isomorphism admits no polynomial-time algorithm in wild regimes under standard complexity assumptions, while tame extensions do. Consequently any classification theorem in the program must either restrict its class to a tame regime or weaken its invariant notion, and a global periodic table covering all families cannot exist outside tame regimes.</em></p>
+</div>
+<div class="proof">
+<p><em>Proof.</em> The first statement is McDuff’s theorem: there are uncountably many non-isomorphic separable type <span class="math inline">\(\mathrm{II}_1\)</span> factors <a class="citation" href="#bib-corpus-8">[8]</a>, <a class="citation" href="#bib-corpus-65">[60]</a>. A total classification by a countable list of invariants would inject that uncountable family into a countable product of invariant values, which is impossible, and the Borel-reducibility analysis makes the failure precise for isomorphism of von Neumann algebras <a class="citation" href="#bib-corpus-59">[55]</a>. The second statement is the wildness line: every finite-dimensional algebra over an algebraically closed field is derived-tame or derived-wild with wildness preserved under degeneration <a class="citation" href="#bib-corpus-55">[51]</a>, the rank-2 isomorphism classes of the generic determinant’s Cohen-Macaulay modules admit no finite-dimensional-variety parameterization <a class="citation" href="#bib-corpus-56">[52]</a>, and no meaningful classification of compact <span class="math inline">\(C_p\)</span>-equivariant <span class="math inline">\(H\mathbb{F}_p\)</span>-modules exists at odd primes <a class="citation" href="#bib-corpus-58">[54]</a>. The third statement is the Adyan-Rabin theorem with the Collins extension <a class="citation" href="#bib-corpus-53">[49]</a>. The fourth statement is the unrecognizability of connected-sum homeomorphism for a specific four-manifold <a class="citation" href="#bib-corpus-54">[50]</a>, set against the eight-geometry decomposition of closed three-manifolds <a class="citation" href="#bib-corpus-60">[56]</a>, <a class="citation" href="#bib-corpus-70">[63]</a>. The fifth statement is the isocategorical-group construction: non-isomorphic finite groups carry equivalent representation categories as plain tensor categories <a class="citation" href="#bib-corpus-12">[12]</a>. The sixth statement is the tame/wild tractability boundary <a class="citation" href="#bib-corpus-57">[53]</a>. Each forbidden objective is a classification covering one of the named sectors, so each such classification would contradict the corresponding theorem. The conjunctive conclusion follows. ◻</p>
+</div>
+<h3 id="what-the-obstructions-permit">What the obstructions permit</h3>
+<p><a href="#thm:obstructions" data-reference-type="ref+Label" data-reference="thm:obstructions">12</a> does not say that classification fails everywhere. It says that classification objectives must match regimes.</p>
+<p>The amenable factors are completely classified by Murray-von Neumann type and Connes invariants <a class="citation" href="#bib-corpus-8">[8]</a>, <a class="citation" href="#bib-corpus-62">[58]</a>, <a class="citation" href="#bib-corpus-64">[59]</a>, and the obstruction concerns only the non-amenable remainder. The classification theorem and the impossibility theorem sit side by side and refer to different classes. The anomaly sector is classified completely in regime 3: quantization exists exactly when the relevant cohomological obstruction classes vanish <a class="citation" href="#bib-corpus-19">[19]</a>, so the classification content is the obstruction itself. An impossibility statement of this shape is a finished classification, not a gap. Dimension three admits a finite table of Thurston geometries <a class="citation" href="#bib-corpus-60">[56]</a>, <a class="citation" href="#bib-corpus-70">[63]</a> while dimension four contains algorithmically unrecognizable instances <a class="citation" href="#bib-corpus-54">[50]</a>, so finite tables exist only in tame regimes. The same contrast appears inside group theory: tame extensions admit polynomial-time isomorphism tests while wild regimes do not <a class="citation" href="#bib-corpus-57">[53]</a>, and unknot recognition is decidable in principle with its complexity-class membership open <a class="citation" href="#bib-corpus-61">[57]</a>, which places it in regime 7 and separates decidability from classification.</p>
+<p>The register therefore has a constructive use. An obstruction names the restriction a classification theorem needs. McDuff’s theorem tells a would-be factor classification to restrict to the amenable class, and that restricted classification exists. Wildness tells a would-be module classification to restrict to the derived-tame side. The unrecognizability theorem tells a would-be four-manifold classification to restrict to decomposable classes. Each obstruction pairs with a restricted positive theorem, and that pairing is the working form of the program’s negative results.</p>
+<div class="remark">
+<p><strong>Remark 13</strong>.  The program founding documents warn against assuming that physical theories possess a finite collection of exceptional objects analogous to the twenty-six sporadic groups <a class="citation" href="#bib-corpus-1">[1]</a>. The sporadic groups exist and are exhaustive in the finite-simple setting, and the corresponding question for physical theories is open. The obstruction register shows what a periodic table must record where no table exists.</p>
+</div>
+<h2 id="sec:realization">The realization layer</h2>
+<p>The realization layer <span class="math inline">\(\mathcal{R}\)</span> asks which structures, once classified, are realized as physical theories. The proved content of this layer is reconstruction: objects recovered from their probes. Eight reconstruction theorems are registered.</p>
+<table class="paper-table" id="tab:reconstruction">
+<caption><span class="tbl-num">Table 4.</span> The eight registered reconstruction theorems, with recovered object and scope limits. Each theorem is proved under the hypotheses stated in the source.</caption>
+<thead>
+<tr>
+<th style="text-align: left;">Theorem</th>
+<th style="text-align: left;">Recovers</th>
+<th style="text-align: left;">Scope limits</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;">Gelfand-Naimark <a class="citation" href="#bib-corpus-9">[9]</a>, <a class="citation" href="#bib-corpus-42">[39]</a></td>
+<td style="text-align: left;">A concrete representation of a <span class="math inline">\(C^*\)</span>-algebra</td>
+<td style="text-align: left;">A representation theorem, not a classification</td>
+</tr>
+<tr>
+<td style="text-align: left;">Gelfand duality <a class="citation" href="#bib-corpus-42">[39]</a></td>
+<td style="text-align: left;">A compact Hausdorff space</td>
+<td style="text-align: left;">The commutative side only</td>
+</tr>
+<tr>
+<td style="text-align: left;">Stone duality <a class="citation" href="#bib-corpus-44">[40]</a></td>
+<td style="text-align: left;">A spectrum from a Boolean algebra</td>
+<td style="text-align: left;">The Boolean side only</td>
+</tr>
+<tr>
+<td style="text-align: left;">Doplicher-Roberts <a class="citation" href="#bib-corpus-12">[12]</a>, <a class="citation" href="#bib-corpus-15">[15]</a>, <a class="citation" href="#bib-corpus-16">[16]</a>, <a class="citation" href="#bib-corpus-67">[61]</a></td>
+<td style="text-align: left;">A compact supergroup, unique up to isomorphism</td>
+<td style="text-align: left;">Symmetric structure, conjugates, subobjects, and <span class="math inline">\(\mathrm{End}(\mathbf{1})\)</span> equal to the scalars</td>
+</tr>
+<tr>
+<td style="text-align: left;">Deligne <a class="citation" href="#bib-corpus-13">[13]</a></td>
+<td style="text-align: left;">A supergroup representation category</td>
+<td style="text-align: left;">Characteristic zero and subexponential growth</td>
+</tr>
+<tr>
+<td style="text-align: left;">Stinespring <a class="citation" href="#bib-corpus-10">[10]</a>, <a class="citation" href="#bib-corpus-11">[11]</a></td>
+<td style="text-align: left;">A minimal dilation, unique up to unitary</td>
+<td style="text-align: left;">Normal form only, not an isomorphism classification</td>
+</tr>
+<tr>
+<td style="text-align: left;">Classifying-space construction <a class="citation" href="#bib-corpus-17">[17]</a>, <a class="citation" href="#bib-corpus-18">[18]</a></td>
+<td style="text-align: left;">A principal bundle from a map to the classifying space</td>
+<td style="text-align: left;">Homotopy classification</td>
+</tr>
+<tr>
+<td style="text-align: left;">Supermap representability <a class="citation" href="#bib-corpus-40">[37]</a>, <a class="citation" href="#bib-corpus-41">[38]</a></td>
+<td style="text-align: left;">Concrete representations of categorical supermaps</td>
+<td style="text-align: left;">Settings with channel-state duality</td>
+</tr>
+</tbody>
+</table>
+<p>Reconstruction is better developed than classification. The pattern is uniform: probe data determines the object. Gelfand duality recovers a space from its commutative <span class="math inline">\(C^*\)</span>-algebra <a class="citation" href="#bib-corpus-42">[39]</a>, Stone duality recovers a spectrum from a Boolean algebra <a class="citation" href="#bib-corpus-44">[40]</a>, and Doplicher-Roberts reconstruction recovers a compact supergroup from a symmetric tensor <span class="math inline">\(*\)</span>-category with the stated hypotheses <a class="citation" href="#bib-corpus-12">[12]</a>, <a class="citation" href="#bib-corpus-16">[16]</a>. The 2024 to 2026 supermap line establishes concrete representability of categorical supermaps whenever suitable channel-state duality holds <a class="citation" href="#bib-corpus-40">[37]</a>, <a class="citation" href="#bib-corpus-41">[38]</a>. Whether that line unifies with the Gelfand, Stone, and Naimark pattern into a single relational principle is open.</p>
+<h3 id="relational-characterization">Relational characterization</h3>
+<p>Reconstruction from probes has a categorical form. The Yoneda embedding sends an object <span class="math inline">\(P\)</span> to the functor <span class="math inline">\(\mathrm{Hom}(-, P)\)</span>, and the Yoneda lemma shows that an object of a locally small category is determined up to isomorphism by its relationships. The embedding is therefore a faithful mathematical representation of objects of <span class="math inline">\(\mathrm{Phys}\)</span> through their relational profiles. Its physical interpretation is open.</p>
+<p>The constraint on every relational argument in the program is stated verbatim: <em>Yoneda does not, by itself, establish physical equivalence, empirical adequacy, or a classification theorem.</em> The embedding supplies representability and nothing else. Physical equivalence requires the chosen relation of <a href="#def:equivalence" data-reference-type="ref+label" data-reference="def:equivalence">2</a>, empirical adequacy requires the selection layer, and a classification theorem requires invariants with completeness statements.</p>
+<p>Two islands support the relational program. Concrete representability of categorical supermaps is proved whenever the theory admits suitable channel-state duality <a class="citation" href="#bib-corpus-40">[37]</a>, <a class="citation" href="#bib-corpus-41">[38]</a>. The classical reconstruction pattern of Gelfand, Stone, and Naimark recovers objects from their probe algebras <a class="citation" href="#bib-corpus-42">[39]</a>, <a class="citation" href="#bib-corpus-44">[40]</a>. Whether the two islands join into one principle is open, and no argument in this paper crosses that gap.</p>
+<div id="thm:hypotheses" class="theorem">
+<p><strong>Theorem 14</strong> (Survey: necessity of the structure hypotheses, assembled from Etingof-Gelaki, Doplicher-Roberts, Stinespring, and the supermap results).  <em>Every registered realization or identification theorem fails or becomes open as soon as its structure hypotheses are dropped. In particular: plain tensor equivalence of representation categories does not determine the finite group; Doplicher-Roberts reconstruction requires the symmetric structure and its companion hypotheses; Stinespring data is a normal form and its Kraus rank is not an isomorphism invariant of channels; supermap representability requires channel-state duality. Consequently any identification of systems in the program must declare the layers of structure it preserves, and an identification that forgets the monoidal or symmetric layer is refuted.</em></p>
+</div>
+<div class="proof">
+<p><em>Proof.</em> Isocategorical finite groups are non-isomorphic groups whose representation categories are equivalent as plain tensor categories <a class="citation" href="#bib-corpus-12">[12]</a>, which refutes recovery of the group from plain tensor data and proves the last clause for that case. The Doplicher-Roberts statement is a theorem under its hypotheses, and no theorem on record covers the hypothesis-free version; the symmetric layer is load-bearing because its removal is exactly the case refuted by the counterexample. The Stinespring statement classifies completely positive maps up to minimal dilation, unique up to unitary, and Kraus rank is an invariant of that normal form only <a class="citation" href="#bib-corpus-10">[10]</a>, <a class="citation" href="#bib-corpus-11">[11]</a>, so any claim that treats it as an isomorphism invariant of channels asserts more than the theorem. Supermap representability is proved in settings with channel-state duality <a class="citation" href="#bib-corpus-40">[37]</a>, <a class="citation" href="#bib-corpus-41">[38]</a>, and the general case is open. Each clause is therefore either a counterexample or a recorded hypothesis gap, and the conjunctive conclusion follows. ◻</p>
+</div>
+<p><a href="#thm:hypotheses" data-reference-type="ref+Label" data-reference="thm:hypotheses">14</a> is the realization-layer form of the discipline that any equivalence record must state the structure it preserves. The braided case adds a further warning: fixed-point-net representation categories in braided Galois theory require extra soliton data beyond the braiding <a class="citation" href="#bib-corpus-21">[21]</a>, so even a braided equivalence is not automatically sufficient.</p>
+<h3 id="the-central-test">The central test</h3>
+<p>The realization layer carries a central unanswered test. Can the proposed foundational structures reconstruct gauge connections and curvature, quantum states and observables, interacting Yang-Mills dynamics, and spacetime geometry together with gravitational dynamics, without assuming at the outset the spacetime geometry they aim to explain? Four constraints bound the current answer.</p>
+<p>The finite-groupoid and weighted-nerve constructions of emergent spacetime are concrete, and their continuum convergence conditions are not established without complete proofs. The Ryu-Takayanagi formula is a proposal argued from the AdS/CFT correspondence and verified exactly only in the three-dimensional anti-de Sitter setting with two-dimensional conformal field theory <a class="citation" href="#bib-corpus-45">[41]</a>. Entanglement-wedge bulk reconstruction is a proved quantum-information theorem <a class="citation" href="#bib-corpus-46">[42]</a>, so it lives at the interface of the mathematical and realization layers and is not a theorem about gravity. Tensor-network constructions prove entropy relations inside exactly solvable toys and not inside the physical duality <a class="citation" href="#bib-corpus-48">[44]</a>, and the statement that entanglement builds spacetime is an argument rather than a theorem <a class="citation" href="#bib-corpus-49">[45]</a>.</p>
+<p>The honest summary of the realization layer is therefore asymmetric. Reconstruction from probes is strong where the probes are algebraic or categorical. Reconstruction of interacting dynamics and of spacetime itself from primitive data remains open.</p>
+<h2 id="sec:empirical">The empirical layer</h2>
+<p>The empirical layer <span class="math inline">\(\mathcal{E}\)</span> is where mathematical classification stops and observational selection begins.</p>
+<div id="thm:monotone" class="theorem">
+<p><strong>Theorem 15</strong> (Survey: classical uniqueness and quantum parametricity, assembled from Chentsov and Petz-Sudar).  <em>The Fisher metric is the unique Riemannian metric, up to constant factor, that is monotone under stochastic maps. Quantum monotone metrics are classified by operator monotone functions, a parametric family containing more than one element. Classical uniqueness therefore does not extend to the quantum case, and any quantum distinguishability criterion must either select within the parametric family and justify the selection or carry the family as data.</em></p>
+</div>
+<div class="proof">
+<p><em>Proof.</em> The first statement is Chentsov’s theorem <a class="citation" href="#bib-corpus-52">[48]</a>. The second is the Petz-Sudar classification <a class="citation" href="#bib-corpus-52">[48]</a>. The parameterizing class of operator monotone functions contains more than one element; for instance the identity function and the affine function <span class="math inline">\(f(x) = (x+1)/2\)</span> are both operator monotone and give different metrics. The uniqueness statement is therefore false in the quantum case, and the last clause follows: a criterion that names a single quantum monotone metric makes an additional choice beyond the classification theorem. ◻</p>
+</div>
+<p><a href="#thm:monotone" data-reference-type="ref+Label" data-reference="thm:monotone">15</a> fixes what empirical distinguishability can borrow from information geometry. In the classical case the statistical distance is canonical. In the quantum case the statistical distance is a choice inside a proved parameterization, so an observational equivalence relation built on such distances must state the choice.</p>
+<h3 id="observational-equivalence">Observational equivalence</h3>
+<p>Two theories that differ as mathematical descriptions may be empirically indistinguishable in an accessible regime, so observational equivalence is a further quotient that the mathematical classification does not compute. Conversely an equivalence that forgets the monoidal or symmetric layer is too coarse to be a correct identification at all, because isocategorical groups refute it <a class="citation" href="#bib-corpus-12">[12]</a>. Any observational criterion must therefore be fine enough to respect the preserved-structure requirement and coarse enough to quotient the empirically indistinguishable.</p>
+<p>Formalizing that criterion needs an observation functor with four pieces of data: a domain of theories, a codomain of observational constraints or predictions, a composition rule with coarse-graining, and the induced equivalence classes of <a href="#def:observational" data-reference-type="ref+label" data-reference="def:observational">10</a>. The record contains none of the four. Whether observational equivalence composes in interacting regimes is unstudied, and the positive question of what makes two descriptions one physical system is open: the isocategorical counterexample shows what is insufficient, and no reconstruction criterion for sameness exists.</p>
+<h3 id="the-claim-register">The claim register</h3>
+<p>The empirical record of the realization layer is currently claim-dense, and the claim ladder keeps the rungs apart: announced, manuscript, verified, and accepted are different positions.</p>
+<table class="paper-table" id="tab:claims">
+<caption><span class="tbl-num">Table 5.</span> The five claim-ledger entries of the program registry, with ladder position at the status date of the registry. None is a theorem record.</caption>
+<thead>
+<tr>
+<th style="text-align: left;">Entry</th>
+<th style="text-align: left;">Claim</th>
+<th style="text-align: left;">Ladder position</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;">CL-01</td>
+<td style="text-align: left;">Rigorous existence of QCD, a simplest GUT completion, and pure Yang-Mills as subproblem, Balaban-based <a class="citation" href="#bib-corpus-24">[24]</a>, <a class="citation" href="#bib-corpus-25">[25]</a>, <a class="citation" href="#bib-corpus-26">[26]</a></td>
+<td style="text-align: left;">Announced, manuscript unpublished, formalization withheld, verification pending</td>
+</tr>
+<tr>
+<td style="text-align: left;">CL-02</td>
+<td style="text-align: left;">Reflection-positive four-dimensional SU(N) construction with mass gap and confinement <a class="citation" href="#bib-corpus-28">[28]</a></td>
+<td style="text-align: left;">Journal-published and unverified</td>
+</tr>
+<tr>
+<td style="text-align: left;">CL-03</td>
+<td style="text-align: left;">Existence and mass gap via a five-dimensional orbifold regulator <a class="citation" href="#bib-corpus-29">[29]</a></td>
+<td style="text-align: left;">Withdrawn for quality standards, no status</td>
+</tr>
+<tr>
+<td style="text-align: left;">CL-04</td>
+<td style="text-align: left;">Lattice Yang-Mills theorems in restricted regimes <a class="citation" href="#bib-corpus-30">[30]</a>, <a class="citation" href="#bib-corpus-31">[31]</a>, <a class="citation" href="#bib-corpus-32">[32]</a></td>
+<td style="text-align: left;">Rigorous within stated regimes only</td>
+</tr>
+<tr>
+<td style="text-align: left;">CL-05</td>
+<td style="text-align: left;">Three-dimensional mass-gap proof outline <a class="citation" href="#bib-corpus-33">[33]</a></td>
+<td style="text-align: left;">Preprint outline, no status</td>
+</tr>
+</tbody>
+</table>
+<p>None of the registered claim entries resolves the four-dimensional Yang-Mills Millennium problem, which requires proving both existence of the quantum field theory and a strictly positive mass gap <a class="citation" href="#bib-corpus-23">[23]</a>. The announced existence work explicitly omits the mass gap, lacks public artifacts, and awaits independent verification <a class="citation" href="#bib-corpus-24">[24]</a>, <a class="citation" href="#bib-corpus-25">[25]</a>, <a class="citation" href="#bib-corpus-26">[26]</a>; it carries the status existence claimed; manuscript and formalization withheld; verification pending. The remaining entries restrict their scope to lattice approximations without establishing the continuum limit <a class="citation" href="#bib-corpus-30">[30]</a>, <a class="citation" href="#bib-corpus-31">[31]</a>, <a class="citation" href="#bib-corpus-32">[32]</a>, confine their arguments to three dimensions <a class="citation" href="#bib-corpus-33">[33]</a>, or remain unverified or retracted <a class="citation" href="#bib-corpus-28">[28]</a>, <a class="citation" href="#bib-corpus-29">[29]</a>. The Clay problem page lists the problem as unsolved <a class="citation" href="#bib-corpus-23">[23]</a>. Because constructive field theory currently lacks a demonstrated continuum mass gap, the realization layer for four-dimensional non-Abelian gauge theory remains open.</p>
+<p>A pre-claim baseline makes the ladder vivid. The 2026 survey of rigorous approaches to quantum field theory records that rigorous renormalization has never been made rigorous in the needed generality and that on the mass gap no clear path is known <a class="citation" href="#bib-corpus-27">[27]</a>. The October 2026 existence announcement postdates that survey, contradicts its existence-side assessment, and confirms its mass-gap-side assessment <a class="citation" href="#bib-corpus-24">[24]</a>. Independent verification before a standing committee is the step that would move the claim up the ladder <a class="citation" href="#bib-corpus-25">[25]</a>.</p>
+<p>The register also contains frontier items with lighter status. Higher-form DHR theory exhibits an extra <span class="math inline">\(Z_2\)</span> sector not realizable by Lagrangian gauge models, recorded from a single source <a class="citation" href="#bib-corpus-20">[20]</a>. A braided Doplicher-Roberts program constructs a global quantum gauge group <a class="citation" href="#bib-corpus-22">[22]</a>. Braided Galois theory requires soliton data beyond the braiding <a class="citation" href="#bib-corpus-21">[21]</a>. Each is research input, and none is load-bearing in this assembly.</p>
+<h2 id="sec:conjecture">The structural classification conjecture</h2>
+<p>The organizing statement of the program is the following.</p>
+<div id="conj:structural" class="conjecture">
+<p><strong>Conjecture 16</strong> (Structural classification of admissible physical systems).  Let <span class="math inline">\(\mathrm{Phys}_{\mathrm{adm}}\)</span> denote the class of mathematically admissible physical systems satisfying explicitly stated consistency conditions. There exists a collection of fundamental structural families <span class="math inline">\(\mathfrak{F} = \{\mathfrak{F}_\alpha\}_{\alpha \in A}\)</span> and a set of admissible constructions <span class="math inline">\(\mathfrak{C}\)</span> such that <span class="math display">\[\mathrm{Phys}_{\mathrm{adm}} \simeq \langle \mathfrak{F}_\alpha \rangle_{\mathfrak{C}}.\]</span></p>
+</div>
+<p>The conjecture carries five proof obligations; the scoreboard in <a href="#tab:obligations" class="reflink">6</a> is the state of the program.</p>
+<table class="paper-table" id="tab:obligations">
+<caption><span class="tbl-num">Table 6.</span> The five proof obligations of <a href="#conj:structural" data-reference-type="ref+label" data-reference="conj:structural">16</a> and their state. Four are open and one is partial.</caption>
+<thead>
+<tr>
+<th style="text-align: left;">Obligation</th>
+<th style="text-align: left;">Content</th>
+<th style="text-align: left;">State</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;">Completeness</td>
+<td style="text-align: left;">Every admissible system is represented in the family closure</td>
+<td style="text-align: left;">Open</td>
+</tr>
+<tr>
+<td style="text-align: left;">Soundness</td>
+<td style="text-align: left;">Every generated structure satisfies the admissibility conditions</td>
+<td style="text-align: left;">Open</td>
+</tr>
+<tr>
+<td style="text-align: left;">Equivalence</td>
+<td style="text-align: left;">Different representations of one system are identified correctly</td>
+<td style="text-align: left;">Open</td>
+</tr>
+<tr>
+<td style="text-align: left;">Structural characterization</td>
+<td style="text-align: left;">The fundamental families have precise definitions</td>
+<td style="text-align: left;">Partial</td>
+</tr>
+<tr>
+<td style="text-align: left;">Decomposition</td>
+<td style="text-align: left;">Systems in the targeted classes are built from the families</td>
+<td style="text-align: left;">Open in general</td>
+</tr>
+</tbody>
+</table>
+<div id="def:constituent" class="definition">
+<p><strong>Definition 17</strong> (Constituent invariant record).  Let <span class="math inline">\(P\)</span> admit a decomposition <span class="math inline">\(P \simeq \mathcal{F}(I_1, \ldots, I_n)\)</span> with irreducible constituents. The constituent invariant record is <span class="math inline">\(\mu(P) = (\mathcal{F}, \{\mathcal{I}(I_i)\}, g_P)\)</span>: the construction data, the multiset of invariant records of <a href="#def:invariants" data-reference-type="ref+label" data-reference="def:invariants">9</a> of the constituents, and the gluing datum <span class="math inline">\(g_P\)</span> that <span class="math inline">\(\mathcal{F}\)</span> requires to assemble them. The gluing datum is extension data of the construction: a group extension <span class="math inline">\(1 \to N \to G \to Q \to 1\)</span> is recorded by a class in <span class="math inline">\(H^2(Q, Z(N))\)</span> in addition to the invariant records of <span class="math inline">\(N\)</span> and <span class="math inline">\(Q\)</span>, and other constructions carry the analogous clutching or k-invariant data. Where the decomposition is unique up to order and up to equivalence of constituents, <span class="math inline">\(\mu\)</span> is well defined on <span class="math inline">\(\simeq\)</span>-classes.</p>
+</div>
+<div id="thm:conditional" class="proposition">
+<p><strong>Proposition 18</strong> (Completeness of the constituent record for two constructions).  <em>Let <span class="math inline">\(P\)</span> be an object assembled by one of two operations. In case (a) <span class="math inline">\(P\)</span> is a finite-dimensional complex <span class="math inline">\(C^*\)</span>-algebra written as a direct sum <span class="math inline">\(P \cong \bigoplus_{i=1}^{k} M_{n_i}(\mathbb{C})\)</span>, with constituents classified by their block sizes. In case (b) <span class="math inline">\(P\)</span> is a group extension <span class="math inline">\(1 \to N \to P \to Q \to 1\)</span> with a fixed action of <span class="math inline">\(Q\)</span> on <span class="math inline">\(N\)</span>, with <span class="math inline">\(N\)</span> and <span class="math inline">\(Q\)</span> classified up to isomorphism and the extension class <span class="math inline">\(g_P\)</span> recorded in <span class="math inline">\(H^2(Q, Z(N))\)</span>. In case (a) the multiset of block sizes is a complete invariant of <span class="math inline">\(P\)</span> up to <span class="math inline">\(*\)</span>-isomorphism. In case (b) the pair consisting of the invariant records of <span class="math inline">\(N\)</span> and <span class="math inline">\(Q\)</span> and the extension class <span class="math inline">\(g_P\)</span> is a complete invariant of <span class="math inline">\(P\)</span> up to isomorphism of extensions. In both cases the constituent record of <a href="#def:constituent" data-reference-type="ref+label" data-reference="def:constituent">17</a> is complete, and the construction maps neither into theories nor into observation data.</em></p>
+</div>
+<div class="proof">
+<p><em>Proof.</em> In case (a) the block sizes are the dimensions of the simple modules of <span class="math inline">\(P\)</span>, which are invariant under <span class="math inline">\(*\)</span>-isomorphism, and they determine the algebra by the structure theorem <a class="citation" href="#bib-corpus-9">[9]</a>, <a class="citation" href="#bib-corpus-42">[39]</a>; this is <a href="#lem:blocks" data-reference-type="ref+label" data-reference="lem:blocks">21</a>. In case (b) the classification of group extensions with a fixed action states that isomorphism classes of extensions of <span class="math inline">\(Q\)</span> by <span class="math inline">\(N\)</span> correspond bijectively to classes in <span class="math inline">\(H^2(Q, Z(N))\)</span>, and an isomorphism of extensions preserves the class while a shared class builds an isomorphism of extensions <a class="citation" href="#bib-corpus-72">[65]</a>. In both cases the record <span class="math inline">\(\mu(P)\)</span> therefore determines <span class="math inline">\(P\)</span> up to the stated equivalence. Neither construction outputs a theory or an observation, so the non-collapse argument of Section 3 leaves realization and selection unconstructed. ◻</p>
+</div>
+<div id="rem:incompat" class="remark">
+<p><strong>Remark 19</strong> (Generation and classification).  The five obligations concern generation, admissibility, identification, family definitions, and decomposition, and <a href="#thm:obstructions" data-reference-type="ref+label" data-reference="thm:obstructions">12</a> concerns classification by finite or parametric invariants and by algorithms. The two objectives do not contradict each other: finitely presented groups are generated from cyclic groups by free products and quotients, and their Markov properties are algorithmically undecidable <a class="citation" href="#bib-corpus-53">[49]</a>. The objectives meet only in regimes 1 and 2 of <a href="#tab:regimes" class="reflink">3</a>, where constituents carry classifying invariants and <a href="#thm:conditional" data-reference-type="ref+label" data-reference="thm:conditional">18</a> applies. In the sectors of <a href="#thm:obstructions" data-reference-type="ref+label" data-reference="thm:obstructions">12</a> the classification-layer objective of <a href="#def:layers" data-reference-type="ref+label" data-reference="def:layers">5</a> is unattainable without restricting the class or weakening the invariant notion.</p>
+</div>
+<p><a href="#thm:conditional" data-reference-type="ref+Label" data-reference="thm:conditional">18</a> covers the two constructions where extension theory is established. The analogous completeness statement for the remaining admissible constructions is conditional on the five obligations of <a href="#conj:structural" data-reference-type="ref+label" data-reference="conj:structural">16</a>, of which one is partial and four are open, and on uniqueness of decomposition, which the program leaves open; it is not claimed here. Its conclusion would stop at the mathematical layer. The regime analysis of <a href="#sec:mathlayer" data-reference-type="ref+label" data-reference="sec:mathlayer">4</a> bounds its scope further: inside a target class, the classifying data must live in a regime of <a href="#tab:regimes" class="reflink">3</a> where invariants are finite or explicitly parameterized, and outside those regimes <a href="#thm:obstructions" data-reference-type="ref+label" data-reference="thm:obstructions">12</a> forbids the classification the conjecture would deliver.</p>
+<div class="remark">
+<p><strong>Remark 20</strong>.  The conjecture may also fail. The founding program records that proving either a complete classification of a specified class or the impossibility of natural classification objectives without additional restrictions is a meaningful mathematical result. The obstruction register already delivers the second kind of result in six sectors.</p>
+</div>
+<h2 id="sec:examples">Worked examples</h2>
+<p>The examples trace one classical, one quantum, and one gauge system through the three layers. Each separates <span class="math inline">\(\mathcal{M}\)</span>, <span class="math inline">\(\mathcal{R}\)</span>, and <span class="math inline">\(\mathcal{E}\)</span> and shows where the proved content ends.</p>
+<h3 id="finite-dimensional-quantum-systems">Finite-dimensional quantum systems</h3>
+<p>Let <span class="math inline">\(A = \mathbb{C} \oplus M_2(\mathbb{C})\)</span>, the complex <span class="math inline">\(C^*\)</span>-algebra with one one-dimensional block and one two-dimensional block. At the mathematical layer, <span class="math inline">\(A\)</span> is classified by its dimension vector, the multiset of matrix sizes, here <span class="math inline">\(\{1, 2\}\)</span>: any finite-dimensional complex <span class="math inline">\(C^*\)</span>-algebra is isomorphic to a direct sum of matrix blocks, and the multiset of block sizes determines the algebra up to <span class="math inline">\(*\)</span>-isomorphism <a class="citation" href="#bib-corpus-9">[9]</a>, <a class="citation" href="#bib-corpus-42">[39]</a>.</p>
+<div id="lem:blocks" class="lemma">
+<p><strong>Lemma 21</strong> (Uniqueness of the block decomposition).  <em>Every finite-dimensional complex <span class="math inline">\(C^*\)</span>-algebra <span class="math inline">\(A\)</span> admits a decomposition <span class="math inline">\(A \cong \bigoplus_{i=1}^{k} M_{n_i}(\mathbb{C})\)</span> with the multiset <span class="math inline">\(\{n_1, \ldots, n_k\}\)</span> uniquely determined by <span class="math inline">\(A\)</span>. For the example algebra the multiset is <span class="math inline">\(\{1, 2\}\)</span>, and any decomposition into irreducible blocks realizes it.</em></p>
+</div>
+<div class="proof">
+<p><em>Proof.</em> Existence is the structure theorem for finite-dimensional <span class="math inline">\(C^*\)</span>-algebras <a class="citation" href="#bib-corpus-9">[9]</a>. Uniqueness of the multiset follows because the block sizes are recovered from <span class="math inline">\(A\)</span> as the dimensions of its simple modules, and simple modules are invariant under <span class="math inline">\(*\)</span>-isomorphism. For <span class="math inline">\(A = \mathbb{C} \oplus M_2(\mathbb{C})\)</span> the simple modules have dimensions one and two, so every decomposition into irreducible summands has block sizes <span class="math inline">\(\{1, 2\}\)</span> up to order. ◻</p>
+</div>
+<p>The blocks <span class="math inline">\(M_{n_i}(\mathbb{C})\)</span> are the irreducible constituents under the direct-sum construction, so this example displays decomposition and irreducibility exactly as <a href="#def:irreducible" data-reference-type="ref+label" data-reference="def:irreducible">4</a> requires, and <a href="#lem:blocks" data-reference-type="ref+label" data-reference="lem:blocks">21</a> shows the decomposition unique in this restricted class.</p>
+<p>At the realization layer, <span class="math inline">\(A\)</span> acts on a Hilbert space and states are density matrices on <span class="math inline">\(\mathbb{C} \oplus \mathbb{C}^2\)</span>. The representation is the standard one from the Gelfand-Naimark embedding <a class="citation" href="#bib-corpus-42">[39]</a>, which is a representation theorem and not a classification theorem; the classification content is the dimension vector from the layer above.</p>
+<p>At the empirical layer, measurement statistics on states define distinguishability. The classical statistical distance is canonical by <a href="#thm:monotone" data-reference-type="ref+label" data-reference="thm:monotone">15</a>, and the quantum statistical distance is one choice inside the parametric family of operator monotone functions. Two admissible choices give two inequivalent distinguishability structures on the same classified algebra, so the empirical layer carries data the mathematical layer does not determine.</p>
+<h3 id="classical-mechanics">Classical mechanics</h3>
+<p>Let <span class="math inline">\((M, \omega)\)</span> be a symplectic manifold with Hamiltonian dynamics. At the mathematical layer, Darboux’s theorem removes all local invariants <a class="citation" href="#bib-corpus-6">[6]</a>, so the classifying data is global: the topology of <span class="math inline">\(\omega\)</span> and its cohomology class are candidate data, and Poisson geometry adds Weinstein splitting, the symplectic-leaf foliation, and coadjoint orbits for the Kirillov-Kostant-Souriau case <a class="citation" href="#bib-corpus-7">[7]</a>, <a class="citation" href="#bib-corpus-68">[62]</a>. Local classification is complete and trivial, and the classification content is entirely global.</p>
+<p>At the realization layer, Hamiltonian vector fields realize the dynamics and the observable algebra is the algebra of smooth functions on <span class="math inline">\(M\)</span>. At the empirical layer, the Fisher metric is the unique monotone metric up to constant factor <a class="citation" href="#bib-corpus-52">[48]</a>, so classical statistical distinguishability is canonical. The bridge from this family to the quantum family through deformation quantization is a programmatic link and not an equivalence theorem, so no classical-to-quantum conclusion crosses the layer boundary.</p>
+<h3 id="gauge-theory-and-the-claim-register">Gauge theory and the claim register</h3>
+<p>Let <span class="math inline">\(P \to X\)</span> be a principal <span class="math inline">\(G\)</span>-bundle with connection. At the mathematical layer, principal bundles are classified by homotopy classes of maps into the classifying space <span class="math inline">\(BG\)</span>, and characteristic classes are pullbacks of universal classes <a class="citation" href="#bib-corpus-17">[17]</a>, <a class="citation" href="#bib-corpus-18">[18]</a>. Anomalies are classified as obstruction classes: quantization exists exactly when the relevant classes vanish <a class="citation" href="#bib-corpus-19">[19]</a>. This is regime 3, complete as obstruction, and it is the volume’s sharpest example of classification content that is an impossibility statement.</p>
+<p>At the realization layer, the reconstruction of an interacting four-dimensional quantum field theory from such data is claimed rather than established. The announced existence result carries the status existence claimed; manuscript and formalization withheld; verification pending <a class="citation" href="#bib-corpus-24">[24]</a>, <a class="citation" href="#bib-corpus-25">[25]</a>. At the empirical layer, the mass gap remains open <a class="citation" href="#bib-corpus-23">[23]</a>, lattice theorems hold only in restricted regimes <a class="citation" href="#bib-corpus-30">[30]</a>, <a class="citation" href="#bib-corpus-31">[31]</a>, <a class="citation" href="#bib-corpus-32">[32]</a>, and no entry of <a href="#tab:claims" class="reflink">5</a> closes the continuum limit. The example therefore shows the three layers in three different states: proved at <span class="math inline">\(\mathcal{M}\)</span>, claimed at <span class="math inline">\(\mathcal{R}\)</span>, open at <span class="math inline">\(\mathcal{E}\)</span>.</p>
+<h2 id="sec:requirements">Requirements for a unified framework</h2>
+<p>A unified structural theory of mathematical physics would need eight deliverables, and the assembly names each one precisely.</p>
+<table class="paper-table" id="tab:requirements">
+<caption><span class="tbl-num">Table 7.</span> The eight deliverables a unified framework requires, with the current state of each.</caption>
+<thead>
+<tr>
+<th style="text-align: left;">Deliverable</th>
+<th style="text-align: left;">Current state</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;">Admissibility conditions defining the target class</td>
+<td style="text-align: left;">Unfixed, so statements over the class are conditional</td>
+</tr>
+<tr>
+<td style="text-align: left;">Preservation laws and composition rules for morphisms</td>
+<td style="text-align: left;">Unfixed, so the ambient category is a schema</td>
+</tr>
+<tr>
+<td style="text-align: left;">A chosen physical equivalence with declared preserved structure</td>
+<td style="text-align: left;">Open, constrained by the isocategorical counterexample</td>
+</tr>
+<tr>
+<td style="text-align: left;">A constructed realization map from structures to theories</td>
+<td style="text-align: left;">Stipulated only</td>
+</tr>
+<tr>
+<td style="text-align: left;">A constructed selection map from theories to observations</td>
+<td style="text-align: left;">Not constructed in the record</td>
+</tr>
+<tr>
+<td style="text-align: left;">Regime-appropriate objectives</td>
+<td style="text-align: left;">Established by the regime analysis of <a href="#tab:regimes" class="reflink">3</a> and by <a href="#thm:obstructions" data-reference-type="ref+label" data-reference="thm:obstructions">12</a></td>
+</tr>
+<tr>
+<td style="text-align: left;">A verification layer for the registered proofs</td>
+<td style="text-align: left;">No record carries a completed proof-assistant check</td>
+</tr>
+<tr>
+<td style="text-align: left;">Criteria for physical validation of the architecture</td>
+<td style="text-align: left;">Open, level named but its criteria unstated</td>
+</tr>
+</tbody>
+</table>
+<p>The first three deliverables are definitional. Until the admissibility conditions are fixed, every theorem over the admissible class is conditional on the chosen conditions. Until the morphism rules are fixed, the ambient category is a schema, and any theorem must state which morphism classes are in force. The equivalence must name the structure it preserves, and the isocategorical counterexample shows what happens otherwise <a class="citation" href="#bib-corpus-12">[12]</a>.</p>
+<p>The fourth and fifth deliverables are constructions, and neither exists in the record. The realization map is stipulated as an arrow in the architecture and never built; the selection map has no definition of its observation object, no domain, no codomain, and no composition rule with coarse-graining. Until both are built, the identity of <a href="#thm:conditional" data-reference-type="ref+label" data-reference="thm:conditional">18</a> stops at the mathematical layer.</p>
+<p>The sixth deliverable is what this paper supplies. Restricted classification theorems are the right objective where invariants are finite or explicitly parameterized, and obstruction theorems are the right objective everywhere else. A rigorous impossibility result is a valuable outcome of the program, not a consolation.</p>
+<p>The seventh deliverable is verification. No proof in the series has been checked by a proof-assistant kernel. The executable taxonomy code in the source directory is computational evidence: it is validated against stated specifications and has not been checked by a kernel. The verification directory records ten mechanization targets matching the definitions and theorems above. Mechanization is future work.</p>
+<p>The eighth deliverable is the hardest. Physical validation would require empirical criteria that the architecture could pass and its rivals fail. The corpus names the level and does not fix its criteria. Until those criteria exist, the architecture is a mathematical research program with proved components and an unvalidated assembly.</p>
+<h2 id="sec:limitations">Limitations</h2>
+<p>Four limitations bound this synthesis. The assembly inherits the statuses of the program registry, and any status revision propagates. Three entries rest on single sources and were not independently re-verified here: the extra <span class="math inline">\(Z_2\)</span> sector of higher-form DHR theory <a class="citation" href="#bib-corpus-20">[20]</a>, the journal-published mass-gap claim <a class="citation" href="#bib-corpus-28">[28]</a>, and the Borel-reducibility obstruction announced at the survey level <a class="citation" href="#bib-corpus-59">[55]</a>. The literature survey behind the registry ran on the arXiv API plus known-URL fetches, so non-arXiv venues may be under-covered, and absence of a citation here is not evidence of absence. The regime taxonomy organizes the registered domains and proves a coverage statement about them; it does not classify all of mathematics.</p>
+<p>The formal statements of this paper are assembly results: coverage statements about a finite registry, reductions to the registered impossibility theorems, necessity statements about structure hypotheses, and one conditional reduction. No new classifying invariant is introduced.</p>
+<h2 id="conclusion">Conclusion</h2>
+<p>The assembly establishes four things. Every domain of the program comparison spine sits in exactly one classification regime, fifteen of them with finite or explicitly parameterized invariants and complete classification theorems. Seven obstruction theorems forbid classification in the wild, non-amenable, and undecidable sectors, so classification objectives must match regimes. Every realization and identification theorem fails or becomes open when its structure hypotheses are dropped, so identifications must declare preserved structure. And the structural classification conjecture, under its five obligations, would complete the mathematical layer for a targeted class while leaving realization and selection untouched.</p>
+<p>What remains uncertain is equally sharp. The admissibility conditions are unfixed. The physical equivalence is unchosen. The realization and selection maps are stipulated and not constructed. The announced four-dimensional existence result carries the status existence claimed; manuscript and formalization withheld; verification pending, and the mass gap is open. No record carries a completed computer-checked proof. The central test of the realization layer, reconstruction of interacting dynamics and spacetime without presupposing spacetime, is unanswered.</p>
+<p>What follows is the founding program’s own calibration. The architecture is precise enough to organize a substantial long-term mathematical research program, and its components produce valuable results even if a universal classification theorem proves unattainable. The program should be prepared to prove either that a specified class admits a complete classification or that certain natural classification objectives are impossible without additional restrictions. Both are meaningful mathematical results, and the obstruction register has already begun to deliver the second.</p>
+<h2 id="app:code">Code evidence</h2>
+<p>The computational artifacts of this volume record the bookkeeping claims of the assembly and the finite-dimensional example of <a href="#sec:examples" data-reference-type="ref+label" data-reference="sec:examples">9</a>. The two files perform automated registry auditing and bookkeeping and exercise the worked example; they verify no mathematics. Both files accompany this paper in the CMRPS project repository at <a href="https://github.com/YonedaAI/cmrps" class="uri">https://github.com/YonedaAI/cmrps</a>, under <code>src/vol-12-principia-physica</code>. <a href="#tab:code" class="reflink">8</a> maps each computational claim to the file and function that exercises it.</p>
+<table class="paper-table" id="tab:code">
+<caption><span class="tbl-num">Table 8.</span> Code evidence for the computational claims of this paper. Each row names the file and function under the computational source directory of this volume.</caption>
+<thead>
+<tr>
+<th style="text-align: left;">Computational claim</th>
+<th style="text-align: left;">Function</th>
+<th style="text-align: left;">File</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;">Regime counts of <a href="#tab:regimes" class="reflink">3</a> are 15, 1, 1, 7, 3, 1, 1</td>
+<td style="text-align: left;"><code>regime_counts</code></td>
+<td style="text-align: left;"><code>phase_d_registry_audit.py</code></td>
+</tr>
+<tr>
+<td style="text-align: left;">The obligation scoreboard of <a href="#tab:obligations" class="reflink">6</a> is four open and one partial</td>
+<td style="text-align: left;"><code>obligation_scoreboard</code></td>
+<td style="text-align: left;"><code>phase_d_registry_audit.py</code></td>
+</tr>
+<tr>
+<td style="text-align: left;">Registry record counts are 20 background, 7 obstruction, 7 open problem, and 5 claim-ledger entries</td>
+<td style="text-align: left;"><code>record_counts</code> over the enumerated record list</td>
+<td style="text-align: left;"><code>phase_d_registry_audit.py</code></td>
+</tr>
+<tr>
+<td style="text-align: left;">No enumerated registry record reaches evidence grade 3</td>
+<td style="text-align: left;"><code>layer_separation</code> over per-record grades</td>
+<td style="text-align: left;"><code>phase_d_registry_audit.py</code></td>
+</tr>
+<tr>
+<td style="text-align: left;">The dimension vector <span class="math inline">\(\{1,2\}\)</span> is the classification data of the example and block order does not affect it</td>
+<td style="text-align: left;"><code>dimensionVectorExample</code>, <code>classificationOrderCheck</code></td>
+<td style="text-align: left;"><code>Instances.hs</code></td>
+</tr>
+<tr>
+<td style="text-align: left;">The example algebra decomposes into two one-block factors and reassembles from them</td>
+<td style="text-align: left;"><code>decompositionExample</code>, <code>decompositionCheck</code></td>
+<td style="text-align: left;"><code>Instances.hs</code></td>
+</tr>
+</tbody>
+</table>
+<h2 id="references">References</h2>
+<div class="thebibliography">
+<p class="bibitem" id="bib-corpus-1"><span class="bib-num">[1]</span> D. Gorenstein, R. Lyons, and R. Solomon, The classification of the finite simple groups, Mathematical Surveys and Monographs 40.1, American Mathematical Society (1994). ISBN 0-8218-0960-1.</p>
+<p class="bibitem" id="bib-corpus-2"><span class="bib-num">[2]</span> R. Solomon, A brief history of the classification of the finite simple groups, Bulletin of the American Mathematical Society 38 (2001) 315–352. <a href="https://www.ams.org/journals/bull/2001-38-03/S0273-0979-01-00909-0/" class="uri">https://www.ams.org/journals/bull/2001-38-03/S0273-0979-01-00909-0/</a></p>
+<p class="bibitem" id="bib-corpus-3"><span class="bib-num">[3]</span> J. H. Conway, R. T. Curtis, S. P. Norton, R. A. Parker, and R. A. Wilson, Atlas of finite groups, Clarendon Press (1985). ISBN 0-19-853199-0.</p>
+<p class="bibitem" id="bib-corpus-4"><span class="bib-num">[4]</span> J. E. Humphreys, Introduction to Lie algebras and representation theory, Springer (1972). ISBN 3-540-90052-7.</p>
+<p class="bibitem" id="bib-corpus-5"><span class="bib-num">[5]</span> W. Fulton and J. Harris, Representation theory, Springer (1991). ISBN 978-1-4612-0979-9.</p>
+<p class="bibitem" id="bib-corpus-6"><span class="bib-num">[6]</span> V. I. Arnold, Mathematical methods of classical mechanics, Springer (1980).</p>
+<p class="bibitem" id="bib-corpus-7"><span class="bib-num">[7]</span> J. E. Marsden and T. S. Ratiu, Introduction to mechanics and symmetry, Springer (1994). ISBN 978-1-4757-5587-9.</p>
+<p class="bibitem" id="bib-corpus-8"><span class="bib-num">[8]</span> M. Takesaki, Theory of operator algebras I, Springer (2001). ISBN 3-540-42248-X.</p>
+<p class="bibitem" id="bib-corpus-9"><span class="bib-num">[9]</span> G. J. Murphy, <span class="math inline">\(C^*\)</span>-algebras and operator theory, Academic Press (1990). ISBN 978-0-12-511360-1.</p>
+<p class="bibitem" id="bib-corpus-10"><span class="bib-num">[10]</span> W. F. Stinespring, Positive functions on <span class="math inline">\(C^*\)</span>-algebras, Proceedings of the American Mathematical Society 6 (1955) 211–216. <a href="https://doi.org/10.2307/2032342" class="uri">https://doi.org/10.2307/2032342</a>.</p>
+<p class="bibitem" id="bib-corpus-11"><span class="bib-num">[11]</span> A. S. Holevo, Quantum systems, channels, information, De Gruyter (2012). ISBN 3-11-027340-3.</p>
+<p class="bibitem" id="bib-corpus-12"><span class="bib-num">[12]</span> S. Doplicher and J. E. Roberts, Endomorphisms of <span class="math inline">\(C^*\)</span>-algebras, cross products and duality for compact groups, Annals of Mathematics 130 (1989). <a href="https://doi.org/10.2307/1971477" class="uri">https://doi.org/10.2307/1971477</a>.</p>
+<p class="bibitem" id="bib-corpus-13"><span class="bib-num">[13]</span> P. Etingof, S. Gelaki, D. Nikshych, and V. Ostrik, Tensor categories, Mathematical Surveys and Monographs 205, American Mathematical Society (2015). ISBN 978-1-4704-2024-6.</p>
+<p class="bibitem" id="bib-corpus-14"><span class="bib-num">[14]</span> P. Etingof, D. Nikshych, and V. Ostrik, On fusion categories, Annals of Mathematics 162 (2005) 581–642. <a href="https://doi.org/10.4007/annals.2005.162.581" class="uri">https://doi.org/10.4007/annals.2005.162.581</a>.</p>
+<p class="bibitem" id="bib-corpus-15"><span class="bib-num">[15]</span> R. Haag and D. Kastler, An algebraic approach to quantum field theory, Journal of Mathematical Physics 5 (1964) 848–861. <a href="https://doi.org/10.1063/1.1704187" class="uri">https://doi.org/10.1063/1.1704187</a>.</p>
+<p class="bibitem" id="bib-corpus-16"><span class="bib-num">[16]</span> S. Doplicher, R. Haag, and J. E. Roberts, Local observables and particle statistics I, Communications in Mathematical Physics 23 (1971) 199–230. <a href="https://doi.org/10.1007/bf01877742" class="uri">https://doi.org/10.1007/bf01877742</a>.</p>
+<p class="bibitem" id="bib-corpus-17"><span class="bib-num">[17]</span> D. Husemoller, Fibre bundles, Springer (1966). ISBN 0-387-90103-5.</p>
+<p class="bibitem" id="bib-corpus-18"><span class="bib-num">[18]</span> J. Milnor and J. Stasheff, Characteristic classes, Princeton University Press (1974). ISBN 1-4008-8182-X.</p>
+<p class="bibitem" id="bib-corpus-19"><span class="bib-num">[19]</span> R. A. Bertlmann, Anomalies in quantum field theory, Clarendon Press (1996). ISBN 978-0-19-852047-4.</p>
+<p class="bibitem" id="bib-corpus-20"><span class="bib-num">[20]</span> H. Casini and N. Magan, arXiv:2511.21810 (2025). <a href="https://arxiv.org/abs/2511.21810" class="uri">https://arxiv.org/abs/2511.21810</a></p>
+<p class="bibitem" id="bib-corpus-21"><span class="bib-num">[21]</span> M. Müger, arXiv:math-ph/0008027 (2000). <a href="https://arxiv.org/abs/math-ph/0008027" class="uri">https://arxiv.org/abs/math-ph/0008027</a></p>
+<p class="bibitem" id="bib-corpus-22"><span class="bib-num">[22]</span> G. Pinzari, arXiv:2502.06229 (2026). <a href="https://arxiv.org/abs/2502.06229" class="uri">https://arxiv.org/abs/2502.06229</a></p>
+<p class="bibitem" id="bib-corpus-23"><span class="bib-num">[23]</span> Yang-Mills and the mass gap, Clay Mathematics Institute. <a href="https://www.claymath.org/millennium/yang-mills-the-maths-gap/" class="uri">https://www.claymath.org/millennium/yang-mills-the-maths-gap/</a></p>
+<p class="bibitem" id="bib-corpus-24"><span class="bib-num">[24]</span> Building scientific understanding with academic communities, OpenAI (2026). <a href="https://openai.com/index/building-scientific-understanding-with-academic-communities/" class="uri">https://openai.com/index/building-scientific-understanding-with-academic-communities/</a></p>
+<p class="bibitem" id="bib-corpus-25"><span class="bib-num">[25]</span> Yang-Mills working group statement, Kavli Institute for Theoretical Physics (2026). <a href="https://www.kitp.ucsb.edu/sites/default/files/YM_working_group.pdf" class="uri">https://www.kitp.ucsb.edu/sites/default/files/YM_working_group.pdf</a></p>
+<p class="bibitem" id="bib-corpus-26"><span class="bib-num">[26]</span> Dueling proofs from OpenAI and Anthropic astound scientists, Scientific American (2026). <a href="https://www.scientificamerican.com/article/dueling-proofs-from-openai-and-anthropic-astound-scientists/" class="uri">https://www.scientificamerican.com/article/dueling-proofs-from-openai-and-anthropic-astound-scientists/</a></p>
+<p class="bibitem" id="bib-corpus-27"><span class="bib-num">[27]</span> M. Douglas, Nature Reviews Physics 8 (2026) 86–97. <a href="https://www.nature.com/articles/s42254-025-00909-2" class="uri">https://www.nature.com/articles/s42254-025-00909-2</a></p>
+<p class="bibitem" id="bib-corpus-28"><span class="bib-num">[28]</span> M. Faizal and A. Shabir, arXiv:2606.19362 (2026). <a href="https://arxiv.org/abs/2606.19362" class="uri">https://arxiv.org/abs/2606.19362</a></p>
+<p class="bibitem" id="bib-corpus-29"><span class="bib-num">[29]</span> A. Jacobsen, arXiv:2506.00284 (2025), withdrawn. <a href="https://arxiv.org/abs/2506.00284" class="uri">https://arxiv.org/abs/2506.00284</a></p>
+<p class="bibitem" id="bib-corpus-30"><span class="bib-num">[30]</span> A. Nissim, arXiv:2510.22788 (2025). <a href="https://arxiv.org/abs/2510.22788" class="uri">https://arxiv.org/abs/2510.22788</a></p>
+<p class="bibitem" id="bib-corpus-31"><span class="bib-num">[31]</span> Y. Cao, A. Nissim, and S. Sheffield, arXiv:2509.04688 (2025). <a href="https://arxiv.org/abs/2509.04688" class="uri">https://arxiv.org/abs/2509.04688</a></p>
+<p class="bibitem" id="bib-corpus-32"><span class="bib-num">[32]</span> P. Faria da Veiga and M. O’Carroll, arXiv:2509.03513 (2025). <a href="https://arxiv.org/abs/2509.03513" class="uri">https://arxiv.org/abs/2509.03513</a></p>
+<p class="bibitem" id="bib-corpus-33"><span class="bib-num">[33]</span> S. Nair, arXiv:2608.10133 (2026). <a href="https://arxiv.org/abs/2608.10133" class="uri">https://arxiv.org/abs/2608.10133</a></p>
+<p class="bibitem" id="bib-corpus-34"><span class="bib-num">[34]</span> J. Baez and J. Dolan, arXiv:q-alg/9503002 (1995). <a href="https://arxiv.org/abs/q-alg/9503002" class="uri">https://arxiv.org/abs/q-alg/9503002</a></p>
+<p class="bibitem" id="bib-corpus-35"><span class="bib-num">[35]</span> J. Lurie, arXiv:0905.0465 (2009). <a href="https://arxiv.org/abs/0905.0465" class="uri">https://arxiv.org/abs/0905.0465</a></p>
+<p class="bibitem" id="bib-corpus-36"><span class="bib-num">[36]</span> M. Atiyah, Topological quantum field theory, Publications Mathématiques de l’IHÉS 68 (1988) 175–186. <a href="https://doi.org/10.1007/bf02698547" class="uri">https://doi.org/10.1007/bf02698547</a>.</p>
+<p class="bibitem" id="bib-corpus-40"><span class="bib-num">[37]</span> Wilson, Hefford, and Hoffreumon, Supermaps on generalised theories, arXiv:2602.23865 (2026). <a href="https://arxiv.org/abs/2602.23865" class="uri">https://arxiv.org/abs/2602.23865</a></p>
+<p class="bibitem" id="bib-corpus-41"><span class="bib-num">[38]</span> Hefford and Wilson, A profunctorial semantics for quantum supermaps, arXiv:2402.02997 (2024). <a href="https://arxiv.org/abs/2402.02997" class="uri">https://arxiv.org/abs/2402.02997</a></p>
+<p class="bibitem" id="bib-corpus-42"><span class="bib-num">[39]</span> I. M. Gelfand and M. Neumark, On the imbedding of normed rings into the ring of operators in Hilbert space, Matematicheskii Sbornik 12 (1943) 197–213, reprinted in Contemporary Mathematics 167 (1994) 213–216. <a href="https://doi.org/10.1090/conm/167/16" class="uri">https://doi.org/10.1090/conm/167/16</a>.</p>
+<p class="bibitem" id="bib-corpus-44"><span class="bib-num">[40]</span> M. H. Stone, Applications of the theory of Boolean rings to general topology, Transactions of the American Mathematical Society 41 (1937) 375–481. <a href="https://doi.org/10.1090/s0002-9947-1937-1501905-7" class="uri">https://doi.org/10.1090/s0002-9947-1937-1501905-7</a>.</p>
+<p class="bibitem" id="bib-corpus-45"><span class="bib-num">[41]</span> Ryu and Takayanagi, Holographic derivation of entanglement entropy from AdS/CFT, arXiv:hep-th/0603001 (2006). <a href="https://arxiv.org/abs/hep-th/0603001" class="uri">https://arxiv.org/abs/hep-th/0603001</a></p>
+<p class="bibitem" id="bib-corpus-46"><span class="bib-num">[42]</span> Dong, Harlow, and Wall, Reconstruction of bulk operators within the entanglement wedge in gauge-gravity duality, arXiv:1601.05416 (2016). <a href="https://arxiv.org/abs/1601.05416" class="uri">https://arxiv.org/abs/1601.05416</a></p>
+<p class="bibitem" id="bib-corpus-47"><span class="bib-num">[43]</span> Bao, Nezami, Ooguri, Stoica, Sully, and Walter, The holographic entropy cone, arXiv:1505.07839 (2015). <a href="https://arxiv.org/abs/1505.07839" class="uri">https://arxiv.org/abs/1505.07839</a></p>
+<p class="bibitem" id="bib-corpus-48"><span class="bib-num">[44]</span> Pastawski, Yoshida, Harlow, and Preskill, Holographic quantum error-correcting codes: toy models for the bulk/boundary correspondence, arXiv:1503.06237 (2015). <a href="https://arxiv.org/abs/1503.06237" class="uri">https://arxiv.org/abs/1503.06237</a></p>
+<p class="bibitem" id="bib-corpus-49"><span class="bib-num">[45]</span> M. Van Raamsdonk, Building up spacetime with quantum entanglement, arXiv:1005.3035 (2010). <a href="https://arxiv.org/abs/1005.3035" class="uri">https://arxiv.org/abs/1005.3035</a></p>
+<p class="bibitem" id="bib-corpus-50"><span class="bib-num">[46]</span> E. Minguzzi and M. Sánchez, arXiv:gr-qc/0609119 (2006). <a href="https://arxiv.org/abs/gr-qc/0609119" class="uri">https://arxiv.org/abs/gr-qc/0609119</a></p>
+<p class="bibitem" id="bib-corpus-51"><span class="bib-num">[47]</span> A. Galaev, arXiv:1611.01551 (2016). <a href="https://arxiv.org/abs/1611.01551" class="uri">https://arxiv.org/abs/1611.01551</a></p>
+<p class="bibitem" id="bib-corpus-52"><span class="bib-num">[48]</span> D. Petz and C. Sudár, arXiv:quant-ph/0102132 (2001). <a href="https://arxiv.org/abs/quant-ph/0102132" class="uri">https://arxiv.org/abs/quant-ph/0102132</a></p>
+<p class="bibitem" id="bib-corpus-53"><span class="bib-num">[49]</span> M. O. Rabin, Recursive unsolvability of group theoretic problems, Annals of Mathematics 67 (1958) 172–194. <a href="https://doi.org/10.2307/1969933" class="uri">https://doi.org/10.2307/1969933</a>.</p>
+<p class="bibitem" id="bib-corpus-54"><span class="bib-num">[50]</span> M. Tancer, arXiv:2310.07421 (2023). <a href="https://arxiv.org/abs/2310.07421" class="uri">https://arxiv.org/abs/2310.07421</a></p>
+<p class="bibitem" id="bib-corpus-55"><span class="bib-num">[51]</span> V. Bekkert and Y. Drozd, arXiv:math/0310352 (2003). <a href="https://arxiv.org/abs/math/0310352" class="uri">https://arxiv.org/abs/math/0310352</a></p>
+<p class="bibitem" id="bib-corpus-56"><span class="bib-num">[52]</span> R.-O. Buchweitz and G. Leuschke, arXiv:math/0505315 (2005). <a href="https://arxiv.org/abs/math/0505315" class="uri">https://arxiv.org/abs/math/0505315</a></p>
+<p class="bibitem" id="bib-corpus-57"><span class="bib-num">[53]</span> J. Grochow and Y. Qiao, arXiv:1507.01917 (2015). <a href="https://arxiv.org/abs/1507.01917" class="uri">https://arxiv.org/abs/1507.01917</a></p>
+<p class="bibitem" id="bib-corpus-58"><span class="bib-num">[54]</span> J. Grevstad and J. May, arXiv:2509.17604 (2025). <a href="https://arxiv.org/abs/2509.17604" class="uri">https://arxiv.org/abs/2509.17604</a></p>
+<p class="bibitem" id="bib-corpus-59"><span class="bib-num">[55]</span> R. Sasyk and A. Tørnquist, arXiv:0909.2657 (2009). <a href="https://arxiv.org/abs/0909.2657" class="uri">https://arxiv.org/abs/0909.2657</a></p>
+<p class="bibitem" id="bib-corpus-60"><span class="bib-num">[56]</span> W. P. Thurston, Three dimensional manifolds, Kleinian groups and hyperbolic geometry, Bulletin of the American Mathematical Society 6 (1982) 357–381. <a href="https://doi.org/10.1090/s0273-0979-1982-15003-0" class="uri">https://doi.org/10.1090/s0273-0979-1982-15003-0</a>.</p>
+<p class="bibitem" id="bib-corpus-61"><span class="bib-num">[57]</span> J. Hass, J. C. Lagarias, and N. Pippenger, The computational complexity of knot and link problems, Journal of the ACM 46 (1999). <a href="https://doi.org/10.1145/301970.301971" class="uri">https://doi.org/10.1145/301970.301971</a>.</p>
+<p class="bibitem" id="bib-corpus-62"><span class="bib-num">[58]</span> F. J. Murray and J. von Neumann, On rings of operators IV, Annals of Mathematics 44 (1943) 716–808. <a href="https://doi.org/10.2307/1969107" class="uri">https://doi.org/10.2307/1969107</a>.</p>
+<p class="bibitem" id="bib-corpus-64"><span class="bib-num">[59]</span> A. Connes, Classification of injective factors, Annals of Mathematics 104 (1976) 73–115. <a href="https://doi.org/10.2307/1971057" class="uri">https://doi.org/10.2307/1971057</a>.</p>
+<p class="bibitem" id="bib-corpus-65"><span class="bib-num">[60]</span> D. McDuff, Uncountably many <span class="math inline">\(\mathrm{II}_1\)</span> factors, Annals of Mathematics 90 (1969) 361–371. <a href="https://doi.org/10.2307/1970730" class="uri">https://doi.org/10.2307/1970730</a>.</p>
+<p class="bibitem" id="bib-corpus-67"><span class="bib-num">[61]</span> S. Doplicher and J. E. Roberts, A new duality theory for compact groups, Inventiones Mathematicae 98 (1989) 157–218. <a href="https://doi.org/10.1007/bf01388849" class="uri">https://doi.org/10.1007/bf01388849</a>.</p>
+<p class="bibitem" id="bib-corpus-68"><span class="bib-num">[62]</span> A. Weinstein, The local structure of Poisson manifolds, Journal of Differential Geometry 18 (1983) 523–557. <a href="https://doi.org/10.4310/jdg/1214437787" class="uri">https://doi.org/10.4310/jdg/1214437787</a>.</p>
+<p class="bibitem" id="bib-corpus-70"><span class="bib-num">[63]</span> G. Perelman, The entropy formula for the Ricci flow and its geometric applications, arXiv:math/0211159 (2002). <a href="https://arxiv.org/abs/math/0211159" class="uri">https://arxiv.org/abs/math/0211159</a></p>
+<p class="bibitem" id="bib-corpus-71"><span class="bib-num">[64]</span> M. Lackenby, The efficient certification of knottedness and Thurston norm, Advances in Mathematics 389 (2021). <a href="https://doi.org/10.1016/j.aim.2021.107796" class="uri">https://doi.org/10.1016/j.aim.2021.107796</a>.</p>
+<p class="bibitem" id="bib-corpus-72"><span class="bib-num">[65]</span> K. S. Brown, Cohomology of groups, Springer (1982). ISBN 978-1-4684-9328-3.</p>
+</div>
+

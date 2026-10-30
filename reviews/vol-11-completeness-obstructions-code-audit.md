@@ -1,0 +1,2132 @@
+---
+reviewer: codex (OpenAI) gpt-6.1-sol
+type: code-audit
+paper: vol-11-completeness-obstructions
+round: 2
+date: 2026-10-30T05:34:39Z
+---
+Reading additional input from stdin...
+OpenAI Codex v0.166.0
+--------
+workdir: /Users/mlong/Documents/Development/classification-physical-systems
+model: gpt-6.1-sol
+provider: openai
+approval: never
+sandbox: read-only
+reasoning effort: medium
+reasoning summaries: none
+session id: 01a18b4d-94e4-7941-897c-622671a14639
+--------
+user
+Read papers/latex/vol-11-completeness-obstructions.tex and ONLY the files under src/vol-11-completeness-obstructions/ that its code evidence appendix names (do not explore anything else). For EVERY row of the appendix output one line per row with claim, verdict (one of SUPPORTS, PARTIAL, NO), and a one-sentence reason. SUPPORTS means the named code actually demonstrates or tests the claim as stated. End with VERDICT: PASS if every row is SUPPORTS, else VERDICT: NEEDS_FIX.
+warning: Under-development features enabled: chronicle. Under-development features are incomplete and may behave unpredictably. To suppress this warning, set `suppress_unstable_features_warning = true` in /Users/mlong/.codex/config.toml.
+warning: clamping SessionEnd hook timeout to 3s in /Users/mlong/.codex/plugins/cache/openai-codex/codex/1.0.6/hooks/hooks.json
+hook: SessionStart
+hook: SessionStart
+hook: SessionStart
+hook: SessionStart
+hook: SessionStart
+hook: SessionStart
+hook: SessionStart Completed
+hook: SessionStart Completed
+hook: SessionStart Completed
+hook: SessionStart Completed
+hook: SessionStart Completed
+hook: SessionStart Completed
+codex
+I’ll read the appendix, check only its named source files, and assess every row against the code evidence.
+exec
+/usr/local/bin/zsh -lc 'cat papers/latex/vol-11-completeness-obstructions.tex' in /Users/mlong/Documents/Development/classification-physical-systems
+ succeeded in 0ms:
+\documentclass[11pt,letterpaper]{article}
+
+\usepackage[T1]{fontenc}
+\usepackage{lmodern}
+\usepackage{microtype}
+\usepackage[margin=1in]{geometry}      % one-inch margins, as the writing standard specifies
+\linespread{1.0}
+\setlength{\parskip}{0pt}          % conventional article: indent, no vertical gap
+\setlength{\parindent}{1.5em}
+
+\usepackage{amsmath,amssymb,amsthm}
+\usepackage{graphicx}
+\usepackage{xcolor}
+\usepackage{tikz}                  % and tikz-cd when commutative diagrams are used
+\usepackage{booktabs,tabularx,array,longtable}
+\newcolumntype{L}[1]{>{\raggedright\arraybackslash}p{#1}}
+\usepackage{listings}
+\lstset{basicstyle=\ttfamily\footnotesize,breaklines=true,columns=fullflexible,frame=single,framesep=4pt,showstringspaces=false,captionpos=b}
+\usepackage[hidelinks]{hyperref}
+\usepackage{cleveref}
+
+\newtheorem{theorem}{Theorem}[section]
+\newtheorem{proposition}[theorem]{Proposition}
+\newtheorem{lemma}[theorem]{Lemma}
+\newtheorem{corollary}[theorem]{Corollary}
+\theoremstyle{definition}
+\newtheorem{definition}[theorem]{Definition}
+\theoremstyle{remark}
+\newtheorem{remark}[theorem]{Remark}
+
+\title{Completeness and Obstructions\\[4pt]
+  {\normalsize Part 11 of \emph{The Classification of Mathematical Representations of Physical Systems}}}
+\author{Matthew Long\\
+  \small The YonedaAI Collaboration, YonedaAI Research Collective\\
+  \small Chicago, Illinois, USA\\
+  \small \texttt{mlong@yonedalabs.ai}\\
+  \small \url{https://yonedalabs.ai}}
+\date{October 2026}
+
+\begin{document}
+\maketitle
+
+\begin{abstract}
+This paper determines what can be established about the completeness of a classification of mathematical representations of physical systems. Seven proved obstruction theorems are compiled as a register: there are uncountably many separable type $\mathrm{II}_1$ factors; tensor-category equivalence without symmetric structure does not determine the group; every Markov property of finitely presentable groups is algorithmically undecidable; wild representation categories admit no parametrization by a finite-dimensional variety; homeomorphism of a specific closed four-manifold is unrecognizable; isomorphism of separable von Neumann algebras admits no classification by countable invariants; and the tame-wild dichotomy bounds algorithmic tractability. From these results a classification program is defined as a triple of complete invariant, parameter space, and recognition procedure, and each surveyed domain of mathematical physics is assigned to one of seven regimes. A transport theorem shows that wild embeddings and invariant obstructions propagate along fully faithful functors, so such obstructions travel with any fully faithful re-presentation of a domain. Counterexamples refute three natural completions of the universal classification conjecture. The conjecture itself is examined obligation by obligation and is never used as a lemma. Completeness holds in restricted tame regimes and is provably unattainable elsewhere without further restrictions.
+\end{abstract}
+
+\section{Introduction}
+
+The classification of finite simple groups is the model of what a total classification theorem looks like: every object of the domain falls into an explicitly described list of families and exceptions, and the list is exhaustive \cite{solomon2001}. The research program of this series asks whether mathematical representations of physical systems admit an analogous classification. The question is precise enough to be attacked only after fixing an equivalence relation on representations, a notion of admissible system, and a catalogue of constructions from which complex systems are assembled. The central identity of the program, that every admissible system is generated by a fixed collection of structural families under a fixed set of constructions, remains a registered conjecture.
+
+Impossibility theorems bound the structure of classification programs as tightly as exhaustive enumerations do. A theorem showing that no complete invariant or parameter space can exist in a stated generality marks the same kind of mathematical boundary as a theorem listing the objects. The analysis below works out those boundaries for mathematical representations of physical systems: it compiles seven proved obstruction theorems, refutes three natural completions of the universal classification conjecture on explicit counterexamples, and keeps the conjecture itself as an object of study rather than a premise.
+
+Seven proved obstruction theorems forbid specific forms of classification, and a regime taxonomy applies them to every domain surveyed in the series. A transport theorem, proved here, shows the obstructions survive fully faithful re-presentation of a domain, and three counterexamples, also proved here, refute natural completions of the universal classification problem.
+
+Established results are cited to the mathematical literature and are used at the strength their proofs support. New statements are proved in full or narrowed until they can be. Counterexample search is part of the method and not an afterthought: for every natural completion of the classification picture considered here, an explicit counterexample was sought, and three completions failed the search. Computational experiments accompany the paper as evidence about finite instances; they are never treated as proofs.
+
+Wild embeddings and invariant obstructions transport along fully faithful functors, so a wild or undecidable sector embedded in the manner of \Cref{thm:transport} carries its obstruction into the larger domain. The surveyed domains occupy seven distinct regimes, and no coarser taxonomy places them all. Three natural strengthenings of the universal classification conjecture are false: the number of exceptional isomorphism classes in the operator-algebra sector is uncountable, the two-regime picture of classified versus impossible is refuted by concrete domains, and equivalence defined at the plain tensor layer fails to identify systems correctly. The universal conjecture itself, examined against its five proof obligations, has four open obligations and one partial obligation, and its statement is conditional on an unfixed admissibility list.
+
+\section{Definitions and standing constraints}
+
+\subsection{Classification problem}
+
+\begin{definition}[Representation]
+\label{def:tuple}
+A representation of a physical system is a tuple $P = (X, \mathcal{O}, \mathcal{D}, \mathcal{S}, \mathcal{C})$ where $X$ is a state space or geometric structure, $\mathcal{O}$ an observable algebra or collection, $\mathcal{D}$ dynamical laws, $\mathcal{S}$ symmetry and constraint data, and $\mathcal{C}$ composition rules. The five components need not be independent. The composition component fixes what irreducibility means for $P$: a system is irreducible relative to a stated composition operation when it admits no nontrivial decomposition under that operation.
+\end{definition}
+
+The tuple of \Cref{def:tuple} is the coordinate record of the series. The classification problem is
+\[
+\mathrm{Classify}\bigl(\mathrm{Ob}(\mathrm{Phys})/{\simeq}\bigr),
+\]
+the classification of representations up to a carefully chosen equivalence $\simeq$.
+
+Notation is fixed as follows. The symbol $\simeq$ stands for an equivalence relation on objects of a category and $\cong$ for isomorphism; when a domain is introduced, its equivalence is named. The letters $\mathcal{A}$ and $\mathcal{C}$ denote categories, $D$ denotes a domain of objects with an equivalence relation, and $k$ denotes a field. Isomorphism classes are written $\mathrm{Ob}(\mathcal{A})/{\cong}$. The symbol $*$ marks the adjoint of operator-algebraic structures. All classification statements in this paper are statements about mathematical representations, and none is a statement about empirical selection among physical theories.
+
+Two equivalence notions must be kept apart. Mathematical equivalence is isomorphism of the tuples in the ambient category of each component. Physical equivalence is a chosen relation on objects for which two mathematically different descriptions count as the same system; the choice is load-bearing and is not settled. Every equivalence used to identify systems must state which layer of structure it preserves, and equivalences that forget the monoidal or symmetric layer are provably insufficient \cite{eg2000}. The counterexample is recorded in the register and restated as \Cref{prop:equiv}.
+
+Obstructions proved for mathematical isomorphism constrain physical equivalence directly on every subsector where physical equivalence coincides with isomorphism. On any subsector where two systems are physically equivalent if and only if their representations are isomorphic, wildness, undecidability, and non-classifiability transfer unconditionally. Coarser physical equivalences can identify additional representations globally, but they cannot dissolve proved mathematical obstructions on subsectors where isomorphism is preserved.
+
+Yoneda embeddings preserve mathematical structure but cannot determine physical equivalence, empirical adequacy, or classification boundaries. Representing a system $P$ through its functor of points $\operatorname{Hom}(-, P)$ provides relational data without identifying which relational differences are physically observable. The standing qualification of the program binds every such use and is quoted verbatim: Yoneda does not, by itself, establish physical equivalence, empirical adequacy, or a classification theorem. Relational embeddings therefore cannot discharge the equivalence and completeness obligations of Section 7.
+
+\begin{remark}[Schema and category]
+The morphisms of the program, coarse-graining, exact equivalence, embedding, duality, and limiting procedures, do not yet carry fixed preservation laws or composition rules. Until they do, the ambient object is a schema rather than a category. This paper therefore runs its arguments on standard mathematical categories with standard isomorphism relations, and it treats the physical reading of those arguments as conditional on the eventual fixings.
+\end{remark}
+
+\subsection{Admissibility}
+
+\begin{definition}[Admissible class and closure]
+\label{def:adm}
+An admissible representation is one satisfying four consistency conditions: internal consistency of the five components of \Cref{def:tuple}; closure of the observable algebra under its stated operations; existence of a well-posed dynamics; and compatibility of symmetry data with composition. The full subcategory of admissible representations is $\mathrm{Phys}_{\mathrm{adm}}$. A structural family is a full subcategory of representations singled out by its underlying mathematical structure, and a family collection is a set $\mathfrak{F} = \{\mathfrak{F}_\alpha\}_{\alpha \in A}$ of them. The construction set $\mathfrak{C}$ consists of tensor product, direct sum, extension, limits and colimits, and factorization, and the closure $\langle \mathfrak{F}_\alpha \rangle_{\mathfrak{C}}$ is the smallest class containing $\mathfrak{F}$ and closed under $\mathfrak{C}$.
+\end{definition}
+
+The central conjecture of the program asserts
+\[
+\mathrm{Phys}_{\mathrm{adm}} \simeq \langle \mathfrak{F}_\alpha \rangle_{\mathfrak{C}}
+\]
+for some such family collection and construction set. The candidate conditions of \Cref{def:adm} are the ones the program names; the list is not fixed by any settled mathematics, and every statement quantifying over $\mathrm{Phys}_{\mathrm{adm}}$ is therefore conditional on the list one adopts. The conjecture is registered as an object of study and as a declared hypothesis only; it is never used as a lemma in this paper, and no result here assumes it true or false.
+
+\begin{remark}[Unfixed premise]
+\label{rem:unfixed}
+Completeness of a classification over $\mathrm{Phys}_{\mathrm{adm}}$ cannot be evaluated against a moving premise. Until the admissibility list is fixed, the first proof obligation of the universal classification conjecture is not merely open; its statement is conditional. This is an obstruction of an internal kind, and it is the reason the analysis below runs on domains with standard mathematical definitions rather than on $\mathrm{Phys}_{\mathrm{adm}}$ itself.
+\end{remark}
+
+\subsection{Claim discipline}
+
+Three levels of achievement are distinguished throughout: mathematical formulation, rigorous theorem, and physical validation. The results of this paper sit at the second level. Nothing in this paper establishes physical validation of any representation, and no mathematical classification established here is presented as an empirical selection among physical theories. Where a claim rests on an announcement rather than a published proof, the text says so; one such claim is tracked in a remark outside the regime table.
+
+\section{Obstruction register}
+
+Each obstruction below is a proved theorem, and it decides a question a classification program would otherwise have to settle by effort. Two conventions govern the collection. Only theorems with complete proofs in the mathematical literature enter; announcements stay out until they are proved. And an obstruction is recorded at the generality its proof supports: an undecidability result about finitely presented groups says nothing about finite groups, and a wildness result about modules over a specific algebra says nothing about modules over algebras on the tame side. Reading the register is a matter of reading the quantifiers.
+
+Each row is a theorem, and each theorem decides a question that a classification program would otherwise have to decide by effort. The seven rows divide by the component of \Cref{def:program} they destroy: the invariant, the parameter space, the recognizer, or the equivalence itself.
+
+\subsection{Factor classification}
+
+The classification of von Neumann algebra factors reduces, by the Murray-von Neumann direct-integral decomposition, to the classification of factors, and the amenable factors are classified: types $\mathrm{I}_n$, $\mathrm{I}_\infty$, $\mathrm{II}_1$, $\mathrm{II}_\infty$, $\mathrm{III}_\lambda$ for $0 < \lambda \leq 1$, and $\mathrm{III}_0$, with the type $\mathrm{III}_0$ case described by ergodic flows \cite{connes1976,vnwiki}. Outside the amenable class the situation changes completely. McDuff proved in 1969 that there are uncountably many non-isomorphic separable type $\mathrm{II}_1$ factors \cite{mcduff1969}.
+
+What this forbids is a total classification of factors in the style of the classification of finite simple groups: no list of families and finitely many exceptions can exhaust the separable $\mathrm{II}_1$ factors, and no countable table of isomorphism classes can be complete. What it permits is a classification of the amenable class, which exists, and stratification of the general case by invariants of coarser grain, such as the Connes spectrum, which records partial information only \cite{vnwiki}.
+
+\subsection{Tensor-category recovery}
+\label{sec:tensor-recovery}
+
+A natural proposal for identifying physical systems is to compare their representation categories as tensor categories and declare two systems equivalent when the categories are equivalent. The proposal fails. Etingof and Gelaki constructed pairs of non-isomorphic finite groups whose representation categories are equivalent as plain tensor categories \cite{eg2000}. The symmetric structure of the category is not recoverable from the plain tensor layer, and two different symmetry groups present the same plain tensor representation theory.
+
+What this forbids is any classification or equivalence criterion that discards the monoidal or symmetric layer: such a criterion is not merely imprecise, it is false on explicit counterexamples. What it permits is the Doplicher-Roberts style of reconstruction, which takes the symmetric tensor structure with its conjugates, direct sums, subobjects, and $\operatorname{End}(1) = \mathbb{C}$ as input and recovers a compact supergroup unique up to isomorphism \cite{eg2000}. The counterexample is the sharpest constraint in the register, and it is applied twice more in this paper: as an impossibility theorem in the transport analysis, and as a counterexample to a natural completion of the universal conjecture.
+
+\subsection{Markov undecidability}
+
+A classification program can aim at an algorithm: given a presentation of an object, decide which isomorphism class it lies in. For finitely presented groups this aim fails at the root. Adyan and Rabin proved that every Markov property of finitely presentable groups is algorithmically undecidable \cite{adyan1955,rabin1958}. The list of Markov properties includes being trivial, being finite, and being simple, so even the coarsest structural tests on finitely presented groups admit no uniform decision procedure. Collins extended undecidability beyond Markov properties, proving that the Hopfian property is undecidable even though neither it nor its negation is Markov \cite{collins1969}.
+
+What this forbids is any uniform recognition procedure for group-flavored sectors of a classification, including recognition of finiteness and simplicity. What it permits is decision of the same properties on restricted subclasses where the Markov construction does not embed, and it permits recognition procedures that are partial or that come with error. The proof reduces the halting problem to the group property through a Markov set construction, and Section 5 builds transport results on the same reduction pattern.
+
+\subsection{Wildness}
+
+The tame-wild dichotomy of Drozd is the boundary of parametrizable representation theory. Bekkert and Drozd proved that every finite-dimensional algebra over an algebraically closed field is derived-tame or derived-wild, and that any degeneration of a derived-wild algebra is again derived-wild \cite{bekkert2003}. Wildness is a property of the category of representations, and it is a non-classifiability statement rather than a difficulty rating. Buchweitz and Leuschke showed that the Cohen-Macaulay representation theory of the generic determinant is wild in a strong sense: already in rank two the isomorphism classes cannot be parametrized by a finite-dimensional variety over the coefficients \cite{buchweitz2005}. Grevstad and May proved that the cohomological Mackey algebra is derived-wild whenever the group surjects onto a $p$-group of order greater than two, and concluded that no meaningful classification of compact $C_p$-equivariant $H\underline{\mathbb{F}}_p$-modules exists at odd primes \cite{grevstad2025}.
+
+What this forbids is any finite-variety parameterization of the isomorphism classes of a wild representation category, and any classification of a domain that contains such a category as an isomorphism-reflecting subcategory. What it permits is a complete classification theory on the tame side, where parametrizations do exist, and partial invariants on the wild side that ignore the wild core.
+
+\subsection{Four-manifold unrecognizability}
+
+In dimension three the geometrization theorem decomposes every oriented prime closed 3-manifold into pieces carrying one of exactly eight Thurston geometries \cite{geometrization}. In dimension four the finite-table picture breaks. Markov's construction shows that unrecognizable four-manifolds exist, that is, manifolds for which the homeomorphism problem is undecidable. Tancer sharpened the construction to show that the connected sum of nine copies of $S^2 \times S^2$ is unrecognizable, improving the previous bound of twelve due to Gordon \cite{tancer2023}. Filipkiewicz classified the four-dimensional maximal model geometries and found eighteen of them plus one countably infinite family, against exactly eight in dimension three \cite{geometrization,perelman,hillman}.
+
+What this forbids is any effective classification of four-manifolds in general, and any assumption that the finite-list paradigm of dimension three persists upward. What it permits is classification of restricted four-manifold classes, and the dimension contrast itself: finite tables exist in tame regimes, and dimension four is not one of them.
+
+\subsection{Countable invariants}
+
+Descriptive set theory supplies a machine for proving that no classification by countable invariants can exist. Sasyk and Tørnquist applied Borel reducibility and Hjorth's theory of turbulence to the isomorphism relation for separable von Neumann algebras \cite{sasyk2009}. The result, as recorded in the survey that this series relies on, is that isomorphism of separable von Neumann algebras admits no classification by countable invariants. The result is published in the Bulletin of Symbolic Logic, with the complete proof in Inventiones Mathematicae \cite{sasyk2009}.
+
+What this forbids is a complete invariant for general von Neumann algebras taking values in a countable set, and any table of countably many labels exhausting the isomorphism classes. What it permits is classification by uncountable invariant sets, and classification by countable invariants on restricted subclasses.
+
+\subsection{Tractability boundary}
+
+The tame-wild dichotomy has an algorithmic shadow. Grochow and Qiao gave polynomial-time algorithms for group isomorphism in the tame direction, for groups whose Sylow subgroups are cyclic, dihedral, semi-dihedral, or generalized quaternion, and showed that the representation-theoretic and cohomological bounds their algorithms need fail in the wild case \cite{grochow2015}. Their conclusion is that the tame-wild line of representation theory is a dividing line between the currently tractable and the currently intractable instances of group isomorphism.
+
+What this forbids is any promise of a uniform polynomial-time classification procedure across the tame-wild boundary. What it permits is efficient recognition on the tame side, and a precise statement of where the known methods stop.
+
+\subsection{Register summary}
+
+\Cref{tab:register} lists each theorem with the classification form it rules out in the generality stated.
+
+\begin{table}[ht]
+\centering
+\caption{The obstruction register: seven proved theorems and the classification forms they forbid.}
+\label{tab:register}
+\small
+\begin{tabular}{L{3.2cm}L{4.6cm}L{4.6cm}}
+\toprule
+Obstruction & Statement & Forbidden classification form \\
+\midrule
+McDuff 1969 & Uncountably many non-isomorphic separable $\mathrm{II}_1$ factors & Total factor classification outside the amenable class \\
+Etingof-Gelaki & Non-isomorphic groups with equivalent plain tensor representation categories & Equivalence discarding the symmetric layer \\
+Adyan-Rabin & Every Markov property of finitely presentable groups is undecidable & Uniform recognition of group-flavored properties \\
+Wildness & Wild categories admit no finite-variety parametrization of isomorphism classes & Finite-variety parameterization of wild sectors \\
+Tancer 2023 & Nine-fold connected sum of $S^2 \times S^2$ is unrecognizable & Effective classification of four-manifolds \\
+Sasyk-Tørnquist & vN algebra isomorphism admits no classification by countable invariants & Countable-valued complete invariants \\
+Grochow-Qiao & Tame extensions tractable, wild bounds fail & Uniform polynomial-time classification across the boundary \\
+\bottomrule
+\end{tabular}
+\end{table}
+
+\section{Regime taxonomy}
+
+\subsection{Classification program data}
+
+The register forbids specific forms of classification. To compare those forms across domains, a classification program is decomposed into three pieces of data.
+
+\begin{definition}[Classification program]
+\label{def:program}
+Let $(D, \simeq)$ be a domain of objects with an equivalence relation. A classification program for $(D, \simeq)$ is a triple $(\iota, \Pi, R)$ where $\iota$ is a complete invariant, a map from objects to a set $I$ with $\iota(x) = \iota(y)$ if and only if $x \simeq y$; $\Pi$ is a parameter space, a structured object together with a structure-compatible surjection onto the $\simeq$-classes of $D$; and $R$ is a recognizer, a procedure that decides $x \simeq y$ from finite presentations of $x$ and $y$. The structure of $\Pi$ is part of the data: it is a finite-dimensional $k$-variety with an algebraic family, a standard Borel space with a Borel parametrization, or a finite combinatorial set. Without that structure $\Pi$ is just another name for the class set and carries no content beyond $\iota$.
+\end{definition}
+
+\begin{definition}[Finite-variety parametrization]
+\label{def:param}
+The isomorphism classes of a category $\mathcal{A}$ over a field $k$ are parametrized by a finite-dimensional variety when there are a finite-dimensional $k$-variety $V$ and an algebraic family of objects $\{A_v\}_{v \in V(k)}$ of $\mathcal{A}$ such that every object of $\mathcal{A}$ is isomorphic to some fiber $A_v$. A bare set-theoretic surjection $V(k) \twoheadrightarrow \mathrm{Ob}(\mathcal{A})/{\cong}$ is not a parametrization: when $k$ is uncountable the cardinality of $V(k)$ exceeds the class set of any tame category, so such maps exist trivially and carry no geometric information.
+\end{definition}
+
+\Cref{def:param} is the notion the wildness results refute. Buchweitz and Leuschke show that in rank two the isomorphism classes of the generic determinant's Cohen-Macaulay modules admit no parametrization by a finite-dimensional variety over the coefficients \cite{buchweitz2005}, in exactly the algebraic-family sense of \Cref{def:param}.
+
+The classification of finite simple groups delivers an exhaustive list, and practical identification runs through companion data of the Atlas kind: order, Schur multiplier, outer automorphism group, presentations, character tables with power maps \cite{atlaswiki}. What it does not deliver is a uniform parameterization. Gorenstein's verdict is the recorded one: no clean uniform description of the finite simple groups analogous to Dynkin diagrams is known \cite{solomon2001}. The classification is complete and its parameterization is missing, so completeness of the list and existence of a parameter space are different achievements. The Killing-Cartan classification of complex semisimple Lie algebras achieves both: Dynkin diagrams parameterize, the invariant is complete, and recognition is algorithmic \cite{humphreys,fultonharris}. Darboux's theorem shows a third configuration: locally, symplectic manifolds of the same dimension are all equivalent, so the local classification is complete and trivial and its content is entirely global \cite{darboux}.
+
+\begin{lemma}[Countable invariants]
+\label{lem:countable}
+If the isomorphism relation on a domain $D$ admits no classification by countable invariants in the descriptive-set-theoretic sense, that is, if it is not Borel reducible to the isomorphism relation of any class of countable structures, then no complete invariant of $D$ takes values in a space of countable structures. If in addition $D$ has more than countably many isomorphism classes, then no complete invariant of $D$ takes values in a countable set.
+\end{lemma}
+
+\begin{proof}
+A complete invariant whose values are countable structures, taken with a Borel assignment of the structure to the object, is a classification by countable invariants and would give a Borel reduction to the isomorphism of those structures. For the second claim, a complete invariant with countable range has countably many fibers, so the class set is countable.
+\end{proof}
+
+For the separable $\mathrm{II}_1$ factors the second claim of \Cref{lem:countable} is already settled by McDuff's uncountable family \cite{mcduff1969}. The first claim is stronger: for general separable von Neumann algebras even invariants valued in countable structures, K-theory data of that kind, fail to classify isomorphism \cite{sasyk2009}. A cardinality bound and a Borel-reducibility bound are different statements, and the arguments below invoke each where it applies.
+
+\begin{remark}[Two instances of the definition]
+Finite-dimensional complex $C^*$-algebras instantiate \Cref{def:program} with $\iota$ the dimension vector, $\Pi$ the finite set of multisets of block sizes, and $R$ the block decomposition algorithm. Finitely presented groups under isomorphism instantiate it with the obstruction register in place of the components: $\iota$ exists set-theoretically, no algebraic-family $\Pi$ is expected in the wild sectors, and $R$ does not exist at all in the presence of Markov reductions. The two instances show that the definition is neutral between regimes; the regimes are properties of the evidence, not of the definition.
+\end{remark}
+
+\subsection{The seven regimes}
+
+\begin{definition}[Regimes]
+\label{def:regime}
+A domain $(D, \simeq)$ with a classification program lies in one of seven regimes. \emph{Parameterized}: all three components exist and $\Pi$ is one of the structured kinds of \Cref{def:program}, a finite combinatorial set, a finite-dimensional variety with an algebraic family, or a standard Borel space with a Borel parametrization. \emph{Unparameterized}: $\iota$ and $R$ exist, no uniform $\Pi$ is known. \emph{Obstruction-complete}: the classification content is a proved impossibility theorem, so the classification is the obstruction. \emph{Open}: partial results exist and no impossibility theorem applies. \emph{Wild}: finite-variety parametrization is provably impossible and isomorphism classes grow without bound in every proposed parameter dimension. \emph{Undecidable}: $R$ is provably nonexistent in the stated generality. \emph{Decidable-but-unclassified}: $R$ exists and no complete $\iota$ is known.
+\end{definition}
+
+The regimes are not a partition of a single mathematical universe. They are a partition of the surveyed domains of the series by the shape of their classification evidence, and the assignment in \Cref{tab:regimes} is checked computationally in Section 8. The regime vocabulary is the deliverable the periodic table of the program needs: a table must mark where no table can exist, and the seven regimes are the marks available.
+
+Each regime has an archetype. The Killing-Cartan classification is the archetype of the parameterized regime; the classification of finite simple groups is the archetype of the unparameterized regime; anomaly classification is the archetype of obstruction-complete; fusion categories are the archetype of open; the Cohen-Macaulay modules of the generic determinant are the archetype of wild; Markov properties of finitely presented groups are the archetype of undecidable; and unknot recognition is the archetype of decidable-but-unclassified. The archetypes are proved mathematics in every case, so the taxonomy rests on theorems rather than on analogy.
+
+\subsection{Assignment of surveyed domains}
+
+\Cref{tab:regimes} assigns each domain from the literature survey of the series to a regime. The proofs behind the assignments are the register of Section 3 and the classification theorems cited in the survey.
+
+\begingroup
+\small
+\begin{longtable}{L{4.2cm}L{3.2cm}L{4.8cm}}
+\caption{Regime assignment for the surveyed domains. Each row is a domain of the series literature map, with the regime of \Cref{def:regime} and the deciding evidence.}
+\label{tab:regimes}\\
+\toprule
+Domain & Regime & Deciding evidence \\
+\midrule
+\endfirsthead
+\toprule
+Domain & Regime & Deciding evidence \\
+\midrule
+\endhead
+\midrule
+\multicolumn{3}{r}{Continued on next page}\\
+\endfoot
+\bottomrule
+\endlastfoot
+Simple Lie algebras & Parameterized & Dynkin and Satake diagrams \cite{humphreys,fultonharris} \\
+Highest-weight irreps & Parameterized & Dominant integral weights \cite{humphreys,fultonharris} \\
+Finite-dim $C^*$-algebras & Parameterized & Dimension vector \cite{cstarwiki} \\
+Principal $G$-bundles & Parameterized & Maps into the classifying space \cite{cstarwiki} \\
+Classical monotone metrics & Parameterized & Fisher metric unique up to constant \cite{petzsudar} \\
+Local symplectic germs & Parameterized & Darboux normal form \cite{darboux} \\
+Amenable factors & Parameterized & Type and Connes invariants \cite{vnwiki} \\
+Finite simple groups & Unparameterized & Complete list, no uniform parameterization \cite{solomon2001} \\
+Quantum monotone metrics & Unparameterized & Operator monotone functions, infinite family \cite{petzsudar} \\
+Anomalies & Obstruction-complete & Cohomological obstruction classes \cite{cstarwiki} \\
+General $\mathrm{II}_1$ factors & Obstruction-complete & McDuff's theorem \cite{mcduff1969} \\
+Plain tensor category recovery & Obstruction-complete & Etingof-Gelaki counterexamples \cite{eg2000} \\
+Fusion categories & Open & Weak Hopf algebra presentation known \cite{fusionnlab} \\
+Elliott nuclear program & Open & Program unfinished \cite{cstarwiki} \\
+Holographic entropy cone, $n \geq 5$ & Open & One inequality family known \cite{cstarwiki} \\
+Extended TQFTs & Open & Classification claim carries a proof gap \cite{lurie2009} \\
+Yang-Mills mass gap & Open & Clay lists the problem unsolved \cite{clay} \\
+Type III factors & Open & Coarse Connes strata only \cite{vnwiki} \\
+Wild CM modules of the generic determinant & Wild & No finite-variety parametrization \cite{buchweitz2005} \\
+$C_p$-equivariant modules at odd primes & Wild & Derived-wild Mackey algebra \cite{grevstad2025} \\
+Derived-wild algebras & Wild & Wildness holds under degeneration \cite{bekkert2003} \\
+Finitely presented groups, Markov properties & Undecidable & Adyan-Rabin \cite{rabin1958} \\
+Four-manifold homeomorphism & Undecidable & Unrecognizable connected sums \cite{tancer2023} \\
+vN algebra isomorphism & Obstruction-complete & No classification by countable structures \cite{sasyk2009} \\
+Unknot recognition & Decidable-but-unclassified & In NP and coNP, P open \cite{hass1999,lackenby2021} \\
+Three-manifolds & Parameterized & Eight Thurston geometries \cite{geometrization} \\
+Four-dimensional model geometries & Parameterized & Eighteen models plus one countable family listed explicitly \cite{geometrization,perelman,hillman} \\
+Quantum channels & Unparameterized & Minimal dilation normal form only \cite{cstarwiki} \\
+Group isomorphism, tame extensions & Parameterized & Polynomial time on the tame side \cite{grochow2015} \\
+\end{longtable}
+\endgroup
+
+\begin{remark}[Assignment is evidence-shaped]
+The assignment records where the classification evidence of each domain sits as of October 2026. A domain moves when new theorems arrive: the fusion-category entry moves if the open conjecture closes \cite{fusionnlab}. One tracked claim sits outside the table because it rests on announcements rather than published proofs: an October 2026 existence claim for four-dimensional Yang-Mills and QCD, whose status is exactly the standing one, existence claimed; manuscript and formalization withheld; verification pending \cite{openai,kitp}. Existence and the mass gap are separate questions and are never conflated; the Clay problem remains open \cite{clay,kitp}.
+\end{remark}
+
+\subsection{Lessons from the model program}
+
+The classification of finite simple groups is the reference point of the series, and three of its lessons structure the regime taxonomy.
+
+The first lesson is that classification and parameterization are different achievements. The classification is complete, and the recorded verdict is that no clean uniform description of the finite simple groups analogous to Dynkin diagrams is known \cite{solomon2001}. The unparameterized regime exists in the model program itself, which is why the regime taxonomy separates the two components of \Cref{def:program} rather than collapsing them into one verdict of classified.
+
+The second lesson is that practical identification runs through companion data. Practitioners identify finite groups by order, Schur multiplier, outer automorphism group, presentations, and character tables with power maps \cite{atlaswiki}. These are not the complete invariant of the classification theorem; they are an atlas of computable fingerprints that make the classification usable. A classification program for physical systems will need the same two layers, theorem and atlas, and the regime taxonomy applies to the theorem layer while the atlas layer remains to be built.
+
+The third lesson is that a completed classification can carry its own gaps and still be complete. The proof of the classification of finite simple groups was announced prematurely and completed only decades later \cite{solomon2001}. Completeness is a property of the final statement and proof, not of announcements, and the claim discipline of the series records this by keeping announced results out of the theorem register until they are proved.
+
+None of the three lessons is an obstruction. Together they explain why the unparameterized regime is not a failure and why the regime taxonomy records seven shapes of evidence rather than one ladder of success.
+
+\subsection{Regime stability}
+
+The regime assignment of \Cref{tab:regimes} is dated evidence, and three kinds of event move rows.
+
+A new theorem moves a row upward in the table. The fusion-category row moves from open to parameterized or unparameterized if the structural conjecture in that area closes; the Elliott program row moves when the program completes or when a counterexample to its uniqueness conjecture is proved; the four-dimensional existence row moves when the announced manuscript and its formalization are released and verified \cite{openai,kitp,cstarwiki,fusionnlab}.
+
+A new obstruction moves a row downward. A proof that a recognition problem is unrecognizable, or that a representation category is wild, moves its domain into undecidable or wild and, by \Cref{thm:transport}, moves every domain containing it isomorphism-reflectingly.
+
+A change of equivalence moves rows sideways. If a domain is redefined under a coarser equivalence, its invariant becomes complete or incomplete for reasons that have nothing to do with new theorems; \Cref{prop:equiv} is exactly such a case at the level of groups. The taxonomy is therefore a record of theorems and of a chosen equivalence, and both must be read with it.
+
+\section{Nonclassification results}
+
+Obstructions propagate along embeddings: a wild or undecidable sector carried by a fully faithful functor that is injective on isomorphism classes brings its failure with it into the larger domain, and undecidability transports along computable reductions. Three natural completions of the classification picture fail on explicit counterexamples.
+
+\subsection{Obstruction transport}
+
+\begin{definition}[Isomorphism-injective functor]
+\label{def:injfun}
+A functor $F: \mathcal{A} \to \mathcal{C}$ is isomorphism-injective when $F(A) \cong F(B)$ implies $A \cong B$ for all objects $A, B$ of $\mathcal{A}$. Every fully faithful functor is isomorphism-injective: the inverse of an isomorphism $F(A) \cong F(B)$ lifts to a morphism over $B$, and the lifted composites are identities by uniqueness of preimages.
+\end{definition}
+
+\begin{theorem}[Obstruction transport]
+\label{thm:transport}
+Let $F: \mathcal{A} \to \mathcal{C}$ be fully faithful.
+\begin{enumerate}
+\item If $\mathcal{A}$ has uncountably many isomorphism classes, so does $\mathcal{C}$, and if no complete invariant of $\mathcal{A}$ takes values in a countable set, none for $\mathcal{C}$ does either. If $\mathcal{A}$ and $\mathcal{C}$ are categories of structures on standard Borel spaces of objects and $F$ acts Borel-measurably on those spaces, then classification of the isomorphism relation of $\mathcal{C}$ by countable structures implies the same for $\mathcal{A}$; hence non-classifiability by countable structures transports from $\mathcal{A}$ to $\mathcal{C}$.
+\item If $\mathcal{A}$ carries a wild embedding, a family of objects with the matrix-pair universality property of the tame-wild dichotomy, then $\mathcal{C}$ carries the same wild embedding composed with $F$. Every non-parametrization or non-classification conclusion whose hypothesis is such an embedding, as in the wildness results of the register, is then available for the embedded family in $\mathcal{C}$ on the same footing as in $\mathcal{A}$.
+\end{enumerate}
+\end{theorem}
+
+\begin{proof}
+$F$ is isomorphism-injective by \Cref{def:injfun}, so it induces an injection $F_*: \mathrm{Ob}(\mathcal{A})/{\cong} \hookrightarrow \mathrm{Ob}(\mathcal{C})/{\cong}$ on isomorphism classes, and uncountability and the absence of countable-valued complete invariants transport by restriction of any hypothetical invariant to $\mathcal{A}$ along $F$. For the countable-structures claim, a Borel reduction of the isomorphism relation of $\mathcal{C}$ to the isomorphism of countable structures, composed with the Borel map $F$ induces on object spaces, is a Borel reduction for $\mathcal{A}$; contrapositively, none for $\mathcal{A}$ means none for $\mathcal{C}$. The Borel hypotheses are what make this composition legitimate; without them the claim is not asserted. For the wild embedding, the matrix-pair family in $\mathcal{A}$ maps to a family in $\mathcal{C}$ with identical $\operatorname{Hom}$-space dimensions, since $F$ is fully faithful, and identical isomorphism behavior, since $F$ is isomorphism-injective; the universality property is preserved verbatim.
+\end{proof}
+
+The wild-embedding clause transports the obstruction, not the conclusion about a category strictly larger than the embedded family. When a whole category is the wild family, as for the Cohen-Macaulay modules of the generic determinant \cite{buchweitz2005}, non-parametrization of the category follows in the sense of \Cref{def:param}. When the wild family sits inside a larger category, the proved non-parametrization statements apply to the essential image of the wild module category and to any subcategory of $\mathcal{C}$ equivalent to it; no claim is made about parametrizations of a category that strictly contains that image without an explicit moduli framework for the containment.
+
+\begin{corollary}[Wild embedding]
+\label{cor:wild}
+Let $\mathcal{C}$ be a category of representations admitting a fully faithful functor $F$ from the module category of a derived-wild finite-dimensional algebra. Then $\mathcal{C}$ carries a wild embedding, the essential image $F(\mathcal{A})$ admits no finite-variety parametrization of its isomorphism classes \cite{bekkert2003,buchweitz2005,grevstad2025}, and the same non-parametrization holds for any subcategory of $\mathcal{C}$ equivalent to that image.
+\end{corollary}
+
+\Cref{cor:wild} is the reason wildness is a structural fact about a domain and not a comment on the state of the art. The generic determinant's Cohen-Macaulay modules in rank two already defeat finite-variety parametrization \cite{buchweitz2005}, and the compact $C_p$-equivariant modules at odd primes carry no meaningful classification at all \cite{grevstad2025}. Any larger domain that embeds either category in the manner of the corollary carries the obstruction on its embedded part. The same pattern with \Cref{lem:countable} shows that a sector with no classification by countable structures forbids such classification for any domain receiving it along a Borel, fully faithful functor.
+
+\begin{corollary}[Operator-algebra consequence]
+\label{cor:opalg}
+Let $\mathcal{C}$ be the category of separable von Neumann algebras with normal *-homomorphisms as morphisms, taken with isomorphism as its equivalence. The separable $\mathrm{II}_1$ factors have uncountably many isomorphism classes \cite{mcduff1969}, so no complete invariant of $\mathcal{C}$ takes values in a countable set, and no atlas of countably many computable fingerprints can be complete for $\mathcal{C}$. The stronger statement holds: the isomorphism relation of $\mathcal{C}$ admits no classification by countable structures at all \cite{sasyk2009}.
+\end{corollary}
+
+\begin{proof}
+An atlas of countably many computable fingerprints assigns to each algebra a tuple of values from countable sets, and the combined map is a complete invariant with countable range if the atlas is complete; \Cref{lem:countable} and McDuff's uncountable family rule this out \cite{mcduff1969}. The stronger statement is the Borel-reducibility result of Sasyk and Tørnquist \cite{sasyk2009}.
+\end{proof}
+
+\Cref{cor:opalg} fixes the reach of the Atlas discipline of the model program, identification by finite tables of computable data \cite{atlaswiki}. That method is complete exactly where a countable-valued complete invariant exists and provably incomplete where uncountably many classes or the Borel-reducibility obstruction stand. The regime table records which domains admit an atlas at all.
+
+\subsection{Recognition reductions}
+
+\begin{proposition}[Undecidability transport]
+\label{prop:undec}
+Let $Q$ be a recognition problem for a class $\mathcal{C}$, and suppose there is a computable map $\varphi$ from finite group presentations to objects of $\mathcal{C}$ and a Markov property $P$ of finitely presentable groups such that a presentation $G$ has $P$ if and only if $\varphi(G)$ satisfies $Q$. Then $Q$ is algorithmically undecidable.
+\end{proposition}
+
+\begin{proof}
+A decision procedure for $Q$, composed with the computable map $\varphi$, decides $P$ on finite presentations. By the Adyan-Rabin theorem no such procedure exists for any Markov property \cite{adyan1955,rabin1958}. Hence none exists for $Q$.
+\end{proof}
+
+\Cref{prop:undec} is the shape of every undecidability entry in the register. Tancer's construction is an instance: the unrecognizability of the nine-fold connected sum of $S^2 \times S^2$ is proved through the Markov set construction carried into four-manifold topology \cite{tancer2023}. The proposition also explains why undecidability is a statement about the recognizer component of \Cref{def:program} and says nothing by itself about invariants or parameter spaces: an undecidable domain may still carry rich complete invariants that no algorithm can compute.
+
+\subsection{Counterexample catalogue}
+\label{sec:counterexamples}
+
+Each of the three natural strengthenings of the classification picture below fails on an explicit counterexample.
+
+\begin{proposition}[No finite sporadic list]
+\label{prop:sporadic}
+The hypothesis that the isomorphism classes of a completed classification decompose into infinite families plus finitely many exceptional objects is false for the operator-algebra sector and for four-dimensional geometry. The separable $\mathrm{II}_1$ factors number uncountably many isomorphism classes \cite{mcduff1969}, and the four-dimensional maximal model geometries number eighteen plus one countably infinite family \cite{geometrization}.
+\end{proposition}
+
+\begin{proof}
+Both lower bounds refute finiteness of the exceptional set: uncountably many classes cannot be listed as finitely many sporadics, and a countably infinite family of model geometries is not finite. Any classification whose final form is families plus finitely many sporadics is therefore false in these sectors before its completeness is even considered.
+\end{proof}
+
+\begin{proposition}[The two-regime picture fails]
+\label{prop:tworegime}
+The taxonomy that sorts domains into classified and impossible misassigns at least two surveyed domains. Unknot recognition is decidable and sits in NP and coNP, while its complexity class is open and no complete invariant is known \cite{hass1999,lackenby2021}. The finite simple groups are completely classified and carry no uniform parameterization \cite{solomon2001}. The first domain is decidable but unclassified; the second is classified but unparameterized. Neither fits a two-regime picture.
+\end{proposition}
+
+\begin{proof}
+Decidable-but-unclassified and classified-but-unparameterized are distinct shapes of evidence, exhibited by the two named domains. Any taxonomy with two regimes assigns both domains to the same regime, and in that regime one of the two descriptions of the evidence is wrong. Hence the two-regime picture is refuted, and the seven regimes of \Cref{def:regime} are needed to keep the descriptions straight.
+\end{proof}
+
+\begin{proposition}[Equivalence at the plain tensor layer fails]
+\label{prop:equiv}
+Let $\simeq_{\mathrm{pt}}$ be the relation on finite groups obtained by declaring $G \simeq_{\mathrm{pt}} H$ when their representation categories are equivalent as plain tensor categories. Then $\simeq_{\mathrm{pt}}$ is strictly coarser than isomorphism, so any classification of systems whose symmetry data is a finite group, conducted at the plain tensor layer, identifies distinct systems.
+\end{proposition}
+
+\begin{proof}
+Etingof and Gelaki exhibit non-isomorphic finite groups with equivalent plain tensor representation categories \cite{eg2000}. For such a pair $G \not\cong H$ while $G \simeq_{\mathrm{pt}} H$, so the quotient by $\simeq_{\mathrm{pt}}$ is strictly coarser than the quotient by isomorphism. A classification built on $\simeq_{\mathrm{pt}}$ therefore merges distinct isomorphism classes, and its fibers are not the classes one set out to classify.
+\end{proof}
+
+\Cref{prop:equiv} is the counterexample the register promised for the third proof obligation of the universal conjecture. Choosing an equivalence relation is not a formality: the plain tensor choice is a natural one, it is stated in one line, and it is provably wrong. Every equivalence admitted in the program must name the layers of structure it preserves, and the symmetric layer is the one that recovers the group.
+
+\subsection{Common consequences}
+
+The four statements have a common consequence. Non-classifiability in the register is not a set of isolated pathologies; it travels along fully faithful embeddings (\Cref{thm:transport}), along computable maps (\Cref{prop:undec}), and it defeats three natural completion schemes (Propositions \ref{prop:sporadic} to \ref{prop:equiv}). A universal classification theorem for all admissible physical systems cannot be of CFSG form unless every wild, undecidable, and unrecognizable sector is excluded from its quantifiers. The exclusions are restrictions on the domain, and each restriction is a new admissibility condition of the kind that \Cref{rem:unfixed} records as unfixed.
+
+\subsection{Scope of the transport theorem}
+
+\Cref{thm:transport} quantifies over functors injective on isomorphism classes, and its hypotheses are mathematical. Three remarks delimit its use.
+
+The theorem transports refutations, not theorems. It moves wild embeddings and invariant obstructions from a subcategory to a larger category, and it moves undecidability along computable reductions. It does not transport positive classification results: a classification of a subcategory says nothing about the ambient category, which is why the completed islands of Section 6 each restate their own hypotheses.
+
+Full faithfulness is what carries the wild embedding, because it preserves the Hom-dimensions the universality property is built from; injectivity on isomorphism classes is what carries isomorphism behavior. Physical embeddings that deliberately identify systems fail the second hypothesis, and a coarse-graining map that forgets microscopic detail typically fails it as well, so the theorem is silent about classification programs run on coarse descriptions.
+
+The theorem applies at the level of domains, not of families. A family such as the operator-algebra family contains parameterized islands and obstruction-complete sectors side by side, and the transport theorem says which ambient domains inherit which failure. Regime assignment remains a domain-level judgment, and the two levels must not be confused.
+
+\section{Restricted classification results}
+
+Completed classifications exist on restricted domains under explicit hypotheses, and each is an instance of \Cref{def:program}. The restriction in each of them is load-bearing rather than removable by a better argument, as \Cref{cor:restrict} records.
+
+\subsection{Completed islands}
+\label{sec:completed}
+
+The finite-dimensional complex $C^*$-algebras are classified completely. Every such algebra is a direct sum $A \cong \bigoplus_{i=1}^{k} M_{n_i}(\mathbb{C})$ of matrix algebras, and the multiset of matrix sizes, the dimension vector, determines $A$ up to *-isomorphism \cite{cstarwiki}. The classification program of \Cref{def:program} is fully realized here: the dimension vector is a complete invariant, the parameter space is the set of finite multisets of positive integers, and recognition is the finite computation of block decomposition. This is the model theorem of the series and the shape every restricted classification aims at.
+
+The amenable factors are classified as well: types $\mathrm{I}_n$, $\mathrm{I}_\infty$, $\mathrm{II}_1$, $\mathrm{II}_\infty$, $\mathrm{III}_\lambda$ for $0 < \lambda \leq 1$, and $\mathrm{III}_0$, with the invariant given by Murray-von Neumann type and Connes data \cite{connes1976,vnwiki}. The restriction is the word amenable. McDuff's theorem removes it and the classification dies \cite{mcduff1969}.
+
+Principal $G$-bundles over a base $X$ are classified by homotopy classes of maps into the classifying space, and the characteristic classes are exactly the pullbacks of universal classes \cite{cstarwiki}. The restriction is topological: the classification is up to bundle isomorphism and it records no connection data. Anomalies are classified on the obstruction pattern: the gauge anomaly is a pair of cohomology classes whose vanishing is the condition for quantization, so the classification content is the obstruction itself \cite{cstarwiki}.
+
+Doplicher-Roberts reconstruction classifies symmetric tensor *-categories with conjugates, direct sums, subobjects, and $\operatorname{End}(1) = \mathbb{C}$: such a category is the representation category of a compact supergroup, unique up to isomorphism \cite{eg2000}. The hypotheses are the restriction, and the Etingof-Gelaki counterexamples show that dropping the symmetric layer destroys the conclusion \cite{eg2000}. Deligne's theorem classifies symmetric tensor categories of subexponential growth in characteristic zero along the same lines \cite{eg2000}.
+
+Quantum channels occupy a middle position. Stinespring dilation classifies completely positive maps up to minimal dilation, unique up to unitary freedom, and the Choi-Kraus form is a normal form whose Kraus rank is an invariant of the form \cite{stinespring,cstarwiki}. The classification is of dilations, not of channels up to isomorphism, and the Kraus rank of a normal form is not an isomorphism invariant of the channel. This is a classification of a presentation, and the regime table places the domain in the unparameterized regime accordingly.
+
+The local symplectic classification is complete and trivial: Darboux's theorem gives local normal form with no local invariants, so the classification content of the symplectic side is entirely global and topological \cite{darboux}. In the opposite direction, the Killing-Cartan classification of semisimple Lie algebras and the highest-weight classification of their irreducible representations deliver complete invariants with parameterizations \cite{humphreys,fultonharris}. The geometrization theorem decomposes closed 3-manifolds into exactly eight Thurston geometries \cite{geometrization}, and Chentsov's theorem gives the Fisher metric as the unique metric monotone under stochastic maps, while the quantum analogue is a parametric family indexed by operator monotone functions \cite{petzsudar}. In every row the invariant is finite or parametric, and in every row the domain is stated with its restrictions.
+
+\subsection{Hypotheses and their cost}
+
+\begin{corollary}[Quantifier restriction]
+\label{cor:restrict}
+Under the hypotheses of \Cref{thm:transport}, a completeness statement for $\mathcal{C}$ in the sense of \Cref{def:program} is false. Under the hypotheses of \Cref{prop:undec}, a recognition statement for $\mathcal{C}$ in that sense is false. Any correct completeness or recognition statement about $\mathcal{C}$ restricts its quantifiers to a subdomain that excludes the part carrying the obstruction.
+\end{corollary}
+
+\begin{proof}
+\Cref{thm:transport} and \Cref{prop:undec} deny the existence of the parameter space or of the recognizer over all of $\mathcal{C}$. A statement quantified over a subdomain that excludes the obstruction carries no contradiction, and the surveyed theorems of Section 6.1 are all of this form.
+\end{proof}
+
+\Cref{cor:restrict} explains the shape of the completed islands. The restriction in each theorem is not a hedge and it is not removable by a better argument; it is the boundary the obstruction register draws. Two further points about the cost of hypotheses deserve recording. First, hypotheses can be subtle: braided extensions of the Doplicher-Roberts setting can require extra data beyond the braiding for the reconstruction to close, so the hypothesis list of a reconstruction theorem is part of its content and must travel with it. Second, a restriction can hide a boundary rather than a theorem: the tame side of the Grochow-Qiao divide admits polynomial-time isomorphism testing for the groups named, and the wild side fails the bounds their method needs \cite{grochow2015}. A classification program built on the tame side inherits the boundary as a working assumption.
+
+\subsection{Regime boundaries}
+
+Where the tame-wild boundary sits for physical representation categories, as opposed to generic algebras, is unstudied. The generic mathematics supplies the dichotomy and the algorithmic shadow \cite{bekkert2003,grochow2015}; no result on record locates the boundary for the tensor categories or representation categories that physical theories actually use. The question matters for the program, because a completeness theorem for a physical class is exactly a theorem that the class sits on the tame side.
+
+Regime boundaries move in one further way. When an announcement matures into a published proof, its domain enters the table at the regime the proof supports; until then the claim is tracked outside the taxonomy, as in \Cref{tab:regimes}'s companion remark. The taxonomy records theorems, and announcements are not theorems.
+
+The regime taxonomy records that boundaries are not always sharp walls. Unknot recognition is decidable and sits in NP and coNP, while its complexity class is open and no complete invariant is known \cite{hass1999,lackenby2021}. Between the classified and the impossible there are domains whose status is settled in one component of \Cref{def:program} and unsettled in another. Any periodic table of the program must carry such entries honestly rather than forcing them into a binary verdict.
+
+\section{The five obligations}
+
+The universal classification conjecture states that every admissible physical system is generated by a fixed collection of structural families under a fixed set of admissible constructions, up to a justified equivalence. Its proof obligations number five, and \Cref{tab:obligations} gives their status against the evidence of this paper. The conjecture is a registered hypothesis and an object of analysis here; nothing in this section assumes it true or false.
+
+\begin{table}[ht]
+\centering
+\caption{The five proof obligations of the universal classification conjecture and their status.}
+\label{tab:obligations}
+\small
+\begin{tabular}{L{3.6cm}L{5.4cm}L{3.2cm}}
+\toprule
+Obligation & Content & Status \\
+\midrule
+Completeness & Every admissible system lies in the generated class & Open, conditional on the unfixed admissibility list \\
+Soundness & Every generated structure is admissible & Open, same conditionality \\
+Equivalence & Distinct presentations of one system are identified correctly & Open; \Cref{prop:equiv} constrains every choice \\
+Structural characterization & The families have precise mathematical definitions & Partial: families named, admissibility unfixed \\
+Decomposition & Targeted classes assemble from the families & Open in general; proved in restricted domains \\
+\bottomrule
+\end{tabular}
+\end{table}
+
+The completeness obligation quantifies over $\mathrm{Phys}_{\mathrm{adm}}$ and is therefore conditional on the admissibility list that \Cref{rem:unfixed} records as unfixed. Beyond the conditionality, \Cref{thm:transport} blocks the obligation in any formulation whose generated class contains a wild or undecidable sector isomorphism-reflectingly: the parameter space the classification needs cannot exist there. The obligation is open today and its unrestricted form collides with the register.
+
+The soundness obligation runs in the other direction, from the generated class to the admissibility conditions. It is vacuous until the conditions are stated, and it becomes checkable only after the list is fixed. No obstruction in the register touches it directly; its difficulty is definitional.
+
+The equivalence obligation is the one with a proved negative result attached. \Cref{prop:equiv} shows that the natural plain tensor choice of equivalence is strictly coarser than isomorphism and merges distinct systems. Any solution must therefore name the layers of structure it preserves and must recover the group from the preserved layers where a group is present. The solution space is restricted by a counterexample, which is a stronger constraint than mere openness.
+
+The structural characterization obligation is partial on the evidence of record. The ten candidate families of the program are named with their defining structures and their established islands, and the admissibility conditions that would make the families exhaustive are unfixed. Naming a family is not characterizing it to the precision a completeness proof needs, and the gap between the two is where this obligation lives.
+
+The decomposition obligation asks that systems of the targeted classes assemble from the families under the admissible constructions. Restricted theorems exist: the finite-dimensional $C^*$-algebra decomposition assembles every algebra of that class from matrix blocks \cite{cstarwiki}, amenable factors decompose by type \cite{vnwiki}, and Doplicher-Roberts reconstruction assembles superselection data from symmetric tensor structure \cite{eg2000}. In general the obligation is open, and uniqueness of decomposition is open even before assembly is considered: interacting systems need not admit unique decompositions at all.
+
+What survives the register is the restricted form the survey of the series anticipated: classification theorems on tame, restricted classes, plus explicit obstruction theorems where no classification can exist. The regime taxonomy of Section 4 states exactly which domains admit which of the two outcomes today, and Section 6 records the shape of every completed theorem on the positive side.
+
+The consequences for a periodic table of mathematical physics are direct. A table with only status columns for proved and open is incomplete: it has no cell for the proved impossibilities, and the regime taxonomy supplies one regime per kind of impossibility. A table with a single row per family is too coarse at the boundaries, because a family such as the operator-algebra family contains parameterized islands, an unparameterized island, and an obstruction-complete sector at once. The right grain is the domain, not the family, and the right vocabulary is the seven regimes.
+
+\subsection{Requirements for a completeness theorem}
+
+The register and the transport results fix what any future completeness theorem must contain. Four conditions are necessary, and each is drawn from a proved obstruction rather than from preference.
+
+The quantifier must be restricted. By \Cref{cor:restrict}, a domain carrying a wild or undecidable sector in the manner of \Cref{thm:transport} supports no completeness statement unless the quantifier excludes the part carrying the obstruction. A theorem over a class that embeds the generic determinant's modules, or a Markov construction, is false before its proof begins.
+
+The equivalence must name its layers. By \Cref{prop:equiv}, any equivalence forgetting the symmetric layer merges distinct systems, so the identification relation of the theorem must state the preserved structure and must recover groups where groups are present.
+
+The parameter space must be structured. By \Cref{def:param} and \Cref{lem:countable}, a bare set-theoretic indexing carries no content, and countable-valued complete invariants cannot exist where uncountably many classes or Borel non-reducibility stand. The parameterizer must be an algebraic family, a standard Borel parametrization, or a finite combinatorial set of the kind \Cref{def:program} names.
+
+The premise must be fixed. By \Cref{rem:unfixed}, a theorem over an admissible class whose conditions are unfixed is conditional on the list one adopts. A completeness theorem that quantifies over $\mathrm{Phys}_{\mathrm{adm}}$ waits on \Cref{def:adm} being settled; a theorem over a standard mathematical domain, as in the completed islands of \Cref{sec:completed}, does not.
+
+Together the four conditions describe the shape of the positive results the program may still earn: restricted-class theorems with stated hypotheses on tame domains, side by side with obstruction theorems registered at their full generality. That is the shape the evidence already has, and the regime table is where each domain's share of it is recorded.
+
+\section{Computational evidence}
+\label{sec:computational}
+
+The three experiments of this section are evidence about finite instances and growth patterns, not proofs. The claims they support are marked as computational in the code evidence appendix.
+
+The first experiment enumerates the regime assignment of \Cref{tab:regimes} as data and checks two properties mechanically: every surveyed domain receives exactly one regime label, and every label used is one of the seven of \Cref{def:regime}. The experiment treats the table as input, so it verifies the internal consistency of the assignment and not the mathematical truth of any row.
+
+The second experiment enumerates unital finite-dimensional complex $C^*$-algebras of a given complex dimension $N$, where $N = \dim_{\mathbb{C}}(A)$ is the vector space dimension over $\mathbb{C}$, by their dimension vectors, the multisets of matrix block sizes with $\sum_i n_i^2 = N$. For each $N$ up to a bound it prints the finite list of vectors, exhibiting on the tame side what a parametrization looks like: finitely many classes per dimension, listed by a finite invariant. For example, dimension $N = 5$ admits exactly two algebras, with block-size multisets $\{\!\{1,1,1,1,1\}\!\}$ and $\{\!\{1,2\}\!\}$, and dimension $N = 8$ admits exactly three, with multisets $\{\!\{1^{(8)}\}\!\}$, $\{\!\{2,1,1,1,1\}\!\}$, and $\{\!\{2,2\}\!\}$. The enumeration is exhaustive within its bound and is a direct check of the finiteness claim for each dimension.
+
+The third experiment computes the dimension of the quotient of representation varieties for the $m$-Kronecker quiver along the dimension vector $(n, n)$. The quotient dimension is $m n^2$ minus the generic orbit dimension $2n^2$ minus the dimension of the generic stabilizer: the centralizer of a generic matrix, of dimension $n$, for the tame case $m = 2$, and the scalar matrices, of dimension $1$, for the wild case $m = 3$. The quotient dimension therefore grows linearly for $m = 2$ and quadratically for $m = 3$. The tame side is parametrizable by eigenvalue data, a finite-dimensional variety of the kind \Cref{def:param} allows; the wild side grows faster than any fixed algebraic family can absorb, which is the dimension bookkeeping behind the non-parametrization theorems. The calculation is a growth pattern, and the non-parametrization theorem it illustrates is the proved result of Buchweitz and Leuschke \cite{buchweitz2005}.
+
+A companion Haskell module encodes the taxonomy layer: representative systems of each regime, carrying instances of the shared family classes of the series taxonomy, with a regime tag mirroring \Cref{def:regime}. The module is executable specification, and it is computational evidence of the same standing as the experiments. Its witness systems cover the McDuff sector, the wild module sector, the finite-dimensional $C^*$-algebra sector, and the four-manifold sector, so each regime of \Cref{def:regime} that has a concrete witness in this paper is represented. No artifact in this section is a machine-checked formalization, and none is presented as one.
+
+The experiments also mark what computation cannot do here. No finite run decides whether an algebraic family exists covering an isomorphism-class set, and no enumeration of small instances distinguishes a tame domain from a wild one at the boundary. The register theorems decide those questions, and the experiments only display their shadow on finite data.
+
+The experiments are deterministic and self-contained. Each script computes its output from definitions written in the script itself and from no external data, so a reader can rerun them and compare printed values against the claims of this section. The expected outputs are small enough to check by hand: the partition property of the regime table, the lists of dimension vectors at small $N$, and the quotient-dimension values along the diagonal $a = b = n$ for $m = 2$ and $m = 3$. Agreement is evidence for the claims as stated and nothing more.
+
+\section{Limitations}
+
+The regime taxonomy covers the domains of the series literature survey, and that survey ran on arXiv plus known-URL discovery; non-arXiv venues may be under-covered, so the taxonomy may meet domains that require an eighth regime. The seven regimes are complete for the surveyed list and are not claimed complete for mathematical physics.
+
+The Sasyk-Tørnquist result is published in the Bulletin of Symbolic Logic, with the complete proof in Inventiones Mathematicae \cite{sasyk2009}; the series survey recorded it at announcement strength, and the published record is cited here.
+
+The transport theorem quantifies over fully faithful functors. Physical re-presentation of a domain need not be fully faithful, and when it is not, \Cref{thm:transport} is silent. This is the point at which the choice of equivalence becomes a mathematical hypothesis rather than a formality.
+
+The universal classification conjecture is neither proved nor refuted here. The analysis shows that its unrestricted form collides with the register and that its restricted forms are where the provable content sits; whether a nontrivial restricted form yields a completeness theorem is open.
+
+A fifth limitation concerns the counterexamples of Section 5. Each refutes a specific natural completion of the classification picture, and none refutes every completion. The finite sporadic list fails in two sectors, the two-regime picture fails on two domains, and the plain tensor equivalence fails on explicit group pairs; a completion that avoids all three by construction is untouched by these results, and the register bounds it from the other side.
+
+\section{Conclusion}
+
+Completeness of a classification is a theorem about a domain and an equivalence relation, and the theorem holds where the invariant is finite or parametric and fails where proved obstructions stand. The register of Section 3 collects seven such obstructions, each forbidding a specific classification form, and the transport theorem shows the obstructions travel along fully faithful embeddings: a domain carrying a wild or undecidable sector in the manner of \Cref{thm:transport} inherits the obstruction. The regime taxonomy of Section 4 assigns the surveyed domains of the series to seven regimes, and the counterexamples of Section 5 refute three natural completions of the universal picture: a finite sporadic list, a two-regime account, and equivalence at the plain tensor layer.
+
+The strongest defensible conclusion is negative and useful. A universal classification of all mathematical representations of physical systems, in the form of the classification of finite simple groups, is not attainable across the surveyed domains: uncountably many isomorphism classes, unrecognizable instances, and wild sectors forbid it as a matter of theorem. What is attainable, and what the regime table documents, is a program of restricted classification theorems on tame classes together with explicit obstruction theorems everywhere else. That shape of outcome was named as acceptable in the founding documents of the program, and the analysis here shows it is the shape the evidence has.
+
+The obligations of the universal conjecture remain four open and one partial, and the admissibility conditions that would give the conjecture a fixed premise remain unfixed. Those two facts set the agenda that the closing volume of the series inherits: fix admissibility, fix equivalence at a layer that survives \Cref{prop:equiv}, and then read the regime table as the boundary between what a completeness theorem could cover and what an impossibility theorem already forbids.
+
+\appendix
+\section{Code evidence}
+
+\Cref{tab:code} maps each computational claim of \Cref{sec:computational} to the file and function that demonstrates it. The artifacts live in \texttt{src/vol-11-completeness-obstructions/}. Each row is checked against the named code before publication.
+
+\begin{table}[ht]
+\centering
+\caption{Code evidence for the computational claims. Support means the named code demonstrates the claim as stated.}
+\label{tab:code}
+\footnotesize
+\begin{tabular}{L{4.2cm}L{5.2cm}L{3.4cm}}
+\toprule
+Claim & File and function & Support \\
+\midrule
+The regime assignment is single-valued into the seven regimes & \texttt{regime\_inventory.py}, function \texttt{check\_partition} & Enumeration and assertion over the table data \\
+Finite-dimensional $C^*$-algebras are finitely many per dimension, listed by dimension vectors & \texttt{dimvec\_enumeration.py}, function \texttt{enumerate\_dimension\_vectors} & Exhaustive enumeration for each dimension bound \\
+Quotient-dimension growth contrasts the two-Kronecker and three-Kronecker quivers & \texttt{wild\_quiver\_growth.py}, functions \texttt{stabilizer\_dim} and \texttt{quotient\_dim} & Closed-form evaluation with the generic stabilizer dimension made explicit \\
+Obstruction witness systems carry taxonomy family instances and regime tags & \texttt{Instances.hs}, type \texttt{WitnessSystem} and function \texttt{regimeOf} & Instance declarations and total tag function \\
+\bottomrule
+\end{tabular}
+\end{table}
+
+\begin{thebibliography}{99}
+\small
+
+\bibitem{adyan1955}
+S. I. Adyan. Algorithmic unsolvability of problems of recognition of certain properties of groups (in Russian). \emph{Doklady Akademii Nauk SSSR} 103 (1955), 533-535.
+
+\bibitem{rabin1958}
+M. O. Rabin. Recursive unsolvability of group theoretic problems. \emph{Annals of Mathematics} (2) 67 (1958), 172-194. \url{https://www.jstor.org/stable/1969933}
+
+\bibitem{collins1969}
+D. J. Collins. On recognizing Hopf groups. \emph{Archiv der Mathematik} 20 (1969), 235-240. \url{https://link.springer.com/article/10.1007/BF01899291}
+
+\bibitem{mcduff1969}
+D. McDuff. Uncountably many $\mathrm{II}_1$ factors. \emph{Annals of Mathematics} (2) 90 (1969), 361-371. \url{https://annals.math.princeton.edu/1969/90-2/p07}
+
+\bibitem{connes1976}
+A. Connes. Classification of injective factors. Cases $\mathrm{II}_1$, $\mathrm{II}_\infty$, $\mathrm{III}_\lambda$, $\lambda \neq 1$. \emph{Annals of Mathematics} (2) 104 (1976), 73-115. \url{https://annals.math.princeton.edu/1976/104-1/p04}
+
+\bibitem{hass1999}
+J. Hass, J. C. Lagarias, and N. Pippenger. The computational complexity of knot and link problems. \emph{Journal of the ACM} 46 (1999), 185-211. \url{https://doi.org/10.1145/301970.301971}
+
+\bibitem{lackenby2021}
+M. Lackenby. The efficient certification of knottedness and Thurston norm. \emph{Advances in Mathematics} 387 (2021), article 107796. \url{https://doi.org/10.1016/j.aim.2021.107796}
+
+\bibitem{hillman}
+J. A. Hillman. Four-manifolds, geometries and knots. arXiv:math/0212142. \url{https://arxiv.org/abs/math/0212142}
+
+\bibitem{eg2000}
+P. Etingof and S. Gelaki. Isocategorical groups. \emph{International Mathematics Research Notices} 2001, no. 2, 59-77. The tensor-category input behind the Doplicher-Roberts hypotheses used here.
+
+\bibitem{bekkert2003}
+V. I. Bekkert and Y. A. Drozd. Tame-wild dichotomy for derived categories. arXiv:math/0310352. \url{https://arxiv.org/abs/math/0310352}
+
+\bibitem{buchweitz2005}
+R.-O. Buchweitz and G. J. Leuschke. Factoring the adjoint and maximal Cohen-Macaulay modules over the generic determinant. arXiv:math/0505315. \url{https://arxiv.org/abs/math/0505315}
+
+\bibitem{grevstad2025}
+J. F. Grevstad and C. May. Equivariant $H\underline{\mathbb{F}}_p$-modules are wild. arXiv:2509.17604. \url{https://arxiv.org/abs/2509.17604}
+
+\bibitem{grochow2015}
+J. A. Grochow and Y. Qiao. Polynomial-time isomorphism test of groups that are tame extensions. arXiv:1507.01917. \url{https://arxiv.org/abs/1507.01917}
+
+\bibitem{tancer2023}
+M. Tancer. Simpler algorithmically unrecognizable 4-manifolds. arXiv:2310.07421. \url{https://arxiv.org/abs/2310.07421}
+
+\bibitem{sasyk2009}
+R. Sasyk and A. Tørnquist. Borel reducibility and classification of von Neumann algebras. arXiv:0909.2657; \emph{Bulletin of Symbolic Logic} 15 (2009), 169-183. Complete proof: \emph{Inventiones Mathematicae} (2011). \url{https://arxiv.org/abs/0909.2657}
+
+\bibitem{geometrization}
+W. P. Thurston. Three-dimensional geometry and topology. Vol. 1. Princeton University Press, 1997.
+
+\bibitem{perelman}
+G. Perelman. Ricci flow with surgery on three-manifolds. arXiv:math/0303109. \url{https://arxiv.org/abs/math/0303109}
+
+\bibitem{humphreys}
+J. E. Humphreys. Introduction to Lie algebras and representation theory. Graduate Texts in Mathematics 9. Springer, 1972.
+
+\bibitem{fultonharris}
+W. Fulton and J. Harris. Representation theory: a first course. Graduate Texts in Mathematics 129. Springer, 1991.
+
+\bibitem{stinespring}
+W. F. Stinespring. Positive functions on $C^*$-algebras. \emph{Proceedings of the American Mathematical Society} 6 (1955), 211-216.
+
+
+
+\bibitem{solomon2001}
+R. Solomon. A brief history of the classification of the finite simple groups. \emph{Bulletin of the American Mathematical Society} 38 (2001), 315-352.
+
+\bibitem{atlaswiki}
+J. H. Conway, R. T. Curtis, S. P. Norton, R. A. Parker, and R. A. Wilson. An ATLAS of finite groups. Oxford University Press, 1985.
+
+
+
+\bibitem{darboux}
+A. Cannas da Silva. Lectures on symplectic geometry. Lecture Notes in Mathematics. Springer, 2001.
+
+\bibitem{vnwiki}
+J. Dixmier. Von Neumann algebras. North-Holland, 1981.
+
+\bibitem{cstarwiki}
+G. J. Murphy. $C^*$-algebras and operator theory. Academic Press, 1990.
+
+\bibitem{fusionnlab}
+P. Etingof, D. Nikshych, and V. Ostrik. On fusion categories. \emph{Annals of Mathematics} 162 (2005), 581-642.
+
+\bibitem{petzsudar}
+D. Petz and Cs. Sudar. Extending the Fisher metric to density matrices. arXiv:quant-ph/0102132. \url{https://arxiv.org/abs/quant-ph/0102132}
+
+\bibitem{lurie2009}
+J. Lurie. On the classification of topological field theories. arXiv:0905.0465. \url{https://arxiv.org/abs/0905.0465}
+
+\bibitem{clay}
+Clay Mathematics Institute. Yang-Mills and the mass gap. \url{https://www.claymath.org/millennium/yang-mills-the-maths-gap/}
+
+\bibitem{openai}
+OpenAI. Working with academic communities to build scientific understanding. October 26, 2026. \url{https://openai.com/index/building-scientific-understanding-with-academic-communities/}
+
+\bibitem{kitp}
+KITP Yang-Mills working group statement. October 2026. \url{https://www.kitp.ucsb.edu/sites/default/files/YM_working_group.pdf}
+
+\end{thebibliography}
+
+\end{document}
+
+exec
+/usr/local/bin/zsh -lc "sed -n '1,260p' papers/latex/vol-11-completeness-obstructions.tex" in /Users/mlong/Documents/Development/classification-physical-systems
+exec
+/usr/local/bin/zsh -lc "sed -n '261,520p' papers/latex/vol-11-completeness-obstructions.tex" in /Users/mlong/Documents/Development/classification-physical-systems
+ succeeded in 0ms:
+Fusion categories & Open & Weak Hopf algebra presentation known \cite{fusionnlab} \\
+Elliott nuclear program & Open & Program unfinished \cite{cstarwiki} \\
+Holographic entropy cone, $n \geq 5$ & Open & One inequality family known \cite{cstarwiki} \\
+Extended TQFTs & Open & Classification claim carries a proof gap \cite{lurie2009} \\
+Yang-Mills mass gap & Open & Clay lists the problem unsolved \cite{clay} \\
+Type III factors & Open & Coarse Connes strata only \cite{vnwiki} \\
+Wild CM modules of the generic determinant & Wild & No finite-variety parametrization \cite{buchweitz2005} \\
+$C_p$-equivariant modules at odd primes & Wild & Derived-wild Mackey algebra \cite{grevstad2025} \\
+Derived-wild algebras & Wild & Wildness holds under degeneration \cite{bekkert2003} \\
+Finitely presented groups, Markov properties & Undecidable & Adyan-Rabin \cite{rabin1958} \\
+Four-manifold homeomorphism & Undecidable & Unrecognizable connected sums \cite{tancer2023} \\
+vN algebra isomorphism & Obstruction-complete & No classification by countable structures \cite{sasyk2009} \\
+Unknot recognition & Decidable-but-unclassified & In NP and coNP, P open \cite{hass1999,lackenby2021} \\
+Three-manifolds & Parameterized & Eight Thurston geometries \cite{geometrization} \\
+Four-dimensional model geometries & Parameterized & Eighteen models plus one countable family listed explicitly \cite{geometrization,perelman,hillman} \\
+Quantum channels & Unparameterized & Minimal dilation normal form only \cite{cstarwiki} \\
+Group isomorphism, tame extensions & Parameterized & Polynomial time on the tame side \cite{grochow2015} \\
+\end{longtable}
+\endgroup
+
+\begin{remark}[Assignment is evidence-shaped]
+The assignment records where the classification evidence of each domain sits as of October 2026. A domain moves when new theorems arrive: the fusion-category entry moves if the open conjecture closes \cite{fusionnlab}. One tracked claim sits outside the table because it rests on announcements rather than published proofs: an October 2026 existence claim for four-dimensional Yang-Mills and QCD, whose status is exactly the standing one, existence claimed; manuscript and formalization withheld; verification pending \cite{openai,kitp}. Existence and the mass gap are separate questions and are never conflated; the Clay problem remains open \cite{clay,kitp}.
+\end{remark}
+
+\subsection{Lessons from the model program}
+
+The classification of finite simple groups is the reference point of the series, and three of its lessons structure the regime taxonomy.
+
+The first lesson is that classification and parameterization are different achievements. The classification is complete, and the recorded verdict is that no clean uniform description of the finite simple groups analogous to Dynkin diagrams is known \cite{solomon2001}. The unparameterized regime exists in the model program itself, which is why the regime taxonomy separates the two components of \Cref{def:program} rather than collapsing them into one verdict of classified.
+
+The second lesson is that practical identification runs through companion data. Practitioners identify finite groups by order, Schur multiplier, outer automorphism group, presentations, and character tables with power maps \cite{atlaswiki}. These are not the complete invariant of the classification theorem; they are an atlas of computable fingerprints that make the classification usable. A classification program for physical systems will need the same two layers, theorem and atlas, and the regime taxonomy applies to the theorem layer while the atlas layer remains to be built.
+
+The third lesson is that a completed classification can carry its own gaps and still be complete. The proof of the classification of finite simple groups was announced prematurely and completed only decades later \cite{solomon2001}. Completeness is a property of the final statement and proof, not of announcements, and the claim discipline of the series records this by keeping announced results out of the theorem register until they are proved.
+
+None of the three lessons is an obstruction. Together they explain why the unparameterized regime is not a failure and why the regime taxonomy records seven shapes of evidence rather than one ladder of success.
+
+\subsection{Regime stability}
+
+The regime assignment of \Cref{tab:regimes} is dated evidence, and three kinds of event move rows.
+
+A new theorem moves a row upward in the table. The fusion-category row moves from open to parameterized or unparameterized if the structural conjecture in that area closes; the Elliott program row moves when the program completes or when a counterexample to its uniqueness conjecture is proved; the four-dimensional existence row moves when the announced manuscript and its formalization are released and verified \cite{openai,kitp,cstarwiki,fusionnlab}.
+
+A new obstruction moves a row downward. A proof that a recognition problem is unrecognizable, or that a representation category is wild, moves its domain into undecidable or wild and, by \Cref{thm:transport}, moves every domain containing it isomorphism-reflectingly.
+
+A change of equivalence moves rows sideways. If a domain is redefined under a coarser equivalence, its invariant becomes complete or incomplete for reasons that have nothing to do with new theorems; \Cref{prop:equiv} is exactly such a case at the level of groups. The taxonomy is therefore a record of theorems and of a chosen equivalence, and both must be read with it.
+
+\section{Nonclassification results}
+
+Obstructions propagate along embeddings: a wild or undecidable sector carried by a fully faithful functor that is injective on isomorphism classes brings its failure with it into the larger domain, and undecidability transports along computable reductions. Three natural completions of the classification picture fail on explicit counterexamples.
+
+\subsection{Obstruction transport}
+
+\begin{definition}[Isomorphism-injective functor]
+\label{def:injfun}
+A functor $F: \mathcal{A} \to \mathcal{C}$ is isomorphism-injective when $F(A) \cong F(B)$ implies $A \cong B$ for all objects $A, B$ of $\mathcal{A}$. Every fully faithful functor is isomorphism-injective: the inverse of an isomorphism $F(A) \cong F(B)$ lifts to a morphism over $B$, and the lifted composites are identities by uniqueness of preimages.
+\end{definition}
+
+\begin{theorem}[Obstruction transport]
+\label{thm:transport}
+Let $F: \mathcal{A} \to \mathcal{C}$ be fully faithful.
+\begin{enumerate}
+\item If $\mathcal{A}$ has uncountably many isomorphism classes, so does $\mathcal{C}$, and if no complete invariant of $\mathcal{A}$ takes values in a countable set, none for $\mathcal{C}$ does either. If $\mathcal{A}$ and $\mathcal{C}$ are categories of structures on standard Borel spaces of objects and $F$ acts Borel-measurably on those spaces, then classification of the isomorphism relation of $\mathcal{C}$ by countable structures implies the same for $\mathcal{A}$; hence non-classifiability by countable structures transports from $\mathcal{A}$ to $\mathcal{C}$.
+\item If $\mathcal{A}$ carries a wild embedding, a family of objects with the matrix-pair universality property of the tame-wild dichotomy, then $\mathcal{C}$ carries the same wild embedding composed with $F$. Every non-parametrization or non-classification conclusion whose hypothesis is such an embedding, as in the wildness results of the register, is then available for the embedded family in $\mathcal{C}$ on the same footing as in $\mathcal{A}$.
+\end{enumerate}
+\end{theorem}
+
+\begin{proof}
+$F$ is isomorphism-injective by \Cref{def:injfun}, so it induces an injection $F_*: \mathrm{Ob}(\mathcal{A})/{\cong} \hookrightarrow \mathrm{Ob}(\mathcal{C})/{\cong}$ on isomorphism classes, and uncountability and the absence of countable-valued complete invariants transport by restriction of any hypothetical invariant to $\mathcal{A}$ along $F$. For the countable-structures claim, a Borel reduction of the isomorphism relation of $\mathcal{C}$ to the isomorphism of countable structures, composed with the Borel map $F$ induces on object spaces, is a Borel reduction for $\mathcal{A}$; contrapositively, none for $\mathcal{A}$ means none for $\mathcal{C}$. The Borel hypotheses are what make this composition legitimate; without them the claim is not asserted. For the wild embedding, the matrix-pair family in $\mathcal{A}$ maps to a family in $\mathcal{C}$ with identical $\operatorname{Hom}$-space dimensions, since $F$ is fully faithful, and identical isomorphism behavior, since $F$ is isomorphism-injective; the universality property is preserved verbatim.
+\end{proof}
+
+The wild-embedding clause transports the obstruction, not the conclusion about a category strictly larger than the embedded family. When a whole category is the wild family, as for the Cohen-Macaulay modules of the generic determinant \cite{buchweitz2005}, non-parametrization of the category follows in the sense of \Cref{def:param}. When the wild family sits inside a larger category, the proved non-parametrization statements apply to the essential image of the wild module category and to any subcategory of $\mathcal{C}$ equivalent to it; no claim is made about parametrizations of a category that strictly contains that image without an explicit moduli framework for the containment.
+
+\begin{corollary}[Wild embedding]
+\label{cor:wild}
+Let $\mathcal{C}$ be a category of representations admitting a fully faithful functor $F$ from the module category of a derived-wild finite-dimensional algebra. Then $\mathcal{C}$ carries a wild embedding, the essential image $F(\mathcal{A})$ admits no finite-variety parametrization of its isomorphism classes \cite{bekkert2003,buchweitz2005,grevstad2025}, and the same non-parametrization holds for any subcategory of $\mathcal{C}$ equivalent to that image.
+\end{corollary}
+
+\Cref{cor:wild} is the reason wildness is a structural fact about a domain and not a comment on the state of the art. The generic determinant's Cohen-Macaulay modules in rank two already defeat finite-variety parametrization \cite{buchweitz2005}, and the compact $C_p$-equivariant modules at odd primes carry no meaningful classification at all \cite{grevstad2025}. Any larger domain that embeds either category in the manner of the corollary carries the obstruction on its embedded part. The same pattern with \Cref{lem:countable} shows that a sector with no classification by countable structures forbids such classification for any domain receiving it along a Borel, fully faithful functor.
+
+\begin{corollary}[Operator-algebra consequence]
+\label{cor:opalg}
+Let $\mathcal{C}$ be the category of separable von Neumann algebras with normal *-homomorphisms as morphisms, taken with isomorphism as its equivalence. The separable $\mathrm{II}_1$ factors have uncountably many isomorphism classes \cite{mcduff1969}, so no complete invariant of $\mathcal{C}$ takes values in a countable set, and no atlas of countably many computable fingerprints can be complete for $\mathcal{C}$. The stronger statement holds: the isomorphism relation of $\mathcal{C}$ admits no classification by countable structures at all \cite{sasyk2009}.
+\end{corollary}
+
+\begin{proof}
+An atlas of countably many computable fingerprints assigns to each algebra a tuple of values from countable sets, and the combined map is a complete invariant with countable range if the atlas is complete; \Cref{lem:countable} and McDuff's uncountable family rule this out \cite{mcduff1969}. The stronger statement is the Borel-reducibility result of Sasyk and Tørnquist \cite{sasyk2009}.
+\end{proof}
+
+\Cref{cor:opalg} fixes the reach of the Atlas discipline of the model program, identification by finite tables of computable data \cite{atlaswiki}. That method is complete exactly where a countable-valued complete invariant exists and provably incomplete where uncountably many classes or the Borel-reducibility obstruction stand. The regime table records which domains admit an atlas at all.
+
+\subsection{Recognition reductions}
+
+\begin{proposition}[Undecidability transport]
+\label{prop:undec}
+Let $Q$ be a recognition problem for a class $\mathcal{C}$, and suppose there is a computable map $\varphi$ from finite group presentations to objects of $\mathcal{C}$ and a Markov property $P$ of finitely presentable groups such that a presentation $G$ has $P$ if and only if $\varphi(G)$ satisfies $Q$. Then $Q$ is algorithmically undecidable.
+\end{proposition}
+
+\begin{proof}
+A decision procedure for $Q$, composed with the computable map $\varphi$, decides $P$ on finite presentations. By the Adyan-Rabin theorem no such procedure exists for any Markov property \cite{adyan1955,rabin1958}. Hence none exists for $Q$.
+\end{proof}
+
+\Cref{prop:undec} is the shape of every undecidability entry in the register. Tancer's construction is an instance: the unrecognizability of the nine-fold connected sum of $S^2 \times S^2$ is proved through the Markov set construction carried into four-manifold topology \cite{tancer2023}. The proposition also explains why undecidability is a statement about the recognizer component of \Cref{def:program} and says nothing by itself about invariants or parameter spaces: an undecidable domain may still carry rich complete invariants that no algorithm can compute.
+
+\subsection{Counterexample catalogue}
+\label{sec:counterexamples}
+
+Each of the three natural strengthenings of the classification picture below fails on an explicit counterexample.
+
+\begin{proposition}[No finite sporadic list]
+\label{prop:sporadic}
+The hypothesis that the isomorphism classes of a completed classification decompose into infinite families plus finitely many exceptional objects is false for the operator-algebra sector and for four-dimensional geometry. The separable $\mathrm{II}_1$ factors number uncountably many isomorphism classes \cite{mcduff1969}, and the four-dimensional maximal model geometries number eighteen plus one countably infinite family \cite{geometrization}.
+\end{proposition}
+
+\begin{proof}
+Both lower bounds refute finiteness of the exceptional set: uncountably many classes cannot be listed as finitely many sporadics, and a countably infinite family of model geometries is not finite. Any classification whose final form is families plus finitely many sporadics is therefore false in these sectors before its completeness is even considered.
+\end{proof}
+
+\begin{proposition}[The two-regime picture fails]
+\label{prop:tworegime}
+The taxonomy that sorts domains into classified and impossible misassigns at least two surveyed domains. Unknot recognition is decidable and sits in NP and coNP, while its complexity class is open and no complete invariant is known \cite{hass1999,lackenby2021}. The finite simple groups are completely classified and carry no uniform parameterization \cite{solomon2001}. The first domain is decidable but unclassified; the second is classified but unparameterized. Neither fits a two-regime picture.
+\end{proposition}
+
+\begin{proof}
+Decidable-but-unclassified and classified-but-unparameterized are distinct shapes of evidence, exhibited by the two named domains. Any taxonomy with two regimes assigns both domains to the same regime, and in that regime one of the two descriptions of the evidence is wrong. Hence the two-regime picture is refuted, and the seven regimes of \Cref{def:regime} are needed to keep the descriptions straight.
+\end{proof}
+
+\begin{proposition}[Equivalence at the plain tensor layer fails]
+\label{prop:equiv}
+Let $\simeq_{\mathrm{pt}}$ be the relation on finite groups obtained by declaring $G \simeq_{\mathrm{pt}} H$ when their representation categories are equivalent as plain tensor categories. Then $\simeq_{\mathrm{pt}}$ is strictly coarser than isomorphism, so any classification of systems whose symmetry data is a finite group, conducted at the plain tensor layer, identifies distinct systems.
+\end{proposition}
+
+\begin{proof}
+Etingof and Gelaki exhibit non-isomorphic finite groups with equivalent plain tensor representation categories \cite{eg2000}. For such a pair $G \not\cong H$ while $G \simeq_{\mathrm{pt}} H$, so the quotient by $\simeq_{\mathrm{pt}}$ is strictly coarser than the quotient by isomorphism. A classification built on $\simeq_{\mathrm{pt}}$ therefore merges distinct isomorphism classes, and its fibers are not the classes one set out to classify.
+\end{proof}
+
+\Cref{prop:equiv} is the counterexample the register promised for the third proof obligation of the universal conjecture. Choosing an equivalence relation is not a formality: the plain tensor choice is a natural one, it is stated in one line, and it is provably wrong. Every equivalence admitted in the program must name the layers of structure it preserves, and the symmetric layer is the one that recovers the group.
+
+\subsection{Common consequences}
+
+The four statements have a common consequence. Non-classifiability in the register is not a set of isolated pathologies; it travels along fully faithful embeddings (\Cref{thm:transport}), along computable maps (\Cref{prop:undec}), and it defeats three natural completion schemes (Propositions \ref{prop:sporadic} to \ref{prop:equiv}). A universal classification theorem for all admissible physical systems cannot be of CFSG form unless every wild, undecidable, and unrecognizable sector is excluded from its quantifiers. The exclusions are restrictions on the domain, and each restriction is a new admissibility condition of the kind that \Cref{rem:unfixed} records as unfixed.
+
+\subsection{Scope of the transport theorem}
+
+\Cref{thm:transport} quantifies over functors injective on isomorphism classes, and its hypotheses are mathematical. Three remarks delimit its use.
+
+The theorem transports refutations, not theorems. It moves wild embeddings and invariant obstructions from a subcategory to a larger category, and it moves undecidability along computable reductions. It does not transport positive classification results: a classification of a subcategory says nothing about the ambient category, which is why the completed islands of Section 6 each restate their own hypotheses.
+
+Full faithfulness is what carries the wild embedding, because it preserves the Hom-dimensions the universality property is built from; injectivity on isomorphism classes is what carries isomorphism behavior. Physical embeddings that deliberately identify systems fail the second hypothesis, and a coarse-graining map that forgets microscopic detail typically fails it as well, so the theorem is silent about classification programs run on coarse descriptions.
+
+The theorem applies at the level of domains, not of families. A family such as the operator-algebra family contains parameterized islands and obstruction-complete sectors side by side, and the transport theorem says which ambient domains inherit which failure. Regime assignment remains a domain-level judgment, and the two levels must not be confused.
+
+\section{Restricted classification results}
+
+Completed classifications exist on restricted domains under explicit hypotheses, and each is an instance of \Cref{def:program}. The restriction in each of them is load-bearing rather than removable by a better argument, as \Cref{cor:restrict} records.
+
+\subsection{Completed islands}
+\label{sec:completed}
+
+The finite-dimensional complex $C^*$-algebras are classified completely. Every such algebra is a direct sum $A \cong \bigoplus_{i=1}^{k} M_{n_i}(\mathbb{C})$ of matrix algebras, and the multiset of matrix sizes, the dimension vector, determines $A$ up to *-isomorphism \cite{cstarwiki}. The classification program of \Cref{def:program} is fully realized here: the dimension vector is a complete invariant, the parameter space is the set of finite multisets of positive integers, and recognition is the finite computation of block decomposition. This is the model theorem of the series and the shape every restricted classification aims at.
+
+The amenable factors are classified as well: types $\mathrm{I}_n$, $\mathrm{I}_\infty$, $\mathrm{II}_1$, $\mathrm{II}_\infty$, $\mathrm{III}_\lambda$ for $0 < \lambda \leq 1$, and $\mathrm{III}_0$, with the invariant given by Murray-von Neumann type and Connes data \cite{connes1976,vnwiki}. The restriction is the word amenable. McDuff's theorem removes it and the classification dies \cite{mcduff1969}.
+
+Principal $G$-bundles over a base $X$ are classified by homotopy classes of maps into the classifying space, and the characteristic classes are exactly the pullbacks of universal classes \cite{cstarwiki}. The restriction is topological: the classification is up to bundle isomorphism and it records no connection data. Anomalies are classified on the obstruction pattern: the gauge anomaly is a pair of cohomology classes whose vanishing is the condition for quantization, so the classification content is the obstruction itself \cite{cstarwiki}.
+
+Doplicher-Roberts reconstruction classifies symmetric tensor *-categories with conjugates, direct sums, subobjects, and $\operatorname{End}(1) = \mathbb{C}$: such a category is the representation category of a compact supergroup, unique up to isomorphism \cite{eg2000}. The hypotheses are the restriction, and the Etingof-Gelaki counterexamples show that dropping the symmetric layer destroys the conclusion \cite{eg2000}. Deligne's theorem classifies symmetric tensor categories of subexponential growth in characteristic zero along the same lines \cite{eg2000}.
+
+Quantum channels occupy a middle position. Stinespring dilation classifies completely positive maps up to minimal dilation, unique up to unitary freedom, and the Choi-Kraus form is a normal form whose Kraus rank is an invariant of the form \cite{stinespring,cstarwiki}. The classification is of dilations, not of channels up to isomorphism, and the Kraus rank of a normal form is not an isomorphism invariant of the channel. This is a classification of a presentation, and the regime table places the domain in the unparameterized regime accordingly.
+
+The local symplectic classification is complete and trivial: Darboux's theorem gives local normal form with no local invariants, so the classification content of the symplectic side is entirely global and topological \cite{darboux}. In the opposite direction, the Killing-Cartan classification of semisimple Lie algebras and the highest-weight classification of their irreducible representations deliver complete invariants with parameterizations \cite{humphreys,fultonharris}. The geometrization theorem decomposes closed 3-manifolds into exactly eight Thurston geometries \cite{geometrization}, and Chentsov's theorem gives the Fisher metric as the unique metric monotone under stochastic maps, while the quantum analogue is a parametric family indexed by operator monotone functions \cite{petzsudar}. In every row the invariant is finite or parametric, and in every row the domain is stated with its restrictions.
+
+\subsection{Hypotheses and their cost}
+
+\begin{corollary}[Quantifier restriction]
+\label{cor:restrict}
+Under the hypotheses of \Cref{thm:transport}, a completeness statement for $\mathcal{C}$ in the sense of \Cref{def:program} is false. Under the hypotheses of \Cref{prop:undec}, a recognition statement for $\mathcal{C}$ in that sense is false. Any correct completeness or recognition statement about $\mathcal{C}$ restricts its quantifiers to a subdomain that excludes the part carrying the obstruction.
+\end{corollary}
+
+\begin{proof}
+\Cref{thm:transport} and \Cref{prop:undec} deny the existence of the parameter space or of the recognizer over all of $\mathcal{C}$. A statement quantified over a subdomain that excludes the obstruction carries no contradiction, and the surveyed theorems of Section 6.1 are all of this form.
+\end{proof}
+
+\Cref{cor:restrict} explains the shape of the completed islands. The restriction in each theorem is not a hedge and it is not removable by a better argument; it is the boundary the obstruction register draws. Two further points about the cost of hypotheses deserve recording. First, hypotheses can be subtle: braided extensions of the Doplicher-Roberts setting can require extra data beyond the braiding for the reconstruction to close, so the hypothesis list of a reconstruction theorem is part of its content and must travel with it. Second, a restriction can hide a boundary rather than a theorem: the tame side of the Grochow-Qiao divide admits polynomial-time isomorphism testing for the groups named, and the wild side fails the bounds their method needs \cite{grochow2015}. A classification program built on the tame side inherits the boundary as a working assumption.
+
+\subsection{Regime boundaries}
+
+Where the tame-wild boundary sits for physical representation categories, as opposed to generic algebras, is unstudied. The generic mathematics supplies the dichotomy and the algorithmic shadow \cite{bekkert2003,grochow2015}; no result on record locates the boundary for the tensor categories or representation categories that physical theories actually use. The question matters for the program, because a completeness theorem for a physical class is exactly a theorem that the class sits on the tame side.
+
+Regime boundaries move in one further way. When an announcement matures into a published proof, its domain enters the table at the regime the proof supports; until then the claim is tracked outside the taxonomy, as in \Cref{tab:regimes}'s companion remark. The taxonomy records theorems, and announcements are not theorems.
+
+The regime taxonomy records that boundaries are not always sharp walls. Unknot recognition is decidable and sits in NP and coNP, while its complexity class is open and no complete invariant is known \cite{hass1999,lackenby2021}. Between the classified and the impossible there are domains whose status is settled in one component of \Cref{def:program} and unsettled in another. Any periodic table of the program must carry such entries honestly rather than forcing them into a binary verdict.
+
+\section{The five obligations}
+
+The universal classification conjecture states that every admissible physical system is generated by a fixed collection of structural families under a fixed set of admissible constructions, up to a justified equivalence. Its proof obligations number five, and \Cref{tab:obligations} gives their status against the evidence of this paper. The conjecture is a registered hypothesis and an object of analysis here; nothing in this section assumes it true or false.
+
+\begin{table}[ht]
+\centering
+\caption{The five proof obligations of the universal classification conjecture and their status.}
+\label{tab:obligations}
+\small
+\begin{tabular}{L{3.6cm}L{5.4cm}L{3.2cm}}
+\toprule
+Obligation & Content & Status \\
+\midrule
+Completeness & Every admissible system lies in the generated class & Open, conditional on the unfixed admissibility list \\
+Soundness & Every generated structure is admissible & Open, same conditionality \\
+Equivalence & Distinct presentations of one system are identified correctly & Open; \Cref{prop:equiv} constrains every choice \\
+Structural characterization & The families have precise mathematical definitions & Partial: families named, admissibility unfixed \\
+Decomposition & Targeted classes assemble from the families & Open in general; proved in restricted domains \\
+\bottomrule
+\end{tabular}
+\end{table}
+
+The completeness obligation quantifies over $\mathrm{Phys}_{\mathrm{adm}}$ and is therefore conditional on the admissibility list that \Cref{rem:unfixed} records as unfixed. Beyond the conditionality, \Cref{thm:transport} blocks the obligation in any formulation whose generated class contains a wild or undecidable sector isomorphism-reflectingly: the parameter space the classification needs cannot exist there. The obligation is open today and its unrestricted form collides with the register.
+
+The soundness obligation runs in the other direction, from the generated class to the admissibility conditions. It is vacuous until the conditions are stated, and it becomes checkable only after the list is fixed. No obstruction in the register touches it directly; its difficulty is definitional.
+
+The equivalence obligation is the one with a proved negative result attached. \Cref{prop:equiv} shows that the natural plain tensor choice of equivalence is strictly coarser than isomorphism and merges distinct systems. Any solution must therefore name the layers of structure it preserves and must recover the group from the preserved layers where a group is present. The solution space is restricted by a counterexample, which is a stronger constraint than mere openness.
+
+The structural characterization obligation is partial on the evidence of record. The ten candidate families of the program are named with their defining structures and their established islands, and the admissibility conditions that would make the families exhaustive are unfixed. Naming a family is not characterizing it to the precision a completeness proof needs, and the gap between the two is where this obligation lives.
+
+The decomposition obligation asks that systems of the targeted classes assemble from the families under the admissible constructions. Restricted theorems exist: the finite-dimensional $C^*$-algebra decomposition assembles every algebra of that class from matrix blocks \cite{cstarwiki}, amenable factors decompose by type \cite{vnwiki}, and Doplicher-Roberts reconstruction assembles superselection data from symmetric tensor structure \cite{eg2000}. In general the obligation is open, and uniqueness of decomposition is open even before assembly is considered: interacting systems need not admit unique decompositions at all.
+
+What survives the register is the restricted form the survey of the series anticipated: classification theorems on tame, restricted classes, plus explicit obstruction theorems where no classification can exist. The regime taxonomy of Section 4 states exactly which domains admit which of the two outcomes today, and Section 6 records the shape of every completed theorem on the positive side.
+
+The consequences for a periodic table of mathematical physics are direct. A table with only status columns for proved and open is incomplete: it has no cell for the proved impossibilities, and the regime taxonomy supplies one regime per kind of impossibility. A table with a single row per family is too coarse at the boundaries, because a family such as the operator-algebra family contains parameterized islands, an unparameterized island, and an obstruction-complete sector at once. The right grain is the domain, not the family, and the right vocabulary is the seven regimes.
+
+\subsection{Requirements for a completeness theorem}
+
+The register and the transport results fix what any future completeness theorem must contain. Four conditions are necessary, and each is drawn from a proved obstruction rather than from preference.
+
+The quantifier must be restricted. By \Cref{cor:restrict}, a domain carrying a wild or undecidable sector in the manner of \Cref{thm:transport} supports no completeness statement unless the quantifier excludes the part carrying the obstruction. A theorem over a class that embeds the generic determinant's modules, or a Markov construction, is false before its proof begins.
+
+The equivalence must name its layers. By \Cref{prop:equiv}, any equivalence forgetting the symmetric layer merges distinct systems, so the identification relation of the theorem must state the preserved structure and must recover groups where groups are present.
+
+The parameter space must be structured. By \Cref{def:param} and \Cref{lem:countable}, a bare set-theoretic indexing carries no content, and countable-valued complete invariants cannot exist where uncountably many classes or Borel non-reducibility stand. The parameterizer must be an algebraic family, a standard Borel parametrization, or a finite combinatorial set of the kind \Cref{def:program} names.
+
+The premise must be fixed. By \Cref{rem:unfixed}, a theorem over an admissible class whose conditions are unfixed is conditional on the list one adopts. A completeness theorem that quantifies over $\mathrm{Phys}_{\mathrm{adm}}$ waits on \Cref{def:adm} being settled; a theorem over a standard mathematical domain, as in the completed islands of \Cref{sec:completed}, does not.
+
+Together the four conditions describe the shape of the positive results the program may still earn: restricted-class theorems with stated hypotheses on tame domains, side by side with obstruction theorems registered at their full generality. That is the shape the evidence already has, and the regime table is where each domain's share of it is recorded.
+
+\section{Computational evidence}
+\label{sec:computational}
+
+The three experiments of this section are evidence about finite instances and growth patterns, not proofs. The claims they support are marked as computational in the code evidence appendix.
+
+The first experiment enumerates the regime assignment of \Cref{tab:regimes} as data and checks two properties mechanically: every surveyed domain receives exactly one regime label, and every label used is one of the seven of \Cref{def:regime}. The experiment treats the table as input, so it verifies the internal consistency of the assignment and not the mathematical truth of any row.
+
+The second experiment enumerates unital finite-dimensional complex $C^*$-algebras of a given complex dimension $N$, where $N = \dim_{\mathbb{C}}(A)$ is the vector space dimension over $\mathbb{C}$, by their dimension vectors, the multisets of matrix block sizes with $\sum_i n_i^2 = N$. For each $N$ up to a bound it prints the finite list of vectors, exhibiting on the tame side what a parametrization looks like: finitely many classes per dimension, listed by a finite invariant. For example, dimension $N = 5$ admits exactly two algebras, with block-size multisets $\{\!\{1,1,1,1,1\}\!\}$ and $\{\!\{1,2\}\!\}$, and dimension $N = 8$ admits exactly three, with multisets $\{\!\{1^{(8)}\}\!\}$, $\{\!\{2,1,1,1,1\}\!\}$, and $\{\!\{2,2\}\!\}$. The enumeration is exhaustive within its bound and is a direct check of the finiteness claim for each dimension.
+
+The third experiment computes the dimension of the quotient of representation varieties for the $m$-Kronecker quiver along the dimension vector $(n, n)$. The quotient dimension is $m n^2$ minus the generic orbit dimension $2n^2$ minus the dimension of the generic stabilizer: the centralizer of a generic matrix, of dimension $n$, for the tame case $m = 2$, and the scalar matrices, of dimension $1$, for the wild case $m = 3$. The quotient dimension therefore grows linearly for $m = 2$ and quadratically for $m = 3$. The tame side is parametrizable by eigenvalue data, a finite-dimensional variety of the kind \Cref{def:param} allows; the wild side grows faster than any fixed algebraic family can absorb, which is the dimension bookkeeping behind the non-parametrization theorems. The calculation is a growth pattern, and the non-parametrization theorem it illustrates is the proved result of Buchweitz and Leuschke \cite{buchweitz2005}.
+
+A companion Haskell module encodes the taxonomy layer: representative systems of each regime, carrying instances of the shared family classes of the series taxonomy, with a regime tag mirroring \Cref{def:regime}. The module is executable specification, and it is computational evidence of the same standing as the experiments. Its witness systems cover the McDuff sector, the wild module sector, the finite-dimensional $C^*$-algebra sector, and the four-manifold sector, so each regime of \Cref{def:regime} that has a concrete witness in this paper is represented. No artifact in this section is a machine-checked formalization, and none is presented as one.
+
+The experiments also mark what computation cannot do here. No finite run decides whether an algebraic family exists covering an isomorphism-class set, and no enumeration of small instances distinguishes a tame domain from a wild one at the boundary. The register theorems decide those questions, and the experiments only display their shadow on finite data.
+
+The experiments are deterministic and self-contained. Each script computes its output from definitions written in the script itself and from no external data, so a reader can rerun them and compare printed values against the claims of this section. The expected outputs are small enough to check by hand: the partition property of the regime table, the lists of dimension vectors at small $N$, and the quotient-dimension values along the diagonal $a = b = n$ for $m = 2$ and $m = 3$. Agreement is evidence for the claims as stated and nothing more.
+
+\section{Limitations}
+
+
+ succeeded in 0ms:
+\documentclass[11pt,letterpaper]{article}
+
+\usepackage[T1]{fontenc}
+\usepackage{lmodern}
+\usepackage{microtype}
+\usepackage[margin=1in]{geometry}      % one-inch margins, as the writing standard specifies
+\linespread{1.0}
+\setlength{\parskip}{0pt}          % conventional article: indent, no vertical gap
+\setlength{\parindent}{1.5em}
+
+\usepackage{amsmath,amssymb,amsthm}
+\usepackage{graphicx}
+\usepackage{xcolor}
+\usepackage{tikz}                  % and tikz-cd when commutative diagrams are used
+\usepackage{booktabs,tabularx,array,longtable}
+\newcolumntype{L}[1]{>{\raggedright\arraybackslash}p{#1}}
+\usepackage{listings}
+\lstset{basicstyle=\ttfamily\footnotesize,breaklines=true,columns=fullflexible,frame=single,framesep=4pt,showstringspaces=false,captionpos=b}
+\usepackage[hidelinks]{hyperref}
+\usepackage{cleveref}
+
+\newtheorem{theorem}{Theorem}[section]
+\newtheorem{proposition}[theorem]{Proposition}
+\newtheorem{lemma}[theorem]{Lemma}
+\newtheorem{corollary}[theorem]{Corollary}
+\theoremstyle{definition}
+\newtheorem{definition}[theorem]{Definition}
+\theoremstyle{remark}
+\newtheorem{remark}[theorem]{Remark}
+
+\title{Completeness and Obstructions\\[4pt]
+  {\normalsize Part 11 of \emph{The Classification of Mathematical Representations of Physical Systems}}}
+\author{Matthew Long\\
+  \small The YonedaAI Collaboration, YonedaAI Research Collective\\
+  \small Chicago, Illinois, USA\\
+  \small \texttt{mlong@yonedalabs.ai}\\
+  \small \url{https://yonedalabs.ai}}
+\date{October 2026}
+
+\begin{document}
+\maketitle
+
+\begin{abstract}
+This paper determines what can be established about the completeness of a classification of mathematical representations of physical systems. Seven proved obstruction theorems are compiled as a register: there are uncountably many separable type $\mathrm{II}_1$ factors; tensor-category equivalence without symmetric structure does not determine the group; every Markov property of finitely presentable groups is algorithmically undecidable; wild representation categories admit no parametrization by a finite-dimensional variety; homeomorphism of a specific closed four-manifold is unrecognizable; isomorphism of separable von Neumann algebras admits no classification by countable invariants; and the tame-wild dichotomy bounds algorithmic tractability. From these results a classification program is defined as a triple of complete invariant, parameter space, and recognition procedure, and each surveyed domain of mathematical physics is assigned to one of seven regimes. A transport theorem shows that wild embeddings and invariant obstructions propagate along fully faithful functors, so such obstructions travel with any fully faithful re-presentation of a domain. Counterexamples refute three natural completions of the universal classification conjecture. The conjecture itself is examined obligation by obligation and is never used as a lemma. Completeness holds in restricted tame regimes and is provably unattainable elsewhere without further restrictions.
+\end{abstract}
+
+\section{Introduction}
+
+The classification of finite simple groups is the model of what a total classification theorem looks like: every object of the domain falls into an explicitly described list of families and exceptions, and the list is exhaustive \cite{solomon2001}. The research program of this series asks whether mathematical representations of physical systems admit an analogous classification. The question is precise enough to be attacked only after fixing an equivalence relation on representations, a notion of admissible system, and a catalogue of constructions from which complex systems are assembled. The central identity of the program, that every admissible system is generated by a fixed collection of structural families under a fixed set of constructions, remains a registered conjecture.
+
+Impossibility theorems bound the structure of classification programs as tightly as exhaustive enumerations do. A theorem showing that no complete invariant or parameter space can exist in a stated generality marks the same kind of mathematical boundary as a theorem listing the objects. The analysis below works out those boundaries for mathematical representations of physical systems: it compiles seven proved obstruction theorems, refutes three natural completions of the universal classification conjecture on explicit counterexamples, and keeps the conjecture itself as an object of study rather than a premise.
+
+Seven proved obstruction theorems forbid specific forms of classification, and a regime taxonomy applies them to every domain surveyed in the series. A transport theorem, proved here, shows the obstructions survive fully faithful re-presentation of a domain, and three counterexamples, also proved here, refute natural completions of the universal classification problem.
+
+Established results are cited to the mathematical literature and are used at the strength their proofs support. New statements are proved in full or narrowed until they can be. Counterexample search is part of the method and not an afterthought: for every natural completion of the classification picture considered here, an explicit counterexample was sought, and three completions failed the search. Computational experiments accompany the paper as evidence about finite instances; they are never treated as proofs.
+
+Wild embeddings and invariant obstructions transport along fully faithful functors, so a wild or undecidable sector embedded in the manner of \Cref{thm:transport} carries its obstruction into the larger domain. The surveyed domains occupy seven distinct regimes, and no coarser taxonomy places them all. Three natural strengthenings of the universal classification conjecture are false: the number of exceptional isomorphism classes in the operator-algebra sector is uncountable, the two-regime picture of classified versus impossible is refuted by concrete domains, and equivalence defined at the plain tensor layer fails to identify systems correctly. The universal conjecture itself, examined against its five proof obligations, has four open obligations and one partial obligation, and its statement is conditional on an unfixed admissibility list.
+
+\section{Definitions and standing constraints}
+
+\subsection{Classification problem}
+
+\begin{definition}[Representation]
+\label{def:tuple}
+A representation of a physical system is a tuple $P = (X, \mathcal{O}, \mathcal{D}, \mathcal{S}, \mathcal{C})$ where $X$ is a state space or geometric structure, $\mathcal{O}$ an observable algebra or collection, $\mathcal{D}$ dynamical laws, $\mathcal{S}$ symmetry and constraint data, and $\mathcal{C}$ composition rules. The five components need not be independent. The composition component fixes what irreducibility means for $P$: a system is irreducible relative to a stated composition operation when it admits no nontrivial decomposition under that operation.
+\end{definition}
+
+The tuple of \Cref{def:tuple} is the coordinate record of the series. The classification problem is
+\[
+\mathrm{Classify}\bigl(\mathrm{Ob}(\mathrm{Phys})/{\simeq}\bigr),
+\]
+the classification of representations up to a carefully chosen equivalence $\simeq$.
+
+Notation is fixed as follows. The symbol $\simeq$ stands for an equivalence relation on objects of a category and $\cong$ for isomorphism; when a domain is introduced, its equivalence is named. The letters $\mathcal{A}$ and $\mathcal{C}$ denote categories, $D$ denotes a domain of objects with an equivalence relation, and $k$ denotes a field. Isomorphism classes are written $\mathrm{Ob}(\mathcal{A})/{\cong}$. The symbol $*$ marks the adjoint of operator-algebraic structures. All classification statements in this paper are statements about mathematical representations, and none is a statement about empirical selection among physical theories.
+
+Two equivalence notions must be kept apart. Mathematical equivalence is isomorphism of the tuples in the ambient category of each component. Physical equivalence is a chosen relation on objects for which two mathematically different descriptions count as the same system; the choice is load-bearing and is not settled. Every equivalence used to identify systems must state which layer of structure it preserves, and equivalences that forget the monoidal or symmetric layer are provably insufficient \cite{eg2000}. The counterexample is recorded in the register and restated as \Cref{prop:equiv}.
+
+Obstructions proved for mathematical isomorphism constrain physical equivalence directly on every subsector where physical equivalence coincides with isomorphism. On any subsector where two systems are physically equivalent if and only if their representations are isomorphic, wildness, undecidability, and non-classifiability transfer unconditionally. Coarser physical equivalences can identify additional representations globally, but they cannot dissolve proved mathematical obstructions on subsectors where isomorphism is preserved.
+
+Yoneda embeddings preserve mathematical structure but cannot determine physical equivalence, empirical adequacy, or classification boundaries. Representing a system $P$ through its functor of points $\operatorname{Hom}(-, P)$ provides relational data without identifying which relational differences are physically observable. The standing qualification of the program binds every such use and is quoted verbatim: Yoneda does not, by itself, establish physical equivalence, empirical adequacy, or a classification theorem. Relational embeddings therefore cannot discharge the equivalence and completeness obligations of Section 7.
+
+\begin{remark}[Schema and category]
+The morphisms of the program, coarse-graining, exact equivalence, embedding, duality, and limiting procedures, do not yet carry fixed preservation laws or composition rules. Until they do, the ambient object is a schema rather than a category. This paper therefore runs its arguments on standard mathematical categories with standard isomorphism relations, and it treats the physical reading of those arguments as conditional on the eventual fixings.
+\end{remark}
+
+\subsection{Admissibility}
+
+\begin{definition}[Admissible class and closure]
+\label{def:adm}
+An admissible representation is one satisfying four consistency conditions: internal consistency of the five components of \Cref{def:tuple}; closure of the observable algebra under its stated operations; existence of a well-posed dynamics; and compatibility of symmetry data with composition. The full subcategory of admissible representations is $\mathrm{Phys}_{\mathrm{adm}}$. A structural family is a full subcategory of representations singled out by its underlying mathematical structure, and a family collection is a set $\mathfrak{F} = \{\mathfrak{F}_\alpha\}_{\alpha \in A}$ of them. The construction set $\mathfrak{C}$ consists of tensor product, direct sum, extension, limits and colimits, and factorization, and the closure $\langle \mathfrak{F}_\alpha \rangle_{\mathfrak{C}}$ is the smallest class containing $\mathfrak{F}$ and closed under $\mathfrak{C}$.
+\end{definition}
+
+The central conjecture of the program asserts
+\[
+\mathrm{Phys}_{\mathrm{adm}} \simeq \langle \mathfrak{F}_\alpha \rangle_{\mathfrak{C}}
+\]
+for some such family collection and construction set. The candidate conditions of \Cref{def:adm} are the ones the program names; the list is not fixed by any settled mathematics, and every statement quantifying over $\mathrm{Phys}_{\mathrm{adm}}$ is therefore conditional on the list one adopts. The conjecture is registered as an object of study and as a declared hypothesis only; it is never used as a lemma in this paper, and no result here assumes it true or false.
+
+\begin{remark}[Unfixed premise]
+\label{rem:unfixed}
+Completeness of a classification over $\mathrm{Phys}_{\mathrm{adm}}$ cannot be evaluated against a moving premise. Until the admissibility list is fixed, the first proof obligation of the universal classification conjecture is not merely open; its statement is conditional. This is an obstruction of an internal kind, and it is the reason the analysis below runs on domains with standard mathematical definitions rather than on $\mathrm{Phys}_{\mathrm{adm}}$ itself.
+\end{remark}
+
+\subsection{Claim discipline}
+
+Three levels of achievement are distinguished throughout: mathematical formulation, rigorous theorem, and physical validation. The results of this paper sit at the second level. Nothing in this paper establishes physical validation of any representation, and no mathematical classification established here is presented as an empirical selection among physical theories. Where a claim rests on an announcement rather than a published proof, the text says so; one such claim is tracked in a remark outside the regime table.
+
+\section{Obstruction register}
+
+Each obstruction below is a proved theorem, and it decides a question a classification program would otherwise have to settle by effort. Two conventions govern the collection. Only theorems with complete proofs in the mathematical literature enter; announcements stay out until they are proved. And an obstruction is recorded at the generality its proof supports: an undecidability result about finitely presented groups says nothing about finite groups, and a wildness result about modules over a specific algebra says nothing about modules over algebras on the tame side. Reading the register is a matter of reading the quantifiers.
+
+Each row is a theorem, and each theorem decides a question that a classification program would otherwise have to decide by effort. The seven rows divide by the component of \Cref{def:program} they destroy: the invariant, the parameter space, the recognizer, or the equivalence itself.
+
+\subsection{Factor classification}
+
+The classification of von Neumann algebra factors reduces, by the Murray-von Neumann direct-integral decomposition, to the classification of factors, and the amenable factors are classified: types $\mathrm{I}_n$, $\mathrm{I}_\infty$, $\mathrm{II}_1$, $\mathrm{II}_\infty$, $\mathrm{III}_\lambda$ for $0 < \lambda \leq 1$, and $\mathrm{III}_0$, with the type $\mathrm{III}_0$ case described by ergodic flows \cite{connes1976,vnwiki}. Outside the amenable class the situation changes completely. McDuff proved in 1969 that there are uncountably many non-isomorphic separable type $\mathrm{II}_1$ factors \cite{mcduff1969}.
+
+What this forbids is a total classification of factors in the style of the classification of finite simple groups: no list of families and finitely many exceptions can exhaust the separable $\mathrm{II}_1$ factors, and no countable table of isomorphism classes can be complete. What it permits is a classification of the amenable class, which exists, and stratification of the general case by invariants of coarser grain, such as the Connes spectrum, which records partial information only \cite{vnwiki}.
+
+\subsection{Tensor-category recovery}
+\label{sec:tensor-recovery}
+
+A natural proposal for identifying physical systems is to compare their representation categories as tensor categories and declare two systems equivalent when the categories are equivalent. The proposal fails. Etingof and Gelaki constructed pairs of non-isomorphic finite groups whose representation categories are equivalent as plain tensor categories \cite{eg2000}. The symmetric structure of the category is not recoverable from the plain tensor layer, and two different symmetry groups present the same plain tensor representation theory.
+
+What this forbids is any classification or equivalence criterion that discards the monoidal or symmetric layer: such a criterion is not merely imprecise, it is false on explicit counterexamples. What it permits is the Doplicher-Roberts style of reconstruction, which takes the symmetric tensor structure with its conjugates, direct sums, subobjects, and $\operatorname{End}(1) = \mathbb{C}$ as input and recovers a compact supergroup unique up to isomorphism \cite{eg2000}. The counterexample is the sharpest constraint in the register, and it is applied twice more in this paper: as an impossibility theorem in the transport analysis, and as a counterexample to a natural completion of the universal conjecture.
+
+\subsection{Markov undecidability}
+
+A classification program can aim at an algorithm: given a presentation of an object, decide which isomorphism class it lies in. For finitely presented groups this aim fails at the root. Adyan and Rabin proved that every Markov property of finitely presentable groups is algorithmically undecidable \cite{adyan1955,rabin1958}. The list of Markov properties includes being trivial, being finite, and being simple, so even the coarsest structural tests on finitely presented groups admit no uniform decision procedure. Collins extended undecidability beyond Markov properties, proving that the Hopfian property is undecidable even though neither it nor its negation is Markov \cite{collins1969}.
+
+What this forbids is any uniform recognition procedure for group-flavored sectors of a classification, including recognition of finiteness and simplicity. What it permits is decision of the same properties on restricted subclasses where the Markov construction does not embed, and it permits recognition procedures that are partial or that come with error. The proof reduces the halting problem to the group property through a Markov set construction, and Section 5 builds transport results on the same reduction pattern.
+
+\subsection{Wildness}
+
+The tame-wild dichotomy of Drozd is the boundary of parametrizable representation theory. Bekkert and Drozd proved that every finite-dimensional algebra over an algebraically closed field is derived-tame or derived-wild, and that any degeneration of a derived-wild algebra is again derived-wild \cite{bekkert2003}. Wildness is a property of the category of representations, and it is a non-classifiability statement rather than a difficulty rating. Buchweitz and Leuschke showed that the Cohen-Macaulay representation theory of the generic determinant is wild in a strong sense: already in rank two the isomorphism classes cannot be parametrized by a finite-dimensional variety over the coefficients \cite{buchweitz2005}. Grevstad and May proved that the cohomological Mackey algebra is derived-wild whenever the group surjects onto a $p$-group of order greater than two, and concluded that no meaningful classification of compact $C_p$-equivariant $H\underline{\mathbb{F}}_p$-modules exists at odd primes \cite{grevstad2025}.
+
+What this forbids is any finite-variety parameterization of the isomorphism classes of a wild representation category, and any classification of a domain that contains such a category as an isomorphism-reflecting subcategory. What it permits is a complete classification theory on the tame side, where parametrizations do exist, and partial invariants on the wild side that ignore the wild core.
+
+\subsection{Four-manifold unrecognizability}
+
+In dimension three the geometrization theorem decomposes every oriented prime closed 3-manifold into pieces carrying one of exactly eight Thurston geometries \cite{geometrization}. In dimension four the finite-table picture breaks. Markov's construction shows that unrecognizable four-manifolds exist, that is, manifolds for which the homeomorphism problem is undecidable. Tancer sharpened the construction to show that the connected sum of nine copies of $S^2 \times S^2$ is unrecognizable, improving the previous bound of twelve due to Gordon \cite{tancer2023}. Filipkiewicz classified the four-dimensional maximal model geometries and found eighteen of them plus one countably infinite family, against exactly eight in dimension three \cite{geometrization,perelman,hillman}.
+
+What this forbids is any effective classification of four-manifolds in general, and any assumption that the finite-list paradigm of dimension three persists upward. What it permits is classification of restricted four-manifold classes, and the dimension contrast itself: finite tables exist in tame regimes, and dimension four is not one of them.
+
+\subsection{Countable invariants}
+
+Descriptive set theory supplies a machine for proving that no classification by countable invariants can exist. Sasyk and Tørnquist applied Borel reducibility and Hjorth's theory of turbulence to the isomorphism relation for separable von Neumann algebras \cite{sasyk2009}. The result, as recorded in the survey that this series relies on, is that isomorphism of separable von Neumann algebras admits no classification by countable invariants. The result is published in the Bulletin of Symbolic Logic, with the complete proof in Inventiones Mathematicae \cite{sasyk2009}.
+
+What this forbids is a complete invariant for general von Neumann algebras taking values in a countable set, and any table of countably many labels exhausting the isomorphism classes. What it permits is classification by uncountable invariant sets, and classification by countable invariants on restricted subclasses.
+
+\subsection{Tractability boundary}
+
+The tame-wild dichotomy has an algorithmic shadow. Grochow and Qiao gave polynomial-time algorithms for group isomorphism in the tame direction, for groups whose Sylow subgroups are cyclic, dihedral, semi-dihedral, or generalized quaternion, and showed that the representation-theoretic and cohomological bounds their algorithms need fail in the wild case \cite{grochow2015}. Their conclusion is that the tame-wild line of representation theory is a dividing line between the currently tractable and the currently intractable instances of group isomorphism.
+
+What this forbids is any promise of a uniform polynomial-time classification procedure across the tame-wild boundary. What it permits is efficient recognition on the tame side, and a precise statement of where the known methods stop.
+
+\subsection{Register summary}
+
+\Cref{tab:register} lists each theorem with the classification form it rules out in the generality stated.
+
+\begin{table}[ht]
+\centering
+\caption{The obstruction register: seven proved theorems and the classification forms they forbid.}
+\label{tab:register}
+\small
+\begin{tabular}{L{3.2cm}L{4.6cm}L{4.6cm}}
+\toprule
+Obstruction & Statement & Forbidden classification form \\
+\midrule
+McDuff 1969 & Uncountably many non-isomorphic separable $\mathrm{II}_1$ factors & Total factor classification outside the amenable class \\
+Etingof-Gelaki & Non-isomorphic groups with equivalent plain tensor representation categories & Equivalence discarding the symmetric layer \\
+Adyan-Rabin & Every Markov property of finitely presentable groups is undecidable & Uniform recognition of group-flavored properties \\
+Wildness & Wild categories admit no finite-variety parametrization of isomorphism classes & Finite-variety parameterization of wild sectors \\
+Tancer 2023 & Nine-fold connected sum of $S^2 \times S^2$ is unrecognizable & Effective classification of four-manifolds \\
+Sasyk-Tørnquist & vN algebra isomorphism admits no classification by countable invariants & Countable-valued complete invariants \\
+Grochow-Qiao & Tame extensions tractable, wild bounds fail & Uniform polynomial-time classification across the boundary \\
+\bottomrule
+\end{tabular}
+\end{table}
+
+\section{Regime taxonomy}
+
+\subsection{Classification program data}
+
+The register forbids specific forms of classification. To compare those forms across domains, a classification program is decomposed into three pieces of data.
+
+\begin{definition}[Classification program]
+\label{def:program}
+Let $(D, \simeq)$ be a domain of objects with an equivalence relation. A classification program for $(D, \simeq)$ is a triple $(\iota, \Pi, R)$ where $\iota$ is a complete invariant, a map from objects to a set $I$ with $\iota(x) = \iota(y)$ if and only if $x \simeq y$; $\Pi$ is a parameter space, a structured object together with a structure-compatible surjection onto the $\simeq$-classes of $D$; and $R$ is a recognizer, a procedure that decides $x \simeq y$ from finite presentations of $x$ and $y$. The structure of $\Pi$ is part of the data: it is a finite-dimensional $k$-variety with an algebraic family, a standard Borel space with a Borel parametrization, or a finite combinatorial set. Without that structure $\Pi$ is just another name for the class set and carries no content beyond $\iota$.
+\end{definition}
+
+\begin{definition}[Finite-variety parametrization]
+\label{def:param}
+The isomorphism classes of a category $\mathcal{A}$ over a field $k$ are parametrized by a finite-dimensional variety when there are a finite-dimensional $k$-variety $V$ and an algebraic family of objects $\{A_v\}_{v \in V(k)}$ of $\mathcal{A}$ such that every object of $\mathcal{A}$ is isomorphic to some fiber $A_v$. A bare set-theoretic surjection $V(k) \twoheadrightarrow \mathrm{Ob}(\mathcal{A})/{\cong}$ is not a parametrization: when $k$ is uncountable the cardinality of $V(k)$ exceeds the class set of any tame category, so such maps exist trivially and carry no geometric information.
+\end{definition}
+
+\Cref{def:param} is the notion the wildness results refute. Buchweitz and Leuschke show that in rank two the isomorphism classes of the generic determinant's Cohen-Macaulay modules admit no parametrization by a finite-dimensional variety over the coefficients \cite{buchweitz2005}, in exactly the algebraic-family sense of \Cref{def:param}.
+
+The classification of finite simple groups delivers an exhaustive list, and practical identification runs through companion data of the Atlas kind: order, Schur multiplier, outer automorphism group, presentations, character tables with power maps \cite{atlaswiki}. What it does not deliver is a uniform parameterization. Gorenstein's verdict is the recorded one: no clean uniform description of the finite simple groups analogous to Dynkin diagrams is known \cite{solomon2001}. The classification is complete and its parameterization is missing, so completeness of the list and existence of a parameter space are different achievements. The Killing-Cartan classification of complex semisimple Lie algebras achieves both: Dynkin diagrams parameterize, the invariant is complete, and recognition is algorithmic \cite{humphreys,fultonharris}. Darboux's theorem shows a third configuration: locally, symplectic manifolds of the same dimension are all equivalent, so the local classification is complete and trivial and its content is entirely global \cite{darboux}.
+
+\begin{lemma}[Countable invariants]
+\label{lem:countable}
+If the isomorphism relation on a domain $D$ admits no classification by countable invariants in the descriptive-set-theoretic sense, that is, if it is not Borel reducible to the isomorphism relation of any class of countable structures, then no complete invariant of $D$ takes values in a space of countable structures. If in addition $D$ has more than countably many isomorphism classes, then no complete invariant of $D$ takes values in a countable set.
+\end{lemma}
+
+\begin{proof}
+A complete invariant whose values are countable structures, taken with a Borel assignment of the structure to the object, is a classification by countable invariants and would give a Borel reduction to the isomorphism of those structures. For the second claim, a complete invariant with countable range has countably many fibers, so the class set is countable.
+\end{proof}
+
+For the separable $\mathrm{II}_1$ factors the second claim of \Cref{lem:countable} is already settled by McDuff's uncountable family \cite{mcduff1969}. The first claim is stronger: for general separable von Neumann algebras even invariants valued in countable structures, K-theory data of that kind, fail to classify isomorphism \cite{sasyk2009}. A cardinality bound and a Borel-reducibility bound are different statements, and the arguments below invoke each where it applies.
+
+\begin{remark}[Two instances of the definition]
+Finite-dimensional complex $C^*$-algebras instantiate \Cref{def:program} with $\iota$ the dimension vector, $\Pi$ the finite set of multisets of block sizes, and $R$ the block decomposition algorithm. Finitely presented groups under isomorphism instantiate it with the obstruction register in place of the components: $\iota$ exists set-theoretically, no algebraic-family $\Pi$ is expected in the wild sectors, and $R$ does not exist at all in the presence of Markov reductions. The two instances show that the definition is neutral between regimes; the regimes are properties of the evidence, not of the definition.
+\end{remark}
+
+\subsection{The seven regimes}
+
+\begin{definition}[Regimes]
+\label{def:regime}
+A domain $(D, \simeq)$ with a classification program lies in one of seven regimes. \emph{Parameterized}: all three components exist and $\Pi$ is one of the structured kinds of \Cref{def:program}, a finite combinatorial set, a finite-dimensional variety with an algebraic family, or a standard Borel space with a Borel parametrization. \emph{Unparameterized}: $\iota$ and $R$ exist, no uniform $\Pi$ is known. \emph{Obstruction-complete}: the classification content is a proved impossibility theorem, so the classification is the obstruction. \emph{Open}: partial results exist and no impossibility theorem applies. \emph{Wild}: finite-variety parametrization is provably impossible and isomorphism classes grow without bound in every proposed parameter dimension. \emph{Undecidable}: $R$ is provably nonexistent in the stated generality. \emph{Decidable-but-unclassified}: $R$ exists and no complete $\iota$ is known.
+\end{definition}
+
+The regimes are not a partition of a single mathematical universe. They are a partition of the surveyed domains of the series by the shape of their classification evidence, and the assignment in \Cref{tab:regimes} is checked computationally in Section 8. The regime vocabulary is the deliverable the periodic table of the program needs: a table must mark where no table can exist, and the seven regimes are the marks available.
+
+Each regime has an archetype. The Killing-Cartan classification is the archetype of the parameterized regime; the classification of finite simple groups is the archetype of the unparameterized regime; anomaly classification is the archetype of obstruction-complete; fusion categories are the archetype of open; the Cohen-Macaulay modules of the generic determinant are the archetype of wild; Markov properties of finitely presented groups are the archetype of undecidable; and unknot recognition is the archetype of decidable-but-unclassified. The archetypes are proved mathematics in every case, so the taxonomy rests on theorems rather than on analogy.
+
+\subsection{Assignment of surveyed domains}
+
+\Cref{tab:regimes} assigns each domain from the literature survey of the series to a regime. The proofs behind the assignments are the register of Section 3 and the classification theorems cited in the survey.
+
+\begingroup
+\small
+\begin{longtable}{L{4.2cm}L{3.2cm}L{4.8cm}}
+\caption{Regime assignment for the surveyed domains. Each row is a domain of the series literature map, with the regime of \Cref{def:regime} and the deciding evidence.}
+\label{tab:regimes}\\
+\toprule
+Domain & Regime & Deciding evidence \\
+\midrule
+\endfirsthead
+\toprule
+Domain & Regime & Deciding evidence \\
+\midrule
+\endhead
+\midrule
+\multicolumn{3}{r}{Continued on next page}\\
+\endfoot
+\bottomrule
+\endlastfoot
+Simple Lie algebras & Parameterized & Dynkin and Satake diagrams \cite{humphreys,fultonharris} \\
+Highest-weight irreps & Parameterized & Dominant integral weights \cite{humphreys,fultonharris} \\
+Finite-dim $C^*$-algebras & Parameterized & Dimension vector \cite{cstarwiki} \\
+Principal $G$-bundles & Parameterized & Maps into the classifying space \cite{cstarwiki} \\
+Classical monotone metrics & Parameterized & Fisher metric unique up to constant \cite{petzsudar} \\
+Local symplectic germs & Parameterized & Darboux normal form \cite{darboux} \\
+Amenable factors & Parameterized & Type and Connes invariants \cite{vnwiki} \\
+Finite simple groups & Unparameterized & Complete list, no uniform parameterization \cite{solomon2001} \\
+Quantum monotone metrics & Unparameterized & Operator monotone functions, infinite family \cite{petzsudar} \\
+Anomalies & Obstruction-complete & Cohomological obstruction classes \cite{cstarwiki} \\
+General $\mathrm{II}_1$ factors & Obstruction-complete & McDuff's theorem \cite{mcduff1969} \\
+Plain tensor category recovery & Obstruction-complete & Etingof-Gelaki counterexamples \cite{eg2000} \\
+
+exec
+/usr/local/bin/zsh -lc 'cat src/vol-11-completeness-obstructions/regime_inventory.py src/vol-11-completeness-obstructions/dimvec_enumeration.py src/vol-11-completeness-obstructions/wild_quiver_growth.py src/vol-11-completeness-obstructions/Instances.hs' in /Users/mlong/Documents/Development/classification-physical-systems
+ succeeded in 0ms:
+# regime_inventory.py
+# Claim evidenced (paper, Table 4 / Section 8): the regime assignment of the
+# surveyed domains is single-valued, and every label used is one of the seven
+# regimes of Definition 4.2.  This script treats the table as input data and
+# checks its internal consistency.  It verifies the assignment's partition
+# property only; it is not a proof of any row of the table.
+# Computational evidence, never proof.
+
+from collections import Counter
+
+# The seven regimes of Definition 4.2 (paper).
+REGIMES = (
+    "Parameterized",
+    "Unparameterized",
+    "Obstruction-complete",
+    "Open",
+    "Wild",
+    "Undecidable",
+    "Decidable-but-unclassified",
+)
+
+# Domain -> regime, transcribed from Table 4 of the paper (29 rows).
+ASSIGNMENT = {
+    "Simple Lie algebras": "Parameterized",
+    "Highest-weight irreps": "Parameterized",
+    "Finite-dim C*-algebras": "Parameterized",
+    "Principal G-bundles": "Parameterized",
+    "Classical monotone metrics": "Parameterized",
+    "Local symplectic germs": "Parameterized",
+    "Amenable factors": "Parameterized",
+    "Three-manifolds": "Parameterized",
+    "Group isomorphism, tame extensions": "Parameterized",
+    "Finite simple groups": "Unparameterized",
+    "Quantum monotone metrics": "Unparameterized",
+    "Quantum channels": "Unparameterized",
+    "Four-dimensional model geometries": "Parameterized",
+    "Anomalies": "Obstruction-complete",
+    "General II_1 factors": "Obstruction-complete",
+    "Plain tensor category recovery": "Obstruction-complete",
+    "Fusion categories": "Open",
+    "Elliott nuclear program": "Open",
+    "Holographic entropy cone, n >= 5": "Open",
+    "Extended TQFTs": "Open",
+    "Yang-Mills mass gap": "Open",
+    "Type III factors": "Open",
+    "Wild CM modules of the generic determinant": "Wild",
+    "C_p-equivariant modules at odd primes": "Wild",
+    "Derived-wild algebras": "Wild",
+    "Finitely presented groups, Markov properties": "Undecidable",
+    "Four-manifold homeomorphism": "Undecidable",
+    "vN algebra isomorphism": "Obstruction-complete",
+    "Unknot recognition": "Decidable-but-unclassified",
+}
+
+
+def check_partition():
+    """Assert the assignment is a function into the seven regimes.
+
+    Returns a dict with counts per regime.  Raises AssertionError on any
+    domain with a missing or out-of-vocabulary regime label.
+    """
+    counts = Counter()
+    for domain, regime in ASSIGNMENT.items():
+        assert domain.strip(), "empty domain name"
+        assert regime in REGIMES, f"{domain}: unknown regime {regime!r}"
+        counts[regime] += 1
+    for regime in REGIMES:
+        assert counts[regime] >= 1, f"regime {regime!r} has no domain"
+    total = sum(counts.values())
+    assert total == len(ASSIGNMENT), "assignment is not single-valued"
+    return dict(counts)
+
+
+if __name__ == "__main__":
+    counts = check_partition()
+    print("regime partition check: PASS")
+    print(f"domains: {len(ASSIGNMENT)}")
+    for regime in REGIMES:
+        print(f"  {regime}: {counts[regime]}")
+# dimvec_enumeration.py
+# Claim evidenced (paper, Section 8): unital finite-dimensional complex
+# C*-algebras of complex dimension N are finitely many, listed by dimension
+# vectors (multisets of matrix block sizes with sum of squares equal to N).
+# The script enumerates them exhaustively up to a bound.  Finiteness per
+# dimension is the tame-side contrast to the wild non-parametrization results;
+# the enumeration is computational evidence, never proof.
+
+def enumerate_dimension_vectors(N):
+    """All multisets of block sizes (n_i >= 1) with sum n_i^2 == N.
+
+    Each multiset is returned once, as a descending tuple.  The multiset of
+    block sizes is the dimension vector classifying a unital finite-dimensional
+    complex C*-algebra up to *-isomorphism.
+    """
+    results = []
+
+    def extend(prefix, max_size, remaining):
+        if remaining == 0:
+            results.append(tuple(sorted(prefix, reverse=True)))
+            return
+        for size in range(min(max_size, int(remaining ** 0.5)), 0, -1):
+            square = size * size
+            if square <= remaining:
+                extend(prefix + [size], size, remaining - square)
+
+    extend([], N, N)
+    # Deduplicate: combinations_with_replacement ordering is not used above.
+    return sorted(set(results), reverse=True)
+
+
+def all_dimension_vectors(max_N):
+    """Enumerate dimension vectors for every N in 1..max_N."""
+    return {N: enumerate_dimension_vectors(N) for N in range(1, max_N + 1)}
+
+
+if __name__ == "__main__":
+    bound = 24
+    table = all_dimension_vectors(bound)
+    for N, vectors in table.items():
+        print(f"N={N}: {len(vectors)} algebra(s)  {list(vectors)}")
+    # Paper's worked values: N=5 has exactly two, N=8 exactly three.
+    assert len(enumerate_dimension_vectors(5)) == 2, "N=5 count mismatch"
+    assert len(enumerate_dimension_vectors(8)) == 3, "N=8 count mismatch"
+    for N, vectors in table.items():
+        for vec in vectors:
+            assert sum(s * s for s in vec) == N, f"{vec} does not sum to {N}"
+    print(f"enumeration check: PASS (all dimensions up to {bound} finite)")
+# wild_quiver_growth.py
+# Claim evidenced (paper, Section 8): the generic quotient dimension for the
+# m-Kronecker quiver at dimension vector (n, n) grows linearly in n for the
+# tame two-Kronecker case and quadratically for the wild three-Kronecker case.
+# The quotient dimension is m*a*b minus the generic orbit dimension
+# a^2 + b^2 - stab_dim, where stab_dim is the dimension of the generic
+# stabilizer: for m = 2 at (n, n) the stabilizer is the centralizer of a
+# generic matrix (dimension n), and for m >= 3 it is the scalar matrices
+# (dimension 1).  This is a growth pattern only; the non-parametrization
+# theorem it illustrates is proved by Buchweitz and Leuschke.
+# Computational evidence, never proof.
+
+
+def stabilizer_dim(m, n):
+    """Generic stabilizer dimension of GL_n x GL_n on m-tuples of n x n maps."""
+    if m <= 1:
+        return 2 * n - n  # rank strata: generic orbit is open, quotient dim 0
+    if m == 2:
+        return n  # centralizer of a generic matrix (polynomials in it)
+    return 1  # scalar matrices for m >= 3
+
+
+def quotient_dim(m, a, b):
+    """Generic quotient dimension for the m-Kronecker quiver at (a, b)."""
+    assert a == b, "diagonal dimension vectors only"
+    n = a
+    return m * n * n - (n * n + n * n - stabilizer_dim(m, n))
+
+
+def diagonal_profile(m, max_n):
+    """Quotient dimensions along a = b = n for n = 1..max_n."""
+    return [quotient_dim(m, n, n) for n in range(1, max_n + 1)]
+
+
+if __name__ == "__main__":
+    max_n = 8
+    tame = diagonal_profile(2, max_n)
+    wild = diagonal_profile(3, max_n)
+    print(f"m=2 (tame side) diagonal:  {tame}")
+    print(f"m=3 (wild side) diagonal:  {wild}")
+    for i, v in enumerate(tame, start=1):
+        assert v == i, f"m=2 at n={i} should be {i}, got {v}"
+    for i, v in enumerate(wild, start=1):
+        assert v == i * i + 1, f"m=3 at n={i} should be {i*i+1}, got {v}"
+    assert wild[-1] > tame[-1], "wild profile should exceed tame profile"
+    print("growth-pattern check: PASS (linear vs quadratic)")
+{-# LANGUAGE TypeFamilies #-}
+
+{-|
+Module      : Instances
+Description : Taxonomy instances for the regime taxonomy and obstruction
+              witnesses of the completeness-and-obstructions volume.
+Copyright   : (c) Matthew Long, 2026
+License     : MIT
+Maintainer  : matthew@yonedaai.com
+Stability   : experimental
+
+Executable taxonomy layer for the paper "Completeness and Obstructions"
+(Part 11 of The Classification of Mathematical Representations of Physical
+Systems).  The module imports the shared family classes of "Taxonomy" and
+declares instances of them for this volume's witness systems; it never
+redefines those classes.
+
+The regime tag mirrors Definition 4.2 of the paper and the lean target
+'Regime'; the type and method names mirror the paper's definitions.  This
+module is computational evidence only: it proves nothing, it is not
+machine-checked, and no formal verification is claimed for it.
+-}
+module Instances
+  ( -- * Regime taxonomy (paper, Definition 4.2)
+    ClassificationRegime (..)
+  , regimes
+  , regimeOf
+    -- * Witness systems of the register
+  , WitnessSystem (..)
+    -- * Family data witnesses
+  , OperatorAlgebraWitness (..)
+  , DerivedWitness (..)
+  , TensorCategoryWitness (..)
+  , GeometricWitness (..)
+  , CombinatorialWitness (..)
+    -- * Invariant mirror (paper, Definition 4.1)
+  , classifyCStar
+  , sortDesc
+  ) where
+
+import Taxonomy.Families
+  ( FamilyHilbertOperatorAlgebras (..)
+  , FamilySmoothGeometric (..)
+  , FamilyTensorCategoriesComposition (..)
+  , FamilyDynamicalSemigroups (..)
+  , FamilyDiscreteCombinatorial (..)
+  , FamilyDerivedHomotopical (..)
+  )
+import Taxonomy.Invariants
+  ( ClassifyingInvariant (..)
+  , DimensionVector (..)
+  )
+import Taxonomy.Constructions
+  ( Construction (..)
+  , Constructible (..)
+  , Irreducible (..)
+  , Decomposition (..)
+  , Decomposable (..)
+  )
+import Taxonomy.Equivalences
+  ( MathematicalEquivalence (..)
+  , PhysicalEquivalence (..)
+  )
+
+-- | Paper, Definition 4.2: the seven regimes of classification evidence.
+-- Constructor names mirror the regime names used in the paper and in the
+-- lean targets document.
+data ClassificationRegime
+  = ParameterizedRegime
+    -- ^ Complete invariant, parameter space, and recognizer all exist.
+  | UnparameterizedRegime
+    -- ^ Complete invariant and recognizer exist; no uniform parameter space.
+  | ObstructionCompleteRegime
+    -- ^ The classification content is a proved impossibility theorem.
+  | OpenRegime
+    -- ^ Partial results exist and no impossibility theorem applies.
+  | WildRegime
+    -- ^ Finite-variety parameterization is provably impossible.
+  | UndecidableRegime
+    -- ^ No recognition procedure exists in the stated generality.
+  | DecidableButUnclassifiedRegime
+    -- ^ A recognizer exists; no complete invariant is known.
+  deriving (Eq, Ord, Show, Enum, Bounded)
+
+-- | All seven regimes, in the order of Definition 4.2.
+regimes :: [ClassificationRegime]
+regimes = [minBound .. maxBound]
+
+-- | A witness system of the obstruction register and the regime table.
+-- Each constructor names the domain whose evidence fixes its regime; the
+-- payload is the identifying data used by the paper's examples.
+data WitnessSystem
+  = FiniteDimCStar [Int]
+    -- ^ Finite-dimensional C*-algebra by dimension vector; parameterized.
+  | SimpleGroupWitness String
+    -- ^ Finite simple group; classified, not parameterized (CFSG gap).
+  | AmenableFactorWitness String
+    -- ^ Amenable factor; parameterized by type data.
+  | GeneralII1Witness String
+    -- ^ General separable II_1 factor; obstruction-complete (McDuff).
+  | IsocategoricalPair String String
+    -- ^ Pair of non-isomorphic groups with equivalent plain tensor
+    -- representation categories (Etingof-Gelaki); obstruction-complete.
+  | FusionCategoryWitness String
+    -- ^ Fusion category; open.
+  | WildModuleWitness (Int, Int)
+    -- ^ Module of a wild category by rank data; wild.
+  | MarkovGroupWitness String
+    -- ^ Finitely presented group with a Markov property; undecidable.
+  | FourManifoldWitness Int
+    -- ^ Connected sum of n copies of S^2 x S^2; unrecognizable for n >= 9.
+  | UnknotWitness Int
+    -- ^ Knot diagram by crossing count; decidable-but-unclassified.
+  deriving (Eq, Show)
+
+-- | Paper, Table 4: the regime of each witness system.  Total by
+-- construction, mirroring the lean target 'RegimeAssignment'.
+regimeOf :: WitnessSystem -> ClassificationRegime
+regimeOf (FiniteDimCStar _)        = ParameterizedRegime
+regimeOf (SimpleGroupWitness _)    = UnparameterizedRegime
+regimeOf (AmenableFactorWitness _) = ParameterizedRegime
+regimeOf (GeneralII1Witness _)     = ObstructionCompleteRegime
+regimeOf (IsocategoricalPair _ _)  = ObstructionCompleteRegime
+regimeOf (FusionCategoryWitness _) = OpenRegime
+regimeOf (WildModuleWitness _)     = WildRegime
+regimeOf (MarkovGroupWitness _)    = UndecidableRegime
+regimeOf (FourManifoldWitness _)   = UndecidableRegime
+regimeOf (UnknotWitness _)         = DecidableButUnclassifiedRegime
+
+-- | Operator-algebra structural data, for the 'FamilyHilbertOperatorAlgebras'
+-- instance.  'Nothing' at the instance level means the witness carries no
+-- operator-algebra data here.
+data OperatorAlgebraWitness
+  = CStarBlocks [Int]
+    -- ^ Dimension vector of a finite-dimensional C*-algebra.
+  | FactorTag String
+    -- ^ Named factor witness.
+  deriving (Eq, Show)
+
+-- | Derived and homotopical data, for 'FamilyDerivedHomotopical'.
+data DerivedWitness
+  = DerivedWildTag (Int, Int)
+    -- ^ Rank data of a derived-wild module category witness.
+  deriving (Eq, Show)
+
+-- | Tensor-category data, for 'FamilyTensorCategoriesComposition'.
+data TensorCategoryWitness
+  = PlainTensorRep String
+    -- ^ Plain tensor representation category of a named group.
+  | SymmetricTensorRep String
+    -- ^ Symmetric tensor representation category of a named group.
+  | FusionCategoryTag String
+    -- ^ Named fusion category witness.
+  deriving (Eq, Show)
+
+-- | Geometric data, for 'FamilySmoothGeometric'.
+data GeometricWitness
+  = FourManifoldTag Int
+    -- ^ Connected sum of n copies of S^2 x S^2.
+  | KnotDiagramTag Int
+    -- ^ Knot diagram with the given crossing count.
+  deriving (Eq, Show)
+
+-- | Combinatorial data, for 'FamilyDiscreteCombinatorial'.
+data CombinatorialWitness
+  = MarkovPresentation String
+    -- ^ Finite presentation carrying a Markov property.
+  | FiniteGroupData String
+    -- ^ Combinatorial data of a named finite group.
+  deriving (Eq, Show)
+
+-- | Paper, Definition 4.1: the dimension vector is the complete invariant of
+-- finite-dimensional complex C*-algebras up to *-isomorphism.  The mirror
+-- returns the classifying-invariant tag of 'Taxonomy.Invariants' and 'Nothing'
+-- outside that domain.
+classifyCStar :: WitnessSystem -> Maybe ClassifyingInvariant
+classifyCStar (FiniteDimCStar ns) =
+  Just (ByDimensionVector (DimensionVector (sortDesc ns)))
+classifyCStar _ = Nothing
+
+-- | Sort a dimension vector in non-increasing order, so that equal
+-- multisets of block sizes compare equal.
+sortDesc :: [Int] -> [Int]
+sortDesc = foldr insertDesc []
+  where
+    insertDesc :: Int -> [Int] -> [Int]
+    insertDesc x [] = [x]
+    insertDesc x (y : ys)
+      | x >= y    = x : y : ys
+      | otherwise = y : insertDesc x ys
+
+instance FamilyHilbertOperatorAlgebras WitnessSystem where
+  type OperatorAlgebraData WitnessSystem = Maybe OperatorAlgebraWitness
+  operatorAlgebraData (FiniteDimCStar ns) = Just (CStarBlocks ns)
+  operatorAlgebraData (GeneralII1Witness n) = Just (FactorTag n)
+  operatorAlgebraData (AmenableFactorWitness n) = Just (FactorTag n)
+  operatorAlgebraData _ = Nothing
+
+instance FamilyDerivedHomotopical WitnessSystem where
+  type DerivedHomotopicalData WitnessSystem = Maybe DerivedWitness
+  derivedHomotopicalData (WildModuleWitness r) = Just (DerivedWildTag r)
+  derivedHomotopicalData _ = Nothing
+
+instance FamilyTensorCategoriesComposition WitnessSystem where
+  type TensorCategoryData WitnessSystem = Maybe TensorCategoryWitness
+  tensorCategoryData (IsocategoricalPair g _) = Just (PlainTensorRep g)
+  tensorCategoryData (FusionCategoryWitness n) = Just (FusionCategoryTag n)
+  tensorCategoryData (SimpleGroupWitness g) = Just (SymmetricTensorRep g)
+  tensorCategoryData _ = Nothing
+
+instance FamilySmoothGeometric WitnessSystem where
+  type GeometricData WitnessSystem = Maybe GeometricWitness
+  geometricData (FourManifoldWitness n) = Just (FourManifoldTag n)
+  geometricData (UnknotWitness n) = Just (KnotDiagramTag n)
+  geometricData _ = Nothing
+
+instance FamilyDiscreteCombinatorial WitnessSystem where
+  type CombinatorialData WitnessSystem = Maybe CombinatorialWitness
+  combinatorialData (MarkovGroupWitness p) = Just (MarkovPresentation p)
+  combinatorialData (SimpleGroupWitness g) = Just (FiniteGroupData g)
+  combinatorialData _ = Nothing
+
+-- | Direct sum concatenates dimension vectors; every other construction is
+-- left unsupplied here, which asserts nothing about its existence.
+instance Constructible WitnessSystem where
+  type Composite WitnessSystem = WitnessSystem
+  tensorProduct _ _ = Nothing
+  directSum (FiniteDimCStar a) (FiniteDimCStar b) =
+    Just (FiniteDimCStar (sortDesc (a ++ b)))
+  directSum _ _ = Nothing
+  extend _ _ _ = Nothing
+  limitHook _ _ = Nothing
+  colimitHook _ _ = Nothing
+  quotientReduction _ _ = Nothing
+
+-- | Irreducibility is relative to the named construction, as in the paper:
+-- single-block C*-algebras are irreducible for direct sum, and factors are
+-- irreducible for factorization.
+instance Irreducible WitnessSystem where
+  irreducibilityBasis (FiniteDimCStar [_]) = DirectSum
+  irreducibilityBasis (GeneralII1Witness _) = Factorization
+  irreducibilityBasis (AmenableFactorWitness _) = Factorization
+  irreducibilityBasis _ = DirectSum
+
+-- | The block decomposition of a finite-dimensional C*-algebra, mirroring
+-- the paper's model theorem: A = sum_i M_{n_i}(C) with each block irreducible.
+instance Decomposable WitnessSystem where
+  decomposition (FiniteDimCStar ns) =
+    Just (Decomposition DirectSum [FiniteDimCStar [n] | n <- ns])
+  decomposition _ = Nothing
+
+-- | Mathematical equivalence of witnesses: dimension vectors compared as
+-- multisets, named witnesses compared by name.  This is the finer relation
+-- of the paper (isomorphism of presentations).
+instance MathematicalEquivalence WitnessSystem where
+  mathematicallyEquivalent (FiniteDimCStar a) (FiniteDimCStar b) =
+    sortDesc a == sortDesc b
+  mathematicallyEquivalent (IsocategoricalPair a b) (IsocategoricalPair c d) =
+    (a == c && b == d) || (a == d && b == c)
+  mathematicallyEquivalent x y = x == y
+
+-- | Physical equivalence of witnesses, with the relation stated: two
+-- witnesses are physically equivalent exactly when they sit in the same
+-- regime of Definition 4.2.  This relation is declared for taxonomy purposes
+-- and is not proposed as an equivalence for physical systems.
+instance PhysicalEquivalence WitnessSystem where
+  physicallyEquivalent a b = regimeOf a == regimeOf b
+
+-- | The dynamical-semigroup family is referenced by the volume but carries
+-- no witness data here; the instance records the absence rather than
+-- inventing data.
+instance FamilyDynamicalSemigroups WitnessSystem where
+  type DynamicalSemigroupData WitnessSystem = ()
+  dynamicalSemigroupData _ = ()
+
+exec
+/usr/local/bin/zsh -lc "sed -n '190,390p' papers/latex/vol-11-completeness-obstructions.tex" in /Users/mlong/Documents/Development/classification-physical-systems
+ succeeded in 0ms:
+\end{definition}
+
+\begin{definition}[Finite-variety parametrization]
+\label{def:param}
+The isomorphism classes of a category $\mathcal{A}$ over a field $k$ are parametrized by a finite-dimensional variety when there are a finite-dimensional $k$-variety $V$ and an algebraic family of objects $\{A_v\}_{v \in V(k)}$ of $\mathcal{A}$ such that every object of $\mathcal{A}$ is isomorphic to some fiber $A_v$. A bare set-theoretic surjection $V(k) \twoheadrightarrow \mathrm{Ob}(\mathcal{A})/{\cong}$ is not a parametrization: when $k$ is uncountable the cardinality of $V(k)$ exceeds the class set of any tame category, so such maps exist trivially and carry no geometric information.
+\end{definition}
+
+\Cref{def:param} is the notion the wildness results refute. Buchweitz and Leuschke show that in rank two the isomorphism classes of the generic determinant's Cohen-Macaulay modules admit no parametrization by a finite-dimensional variety over the coefficients \cite{buchweitz2005}, in exactly the algebraic-family sense of \Cref{def:param}.
+
+The classification of finite simple groups delivers an exhaustive list, and practical identification runs through companion data of the Atlas kind: order, Schur multiplier, outer automorphism group, presentations, character tables with power maps \cite{atlaswiki}. What it does not deliver is a uniform parameterization. Gorenstein's verdict is the recorded one: no clean uniform description of the finite simple groups analogous to Dynkin diagrams is known \cite{solomon2001}. The classification is complete and its parameterization is missing, so completeness of the list and existence of a parameter space are different achievements. The Killing-Cartan classification of complex semisimple Lie algebras achieves both: Dynkin diagrams parameterize, the invariant is complete, and recognition is algorithmic \cite{humphreys,fultonharris}. Darboux's theorem shows a third configuration: locally, symplectic manifolds of the same dimension are all equivalent, so the local classification is complete and trivial and its content is entirely global \cite{darboux}.
+
+\begin{lemma}[Countable invariants]
+\label{lem:countable}
+If the isomorphism relation on a domain $D$ admits no classification by countable invariants in the descriptive-set-theoretic sense, that is, if it is not Borel reducible to the isomorphism relation of any class of countable structures, then no complete invariant of $D$ takes values in a space of countable structures. If in addition $D$ has more than countably many isomorphism classes, then no complete invariant of $D$ takes values in a countable set.
+\end{lemma}
+
+\begin{proof}
+A complete invariant whose values are countable structures, taken with a Borel assignment of the structure to the object, is a classification by countable invariants and would give a Borel reduction to the isomorphism of those structures. For the second claim, a complete invariant with countable range has countably many fibers, so the class set is countable.
+\end{proof}
+
+For the separable $\mathrm{II}_1$ factors the second claim of \Cref{lem:countable} is already settled by McDuff's uncountable family \cite{mcduff1969}. The first claim is stronger: for general separable von Neumann algebras even invariants valued in countable structures, K-theory data of that kind, fail to classify isomorphism \cite{sasyk2009}. A cardinality bound and a Borel-reducibility bound are different statements, and the arguments below invoke each where it applies.
+
+\begin{remark}[Two instances of the definition]
+Finite-dimensional complex $C^*$-algebras instantiate \Cref{def:program} with $\iota$ the dimension vector, $\Pi$ the finite set of multisets of block sizes, and $R$ the block decomposition algorithm. Finitely presented groups under isomorphism instantiate it with the obstruction register in place of the components: $\iota$ exists set-theoretically, no algebraic-family $\Pi$ is expected in the wild sectors, and $R$ does not exist at all in the presence of Markov reductions. The two instances show that the definition is neutral between regimes; the regimes are properties of the evidence, not of the definition.
+\end{remark}
+
+\subsection{The seven regimes}
+
+\begin{definition}[Regimes]
+\label{def:regime}
+A domain $(D, \simeq)$ with a classification program lies in one of seven regimes. \emph{Parameterized}: all three components exist and $\Pi$ is one of the structured kinds of \Cref{def:program}, a finite combinatorial set, a finite-dimensional variety with an algebraic family, or a standard Borel space with a Borel parametrization. \emph{Unparameterized}: $\iota$ and $R$ exist, no uniform $\Pi$ is known. \emph{Obstruction-complete}: the classification content is a proved impossibility theorem, so the classification is the obstruction. \emph{Open}: partial results exist and no impossibility theorem applies. \emph{Wild}: finite-variety parametrization is provably impossible and isomorphism classes grow without bound in every proposed parameter dimension. \emph{Undecidable}: $R$ is provably nonexistent in the stated generality. \emph{Decidable-but-unclassified}: $R$ exists and no complete $\iota$ is known.
+\end{definition}
+
+The regimes are not a partition of a single mathematical universe. They are a partition of the surveyed domains of the series by the shape of their classification evidence, and the assignment in \Cref{tab:regimes} is checked computationally in Section 8. The regime vocabulary is the deliverable the periodic table of the program needs: a table must mark where no table can exist, and the seven regimes are the marks available.
+
+Each regime has an archetype. The Killing-Cartan classification is the archetype of the parameterized regime; the classification of finite simple groups is the archetype of the unparameterized regime; anomaly classification is the archetype of obstruction-complete; fusion categories are the archetype of open; the Cohen-Macaulay modules of the generic determinant are the archetype of wild; Markov properties of finitely presented groups are the archetype of undecidable; and unknot recognition is the archetype of decidable-but-unclassified. The archetypes are proved mathematics in every case, so the taxonomy rests on theorems rather than on analogy.
+
+\subsection{Assignment of surveyed domains}
+
+\Cref{tab:regimes} assigns each domain from the literature survey of the series to a regime. The proofs behind the assignments are the register of Section 3 and the classification theorems cited in the survey.
+
+\begingroup
+\small
+\begin{longtable}{L{4.2cm}L{3.2cm}L{4.8cm}}
+\caption{Regime assignment for the surveyed domains. Each row is a domain of the series literature map, with the regime of \Cref{def:regime} and the deciding evidence.}
+\label{tab:regimes}\\
+\toprule
+Domain & Regime & Deciding evidence \\
+\midrule
+\endfirsthead
+\toprule
+Domain & Regime & Deciding evidence \\
+\midrule
+\endhead
+\midrule
+\multicolumn{3}{r}{Continued on next page}\\
+\endfoot
+\bottomrule
+\endlastfoot
+Simple Lie algebras & Parameterized & Dynkin and Satake diagrams \cite{humphreys,fultonharris} \\
+Highest-weight irreps & Parameterized & Dominant integral weights \cite{humphreys,fultonharris} \\
+Finite-dim $C^*$-algebras & Parameterized & Dimension vector \cite{cstarwiki} \\
+Principal $G$-bundles & Parameterized & Maps into the classifying space \cite{cstarwiki} \\
+Classical monotone metrics & Parameterized & Fisher metric unique up to constant \cite{petzsudar} \\
+Local symplectic germs & Parameterized & Darboux normal form \cite{darboux} \\
+Amenable factors & Parameterized & Type and Connes invariants \cite{vnwiki} \\
+Finite simple groups & Unparameterized & Complete list, no uniform parameterization \cite{solomon2001} \\
+Quantum monotone metrics & Unparameterized & Operator monotone functions, infinite family \cite{petzsudar} \\
+Anomalies & Obstruction-complete & Cohomological obstruction classes \cite{cstarwiki} \\
+General $\mathrm{II}_1$ factors & Obstruction-complete & McDuff's theorem \cite{mcduff1969} \\
+Plain tensor category recovery & Obstruction-complete & Etingof-Gelaki counterexamples \cite{eg2000} \\
+Fusion categories & Open & Weak Hopf algebra presentation known \cite{fusionnlab} \\
+Elliott nuclear program & Open & Program unfinished \cite{cstarwiki} \\
+Holographic entropy cone, $n \geq 5$ & Open & One inequality family known \cite{cstarwiki} \\
+Extended TQFTs & Open & Classification claim carries a proof gap \cite{lurie2009} \\
+Yang-Mills mass gap & Open & Clay lists the problem unsolved \cite{clay} \\
+Type III factors & Open & Coarse Connes strata only \cite{vnwiki} \\
+Wild CM modules of the generic determinant & Wild & No finite-variety parametrization \cite{buchweitz2005} \\
+$C_p$-equivariant modules at odd primes & Wild & Derived-wild Mackey algebra \cite{grevstad2025} \\
+Derived-wild algebras & Wild & Wildness holds under degeneration \cite{bekkert2003} \\
+Finitely presented groups, Markov properties & Undecidable & Adyan-Rabin \cite{rabin1958} \\
+Four-manifold homeomorphism & Undecidable & Unrecognizable connected sums \cite{tancer2023} \\
+vN algebra isomorphism & Obstruction-complete & No classification by countable structures \cite{sasyk2009} \\
+Unknot recognition & Decidable-but-unclassified & In NP and coNP, P open \cite{hass1999,lackenby2021} \\
+Three-manifolds & Parameterized & Eight Thurston geometries \cite{geometrization} \\
+Four-dimensional model geometries & Parameterized & Eighteen models plus one countable family listed explicitly \cite{geometrization,perelman,hillman} \\
+Quantum channels & Unparameterized & Minimal dilation normal form only \cite{cstarwiki} \\
+Group isomorphism, tame extensions & Parameterized & Polynomial time on the tame side \cite{grochow2015} \\
+\end{longtable}
+\endgroup
+
+\begin{remark}[Assignment is evidence-shaped]
+The assignment records where the classification evidence of each domain sits as of October 2026. A domain moves when new theorems arrive: the fusion-category entry moves if the open conjecture closes \cite{fusionnlab}. One tracked claim sits outside the table because it rests on announcements rather than published proofs: an October 2026 existence claim for four-dimensional Yang-Mills and QCD, whose status is exactly the standing one, existence claimed; manuscript and formalization withheld; verification pending \cite{openai,kitp}. Existence and the mass gap are separate questions and are never conflated; the Clay problem remains open \cite{clay,kitp}.
+\end{remark}
+
+\subsection{Lessons from the model program}
+
+The classification of finite simple groups is the reference point of the series, and three of its lessons structure the regime taxonomy.
+
+The first lesson is that classification and parameterization are different achievements. The classification is complete, and the recorded verdict is that no clean uniform description of the finite simple groups analogous to Dynkin diagrams is known \cite{solomon2001}. The unparameterized regime exists in the model program itself, which is why the regime taxonomy separates the two components of \Cref{def:program} rather than collapsing them into one verdict of classified.
+
+The second lesson is that practical identification runs through companion data. Practitioners identify finite groups by order, Schur multiplier, outer automorphism group, presentations, and character tables with power maps \cite{atlaswiki}. These are not the complete invariant of the classification theorem; they are an atlas of computable fingerprints that make the classification usable. A classification program for physical systems will need the same two layers, theorem and atlas, and the regime taxonomy applies to the theorem layer while the atlas layer remains to be built.
+
+The third lesson is that a completed classification can carry its own gaps and still be complete. The proof of the classification of finite simple groups was announced prematurely and completed only decades later \cite{solomon2001}. Completeness is a property of the final statement and proof, not of announcements, and the claim discipline of the series records this by keeping announced results out of the theorem register until they are proved.
+
+None of the three lessons is an obstruction. Together they explain why the unparameterized regime is not a failure and why the regime taxonomy records seven shapes of evidence rather than one ladder of success.
+
+\subsection{Regime stability}
+
+The regime assignment of \Cref{tab:regimes} is dated evidence, and three kinds of event move rows.
+
+A new theorem moves a row upward in the table. The fusion-category row moves from open to parameterized or unparameterized if the structural conjecture in that area closes; the Elliott program row moves when the program completes or when a counterexample to its uniqueness conjecture is proved; the four-dimensional existence row moves when the announced manuscript and its formalization are released and verified \cite{openai,kitp,cstarwiki,fusionnlab}.
+
+A new obstruction moves a row downward. A proof that a recognition problem is unrecognizable, or that a representation category is wild, moves its domain into undecidable or wild and, by \Cref{thm:transport}, moves every domain containing it isomorphism-reflectingly.
+
+A change of equivalence moves rows sideways. If a domain is redefined under a coarser equivalence, its invariant becomes complete or incomplete for reasons that have nothing to do with new theorems; \Cref{prop:equiv} is exactly such a case at the level of groups. The taxonomy is therefore a record of theorems and of a chosen equivalence, and both must be read with it.
+
+\section{Nonclassification results}
+
+Obstructions propagate along embeddings: a wild or undecidable sector carried by a fully faithful functor that is injective on isomorphism classes brings its failure with it into the larger domain, and undecidability transports along computable reductions. Three natural completions of the classification picture fail on explicit counterexamples.
+
+\subsection{Obstruction transport}
+
+\begin{definition}[Isomorphism-injective functor]
+\label{def:injfun}
+A functor $F: \mathcal{A} \to \mathcal{C}$ is isomorphism-injective when $F(A) \cong F(B)$ implies $A \cong B$ for all objects $A, B$ of $\mathcal{A}$. Every fully faithful functor is isomorphism-injective: the inverse of an isomorphism $F(A) \cong F(B)$ lifts to a morphism over $B$, and the lifted composites are identities by uniqueness of preimages.
+\end{definition}
+
+\begin{theorem}[Obstruction transport]
+\label{thm:transport}
+Let $F: \mathcal{A} \to \mathcal{C}$ be fully faithful.
+\begin{enumerate}
+\item If $\mathcal{A}$ has uncountably many isomorphism classes, so does $\mathcal{C}$, and if no complete invariant of $\mathcal{A}$ takes values in a countable set, none for $\mathcal{C}$ does either. If $\mathcal{A}$ and $\mathcal{C}$ are categories of structures on standard Borel spaces of objects and $F$ acts Borel-measurably on those spaces, then classification of the isomorphism relation of $\mathcal{C}$ by countable structures implies the same for $\mathcal{A}$; hence non-classifiability by countable structures transports from $\mathcal{A}$ to $\mathcal{C}$.
+\item If $\mathcal{A}$ carries a wild embedding, a family of objects with the matrix-pair universality property of the tame-wild dichotomy, then $\mathcal{C}$ carries the same wild embedding composed with $F$. Every non-parametrization or non-classification conclusion whose hypothesis is such an embedding, as in the wildness results of the register, is then available for the embedded family in $\mathcal{C}$ on the same footing as in $\mathcal{A}$.
+\end{enumerate}
+\end{theorem}
+
+\begin{proof}
+$F$ is isomorphism-injective by \Cref{def:injfun}, so it induces an injection $F_*: \mathrm{Ob}(\mathcal{A})/{\cong} \hookrightarrow \mathrm{Ob}(\mathcal{C})/{\cong}$ on isomorphism classes, and uncountability and the absence of countable-valued complete invariants transport by restriction of any hypothetical invariant to $\mathcal{A}$ along $F$. For the countable-structures claim, a Borel reduction of the isomorphism relation of $\mathcal{C}$ to the isomorphism of countable structures, composed with the Borel map $F$ induces on object spaces, is a Borel reduction for $\mathcal{A}$; contrapositively, none for $\mathcal{A}$ means none for $\mathcal{C}$. The Borel hypotheses are what make this composition legitimate; without them the claim is not asserted. For the wild embedding, the matrix-pair family in $\mathcal{A}$ maps to a family in $\mathcal{C}$ with identical $\operatorname{Hom}$-space dimensions, since $F$ is fully faithful, and identical isomorphism behavior, since $F$ is isomorphism-injective; the universality property is preserved verbatim.
+\end{proof}
+
+The wild-embedding clause transports the obstruction, not the conclusion about a category strictly larger than the embedded family. When a whole category is the wild family, as for the Cohen-Macaulay modules of the generic determinant \cite{buchweitz2005}, non-parametrization of the category follows in the sense of \Cref{def:param}. When the wild family sits inside a larger category, the proved non-parametrization statements apply to the essential image of the wild module category and to any subcategory of $\mathcal{C}$ equivalent to it; no claim is made about parametrizations of a category that strictly contains that image without an explicit moduli framework for the containment.
+
+\begin{corollary}[Wild embedding]
+\label{cor:wild}
+Let $\mathcal{C}$ be a category of representations admitting a fully faithful functor $F$ from the module category of a derived-wild finite-dimensional algebra. Then $\mathcal{C}$ carries a wild embedding, the essential image $F(\mathcal{A})$ admits no finite-variety parametrization of its isomorphism classes \cite{bekkert2003,buchweitz2005,grevstad2025}, and the same non-parametrization holds for any subcategory of $\mathcal{C}$ equivalent to that image.
+\end{corollary}
+
+\Cref{cor:wild} is the reason wildness is a structural fact about a domain and not a comment on the state of the art. The generic determinant's Cohen-Macaulay modules in rank two already defeat finite-variety parametrization \cite{buchweitz2005}, and the compact $C_p$-equivariant modules at odd primes carry no meaningful classification at all \cite{grevstad2025}. Any larger domain that embeds either category in the manner of the corollary carries the obstruction on its embedded part. The same pattern with \Cref{lem:countable} shows that a sector with no classification by countable structures forbids such classification for any domain receiving it along a Borel, fully faithful functor.
+
+\begin{corollary}[Operator-algebra consequence]
+\label{cor:opalg}
+Let $\mathcal{C}$ be the category of separable von Neumann algebras with normal *-homomorphisms as morphisms, taken with isomorphism as its equivalence. The separable $\mathrm{II}_1$ factors have uncountably many isomorphism classes \cite{mcduff1969}, so no complete invariant of $\mathcal{C}$ takes values in a countable set, and no atlas of countably many computable fingerprints can be complete for $\mathcal{C}$. The stronger statement holds: the isomorphism relation of $\mathcal{C}$ admits no classification by countable structures at all \cite{sasyk2009}.
+\end{corollary}
+
+\begin{proof}
+An atlas of countably many computable fingerprints assigns to each algebra a tuple of values from countable sets, and the combined map is a complete invariant with countable range if the atlas is complete; \Cref{lem:countable} and McDuff's uncountable family rule this out \cite{mcduff1969}. The stronger statement is the Borel-reducibility result of Sasyk and Tørnquist \cite{sasyk2009}.
+\end{proof}
+
+\Cref{cor:opalg} fixes the reach of the Atlas discipline of the model program, identification by finite tables of computable data \cite{atlaswiki}. That method is complete exactly where a countable-valued complete invariant exists and provably incomplete where uncountably many classes or the Borel-reducibility obstruction stand. The regime table records which domains admit an atlas at all.
+
+\subsection{Recognition reductions}
+
+\begin{proposition}[Undecidability transport]
+\label{prop:undec}
+Let $Q$ be a recognition problem for a class $\mathcal{C}$, and suppose there is a computable map $\varphi$ from finite group presentations to objects of $\mathcal{C}$ and a Markov property $P$ of finitely presentable groups such that a presentation $G$ has $P$ if and only if $\varphi(G)$ satisfies $Q$. Then $Q$ is algorithmically undecidable.
+\end{proposition}
+
+\begin{proof}
+A decision procedure for $Q$, composed with the computable map $\varphi$, decides $P$ on finite presentations. By the Adyan-Rabin theorem no such procedure exists for any Markov property \cite{adyan1955,rabin1958}. Hence none exists for $Q$.
+\end{proof}
+
+\Cref{prop:undec} is the shape of every undecidability entry in the register. Tancer's construction is an instance: the unrecognizability of the nine-fold connected sum of $S^2 \times S^2$ is proved through the Markov set construction carried into four-manifold topology \cite{tancer2023}. The proposition also explains why undecidability is a statement about the recognizer component of \Cref{def:program} and says nothing by itself about invariants or parameter spaces: an undecidable domain may still carry rich complete invariants that no algorithm can compute.
+
+\subsection{Counterexample catalogue}
+\label{sec:counterexamples}
+
+Each of the three natural strengthenings of the classification picture below fails on an explicit counterexample.
+
+\begin{proposition}[No finite sporadic list]
+\label{prop:sporadic}
+The hypothesis that the isomorphism classes of a completed classification decompose into infinite families plus finitely many exceptional objects is false for the operator-algebra sector and for four-dimensional geometry. The separable $\mathrm{II}_1$ factors number uncountably many isomorphism classes \cite{mcduff1969}, and the four-dimensional maximal model geometries number eighteen plus one countably infinite family \cite{geometrization}.
+\end{proposition}
+
+\begin{proof}
+Both lower bounds refute finiteness of the exceptional set: uncountably many classes cannot be listed as finitely many sporadics, and a countably infinite family of model geometries is not finite. Any classification whose final form is families plus finitely many sporadics is therefore false in these sectors before its completeness is even considered.
+\end{proof}
+
+\begin{proposition}[The two-regime picture fails]
+\label{prop:tworegime}
+The taxonomy that sorts domains into classified and impossible misassigns at least two surveyed domains. Unknot recognition is decidable and sits in NP and coNP, while its complexity class is open and no complete invariant is known \cite{hass1999,lackenby2021}. The finite simple groups are completely classified and carry no uniform parameterization \cite{solomon2001}. The first domain is decidable but unclassified; the second is classified but unparameterized. Neither fits a two-regime picture.
+\end{proposition}
+
+\begin{proof}
+Decidable-but-unclassified and classified-but-unparameterized are distinct shapes of evidence, exhibited by the two named domains. Any taxonomy with two regimes assigns both domains to the same regime, and in that regime one of the two descriptions of the evidence is wrong. Hence the two-regime picture is refuted, and the seven regimes of \Cref{def:regime} are needed to keep the descriptions straight.
+\end{proof}
+
+\begin{proposition}[Equivalence at the plain tensor layer fails]
+\label{prop:equiv}
+Let $\simeq_{\mathrm{pt}}$ be the relation on finite groups obtained by declaring $G \simeq_{\mathrm{pt}} H$ when their representation categories are equivalent as plain tensor categories. Then $\simeq_{\mathrm{pt}}$ is strictly coarser than isomorphism, so any classification of systems whose symmetry data is a finite group, conducted at the plain tensor layer, identifies distinct systems.
+\end{proposition}
+
+exec
+/usr/local/bin/zsh -lc "sed -n '135,190p' papers/latex/vol-11-completeness-obstructions.tex" in /Users/mlong/Documents/Development/classification-physical-systems
+ succeeded in 0ms:
+The tame-wild dichotomy of Drozd is the boundary of parametrizable representation theory. Bekkert and Drozd proved that every finite-dimensional algebra over an algebraically closed field is derived-tame or derived-wild, and that any degeneration of a derived-wild algebra is again derived-wild \cite{bekkert2003}. Wildness is a property of the category of representations, and it is a non-classifiability statement rather than a difficulty rating. Buchweitz and Leuschke showed that the Cohen-Macaulay representation theory of the generic determinant is wild in a strong sense: already in rank two the isomorphism classes cannot be parametrized by a finite-dimensional variety over the coefficients \cite{buchweitz2005}. Grevstad and May proved that the cohomological Mackey algebra is derived-wild whenever the group surjects onto a $p$-group of order greater than two, and concluded that no meaningful classification of compact $C_p$-equivariant $H\underline{\mathbb{F}}_p$-modules exists at odd primes \cite{grevstad2025}.
+
+What this forbids is any finite-variety parameterization of the isomorphism classes of a wild representation category, and any classification of a domain that contains such a category as an isomorphism-reflecting subcategory. What it permits is a complete classification theory on the tame side, where parametrizations do exist, and partial invariants on the wild side that ignore the wild core.
+
+\subsection{Four-manifold unrecognizability}
+
+In dimension three the geometrization theorem decomposes every oriented prime closed 3-manifold into pieces carrying one of exactly eight Thurston geometries \cite{geometrization}. In dimension four the finite-table picture breaks. Markov's construction shows that unrecognizable four-manifolds exist, that is, manifolds for which the homeomorphism problem is undecidable. Tancer sharpened the construction to show that the connected sum of nine copies of $S^2 \times S^2$ is unrecognizable, improving the previous bound of twelve due to Gordon \cite{tancer2023}. Filipkiewicz classified the four-dimensional maximal model geometries and found eighteen of them plus one countably infinite family, against exactly eight in dimension three \cite{geometrization,perelman,hillman}.
+
+What this forbids is any effective classification of four-manifolds in general, and any assumption that the finite-list paradigm of dimension three persists upward. What it permits is classification of restricted four-manifold classes, and the dimension contrast itself: finite tables exist in tame regimes, and dimension four is not one of them.
+
+\subsection{Countable invariants}
+
+Descriptive set theory supplies a machine for proving that no classification by countable invariants can exist. Sasyk and Tørnquist applied Borel reducibility and Hjorth's theory of turbulence to the isomorphism relation for separable von Neumann algebras \cite{sasyk2009}. The result, as recorded in the survey that this series relies on, is that isomorphism of separable von Neumann algebras admits no classification by countable invariants. The result is published in the Bulletin of Symbolic Logic, with the complete proof in Inventiones Mathematicae \cite{sasyk2009}.
+
+What this forbids is a complete invariant for general von Neumann algebras taking values in a countable set, and any table of countably many labels exhausting the isomorphism classes. What it permits is classification by uncountable invariant sets, and classification by countable invariants on restricted subclasses.
+
+\subsection{Tractability boundary}
+
+The tame-wild dichotomy has an algorithmic shadow. Grochow and Qiao gave polynomial-time algorithms for group isomorphism in the tame direction, for groups whose Sylow subgroups are cyclic, dihedral, semi-dihedral, or generalized quaternion, and showed that the representation-theoretic and cohomological bounds their algorithms need fail in the wild case \cite{grochow2015}. Their conclusion is that the tame-wild line of representation theory is a dividing line between the currently tractable and the currently intractable instances of group isomorphism.
+
+What this forbids is any promise of a uniform polynomial-time classification procedure across the tame-wild boundary. What it permits is efficient recognition on the tame side, and a precise statement of where the known methods stop.
+
+\subsection{Register summary}
+
+\Cref{tab:register} lists each theorem with the classification form it rules out in the generality stated.
+
+\begin{table}[ht]
+\centering
+\caption{The obstruction register: seven proved theorems and the classification forms they forbid.}
+\label{tab:register}
+\small
+\begin{tabular}{L{3.2cm}L{4.6cm}L{4.6cm}}
+\toprule
+Obstruction & Statement & Forbidden classification form \\
+\midrule
+McDuff 1969 & Uncountably many non-isomorphic separable $\mathrm{II}_1$ factors & Total factor classification outside the amenable class \\
+Etingof-Gelaki & Non-isomorphic groups with equivalent plain tensor representation categories & Equivalence discarding the symmetric layer \\
+Adyan-Rabin & Every Markov property of finitely presentable groups is undecidable & Uniform recognition of group-flavored properties \\
+Wildness & Wild categories admit no finite-variety parametrization of isomorphism classes & Finite-variety parameterization of wild sectors \\
+Tancer 2023 & Nine-fold connected sum of $S^2 \times S^2$ is unrecognizable & Effective classification of four-manifolds \\
+Sasyk-Tørnquist & vN algebra isomorphism admits no classification by countable invariants & Countable-valued complete invariants \\
+Grochow-Qiao & Tame extensions tractable, wild bounds fail & Uniform polynomial-time classification across the boundary \\
+\bottomrule
+\end{tabular}
+\end{table}
+
+\section{Regime taxonomy}
+
+\subsection{Classification program data}
+
+The register forbids specific forms of classification. To compare those forms across domains, a classification program is decomposed into three pieces of data.
+
+\begin{definition}[Classification program]
+\label{def:program}
+Let $(D, \simeq)$ be a domain of objects with an equivalence relation. A classification program for $(D, \simeq)$ is a triple $(\iota, \Pi, R)$ where $\iota$ is a complete invariant, a map from objects to a set $I$ with $\iota(x) = \iota(y)$ if and only if $x \simeq y$; $\Pi$ is a parameter space, a structured object together with a structure-compatible surjection onto the $\simeq$-classes of $D$; and $R$ is a recognizer, a procedure that decides $x \simeq y$ from finite presentations of $x$ and $y$. The structure of $\Pi$ is part of the data: it is a finite-dimensional $k$-variety with an algebraic family, a standard Borel space with a Borel parametrization, or a finite combinatorial set. Without that structure $\Pi$ is just another name for the class set and carries no content beyond $\iota$.
+\end{definition}
+
+exec
+/usr/local/bin/zsh -lc "sed -n '390,505p' papers/latex/vol-11-completeness-obstructions.tex" in /Users/mlong/Documents/Development/classification-physical-systems
+ succeeded in 0ms:
+\end{proposition}
+
+\begin{proof}
+Etingof and Gelaki exhibit non-isomorphic finite groups with equivalent plain tensor representation categories \cite{eg2000}. For such a pair $G \not\cong H$ while $G \simeq_{\mathrm{pt}} H$, so the quotient by $\simeq_{\mathrm{pt}}$ is strictly coarser than the quotient by isomorphism. A classification built on $\simeq_{\mathrm{pt}}$ therefore merges distinct isomorphism classes, and its fibers are not the classes one set out to classify.
+\end{proof}
+
+\Cref{prop:equiv} is the counterexample the register promised for the third proof obligation of the universal conjecture. Choosing an equivalence relation is not a formality: the plain tensor choice is a natural one, it is stated in one line, and it is provably wrong. Every equivalence admitted in the program must name the layers of structure it preserves, and the symmetric layer is the one that recovers the group.
+
+\subsection{Common consequences}
+
+The four statements have a common consequence. Non-classifiability in the register is not a set of isolated pathologies; it travels along fully faithful embeddings (\Cref{thm:transport}), along computable maps (\Cref{prop:undec}), and it defeats three natural completion schemes (Propositions \ref{prop:sporadic} to \ref{prop:equiv}). A universal classification theorem for all admissible physical systems cannot be of CFSG form unless every wild, undecidable, and unrecognizable sector is excluded from its quantifiers. The exclusions are restrictions on the domain, and each restriction is a new admissibility condition of the kind that \Cref{rem:unfixed} records as unfixed.
+
+\subsection{Scope of the transport theorem}
+
+\Cref{thm:transport} quantifies over functors injective on isomorphism classes, and its hypotheses are mathematical. Three remarks delimit its use.
+
+The theorem transports refutations, not theorems. It moves wild embeddings and invariant obstructions from a subcategory to a larger category, and it moves undecidability along computable reductions. It does not transport positive classification results: a classification of a subcategory says nothing about the ambient category, which is why the completed islands of Section 6 each restate their own hypotheses.
+
+Full faithfulness is what carries the wild embedding, because it preserves the Hom-dimensions the universality property is built from; injectivity on isomorphism classes is what carries isomorphism behavior. Physical embeddings that deliberately identify systems fail the second hypothesis, and a coarse-graining map that forgets microscopic detail typically fails it as well, so the theorem is silent about classification programs run on coarse descriptions.
+
+The theorem applies at the level of domains, not of families. A family such as the operator-algebra family contains parameterized islands and obstruction-complete sectors side by side, and the transport theorem says which ambient domains inherit which failure. Regime assignment remains a domain-level judgment, and the two levels must not be confused.
+
+\section{Restricted classification results}
+
+Completed classifications exist on restricted domains under explicit hypotheses, and each is an instance of \Cref{def:program}. The restriction in each of them is load-bearing rather than removable by a better argument, as \Cref{cor:restrict} records.
+
+\subsection{Completed islands}
+\label{sec:completed}
+
+The finite-dimensional complex $C^*$-algebras are classified completely. Every such algebra is a direct sum $A \cong \bigoplus_{i=1}^{k} M_{n_i}(\mathbb{C})$ of matrix algebras, and the multiset of matrix sizes, the dimension vector, determines $A$ up to *-isomorphism \cite{cstarwiki}. The classification program of \Cref{def:program} is fully realized here: the dimension vector is a complete invariant, the parameter space is the set of finite multisets of positive integers, and recognition is the finite computation of block decomposition. This is the model theorem of the series and the shape every restricted classification aims at.
+
+The amenable factors are classified as well: types $\mathrm{I}_n$, $\mathrm{I}_\infty$, $\mathrm{II}_1$, $\mathrm{II}_\infty$, $\mathrm{III}_\lambda$ for $0 < \lambda \leq 1$, and $\mathrm{III}_0$, with the invariant given by Murray-von Neumann type and Connes data \cite{connes1976,vnwiki}. The restriction is the word amenable. McDuff's theorem removes it and the classification dies \cite{mcduff1969}.
+
+Principal $G$-bundles over a base $X$ are classified by homotopy classes of maps into the classifying space, and the characteristic classes are exactly the pullbacks of universal classes \cite{cstarwiki}. The restriction is topological: the classification is up to bundle isomorphism and it records no connection data. Anomalies are classified on the obstruction pattern: the gauge anomaly is a pair of cohomology classes whose vanishing is the condition for quantization, so the classification content is the obstruction itself \cite{cstarwiki}.
+
+Doplicher-Roberts reconstruction classifies symmetric tensor *-categories with conjugates, direct sums, subobjects, and $\operatorname{End}(1) = \mathbb{C}$: such a category is the representation category of a compact supergroup, unique up to isomorphism \cite{eg2000}. The hypotheses are the restriction, and the Etingof-Gelaki counterexamples show that dropping the symmetric layer destroys the conclusion \cite{eg2000}. Deligne's theorem classifies symmetric tensor categories of subexponential growth in characteristic zero along the same lines \cite{eg2000}.
+
+Quantum channels occupy a middle position. Stinespring dilation classifies completely positive maps up to minimal dilation, unique up to unitary freedom, and the Choi-Kraus form is a normal form whose Kraus rank is an invariant of the form \cite{stinespring,cstarwiki}. The classification is of dilations, not of channels up to isomorphism, and the Kraus rank of a normal form is not an isomorphism invariant of the channel. This is a classification of a presentation, and the regime table places the domain in the unparameterized regime accordingly.
+
+The local symplectic classification is complete and trivial: Darboux's theorem gives local normal form with no local invariants, so the classification content of the symplectic side is entirely global and topological \cite{darboux}. In the opposite direction, the Killing-Cartan classification of semisimple Lie algebras and the highest-weight classification of their irreducible representations deliver complete invariants with parameterizations \cite{humphreys,fultonharris}. The geometrization theorem decomposes closed 3-manifolds into exactly eight Thurston geometries \cite{geometrization}, and Chentsov's theorem gives the Fisher metric as the unique metric monotone under stochastic maps, while the quantum analogue is a parametric family indexed by operator monotone functions \cite{petzsudar}. In every row the invariant is finite or parametric, and in every row the domain is stated with its restrictions.
+
+\subsection{Hypotheses and their cost}
+
+\begin{corollary}[Quantifier restriction]
+\label{cor:restrict}
+Under the hypotheses of \Cref{thm:transport}, a completeness statement for $\mathcal{C}$ in the sense of \Cref{def:program} is false. Under the hypotheses of \Cref{prop:undec}, a recognition statement for $\mathcal{C}$ in that sense is false. Any correct completeness or recognition statement about $\mathcal{C}$ restricts its quantifiers to a subdomain that excludes the part carrying the obstruction.
+\end{corollary}
+
+\begin{proof}
+\Cref{thm:transport} and \Cref{prop:undec} deny the existence of the parameter space or of the recognizer over all of $\mathcal{C}$. A statement quantified over a subdomain that excludes the obstruction carries no contradiction, and the surveyed theorems of Section 6.1 are all of this form.
+\end{proof}
+
+\Cref{cor:restrict} explains the shape of the completed islands. The restriction in each theorem is not a hedge and it is not removable by a better argument; it is the boundary the obstruction register draws. Two further points about the cost of hypotheses deserve recording. First, hypotheses can be subtle: braided extensions of the Doplicher-Roberts setting can require extra data beyond the braiding for the reconstruction to close, so the hypothesis list of a reconstruction theorem is part of its content and must travel with it. Second, a restriction can hide a boundary rather than a theorem: the tame side of the Grochow-Qiao divide admits polynomial-time isomorphism testing for the groups named, and the wild side fails the bounds their method needs \cite{grochow2015}. A classification program built on the tame side inherits the boundary as a working assumption.
+
+\subsection{Regime boundaries}
+
+Where the tame-wild boundary sits for physical representation categories, as opposed to generic algebras, is unstudied. The generic mathematics supplies the dichotomy and the algorithmic shadow \cite{bekkert2003,grochow2015}; no result on record locates the boundary for the tensor categories or representation categories that physical theories actually use. The question matters for the program, because a completeness theorem for a physical class is exactly a theorem that the class sits on the tame side.
+
+Regime boundaries move in one further way. When an announcement matures into a published proof, its domain enters the table at the regime the proof supports; until then the claim is tracked outside the taxonomy, as in \Cref{tab:regimes}'s companion remark. The taxonomy records theorems, and announcements are not theorems.
+
+The regime taxonomy records that boundaries are not always sharp walls. Unknot recognition is decidable and sits in NP and coNP, while its complexity class is open and no complete invariant is known \cite{hass1999,lackenby2021}. Between the classified and the impossible there are domains whose status is settled in one component of \Cref{def:program} and unsettled in another. Any periodic table of the program must carry such entries honestly rather than forcing them into a binary verdict.
+
+\section{The five obligations}
+
+The universal classification conjecture states that every admissible physical system is generated by a fixed collection of structural families under a fixed set of admissible constructions, up to a justified equivalence. Its proof obligations number five, and \Cref{tab:obligations} gives their status against the evidence of this paper. The conjecture is a registered hypothesis and an object of analysis here; nothing in this section assumes it true or false.
+
+\begin{table}[ht]
+\centering
+\caption{The five proof obligations of the universal classification conjecture and their status.}
+\label{tab:obligations}
+\small
+\begin{tabular}{L{3.6cm}L{5.4cm}L{3.2cm}}
+\toprule
+Obligation & Content & Status \\
+\midrule
+Completeness & Every admissible system lies in the generated class & Open, conditional on the unfixed admissibility list \\
+Soundness & Every generated structure is admissible & Open, same conditionality \\
+Equivalence & Distinct presentations of one system are identified correctly & Open; \Cref{prop:equiv} constrains every choice \\
+Structural characterization & The families have precise mathematical definitions & Partial: families named, admissibility unfixed \\
+Decomposition & Targeted classes assemble from the families & Open in general; proved in restricted domains \\
+\bottomrule
+\end{tabular}
+\end{table}
+
+The completeness obligation quantifies over $\mathrm{Phys}_{\mathrm{adm}}$ and is therefore conditional on the admissibility list that \Cref{rem:unfixed} records as unfixed. Beyond the conditionality, \Cref{thm:transport} blocks the obligation in any formulation whose generated class contains a wild or undecidable sector isomorphism-reflectingly: the parameter space the classification needs cannot exist there. The obligation is open today and its unrestricted form collides with the register.
+
+The soundness obligation runs in the other direction, from the generated class to the admissibility conditions. It is vacuous until the conditions are stated, and it becomes checkable only after the list is fixed. No obstruction in the register touches it directly; its difficulty is definitional.
+
+The equivalence obligation is the one with a proved negative result attached. \Cref{prop:equiv} shows that the natural plain tensor choice of equivalence is strictly coarser than isomorphism and merges distinct systems. Any solution must therefore name the layers of structure it preserves and must recover the group from the preserved layers where a group is present. The solution space is restricted by a counterexample, which is a stronger constraint than mere openness.
+
+The structural characterization obligation is partial on the evidence of record. The ten candidate families of the program are named with their defining structures and their established islands, and the admissibility conditions that would make the families exhaustive are unfixed. Naming a family is not characterizing it to the precision a completeness proof needs, and the gap between the two is where this obligation lives.
+
+The decomposition obligation asks that systems of the targeted classes assemble from the families under the admissible constructions. Restricted theorems exist: the finite-dimensional $C^*$-algebra decomposition assembles every algebra of that class from matrix blocks \cite{cstarwiki}, amenable factors decompose by type \cite{vnwiki}, and Doplicher-Roberts reconstruction assembles superselection data from symmetric tensor structure \cite{eg2000}. In general the obligation is open, and uniqueness of decomposition is open even before assembly is considered: interacting systems need not admit unique decompositions at all.
+
+What survives the register is the restricted form the survey of the series anticipated: classification theorems on tame, restricted classes, plus explicit obstruction theorems where no classification can exist. The regime taxonomy of Section 4 states exactly which domains admit which of the two outcomes today, and Section 6 records the shape of every completed theorem on the positive side.
+
+The consequences for a periodic table of mathematical physics are direct. A table with only status columns for proved and open is incomplete: it has no cell for the proved impossibilities, and the regime taxonomy supplies one regime per kind of impossibility. A table with a single row per family is too coarse at the boundaries, because a family such as the operator-algebra family contains parameterized islands, an unparameterized island, and an obstruction-complete sector at once. The right grain is the domain, not the family, and the right vocabulary is the seven regimes.
+
+\subsection{Requirements for a completeness theorem}
+
+The register and the transport results fix what any future completeness theorem must contain. Four conditions are necessary, and each is drawn from a proved obstruction rather than from preference.
+
+The quantifier must be restricted. By \Cref{cor:restrict}, a domain carrying a wild or undecidable sector in the manner of \Cref{thm:transport} supports no completeness statement unless the quantifier excludes the part carrying the obstruction. A theorem over a class that embeds the generic determinant's modules, or a Markov construction, is false before its proof begins.
+
+The equivalence must name its layers. By \Cref{prop:equiv}, any equivalence forgetting the symmetric layer merges distinct systems, so the identification relation of the theorem must state the preserved structure and must recover groups where groups are present.
+
+The parameter space must be structured. By \Cref{def:param} and \Cref{lem:countable}, a bare set-theoretic indexing carries no content, and countable-valued complete invariants cannot exist where uncountably many classes or Borel non-reducibility stand. The parameterizer must be an algebraic family, a standard Borel parametrization, or a finite combinatorial set of the kind \Cref{def:program} names.
+
+The premise must be fixed. By \Cref{rem:unfixed}, a theorem over an admissible class whose conditions are unfixed is conditional on the list one adopts. A completeness theorem that quantifies over $\mathrm{Phys}_{\mathrm{adm}}$ waits on \Cref{def:adm} being settled; a theorem over a standard mathematical domain, as in the completed islands of \Cref{sec:completed}, does not.
+
+Together the four conditions describe the shape of the positive results the program may still earn: restricted-class theorems with stated hypotheses on tame domains, side by side with obstruction theorems registered at their full generality. That is the shape the evidence already has, and the regime table is where each domain's share of it is recorded.
+
+\section{Computational evidence}
+\label{sec:computational}
+
+The three experiments of this section are evidence about finite instances and growth patterns, not proofs. The claims they support are marked as computational in the code evidence appendix.
+
+exec
+/usr/local/bin/zsh -lc 'python3 -B src/vol-11-completeness-obstructions/regime_inventory.py' in /Users/mlong/Documents/Development/classification-physical-systems
+ succeeded in 3ms:
+regime partition check: PASS
+domains: 29
+  Parameterized: 10
+  Unparameterized: 3
+  Obstruction-complete: 4
+  Open: 6
+  Wild: 3
+  Undecidable: 2
+  Decidable-but-unclassified: 1
+
+exec
+/usr/local/bin/zsh -lc 'python3 -B src/vol-11-completeness-obstructions/dimvec_enumeration.py' in /Users/mlong/Documents/Development/classification-physical-systems
+ succeeded in 0ms:
+N=1: 1 algebra(s)  [(1,)]
+N=2: 1 algebra(s)  [(1, 1)]
+N=3: 1 algebra(s)  [(1, 1, 1)]
+N=4: 2 algebra(s)  [(2,), (1, 1, 1, 1)]
+N=5: 2 algebra(s)  [(2, 1), (1, 1, 1, 1, 1)]
+N=6: 2 algebra(s)  [(2, 1, 1), (1, 1, 1, 1, 1, 1)]
+N=7: 2 algebra(s)  [(2, 1, 1, 1), (1, 1, 1, 1, 1, 1, 1)]
+N=8: 3 algebra(s)  [(2, 2), (2, 1, 1, 1, 1), (1, 1, 1, 1, 1, 1, 1, 1)]
+N=9: 4 algebra(s)  [(3,), (2, 2, 1), (2, 1, 1, 1, 1, 1), (1, 1, 1, 1, 1, 1, 1, 1, 1)]
+N=10: 4 algebra(s)  [(3, 1), (2, 2, 1, 1), (2, 1, 1, 1, 1, 1, 1), (1, 1, 1, 1, 1, 1, 1, 1, 1, 1)]
+N=11: 4 algebra(s)  [(3, 1, 1), (2, 2, 1, 1, 1), (2, 1, 1, 1, 1, 1, 1, 1), (1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1)]
+N=12: 5 algebra(s)  [(3, 1, 1, 1), (2, 2, 2), (2, 2, 1, 1, 1, 1), (2, 1, 1, 1, 1, 1, 1, 1, 1), (1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1)]
+N=13: 6 algebra(s)  [(3, 2), (3, 1, 1, 1, 1), (2, 2, 2, 1), (2, 2, 1, 1, 1, 1, 1), (2, 1, 1, 1, 1, 1, 1, 1, 1, 1), (1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1)]
+N=14: 6 algebra(s)  [(3, 2, 1), (3, 1, 1, 1, 1, 1), (2, 2, 2, 1, 1), (2, 2, 1, 1, 1, 1, 1, 1), (2, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1), (1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1)]
+N=15: 6 algebra(s)  [(3, 2, 1, 1), (3, 1, 1, 1, 1, 1, 1), (2, 2, 2, 1, 1, 1), (2, 2, 1, 1, 1, 1, 1, 1, 1), (2, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1), (1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1)]
+N=16: 8 algebra(s)  [(4,), (3, 2, 1, 1, 1), (3, 1, 1, 1, 1, 1, 1, 1), (2, 2, 2, 2), (2, 2, 2, 1, 1, 1, 1), (2, 2, 1, 1, 1, 1, 1, 1, 1, 1), (2, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1), (1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1)]
+N=17: 9 algebra(s)  [(4, 1), (3, 2, 2), (3, 2, 1, 1, 1, 1), (3, 1, 1, 1, 1, 1, 1, 1, 1), (2, 2, 2, 2, 1), (2, 2, 2, 1, 1, 1, 1, 1), (2, 2, 1, 1, 1, 1, 1, 1, 1, 1, 1), (2, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1), (1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1)]
+N=18: 10 algebra(s)  [(4, 1, 1), (3, 3), (3, 2, 2, 1), (3, 2, 1, 1, 1, 1, 1), (3, 1, 1, 1, 1, 1, 1, 1, 1, 1), (2, 2, 2, 2, 1, 1), (2, 2, 2, 1, 1, 1, 1, 1, 1), (2, 2, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1), (2, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1), (1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1)]
+N=19: 10 algebra(s)  [(4, 1, 1, 1), (3, 3, 1), (3, 2, 2, 1, 1), (3, 2, 1, 1, 1, 1, 1, 1), (3, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1), (2, 2, 2, 2, 1, 1, 1), (2, 2, 2, 1, 1, 1, 1, 1, 1, 1), (2, 2, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1), (2, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1), (1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1)]
+N=20: 12 algebra(s)  [(4, 2), (4, 1, 1, 1, 1), (3, 3, 1, 1), (3, 2, 2, 1, 1, 1), (3, 2, 1, 1, 1, 1, 1, 1, 1), (3, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1), (2, 2, 2, 2, 2), (2, 2, 2, 2, 1, 1, 1, 1), (2, 2, 2, 1, 1, 1, 1, 1, 1, 1, 1), (2, 2, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1), (2, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1), (1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1)]
+N=21: 13 algebra(s)  [(4, 2, 1), (4, 1, 1, 1, 1, 1), (3, 3, 1, 1, 1), (3, 2, 2, 2), (3, 2, 2, 1, 1, 1, 1), (3, 2, 1, 1, 1, 1, 1, 1, 1, 1), (3, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1), (2, 2, 2, 2, 2, 1), (2, 2, 2, 2, 1, 1, 1, 1, 1), (2, 2, 2, 1, 1, 1, 1, 1, 1, 1, 1, 1), (2, 2, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1), (2, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1), (1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1)]
+N=22: 14 algebra(s)  [(4, 2, 1, 1), (4, 1, 1, 1, 1, 1, 1), (3, 3, 2), (3, 3, 1, 1, 1, 1), (3, 2, 2, 2, 1), (3, 2, 2, 1, 1, 1, 1, 1), (3, 2, 1, 1, 1, 1, 1, 1, 1, 1, 1), (3, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1), (2, 2, 2, 2, 2, 1, 1), (2, 2, 2, 2, 1, 1, 1, 1, 1, 1), (2, 2, 2, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1), (2, 2, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1), (2, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1), (1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1)]
+N=23: 14 algebra(s)  [(4, 2, 1, 1, 1), (4, 1, 1, 1, 1, 1, 1, 1), (3, 3, 2, 1), (3, 3, 1, 1, 1, 1, 1), (3, 2, 2, 2, 1, 1), (3, 2, 2, 1, 1, 1, 1, 1, 1), (3, 2, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1), (3, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1), (2, 2, 2, 2, 2, 1, 1, 1), (2, 2, 2, 2, 1, 1, 1, 1, 1, 1, 1), (2, 2, 2, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1), (2, 2, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1), (2, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1), (1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1)]
+N=24: 16 algebra(s)  [(4, 2, 2), (4, 2, 1, 1, 1, 1), (4, 1, 1, 1, 1, 1, 1, 1, 1), (3, 3, 2, 1, 1), (3, 3, 1, 1, 1, 1, 1, 1), (3, 2, 2, 2, 1, 1, 1), (3, 2, 2, 1, 1, 1, 1, 1, 1, 1), (3, 2, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1), (3, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1), (2, 2, 2, 2, 2, 2), (2, 2, 2, 2, 2, 1, 1, 1, 1), (2, 2, 2, 2, 1, 1, 1, 1, 1, 1, 1, 1), (2, 2, 2, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1), (2, 2, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1), (2, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1), (1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1)]
+enumeration check: PASS (all dimensions up to 24 finite)
+
+exec
+/usr/local/bin/zsh -lc 'python3 -B src/vol-11-completeness-obstructions/wild_quiver_growth.py' in /Users/mlong/Documents/Development/classification-physical-systems
+ succeeded in 0ms:
+m=2 (tame side) diagonal:  [1, 2, 3, 4, 5, 6, 7, 8]
+m=3 (wild side) diagonal:  [2, 5, 10, 17, 26, 37, 50, 65]
+growth-pattern check: PASS (linear vs quadratic)
+
+codex
+ROW 1 | Regime assignment is single-valued into seven regimes | SUPPORTS | The dictionary matches all 29 surveyed domains, and check_partition verifies valid labels with passing assertions.
+ROW 2 | Finite-dimensional C*-algebras enumerated by dimension vectors | SUPPORTS | Recursive enumeration exhausts positive block-size multisets satisfying the dimension equation, with checks passing through dimension 24.
+ROW 3 | Two- versus three-Kronecker quotient-dimension growth | SUPPORTS | Explicit stabilizer dimensions yield n and n²+1 respectively, with assertions passing for n=1 through 8.
+ROW 4 | Witness systems carry taxonomy instances and regime tags | SUPPORTS | Instances.hs declares family instances for WitnessSystem and regimeOf exhaustively assigns all constructors a regime.
+VERDICT: PASS
+hook: Stop
+hook: Stop Completed
+tokens used
+53,804
+ROW 1 | Regime assignment is single-valued into seven regimes | SUPPORTS | The dictionary matches all 29 surveyed domains, and check_partition verifies valid labels with passing assertions.
+ROW 2 | Finite-dimensional C*-algebras enumerated by dimension vectors | SUPPORTS | Recursive enumeration exhausts positive block-size multisets satisfying the dimension equation, with checks passing through dimension 24.
+ROW 3 | Two- versus three-Kronecker quotient-dimension growth | SUPPORTS | Explicit stabilizer dimensions yield n and n²+1 respectively, with assertions passing for n=1 through 8.
+ROW 4 | Witness systems carry taxonomy instances and regime tags | SUPPORTS | Instances.hs declares family instances for WitnessSystem and regimeOf exhaustively assigns all constructors a regime.
+VERDICT: PASS

@@ -1,0 +1,16 @@
+papers/latex/*.aux
+papers/latex/*.log
+papers/latex/*.out
+papers/latex/*.toc
+papers/latex/*.bbl
+papers/latex/*.blg
+node_modules/
+website/.next/
+website/out/
+website/node_modules/
+.review.lock/
+sources/*.pdf
+*.o
+*.hi
+.ghc.environment.*
+lean/.lake/

@@ -1,0 +1,28 @@
+{
+  "topics": [
+    "vol-01-foundations",
+    "vol-02-structural-families",
+    "vol-03-irreducibility-decomposition",
+    "vol-04-yoneda-classification",
+    "vol-05-classical-systems",
+    "vol-06-quantum-systems",
+    "vol-07-gauge-qft",
+    "vol-08-spacetime-reconstruction",
+    "vol-09-gravity-information-geometry",
+    "vol-10-observational-equivalence",
+    "vol-11-completeness-obstructions",
+    "vol-12-principia-physica"
+  ],
+  "perspective": "Binding research directive for the CMRPS series is on disk at docs/perspective.md — read it in full before drafting anything. It contains the YONEDAAI directive, the 12-volume map, methodology Phases A-F, the six claim-status labels, the author block (Matthew Long / The YonedaAI Collaboration / YonedaAI Research Collective / Chicago, Illinois, USA / matthew@yonedaai.com / https://yonedaai.com, dated October 2026), and the 2026-10-29 claim-status facts (Clay Unsolved; OpenAI existence claimed with manuscript+Lean withheld; mass gap open — never conflate existence with mass gap; never call the withheld formalization machine-checked). Shared artifacts binding every volume: docs/ontology.md (DEF-001..DEF-042), docs/theorem-registry.md, docs/research-map.md (cross-volume dependency graph with explicit 'may NOT depend on' column), docs/periodic-table.md (PROVEN/CLAIMED/OPEN/IMPOSSIBLE), and the compiled typed taxonomy at src/Taxonomy/ (import its classes; never redefine them). Yoneda qualification verbatim: Yoneda does not, by itself, establish physical equivalence, empirical adequacy, or a classification theorem.",
+  "project": "cmrps",
+  "githubOrg": "YonedaAI",
+  "slackChannel": "C0AK269AVSA",
+  "noHaskell": false,
+  "lean": true,
+  "noWebsite": false,
+  "noSocial": false,
+  "humanReadable": true,
+  "codeAudit": true,
+  "bibGate": true,
+  "planCritique": false
+}

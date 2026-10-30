@@ -1,0 +1,702 @@
+- generic [active] [ref=e1]:
+  - banner [ref=e2]:
+    - generic [ref=e3]:
+      - link "CMRPS The Classification of Mathematical Representations of Physical Systems" [ref=e4] [cursor=pointer]:
+        - /url: /
+        - generic [ref=e5]: CMRPS
+        - generic [ref=e6]: The Classification of Mathematical Representations of Physical Systems
+      - navigation [ref=e7]:
+        - link "Papers" [ref=e8] [cursor=pointer]:
+          - /url: /#papers
+        - link "Periodic Table" [ref=e9] [cursor=pointer]:
+          - /url: /periodic-table/
+        - link "Series" [ref=e10] [cursor=pointer]:
+          - /url: /#series
+  - main [ref=e11]:
+    - article [ref=e13]:
+      - generic [ref=e14]:
+        - paragraph [ref=e15]: Program registry · CMRPS
+        - heading "The Periodic Table of Mathematical Physics" [level=1] [ref=e16]
+        - paragraph [ref=e17]: A research framework for classification, not a completed classification. Completeness is a theorem to investigate; the central conjecture it serves remains a conjecture.
+        - generic [ref=e18]:
+          - generic [ref=e19]: Matthew Long · The YonedaAI Collaboration
+          - generic [ref=e20]: Status date 29 October 2026
+      - generic [ref=e21]:
+        - heading "The Periodic Table of Mathematical Physics" [level=1] [ref=e22]
+        - paragraph [ref=e23]:
+          - strong [ref=e24]: "Program:"
+          - text: CMRPS, a 12-volume series by the YonedaAI Collaboration (PI Matthew Long).
+          - strong [ref=e25]: "Status date:"
+          - text: 2026-10-29.
+          - strong [ref=e26]: Nature of this chart.
+          - text: A research framework for classification, not a completed classification. Completeness is a theorem to investigate (Founding Document 02); the central conjecture it serves is registered as T-CMRPS-01 and remains a
+          - strong [ref=e27]: conjecture
+          - text: .
+        - paragraph [ref=e28]:
+          - strong [ref=e29]: Status legend (used in every cell of every Status column).
+        - table [ref=e30]:
+          - rowgroup [ref=e31]:
+            - row [ref=e32]:
+              - columnheader "Token" [ref=e33]
+              - columnheader "Meaning" [ref=e34]
+          - rowgroup [ref=e35]:
+            - row [ref=e36]:
+              - cell [ref=e37]:
+                - strong [ref=e38]: PROVEN
+              - cell "A classification theorem with a completeness statement exists in the stated scope." [ref=e39]
+            - row [ref=e40]:
+              - cell [ref=e41]:
+                - strong [ref=e42]: CLAIMED
+              - cell "An announced result whose supporting artifacts are not publicly checkable." [ref=e43]
+            - row [ref=e44]:
+              - cell [ref=e45]:
+                - strong [ref=e46]: OPEN
+              - cell "No complete result; partial or parametric results noted in the row." [ref=e47]
+            - row [ref=e48]:
+              - cell [ref=e49]:
+                - strong [ref=e50]: IMPOSSIBLE
+              - cell "A theorem proves that no classification of the stated kind can exist." [ref=e51]
+        - paragraph [ref=e52]:
+          - text: "Citation convention: bracketed numbers resolve to the Sources list of"
+          - code [ref=e53]: research/cmrps-research-map/REPORT.md
+          - text: . Inferences are marked
+          - emphasis [ref=e54]: conjectural
+          - text: or
+          - emphasis [ref=e55]: open
+          - text: .
+        - separator [ref=e56]
+        - heading "(a) Fundamental structural families and their defining invariants" [level=2] [ref=e57]
+        - paragraph [ref=e58]: Families I–X are the candidate organizing families of the founding document §4 (DEF-026–035). They are candidates, not a completed classification.
+        - table [ref=e59]:
+          - rowgroup [ref=e60]:
+            - row [ref=e61]:
+              - columnheader "Family" [ref=e62]
+              - columnheader "Structure" [ref=e63]
+              - columnheader "Representative systems" [ref=e64]
+              - columnheader "Defining invariants" [ref=e65]
+              - columnheader "Status" [ref=e66]
+              - columnheader "Sources" [ref=e67]
+          - rowgroup [ref=e68]:
+            - row [ref=e69]:
+              - cell [ref=e70]:
+                - strong [ref=e71]: I
+              - cell "Symplectic and Poisson structures" [ref=e72]
+              - cell "Classical mechanics" [ref=e73]
+              - cell [ref=e74]:
+                - text: Symplectic form ω;
+                - strong [ref=e75]: "locally: none"
+                - text: "(Darboux normal form); globally: topology of ω. Poisson: Weinstein splitting (symplectic × transverse), symplectic-leaf foliation, coadjoint orbits for KKS"
+              - cell [ref=e76]:
+                - strong [ref=e77]: PROVEN
+                - text: local; global classification topological
+              - cell "[6][7]" [ref=e78]
+            - row [ref=e79]:
+              - cell [ref=e80]:
+                - strong [ref=e81]: II
+              - cell "Hilbert spaces and operator algebras" [ref=e82]
+              - cell "Quantum mechanics" [ref=e83]
+              - 'cell "Dimension vector (finite-dim C*: A ≅ ⊕ M_{n_i}(C)); Murray–von Neumann type + Connes invariants (amenable factors); Kraus rank (channels)" [ref=e84]'
+              - cell [ref=e85]:
+                - strong [ref=e86]: PROVEN
+                - text: islands; general factors
+                - strong [ref=e87]: IMPOSSIBLE
+                - text: "[8]; fusion cats"
+                - strong [ref=e88]: OPEN
+                - text: "[14]"
+              - cell "[8][9][10][11][14]" [ref=e89]
+            - row [ref=e90]:
+              - cell [ref=e91]:
+                - strong [ref=e92]: III
+              - cell "Smooth manifolds and geometric structures" [ref=e93]
+              - cell "Relativity" [ref=e94]
+              - cell "Holonomy group (Lorentzian, Berger-list analogue); causal class (complete causal ladder); Thurston geometry type (3-manifolds)" [ref=e95]
+              - cell [ref=e96]:
+                - strong [ref=e97]: PROVEN
+                - text: in stated regimes; dim-4 unrecognizable instances
+                - strong [ref=e98]: IMPOSSIBLE
+              - cell "[50][51][54][60]" [ref=e99]
+            - row [ref=e100]:
+              - cell [ref=e101]:
+                - strong [ref=e102]: IV
+              - cell "Principal bundles and connections" [ref=e103]
+              - cell "Gauge theories" [ref=e104]
+              - cell "[X, BG]; characteristic classes in H*(BG) (SW, Pontryagin, Euler, Chern, DD); anomaly classes H¹⊕H²(CE(P))" [ref=e105]
+              - cell [ref=e106]:
+                - strong [ref=e107]: PROVEN
+                - text: (bundles; anomalies as obstructions)
+              - cell "[17][18][19]" [ref=e108]
+            - row [ref=e109]:
+              - cell [ref=e110]:
+                - strong [ref=e111]: V
+              - cell "Probability and measure-theoretic structures" [ref=e112]
+              - cell "Statistical physics" [ref=e113]
+              - cell "Fisher metric, unique up to constant (Chentsov, classical)" [ref=e114]
+              - cell [ref=e115]:
+                - strong [ref=e116]: PROVEN
+                - text: unique classical; quantum parametric (Petz–Sudar)
+              - cell "[52]" [ref=e117]
+            - row [ref=e118]:
+              - cell [ref=e119]:
+                - strong [ref=e120]: VI
+              - cell "Topological and higher-categorical structures" [ref=e121]
+              - cell "TQFTs" [ref=e122]
+              - cell "Fully dualizable objects (cobordism hypothesis); Atiyah axioms" [ref=e123]
+              - cell [ref=e124]:
+                - strong [ref=e125]: CLAIMED
+                - text: for extended TQFTs (Lurie proof sketch) [35]; functorial TQFT
+                - strong [ref=e126]: PROVEN
+                - text: tractable [36]
+              - cell "[34][35][36]" [ref=e127]
+            - row [ref=e128]:
+              - cell [ref=e129]:
+                - strong [ref=e130]: VII
+              - cell "Dynamical systems and operator semigroups" [ref=e131]
+              - cell "Dissipative and open systems" [ref=e132]
+              - cell "Generator data; Stinespring minimal dilation of CP maps" [ref=e133]
+              - cell [ref=e134]:
+                - strong [ref=e135]: OPEN
+                - text: as a classification; normal form only
+              - cell "[10][11]" [ref=e136]
+            - row [ref=e137]:
+              - cell [ref=e138]:
+                - strong [ref=e139]: VIII
+              - cell "Tensor categories and compositional structures" [ref=e140]
+              - cell "Quantum information" [ref=e141]
+              - cell "Symmetric structure (load-bearing); conjugates, subobjects, End(1)=C (DR hypotheses); pivotal structure (fusion cats)" [ref=e142]
+              - cell [ref=e143]:
+                - strong [ref=e144]: PROVEN
+                - text: islands (DR, Deligne); fusion cats
+                - strong [ref=e145]: OPEN
+              - cell "[12][13][14][16]" [ref=e146]
+            - row [ref=e147]:
+              - cell [ref=e148]:
+                - strong [ref=e149]: IX
+              - cell "Discrete combinatorial structures" [ref=e150]
+              - cell "Lattice and network models" [ref=e151]
+              - cell "Lattice data; tame/wild class" [ref=e152]
+              - cell [ref=e153]:
+                - strong [ref=e154]: PROVEN
+                - text: regime-restricted theorems [30][31][32]; wild sectors
+                - strong [ref=e155]: IMPOSSIBLE
+                - text: to classify
+              - cell "[30][31][32][55][56][57][58]" [ref=e156]
+            - row [ref=e157]:
+              - cell [ref=e158]:
+                - strong [ref=e159]: X
+              - cell "Derived and homotopical structures" [ref=e160]
+              - cell "Higher gauge and derived field theories" [ref=e161]
+              - cell "Derived-tame vs derived-wild dichotomy" [ref=e162]
+              - cell [ref=e163]:
+                - strong [ref=e164]: OPEN
+                - text: beyond the dichotomy
+              - cell "[55]" [ref=e165]
+        - paragraph [ref=e166]:
+          - strong [ref=e167]: Cross-family correspondences.
+          - text: Classical–quantum connection via deformation quantization is
+          - emphasis [ref=e168]: conjectural
+          - text: (Founding Document §4). Gelfand/Stone/DR/Deligne links are proved — see region (c). The 2024–2026 supermap-representability line [40][41] and its possible unification with Gelfand/Stone/Naimark is
+          - emphasis [ref=e169]: open
+          - text: .
+        - separator [ref=e170]
+        - heading "(b) Exceptional structures" [level=2] [ref=e171]
+        - paragraph [ref=e172]: "The CFSG template suggests families + sporadics. The founding document warns: one should not assume that physical theories possess a finite collection of exceptional objects analogous to the 26 sporadic groups (Founding Document 03). The entries below are the proven exceptional mathematics the table must accommodate."
+        - table [ref=e173]:
+          - rowgroup [ref=e174]:
+            - row [ref=e175]:
+              - columnheader "Exceptional object" [ref=e176]
+              - columnheader "Region" [ref=e177]
+              - columnheader "Defining data" [ref=e178]
+              - columnheader "Status" [ref=e179]
+              - columnheader "Sources" [ref=e180]
+          - rowgroup [ref=e181]:
+            - row [ref=e182]:
+              - cell "26 sporadic finite simple groups (27 counting Tits)" [ref=e183]
+              - cell "Family II/group theory" [ref=e184]
+              - cell "Order, Schur multiplier, Out(G), presentations, character tables with power maps (ATLAS companions)" [ref=e185]
+              - cell [ref=e186]:
+                - strong [ref=e187]: PROVEN
+                - text: to exist and be exhaustive (CFSG); no uniform parameterization known
+              - cell "[1][2][3]" [ref=e188]
+            - row [ref=e189]:
+              - cell "Exceptional Lie algebras G2, F4, E6, E7, E8" [ref=e190]
+              - cell "Family I–II boundary (symmetry)" [ref=e191]
+              - cell "Dynkin diagrams outside A–D series; Satake diagrams for their real forms" [ref=e192]
+              - cell [ref=e193]:
+                - strong [ref=e194]: PROVEN
+                - text: (Killing–Cartan complete)
+              - cell "[4]" [ref=e195]
+            - row [ref=e196]:
+              - cell "Real forms and compact/split forms" [ref=e197]
+              - cell "Family III (symmetry layer)" [ref=e198]
+              - cell "Order-≤2 automorphism classes; split and compact forms always exist" [ref=e199]
+              - cell [ref=e200]:
+                - strong [ref=e201]: PROVEN
+              - cell "[4]" [ref=e202]
+            - row [ref=e203]:
+              - cell "Amenable type III₀ and III₁ factors" [ref=e204]
+              - cell "Family II" [ref=e205]
+              - cell "III₀ = ergodic flows; III₁ completed by Haagerup; III_λ (0<λ≤1) continuous parameter" [ref=e206]
+              - cell [ref=e207]:
+                - strong [ref=e208]: PROVEN
+                - text: within the amenable class
+              - cell "[8]" [ref=e209]
+            - row [ref=e210]:
+              - cell "Hyperfinite (AFD) II₁ factor" [ref=e211]
+              - cell "Family II" [ref=e212]
+              - cell "Unique amenable II₁ factor" [ref=e213]
+              - cell [ref=e214]:
+                - strong [ref=e215]: PROVEN
+                - text: "; contrast: uncountably many non-amenable separable II₁ factors"
+              - cell "[8]" [ref=e216]
+            - row [ref=e217]:
+              - cell "Thurston's 8 model geometries" [ref=e218]
+              - cell "Family III" [ref=e219]
+              - cell "S³, E³, H³, S²×R, H²×R, Nil, Sol, SL₂(R)~" [ref=e220]
+              - cell [ref=e221]:
+                - strong [ref=e222]: PROVEN
+                - text: (geometrization)
+              - cell "[60]" [ref=e223]
+            - row [ref=e224]:
+              - cell "Filipkiewicz's dim-4 model geometries" [ref=e225]
+              - cell "Family III" [ref=e226]
+              - cell "18 + one countably infinite family" [ref=e227]
+              - cell [ref=e228]:
+                - strong [ref=e229]: PROVEN
+                - text: to exist; only restricted 4-manifold classes decompose
+              - cell "[60]" [ref=e230]
+            - row [ref=e231]:
+              - cell "Isocategorical group pairs (Etingof–Gelaki)" [ref=e232]
+              - cell "Family VIII" [ref=e233]
+              - cell "Non-isomorphic groups with equivalent plain tensor representation categories" [ref=e234]
+              - cell [ref=e235]:
+                - strong [ref=e236]: PROVEN
+                - text: to exist — the symmetric layer is not recoverable without them
+              - cell "[12]" [ref=e237]
+            - row [ref=e238]:
+              - cell "Extra Z₂ factor in higher-form DHR (Casini–Magan)" [ref=e239]
+              - cell "Families IV, VIII" [ref=e240]
+              - cell "Sector not realizable by Lagrangian gauge models" [ref=e241]
+              - cell [ref=e242]:
+                - strong [ref=e243]: OPEN
+                - text: "[single source]"
+              - cell "[20]" [ref=e244]
+        - separator [ref=e245]
+        - heading "(c) Proven reconstruction relationships" [level=2] [ref=e246]
+        - paragraph [ref=e247]: Objects determined by probes — the pattern CFSG-class classification rarely achieves but reconstruction theorems routinely do.
+        - table [ref=e248]:
+          - rowgroup [ref=e249]:
+            - row [ref=e250]:
+              - columnheader "Reconstruction theorem" [ref=e251]
+              - columnheader "Recovers" [ref=e252]
+              - columnheader "From" [ref=e253]
+              - columnheader "Scope limits" [ref=e254]
+              - columnheader "Status" [ref=e255]
+              - columnheader "Sources" [ref=e256]
+          - rowgroup [ref=e257]:
+            - row [ref=e258]:
+              - cell "Gelfand–Naimark" [ref=e259]
+              - cell "A concrete representation of a C*-algebra in B(H)" [ref=e260]
+              - cell "Abstract C*-algebra" [ref=e261]
+              - cell [ref=e262]:
+                - text: Representation theorem,
+                - strong [ref=e263]: not
+                - text: a classification; only the commutative case is fully classified
+              - cell [ref=e264]:
+                - strong [ref=e265]: PROVEN
+              - cell "[9][42]" [ref=e266]
+            - row [ref=e267]:
+              - cell "Gelfand duality" [ref=e268]
+              - cell "Compact Hausdorff space" [ref=e269]
+              - cell "Commutative C*-algebra" [ref=e270]
+              - cell "Commutative side only" [ref=e271]
+              - cell [ref=e272]:
+                - strong [ref=e273]: PROVEN
+              - cell "[43]" [ref=e274]
+            - row [ref=e275]:
+              - cell "Stone duality" [ref=e276]
+              - cell "Spectrum (zero-dimensional compact space)" [ref=e277]
+              - cell "Boolean algebra" [ref=e278]
+              - cell "Boolean side only" [ref=e279]
+              - cell [ref=e280]:
+                - strong [ref=e281]: PROVEN
+              - cell "[44]" [ref=e282]
+            - row [ref=e283]:
+              - cell "Doplicher–Roberts reconstruction" [ref=e284]
+              - cell "Compact supergroup (unique up to isomorphism)" [ref=e285]
+              - cell "Symmetric tensor *-category with conjugates, direct sums, subobjects, End(1)=C" [ref=e286]
+              - cell "Requires the symmetric structure; DHR selection criteria; Haag duality in the QFT reading" [ref=e287]
+              - cell [ref=e288]:
+                - strong [ref=e289]: PROVEN
+                - text: under stated hypotheses
+              - cell "[12][15][16]" [ref=e290]
+            - row [ref=e291]:
+              - cell "Deligne's theorem" [ref=e292]
+              - cell "Supergroup representation category" [ref=e293]
+              - cell "Char-0 symmetric tensor category of subexponential growth" [ref=e294]
+              - cell "Hypotheses essential" [ref=e295]
+              - cell [ref=e296]:
+                - strong [ref=e297]: PROVEN
+              - cell "[13]" [ref=e298]
+            - row [ref=e299]:
+              - cell "Stinespring dilation" [ref=e300]
+              - cell "Minimal dilation (unique up to unitary)" [ref=e301]
+              - cell "Completely positive map" [ref=e302]
+              - cell "Normal form; not an isomorphism classification of channels" [ref=e303]
+              - cell [ref=e304]:
+                - strong [ref=e305]: PROVEN
+              - cell "[10][11]" [ref=e306]
+            - row [ref=e307]:
+              - cell "Classifying-space construction" [ref=e308]
+              - cell "Principal G-bundle from a map X → BG" [ref=e309]
+              - cell "Map to classifying space" [ref=e310]
+              - cell "Homotopy-classified; characteristic classes are pullbacks" [ref=e311]
+              - cell [ref=e312]:
+                - strong [ref=e313]: PROVEN
+              - cell "[17][18]" [ref=e314]
+            - row [ref=e315]:
+              - cell "Supermap representability" [ref=e316]
+              - cell "Concrete representation of categorical supermaps" [ref=e317]
+              - cell "Theory with suitable channel–state duality (2024–2026)" [ref=e318]
+              - cell [ref=e319]:
+                - text: Settings with channel–state duality; unification with Gelfand/Stone/Naimark
+                - strong [ref=e320]: open
+              - cell [ref=e321]:
+                - strong [ref=e322]: PROVEN
+                - text: in stated settings
+              - cell "[40][41]" [ref=e323]
+        - separator [ref=e324]
+        - heading "(d) Established equivalences and dualities" [level=2] [ref=e325]
+        - paragraph [ref=e326]:
+          - strong [ref=e327]: Standing warning (Etingof–Gelaki).
+          - text: Tensor-category equivalence
+          - strong [ref=e328]: without symmetric structure
+          - text: "provably fails to recover the group: non-isomorphic finite groups can carry equivalent plain tensor representation categories [12]. Any equivalence, duality, or classification in the series that forgets the monoidal/symmetric layer is"
+          - strong [ref=e329]: "false"
+          - text: (DEF-018). The table marks this row
+          - strong [ref=e330]: IMPOSSIBLE
+          - text: as a recovery principle.
+        - table [ref=e331]:
+          - rowgroup [ref=e332]:
+            - row [ref=e333]:
+              - columnheader "Equivalence / duality" [ref=e334]
+              - columnheader "Identifies" [ref=e335]
+              - columnheader "Preserves" [ref=e336]
+              - columnheader "Status" [ref=e337]
+              - columnheader "Sources" [ref=e338]
+          - rowgroup [ref=e339]:
+            - row [ref=e340]:
+              - cell "Tensor-cat equivalence without symmetric structure → group recovery" [ref=e341]
+              - cell "—" [ref=e342]
+              - cell "nothing usable" [ref=e343]
+              - cell [ref=e344]:
+                - strong [ref=e345]: IMPOSSIBLE
+                - text: (Etingof–Gelaki isocategorical groups)
+              - cell "[12]" [ref=e346]
+            - row [ref=e347]:
+              - 'cell "DR equivalence: symmetric tensor *-cat ≃ Rep(compact supergroup)" [ref=e348]'
+              - cell "Superselection data and compact supergroup" [ref=e349]
+              - cell "Symmetric tensor structure, conjugates, End(1)=C" [ref=e350]
+              - cell [ref=e351]:
+                - strong [ref=e352]: PROVEN
+              - cell "[12][16]" [ref=e353]
+            - row [ref=e354]:
+              - 'cell "Deligne equivalence: subexponential char-0 symmetric tensor cats ≃ supergroup reps" [ref=e355]'
+              - cell "Tensor category and supergroup representations" [ref=e356]
+              - cell "Symmetric structure, growth condition" [ref=e357]
+              - cell [ref=e358]:
+                - strong [ref=e359]: PROVEN
+              - cell "[13]" [ref=e360]
+            - row [ref=e361]:
+              - cell "Gelfand duality" [ref=e362]
+              - cell "Commutative C*-algebras and compact Hausdorff spaces" [ref=e363]
+              - cell "Algebraic/topological structure" [ref=e364]
+              - cell [ref=e365]:
+                - strong [ref=e366]: PROVEN
+              - cell "[43]" [ref=e367]
+            - row [ref=e368]:
+              - cell "Stone duality" [ref=e369]
+              - cell "Boolean algebras and zero-dimensional compact spectra" [ref=e370]
+              - cell "Boolean structure" [ref=e371]
+              - cell [ref=e372]:
+                - strong [ref=e373]: PROVEN
+              - cell "[44]" [ref=e374]
+            - row [ref=e375]:
+              - cell [ref=e376]:
+                - emphasis [ref=e377]: "-isomorphism of finite-dim C"
+                - text: "-algebras"
+              - cell "Dimension vectors and algebras" [ref=e378]
+              - cell "*-algebra structure" [ref=e379]
+              - cell [ref=e380]:
+                - strong [ref=e381]: PROVEN
+              - cell "[9]" [ref=e382]
+            - row [ref=e383]:
+              - cell "Channel equivalence via minimal Stinespring dilation" [ref=e384]
+              - cell "CP maps and dilations" [ref=e385]
+              - cell "Complete positivity; unitary freedom" [ref=e386]
+              - cell [ref=e387]:
+                - strong [ref=e388]: PROVEN
+                - text: (up to unitary)
+              - cell "[10]" [ref=e389]
+            - row [ref=e390]:
+              - cell "Müger's Galois theory for braided tensor categories" [ref=e391]
+              - cell "Fixed-point-net representation categories" [ref=e392]
+              - cell [ref=e393]:
+                - text: Braided structure
+                - strong [ref=e394]: plus extra "soliton" data
+              - cell [ref=e395]:
+                - strong [ref=e396]: PROVEN
+                - text: ; extra data required
+              - cell "[21]" [ref=e397]
+            - row [ref=e398]:
+              - cell "Holographic duality (AdS/CFT) as applied to RT" [ref=e399]
+              - cell "Bulk geometry and boundary entanglement" [ref=e400]
+              - cell "—" [ref=e401]
+              - cell [ref=e402]:
+                - strong [ref=e403]: OPEN
+                - text: — RT verified exactly only in AdS₃/2D CFT [45]; entanglement-wedge reconstruction is a
+                - strong [ref=e404]: PROVEN
+                - text: quantum-information theorem [46]; HaPPY codes are tensor-network toys, not AdS/CFT [48]
+              - cell "[45][46][48]" [ref=e405]
+            - row [ref=e406]:
+              - cell "Yoneda embedding Hom(−, P)" [ref=e407]
+              - cell "Objects and their relational profiles" [ref=e408]
+              - cell "Categorical structure" [ref=e409]
+              - cell [ref=e410]:
+                - strong [ref=e411]: PROVEN
+                - text: "mathematically; the Yoneda qualification binds:"
+                - strong [ref=e412]: "\"Yoneda does not, by itself, establish physical equivalence, empirical adequacy, or a classification theorem.\""
+              - cell "Founding Document §5" [ref=e413]
+        - separator [ref=e414]
+        - heading "(e) Open classification problems" [level=2] [ref=e415]
+        - table [ref=e416]:
+          - rowgroup [ref=e417]:
+            - row [ref=e418]:
+              - columnheader "Problem" [ref=e419]
+              - columnheader "Region" [ref=e420]
+              - columnheader "What is known" [ref=e421]
+              - columnheader "Status" [ref=e422]
+              - columnheader "Sources" [ref=e423]
+          - rowgroup [ref=e424]:
+            - row [ref=e425]:
+              - cell "Fusion categories" [ref=e426]
+              - cell "Family VIII" [ref=e427]
+              - cell "Every fusion category is Rep of a weak Hopf algebra (Ostrik); ENO pivotal-structure conjecture (Annals 162, 2005)" [ref=e428]
+              - cell [ref=e429]:
+                - strong [ref=e430]: OPEN
+              - cell "[14]" [ref=e431]
+            - row [ref=e432]:
+              - cell "Elliott program (simple nuclear C*-algebras, UCT)" [ref=e433]
+              - cell "Family II" [ref=e434]
+              - cell "Active unfinished program" [ref=e435]
+              - cell [ref=e436]:
+                - strong [ref=e437]: OPEN
+              - cell "[9]" [ref=e438]
+            - row [ref=e439]:
+              - cell "Holographic entropy cone, n ≤ 5" [ref=e440]
+              - cell "Families III, VI" [ref=e441]
+              - cell "Complete inequality sets for 2, 3, and 4 boundary regions follow from strong subadditivity and monogamy of mutual information [47]; the five-region cone is completely constructed by exhibiting graph models for every extreme ray orbit of the cone defined by all proven inequalities, which settles the existence of further five-party inequalities in the negative (Hernández-Cuenca, Phys. Rev. D 100, 026004 (2019))" [ref=e442]
+              - cell [ref=e443]:
+                - strong [ref=e444]: PROVEN
+              - cell "[47]; Hernández-Cuenca 2019" [ref=e445]
+            - row [ref=e446]:
+              - cell "Holographic entropy cone, n ≥ 6" [ref=e447]
+              - cell "Families III, VI" [ref=e448]
+              - cell "For fixed n finitely many independent inequalities exist; only one infinite family known; a 2026 \"multi-entropy cone\" preprint is unverified" [ref=e449]
+              - cell [ref=e450]:
+                - strong [ref=e451]: OPEN
+              - cell "[47]" [ref=e452]
+            - row [ref=e453]:
+              - cell "Lurie proof gap (extended TQFTs)" [ref=e454]
+              - cell "Family VI" [ref=e455]
+              - cell "Baez–Dolan proposal [34]; Lurie 2009 is an \"informal sketch of a proof\" [35]; exact range of completed cases unverified" [ref=e456]
+              - cell [ref=e457]:
+                - strong [ref=e458]: OPEN
+                - text: (claim
+                - strong [ref=e459]: CLAIMED
+                - text: )
+              - cell "[34][35]" [ref=e460]
+            - row [ref=e461]:
+              - cell "Yang–Mills mass gap" [ref=e462]
+              - cell "Family VII/QFT" [ref=e463]
+              - 'cell "Clay: \"no proof of this property is known\"; explicitly not claimed in the 2026 announcements" [ref=e464]'
+              - cell [ref=e465]:
+                - strong [ref=e466]: OPEN
+              - cell "[23][25][26]" [ref=e467]
+            - row [ref=e468]:
+              - cell "4D YM/QCD existence" [ref=e469]
+              - cell "Family VII/QFT" [ref=e470]
+              - cell "Existence claimed 2026-10-26 (QCD, GUT completion, pure YM subproblem, Balaban-based); 1147-page manuscript unpublished; claimed Lean formalization withheld; KITP verification pending" [ref=e471]
+              - cell [ref=e472]:
+                - strong [ref=e473]: CLAIMED
+                - text: — never conflated with mass gap
+              - cell "[24][25][26]" [ref=e474]
+            - row [ref=e475]:
+              - cell "Quantum monotone metrics" [ref=e476]
+              - cell "Family V" [ref=e477]
+              - cell "Classified parametrically by operator monotone functions (Petz–Sudar) — not a finite list" [ref=e478]
+              - cell [ref=e479]:
+                - strong [ref=e480]: OPEN
+                - text: (classification not finite)
+              - cell "[52]" [ref=e481]
+            - row [ref=e482]:
+              - cell "General II₁ / III factors" [ref=e483]
+              - cell "Family II" [ref=e484]
+              - cell "Coarse Connes-spectrum strata only; fundamental groups vary" [ref=e485]
+              - cell [ref=e486]:
+                - strong [ref=e487]: IMPOSSIBLE
+                - text: globally [8]; residual strata
+                - strong [ref=e488]: OPEN
+              - cell "[8]" [ref=e489]
+            - row [ref=e490]:
+              - cell "Uniform parameterization of finite simple groups" [ref=e491]
+              - cell "Group theory" [ref=e492]
+              - cell "CFSG complete; \"no clean uniform description… is known\" [1]" [ref=e493]
+              - cell [ref=e494]:
+                - strong [ref=e495]: OPEN
+              - cell "[1]" [ref=e496]
+            - row [ref=e497]:
+              - cell "Freed–Hopkins anomaly classification statement" [ref=e498]
+              - cell "Family IV" [ref=e499]
+              - cell "Cobordism-spectrum statement not retrieved; primary source needed" [ref=e500]
+              - cell [ref=e501]:
+                - strong [ref=e502]: OPEN
+              - cell "[19] context" [ref=e503]
+            - row [ref=e504]:
+              - cell "Type-III factor structure beyond Connes spectrum" [ref=e505]
+              - cell "Family II" [ref=e506]
+              - cell "Coarse strata; examples with countable and trivial fundamental groups" [ref=e507]
+              - cell [ref=e508]:
+                - strong [ref=e509]: OPEN
+              - cell "[8]" [ref=e510]
+        - separator [ref=e511]
+        - heading "(f) Obstructions region — where no table exists" [level=2] [ref=e512]
+        - paragraph [ref=e513]:
+          - text: A periodic table must mark where no table can exist. Each entry below is a
+          - strong [ref=e514]: theorem
+          - text: ", not a difficulty."
+        - table [ref=e515]:
+          - rowgroup [ref=e516]:
+            - row [ref=e517]:
+              - columnheader "Obstruction" [ref=e518]
+              - columnheader "Statement" [ref=e519]
+              - columnheader "What it forbids" [ref=e520]
+              - columnheader "Status" [ref=e521]
+              - columnheader "Sources" [ref=e522]
+          - rowgroup [ref=e523]:
+            - row [ref=e524]:
+              - cell "Adyan–Rabin" [ref=e525]
+              - cell "Every Markov property of finitely presentable groups is algorithmically undecidable — including finiteness and simplicity (Collins extended beyond Markov properties)" [ref=e526]
+              - cell "Any uniform recognition procedure for group-flavored sectors" [ref=e527]
+              - cell [ref=e528]:
+                - strong [ref=e529]: IMPOSSIBLE
+              - cell "[53]" [ref=e530]
+            - row [ref=e531]:
+              - cell "McDuff" [ref=e532]
+              - cell "Uncountably many non-isomorphic separable type II₁ factors" [ref=e533]
+              - cell "CFSG-style total classification of factors outside the amenable case" [ref=e534]
+              - cell [ref=e535]:
+                - strong [ref=e536]: IMPOSSIBLE
+              - cell "[8]" [ref=e537]
+            - row [ref=e538]:
+              - cell "Wildness (derived-wild; Buchweitz–Leuschke; Grevstad–May)" [ref=e539]
+              - cell "Rank-2 isomorphism classes of the generic determinant's Cohen–Macaulay modules are not parametrizable by a finite-dimensional variety; \"no meaningful classification\" of compact C_p-equivariant HF_p-modules at odd primes; wildness is degeneration-robust" [ref=e540]
+              - cell "Finite-variety parameterization of wild representation categories" [ref=e541]
+              - cell [ref=e542]:
+                - strong [ref=e543]: IMPOSSIBLE
+              - cell "[55][56][58]" [ref=e544]
+            - row [ref=e545]:
+              - cell "Tame/wild tractability boundary (Grochow–Qiao)" [ref=e546]
+              - cell "Polynomial-time group isomorphism for tame extensions; required bounds fail in the wild case" [ref=e547]
+              - cell "Algorithmic classification in wild regimes" [ref=e548]
+              - cell [ref=e549]:
+                - strong [ref=e550]: IMPOSSIBLE
+                - text: (wild side)
+              - cell "[57]" [ref=e551]
+            - row [ref=e552]:
+              - cell "Borel reducibility / turbulence (Sasyk–Tørnquist)" [ref=e553]
+              - cell "Von Neumann algebra isomorphism admits no classification by countable invariants" [ref=e554]
+              - cell "Countable-invariant classifications of vN algebras" [ref=e555]
+              - cell [ref=e556]:
+                - strong [ref=e557]: IMPOSSIBLE
+                - text: "[single source; announcement-level]"
+              - cell "[59]" [ref=e558]
+            - row [ref=e559]:
+              - cell "Dimension-4 unrecognizability (Tancer; Gordon)" [ref=e560]
+              - 'cell "#₉(S²×S²) homeomorphism is algorithmically unrecognizable (improving #₁₂)" [ref=e561]'
+              - cell "Effective classification of 4-manifolds in general" [ref=e562]
+              - cell [ref=e563]:
+                - strong [ref=e564]: IMPOSSIBLE
+              - cell "[54][60]" [ref=e565]
+            - row [ref=e566]:
+              - cell "Etingof–Gelaki" [ref=e567]
+              - 'cell "Isocategorical groups: tensor equivalence without symmetric structure does not determine the group" [ref=e568]'
+              - cell "Equivalence notions that discard the monoidal/symmetric layer" [ref=e569]
+              - cell [ref=e570]:
+                - strong [ref=e571]: IMPOSSIBLE
+              - cell "[12]" [ref=e572]
+            - row [ref=e573]:
+              - cell "Unknotting problem" [ref=e574]
+              - cell "Unknot recognition is in NP and coNP; P-membership open" [ref=e575]
+              - cell "— (a \"decidable but unclassified\" middle regime)" [ref=e576]
+              - cell [ref=e577]:
+                - strong [ref=e578]: OPEN
+              - cell "[61]" [ref=e579]
+            - row [ref=e580]:
+              - cell "Darboux triviality" [ref=e581]
+              - cell "Symplectic geometry has no local invariants" [ref=e582]
+              - cell "Local classification content on the symplectic side (classification must be global)" [ref=e583]
+              - cell [ref=e584]:
+                - strong [ref=e585]: PROVEN
+                - text: (trivially classified locally)
+              - cell "[6]" [ref=e586]
+        - paragraph [ref=e587]:
+          - strong [ref=e588]: Regime contrast.
+          - text: Geometrization decomposes 3-manifolds into exactly 8 Thurston geometries [60] — finite tables exist, but only in tame regimes (dimension 3, not 4 [54][60]). The synthesis offered to the program is that one should expect restricted-class classification theorems plus explicit obstruction theorems, not one global periodic table; this synthesis is
+          - emphasis [ref=e589]: conjectural
+          - text: .
+        - separator [ref=e590]
+        - heading "Reading the table" [level=2] [ref=e591]
+        - list [ref=e592]:
+          - listitem [ref=e593]:
+            - strong [ref=e594]: PROVEN
+            - text: cells are citations to completed theorems;
+            - strong [ref=e595]: IMPOSSIBLE
+            - text: cells are citations to impossibility theorems — both are knowledge.
+          - listitem [ref=e596]:
+            - strong [ref=e597]: CLAIMED
+            - text: appears exactly once as a classification-status cell (4D YM/QCD existence) [24][25][26]; existence and mass gap are never conflated [23][26].
+          - listitem [ref=e598]:
+            - strong [ref=e599]: OPEN
+            - text: cells mark where the series' own conjecture (T-CMRPS-01) and its five obligations live; the table is the chart that conjecture would complete.
+          - listitem [ref=e600]: Every equivalences entry names the structure it preserves, or records the failure that follows from not naming it [12].
+  - contentinfo [ref=e601]:
+    - generic [ref=e602]:
+      - generic [ref=e603]:
+        - heading "CMRPS" [level=3] [ref=e604]
+        - paragraph [ref=e605]: The Classification of Mathematical Representations of Physical Systems — a twelve-volume series with a structural synthesis. All results are stated relative to the admissibility axioms and preservation laws fixed in the series.
+        - paragraph [ref=e606]: Matthew Long / The YonedaAI Collaboration · YonedaAI Research Collective · Chicago, Illinois, USA
+      - generic [ref=e607]:
+        - heading "Read" [level=3] [ref=e608]
+        - list [ref=e609]:
+          - listitem [ref=e610]:
+            - link "All papers" [ref=e611] [cursor=pointer]:
+              - /url: /#papers
+          - listitem [ref=e612]:
+            - link "Periodic table" [ref=e613] [cursor=pointer]:
+              - /url: /periodic-table/
+          - listitem [ref=e614]:
+            - link "Structural synthesis" [ref=e615] [cursor=pointer]:
+              - /url: /papers/synthesis/
+      - generic [ref=e616]:
+        - heading "Series" [level=3] [ref=e617]
+        - list [ref=e618]:
+          - listitem [ref=e619]:
+            - link "Synthesis PDF" [ref=e620] [cursor=pointer]:
+              - /url: /pdf/synthesis.pdf
+          - listitem [ref=e621]:
+            - link "Principia Physica PDF" [ref=e622] [cursor=pointer]:
+              - /url: /pdf/vol-12-principia-physica.pdf
+          - listitem [ref=e623]:
+            - link "Foundations PDF" [ref=e624] [cursor=pointer]:
+              - /url: /pdf/vol-01-foundations.pdf
+  - alert [ref=e625]

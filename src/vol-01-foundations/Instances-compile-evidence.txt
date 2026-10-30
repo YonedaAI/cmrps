@@ -1,0 +1,54 @@
+# Compile and demo evidence for src/vol-01-foundations/Instances.hs
+# Generated 2026-10-30 with GHC on this machine. Claim evidenced:
+# the instance layer compiles against the shared taxonomy classes and
+# its demo output matches the statements of the paper.
+
+$ ghc -isrc -isrc/vol-01-foundations -outputdir /tmp/ghc-vol01-evidence src/vol-01-foundations/Instances.hs src/vol-01-foundations/Main.hs -o /tmp/ghc-vol01-evidence/vol01-demo
+[1 of 6] Compiling Taxonomy.Equivalences ( src/Taxonomy/Equivalences.hs, /tmp/ghc-vol01-evidence/Taxonomy/Equivalences.o )
+[2 of 6] Compiling Taxonomy.Families ( src/Taxonomy/Families.hs, /tmp/ghc-vol01-evidence/Taxonomy/Families.o )
+[3 of 6] Compiling Taxonomy.Constructions ( src/Taxonomy/Constructions.hs, /tmp/ghc-vol01-evidence/Taxonomy/Constructions.o )
+[4 of 6] Compiling Instances        ( src/vol-01-foundations/Instances.hs, /tmp/ghc-vol01-evidence/Instances.o )
+[5 of 6] Compiling Main             ( src/vol-01-foundations/Main.hs, /tmp/ghc-vol01-evidence/Main.o )
+[6 of 6] Linking /tmp/ghc-vol01-evidence/vol01-demo
+
+$ /tmp/ghc-vol01-evidence/vol01-demo
+=== vol-01-foundations: taxonomy instance demo ===
+
+-- Theorem 8.1 (a): irreducible under disjoint union iff |X| = 1
+  |X| = 1, irreducible: True
+  |X| = 2, irreducible: False
+  |X| = 3, irreducible: False
+  |X| = 4, irreducible: False
+  |X| = 5, irreducible: False
+  |X| = 6, irreducible: False
+  |X| = 7, irreducible: False
+  |X| = 8, irreducible: False
+
+-- Theorem 8.1 (b): decomposition into one-point records
+Just (Decomposition {decompositionConstruction = DirectSum, irreducibleFactors = [FiniteStateSystem {fsCardinality = 1},FiniteStateSystem {fsCardinality = 1},FiniteStateSystem {fsCardinality = 1},FiniteStateSystem {fsCardinality = 1},FiniteStateSystem {fsCardinality = 1}]})
+
+-- Theorem 8.1 (c): isomorphism exactly when cardinalities agree
+True
+False
+
+-- Example 7.5: irreducibles under product are prime cardinalities
+  1 = []
+  2 = [2]
+  4 = [2,2]
+  6 = [2,3]
+  12 = [2,2,3]
+  30 = [2,3,5]
+  97 = [97]
+
+-- Theorem 8.2: components of a functional graph
+Just (Decomposition {decompositionConstruction = DirectSum, irreducibleFactors = [FiniteDynamicalSystem {fdsStates = [0,1,2], fdsMap = [(0,1),(1,2),(2,0)]},FiniteDynamicalSystem {fdsStates = [3], fdsMap = [(3,3)]},FiniteDynamicalSystem {fdsStates = [4,5], fdsMap = [(4,5),(5,4)]}]})
+
+-- Theorem 8.2 (c): conjugacy of self-maps
+  relabeled cycles: True
+  different cycle type: False
+
+-- Proposition 7.6: factorization changes entanglement
+  product vector: Schmidt rank 1, coefficients [0.0,1.0]
+  rotated vector: Schmidt rank 2, coefficients [0.7071067811865475,0.7071067811865475]
+
+All demonstrations completed.

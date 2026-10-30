@@ -1,0 +1,26 @@
+{
+  "name": "cmrps",
+  "display_name": "CMRPS — The Classification of Mathematical Representations of Physical Systems",
+  "description": "A twelve-volume research series on the structural classification of mathematical representations of physical systems, with a structural synthesis. Matthew Long / The YonedaAI Collaboration.",
+  "colors": {
+    "bg": "#070a16",
+    "surface": "#0e1428",
+    "surface_hover": "#16203d",
+    "accent": "#6d8cff",
+    "accent_hover": "#8aa4ff",
+    "accent_glow": "rgba(109, 140, 255, 0.16)",
+    "accent_secondary": "#22d3ee",
+    "text": "#e8ecf8",
+    "text_muted": "#9aa7c7",
+    "text_dim": "#5c6a8c",
+    "border": "#1e2a4a",
+    "code_bg": "#0b1122",
+    "success": "#34d399",
+    "warning": "#fbbf24"
+  },
+  "fonts": {
+    "heading": "Spectral",
+    "body": "Inter",
+    "mono": "IBM Plex Mono"
+  }
+}
