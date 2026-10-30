@@ -51,7 +51,7 @@ export default function PaperPage({ params }: { params: { slug: string } }) {
 
   return (
     <>
-      <div className="paper-layout">
+      <div className="paper-layout paper-layout--toc">
         <article>
           <header className="paper-header">
             <p className="kicker">{paper.part} · {paper.category}</p>

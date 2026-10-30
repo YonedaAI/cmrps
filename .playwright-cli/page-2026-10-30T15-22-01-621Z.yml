@@ -1,0 +1,1267 @@
+- generic [active] [ref=f7e1]:
+  - banner [ref=f7e2]:
+    - generic [ref=f7e3]:
+      - link "CMRPS The Classification of Mathematical Representations of Physical Systems" [ref=f7e4] [cursor=pointer]:
+        - /url: /
+        - generic [ref=f7e5]: CMRPS
+        - generic [ref=f7e6]: The Classification of Mathematical Representations of Physical Systems
+      - navigation [ref=f7e7]:
+        - link "Papers" [ref=f7e8] [cursor=pointer]:
+          - /url: /#papers
+        - link "Periodic Table" [ref=f7e9] [cursor=pointer]:
+          - /url: /periodic-table/
+        - link "Series" [ref=f7e10] [cursor=pointer]:
+          - /url: /#series
+  - main [ref=f7e11]:
+    - article [ref=f7e13]:
+      - generic [ref=f7e14]:
+        - paragraph [ref=f7e15]: Program registry · CMRPS
+        - heading "The Periodic Table of Mathematical Physics" [level=1] [ref=f7e16]
+        - paragraph [ref=f7e17]: A research framework for classification, not a completed classification. Completeness is a theorem to investigate; the central conjecture it serves remains a conjecture.
+        - generic [ref=f7e18]:
+          - generic [ref=f7e19]: Matthew Long · The YonedaAI Collaboration
+          - generic [ref=f7e20]: Status date 29 October 2026
+      - generic [ref=f7e21]:
+        - paragraph [ref=f7e22]:
+          - strong [ref=f7e23]: Status legend (used in every cell of every Status column).
+        - table [ref=f7e24]:
+          - rowgroup [ref=f7e25]:
+            - row [ref=f7e26]:
+              - columnheader "Token" [ref=f7e27]
+              - columnheader "Meaning" [ref=f7e28]
+          - rowgroup [ref=f7e29]:
+            - row [ref=f7e30]:
+              - cell [ref=f7e31]:
+                - strong [ref=f7e32]: PROVEN
+              - cell "A classification theorem with a completeness statement exists in the stated scope." [ref=f7e33]
+            - row [ref=f7e34]:
+              - cell [ref=f7e35]:
+                - strong [ref=f7e36]: CLAIMED
+              - cell "An announced result whose supporting artifacts are not publicly checkable." [ref=f7e37]
+            - row [ref=f7e38]:
+              - cell [ref=f7e39]:
+                - strong [ref=f7e40]: OPEN
+              - cell "No complete result; partial or parametric results noted in the row." [ref=f7e41]
+            - row [ref=f7e42]:
+              - cell [ref=f7e43]:
+                - strong [ref=f7e44]: IMPOSSIBLE
+              - cell "A theorem proves that no classification of the stated kind can exist." [ref=f7e45]
+        - paragraph [ref=f7e46]:
+          - text: "Citation convention: bracketed citations link to the Sources section below. Inferences are marked"
+          - emphasis [ref=f7e47]: conjectural
+          - text: or
+          - emphasis [ref=f7e48]: open
+          - text: .
+        - separator [ref=f7e49]
+        - heading "(a) Fundamental structural families and their defining invariants" [level=2] [ref=f7e50]
+        - paragraph [ref=f7e51]: Families I–X are the candidate organizing families of the founding document §4 (DEF-026–035). They are candidates, not a completed classification.
+        - table [ref=f7e52]:
+          - rowgroup [ref=f7e53]:
+            - row [ref=f7e54]:
+              - columnheader "Family" [ref=f7e55]
+              - columnheader "Structure" [ref=f7e56]
+              - columnheader "Representative systems" [ref=f7e57]
+              - columnheader "Defining invariants" [ref=f7e58]
+              - columnheader "Status" [ref=f7e59]
+              - columnheader "Sources" [ref=f7e60]
+          - rowgroup [ref=f7e61]:
+            - row [ref=f7e62]:
+              - cell [ref=f7e63]:
+                - strong [ref=f7e64]: I
+              - cell "Symplectic and Poisson structures" [ref=f7e65]
+              - cell "Classical mechanics" [ref=f7e66]
+              - cell [ref=f7e67]:
+                - text: Symplectic form ω;
+                - strong [ref=f7e68]: "locally: none"
+                - text: "(Darboux normal form); globally: topology of ω. Poisson: Weinstein splitting (symplectic × transverse), symplectic-leaf foliation, coadjoint orbits for KKS"
+              - cell [ref=f7e69]:
+                - strong [ref=f7e70]: PROVEN
+                - text: local; global classification topological
+              - cell [ref=f7e71]:
+                - link "[6]" [ref=f7e72] [cursor=pointer]:
+                  - /url: "#src-6"
+                - link "[7]" [ref=f7e73] [cursor=pointer]:
+                  - /url: "#src-7"
+            - row [ref=f7e74]:
+              - cell [ref=f7e75]:
+                - strong [ref=f7e76]: II
+              - cell "Hilbert spaces and operator algebras" [ref=f7e77]
+              - cell "Quantum mechanics" [ref=f7e78]
+              - 'cell "Dimension vector (finite-dim C*: A ≅ ⊕ M_{n_i}(C)); Murray–von Neumann type + Connes invariants (amenable factors); Kraus rank (channels)" [ref=f7e79]'
+              - cell [ref=f7e80]:
+                - strong [ref=f7e81]: PROVEN
+                - text: islands; general factors
+                - strong [ref=f7e82]: IMPOSSIBLE
+                - link "[8]" [ref=f7e83] [cursor=pointer]:
+                  - /url: "#src-8"
+                - text: ; fusion cats
+                - strong [ref=f7e84]: OPEN
+                - link "[14]" [ref=f7e85] [cursor=pointer]:
+                  - /url: "#src-14"
+              - cell [ref=f7e86]:
+                - link "[8]" [ref=f7e87] [cursor=pointer]:
+                  - /url: "#src-8"
+                - link "[9]" [ref=f7e88] [cursor=pointer]:
+                  - /url: "#src-9"
+                - link "[10]" [ref=f7e89] [cursor=pointer]:
+                  - /url: "#src-10"
+                - link "[11]" [ref=f7e90] [cursor=pointer]:
+                  - /url: "#src-11"
+                - link "[14]" [ref=f7e91] [cursor=pointer]:
+                  - /url: "#src-14"
+            - row [ref=f7e92]:
+              - cell [ref=f7e93]:
+                - strong [ref=f7e94]: III
+              - cell "Smooth manifolds and geometric structures" [ref=f7e95]
+              - cell "Relativity" [ref=f7e96]
+              - cell "Holonomy group (Lorentzian, Berger-list analogue); causal class (complete causal ladder); Thurston geometry type (3-manifolds)" [ref=f7e97]
+              - cell [ref=f7e98]:
+                - strong [ref=f7e99]: PROVEN
+                - text: in stated regimes; dim-4 unrecognizable instances
+                - strong [ref=f7e100]: IMPOSSIBLE
+              - cell [ref=f7e101]:
+                - link "[50]" [ref=f7e102] [cursor=pointer]:
+                  - /url: "#src-50"
+                - link "[51]" [ref=f7e103] [cursor=pointer]:
+                  - /url: "#src-51"
+                - link "[54]" [ref=f7e104] [cursor=pointer]:
+                  - /url: "#src-54"
+                - link "[60]" [ref=f7e105] [cursor=pointer]:
+                  - /url: "#src-60"
+            - row [ref=f7e106]:
+              - cell [ref=f7e107]:
+                - strong [ref=f7e108]: IV
+              - cell "Principal bundles and connections" [ref=f7e109]
+              - cell "Gauge theories" [ref=f7e110]
+              - cell "[X, BG]; characteristic classes in H*(BG) (SW, Pontryagin, Euler, Chern, DD); anomaly classes H¹⊕H²(CE(P))" [ref=f7e111]
+              - cell [ref=f7e112]:
+                - strong [ref=f7e113]: PROVEN
+                - text: (bundles; anomalies as obstructions)
+              - cell [ref=f7e114]:
+                - link "[17]" [ref=f7e115] [cursor=pointer]:
+                  - /url: "#src-17"
+                - link "[18]" [ref=f7e116] [cursor=pointer]:
+                  - /url: "#src-18"
+                - link "[19]" [ref=f7e117] [cursor=pointer]:
+                  - /url: "#src-19"
+            - row [ref=f7e118]:
+              - cell [ref=f7e119]:
+                - strong [ref=f7e120]: V
+              - cell "Probability and measure-theoretic structures" [ref=f7e121]
+              - cell "Statistical physics" [ref=f7e122]
+              - cell "Fisher metric, unique up to constant (Chentsov, classical)" [ref=f7e123]
+              - cell [ref=f7e124]:
+                - strong [ref=f7e125]: PROVEN
+                - text: unique classical; quantum parametric (Petz–Sudar)
+              - cell [ref=f7e126]:
+                - link "[52]" [ref=f7e127] [cursor=pointer]:
+                  - /url: "#src-52"
+            - row [ref=f7e128]:
+              - cell [ref=f7e129]:
+                - strong [ref=f7e130]: VI
+              - cell "Topological and higher-categorical structures" [ref=f7e131]
+              - cell "TQFTs" [ref=f7e132]
+              - cell "Fully dualizable objects (cobordism hypothesis); Atiyah axioms" [ref=f7e133]
+              - cell [ref=f7e134]:
+                - strong [ref=f7e135]: CLAIMED
+                - text: for extended TQFTs (Lurie proof sketch)
+                - link "[35]" [ref=f7e136] [cursor=pointer]:
+                  - /url: "#src-35"
+                - text: ; functorial TQFT
+                - strong [ref=f7e137]: PROVEN
+                - text: tractable
+                - link "[36]" [ref=f7e138] [cursor=pointer]:
+                  - /url: "#src-36"
+              - cell [ref=f7e139]:
+                - link "[34]" [ref=f7e140] [cursor=pointer]:
+                  - /url: "#src-34"
+                - link "[35]" [ref=f7e141] [cursor=pointer]:
+                  - /url: "#src-35"
+                - link "[36]" [ref=f7e142] [cursor=pointer]:
+                  - /url: "#src-36"
+            - row [ref=f7e143]:
+              - cell [ref=f7e144]:
+                - strong [ref=f7e145]: VII
+              - cell "Dynamical systems and operator semigroups" [ref=f7e146]
+              - cell "Dissipative and open systems" [ref=f7e147]
+              - cell "Generator data; Stinespring minimal dilation of CP maps" [ref=f7e148]
+              - cell [ref=f7e149]:
+                - strong [ref=f7e150]: OPEN
+                - text: as a classification; normal form only
+              - cell [ref=f7e151]:
+                - link "[10]" [ref=f7e152] [cursor=pointer]:
+                  - /url: "#src-10"
+                - link "[11]" [ref=f7e153] [cursor=pointer]:
+                  - /url: "#src-11"
+            - row [ref=f7e154]:
+              - cell [ref=f7e155]:
+                - strong [ref=f7e156]: VIII
+              - cell "Tensor categories and compositional structures" [ref=f7e157]
+              - cell "Quantum information" [ref=f7e158]
+              - cell "Symmetric structure (load-bearing); conjugates, subobjects, End(1)=C (DR hypotheses); pivotal structure (fusion cats)" [ref=f7e159]
+              - cell [ref=f7e160]:
+                - strong [ref=f7e161]: PROVEN
+                - text: islands (DR, Deligne); fusion cats
+                - strong [ref=f7e162]: OPEN
+              - cell [ref=f7e163]:
+                - link "[12]" [ref=f7e164] [cursor=pointer]:
+                  - /url: "#src-12"
+                - link "[13]" [ref=f7e165] [cursor=pointer]:
+                  - /url: "#src-13"
+                - link "[14]" [ref=f7e166] [cursor=pointer]:
+                  - /url: "#src-14"
+                - link "[16]" [ref=f7e167] [cursor=pointer]:
+                  - /url: "#src-16"
+            - row [ref=f7e168]:
+              - cell [ref=f7e169]:
+                - strong [ref=f7e170]: IX
+              - cell "Discrete combinatorial structures" [ref=f7e171]
+              - cell "Lattice and network models" [ref=f7e172]
+              - cell "Lattice data; tame/wild class" [ref=f7e173]
+              - cell [ref=f7e174]:
+                - strong [ref=f7e175]: PROVEN
+                - text: regime-restricted theorems
+                - link "[30]" [ref=f7e176] [cursor=pointer]:
+                  - /url: "#src-30"
+                - link "[31]" [ref=f7e177] [cursor=pointer]:
+                  - /url: "#src-31"
+                - link "[32]" [ref=f7e178] [cursor=pointer]:
+                  - /url: "#src-32"
+                - text: ; wild sectors
+                - strong [ref=f7e179]: IMPOSSIBLE
+                - text: to classify
+              - cell [ref=f7e180]:
+                - link "[30]" [ref=f7e181] [cursor=pointer]:
+                  - /url: "#src-30"
+                - link "[31]" [ref=f7e182] [cursor=pointer]:
+                  - /url: "#src-31"
+                - link "[32]" [ref=f7e183] [cursor=pointer]:
+                  - /url: "#src-32"
+                - link "[55]" [ref=f7e184] [cursor=pointer]:
+                  - /url: "#src-55"
+                - link "[56]" [ref=f7e185] [cursor=pointer]:
+                  - /url: "#src-56"
+                - link "[57]" [ref=f7e186] [cursor=pointer]:
+                  - /url: "#src-57"
+                - link "[58]" [ref=f7e187] [cursor=pointer]:
+                  - /url: "#src-58"
+            - row [ref=f7e188]:
+              - cell [ref=f7e189]:
+                - strong [ref=f7e190]: X
+              - cell "Derived and homotopical structures" [ref=f7e191]
+              - cell "Higher gauge and derived field theories" [ref=f7e192]
+              - cell "Derived-tame vs derived-wild dichotomy" [ref=f7e193]
+              - cell [ref=f7e194]:
+                - strong [ref=f7e195]: OPEN
+                - text: beyond the dichotomy
+              - cell [ref=f7e196]:
+                - link "[55]" [ref=f7e197] [cursor=pointer]:
+                  - /url: "#src-55"
+        - paragraph [ref=f7e198]:
+          - strong [ref=f7e199]: Cross-family correspondences.
+          - text: Classical–quantum connection via deformation quantization is
+          - emphasis [ref=f7e200]: conjectural
+          - text: (Founding Document §4). Gelfand/Stone/DR/Deligne links are proved — see region (c). The 2024–2026 supermap-representability line
+          - link "[40]" [ref=f7e201] [cursor=pointer]:
+            - /url: "#src-40"
+          - link "[41]" [ref=f7e202] [cursor=pointer]:
+            - /url: "#src-41"
+          - text: and its possible unification with Gelfand/Stone/Naimark is
+          - emphasis [ref=f7e203]: open
+          - text: .
+        - separator [ref=f7e204]
+        - heading "(b) Exceptional structures" [level=2] [ref=f7e205]
+        - paragraph [ref=f7e206]: "The CFSG template suggests families + sporadics. The founding document warns: one should not assume that physical theories possess a finite collection of exceptional objects analogous to the 26 sporadic groups (Founding Document 03). The entries below are the proven exceptional mathematics the table must accommodate."
+        - table [ref=f7e207]:
+          - rowgroup [ref=f7e208]:
+            - row [ref=f7e209]:
+              - columnheader "Exceptional object" [ref=f7e210]
+              - columnheader "Region" [ref=f7e211]
+              - columnheader "Defining data" [ref=f7e212]
+              - columnheader "Status" [ref=f7e213]
+              - columnheader "Sources" [ref=f7e214]
+          - rowgroup [ref=f7e215]:
+            - row [ref=f7e216]:
+              - cell "26 sporadic finite simple groups (27 counting Tits)" [ref=f7e217]
+              - cell "Family II/group theory" [ref=f7e218]
+              - cell "Order, Schur multiplier, Out(G), presentations, character tables with power maps (ATLAS companions)" [ref=f7e219]
+              - cell [ref=f7e220]:
+                - strong [ref=f7e221]: PROVEN
+                - text: to exist and be exhaustive (CFSG); no uniform parameterization known
+              - cell [ref=f7e222]:
+                - link "[1]" [ref=f7e223] [cursor=pointer]:
+                  - /url: "#src-1"
+                - link "[2]" [ref=f7e224] [cursor=pointer]:
+                  - /url: "#src-2"
+                - link "[3]" [ref=f7e225] [cursor=pointer]:
+                  - /url: "#src-3"
+            - row [ref=f7e226]:
+              - cell "Exceptional Lie algebras G2, F4, E6, E7, E8" [ref=f7e227]
+              - cell "Family I–II boundary (symmetry)" [ref=f7e228]
+              - cell "Dynkin diagrams outside A–D series; Satake diagrams for their real forms" [ref=f7e229]
+              - cell [ref=f7e230]:
+                - strong [ref=f7e231]: PROVEN
+                - text: (Killing–Cartan complete)
+              - cell [ref=f7e232]:
+                - link "[4]" [ref=f7e233] [cursor=pointer]:
+                  - /url: "#src-4"
+            - row [ref=f7e234]:
+              - cell "Real forms and compact/split forms" [ref=f7e235]
+              - cell "Family III (symmetry layer)" [ref=f7e236]
+              - cell "Order-≤2 automorphism classes; split and compact forms always exist" [ref=f7e237]
+              - cell [ref=f7e238]:
+                - strong [ref=f7e239]: PROVEN
+              - cell [ref=f7e240]:
+                - link "[4]" [ref=f7e241] [cursor=pointer]:
+                  - /url: "#src-4"
+            - row [ref=f7e242]:
+              - cell "Amenable type III₀ and III₁ factors" [ref=f7e243]
+              - cell "Family II" [ref=f7e244]
+              - cell "III₀ = ergodic flows; III₁ completed by Haagerup; III_λ (0<λ≤1) continuous parameter" [ref=f7e245]
+              - cell [ref=f7e246]:
+                - strong [ref=f7e247]: PROVEN
+                - text: within the amenable class
+              - cell [ref=f7e248]:
+                - link "[8]" [ref=f7e249] [cursor=pointer]:
+                  - /url: "#src-8"
+            - row [ref=f7e250]:
+              - cell "Hyperfinite (AFD) II₁ factor" [ref=f7e251]
+              - cell "Family II" [ref=f7e252]
+              - cell "Unique amenable II₁ factor" [ref=f7e253]
+              - cell [ref=f7e254]:
+                - strong [ref=f7e255]: PROVEN
+                - text: "; contrast: uncountably many non-amenable separable II₁ factors"
+              - cell [ref=f7e256]:
+                - link "[8]" [ref=f7e257] [cursor=pointer]:
+                  - /url: "#src-8"
+            - row [ref=f7e258]:
+              - cell "Thurston's 8 model geometries" [ref=f7e259]
+              - cell "Family III" [ref=f7e260]
+              - cell "S³, E³, H³, S²×R, H²×R, Nil, Sol, SL₂(R)~" [ref=f7e261]
+              - cell [ref=f7e262]:
+                - strong [ref=f7e263]: PROVEN
+                - text: (geometrization)
+              - cell [ref=f7e264]:
+                - link "[60]" [ref=f7e265] [cursor=pointer]:
+                  - /url: "#src-60"
+            - row [ref=f7e266]:
+              - cell "Filipkiewicz's dim-4 model geometries" [ref=f7e267]
+              - cell "Family III" [ref=f7e268]
+              - cell "18 + one countably infinite family" [ref=f7e269]
+              - cell [ref=f7e270]:
+                - strong [ref=f7e271]: PROVEN
+                - text: to exist; only restricted 4-manifold classes decompose
+              - cell [ref=f7e272]:
+                - link "[60]" [ref=f7e273] [cursor=pointer]:
+                  - /url: "#src-60"
+            - row [ref=f7e274]:
+              - cell "Isocategorical group pairs (Etingof–Gelaki)" [ref=f7e275]
+              - cell "Family VIII" [ref=f7e276]
+              - cell "Non-isomorphic groups with equivalent plain tensor representation categories" [ref=f7e277]
+              - cell [ref=f7e278]:
+                - strong [ref=f7e279]: PROVEN
+                - text: to exist — the symmetric layer is not recoverable without them
+              - cell [ref=f7e280]:
+                - link "[12]" [ref=f7e281] [cursor=pointer]:
+                  - /url: "#src-12"
+            - row [ref=f7e282]:
+              - cell "Extra Z₂ factor in higher-form DHR (Casini–Magan)" [ref=f7e283]
+              - cell "Families IV, VIII" [ref=f7e284]
+              - cell "Sector not realizable by Lagrangian gauge models" [ref=f7e285]
+              - cell [ref=f7e286]:
+                - strong [ref=f7e287]: OPEN
+                - text: "[single source]"
+              - cell [ref=f7e288]:
+                - link "[20]" [ref=f7e289] [cursor=pointer]:
+                  - /url: "#src-20"
+        - separator [ref=f7e290]
+        - heading "(c) Proven reconstruction relationships" [level=2] [ref=f7e291]
+        - paragraph [ref=f7e292]: Objects determined by probes — the pattern CFSG-class classification rarely achieves but reconstruction theorems routinely do.
+        - table [ref=f7e293]:
+          - rowgroup [ref=f7e294]:
+            - row [ref=f7e295]:
+              - columnheader "Reconstruction theorem" [ref=f7e296]
+              - columnheader "Recovers" [ref=f7e297]
+              - columnheader "From" [ref=f7e298]
+              - columnheader "Scope limits" [ref=f7e299]
+              - columnheader "Status" [ref=f7e300]
+              - columnheader "Sources" [ref=f7e301]
+          - rowgroup [ref=f7e302]:
+            - row [ref=f7e303]:
+              - cell "Gelfand–Naimark" [ref=f7e304]
+              - cell "A concrete representation of a C*-algebra in B(H)" [ref=f7e305]
+              - cell "Abstract C*-algebra" [ref=f7e306]
+              - cell [ref=f7e307]:
+                - text: Representation theorem,
+                - strong [ref=f7e308]: not
+                - text: a classification; only the commutative case is fully classified
+              - cell [ref=f7e309]:
+                - strong [ref=f7e310]: PROVEN
+              - cell [ref=f7e311]:
+                - link "[9]" [ref=f7e312] [cursor=pointer]:
+                  - /url: "#src-9"
+                - link "[42]" [ref=f7e313] [cursor=pointer]:
+                  - /url: "#src-42"
+            - row [ref=f7e314]:
+              - cell "Gelfand duality" [ref=f7e315]
+              - cell "Compact Hausdorff space" [ref=f7e316]
+              - cell "Commutative C*-algebra" [ref=f7e317]
+              - cell "Commutative side only" [ref=f7e318]
+              - cell [ref=f7e319]:
+                - strong [ref=f7e320]: PROVEN
+              - cell [ref=f7e321]:
+                - link "[43]" [ref=f7e322] [cursor=pointer]:
+                  - /url: "#src-43"
+            - row [ref=f7e323]:
+              - cell "Stone duality" [ref=f7e324]
+              - cell "Spectrum (zero-dimensional compact space)" [ref=f7e325]
+              - cell "Boolean algebra" [ref=f7e326]
+              - cell "Boolean side only" [ref=f7e327]
+              - cell [ref=f7e328]:
+                - strong [ref=f7e329]: PROVEN
+              - cell [ref=f7e330]:
+                - link "[44]" [ref=f7e331] [cursor=pointer]:
+                  - /url: "#src-44"
+            - row [ref=f7e332]:
+              - cell "Doplicher–Roberts reconstruction" [ref=f7e333]
+              - cell "Compact supergroup (unique up to isomorphism)" [ref=f7e334]
+              - cell "Symmetric tensor *-category with conjugates, direct sums, subobjects, End(1)=C" [ref=f7e335]
+              - cell "Requires the symmetric structure; DHR selection criteria; Haag duality in the QFT reading" [ref=f7e336]
+              - cell [ref=f7e337]:
+                - strong [ref=f7e338]: PROVEN
+                - text: under stated hypotheses
+              - cell [ref=f7e339]:
+                - link "[12]" [ref=f7e340] [cursor=pointer]:
+                  - /url: "#src-12"
+                - link "[15]" [ref=f7e341] [cursor=pointer]:
+                  - /url: "#src-15"
+                - link "[16]" [ref=f7e342] [cursor=pointer]:
+                  - /url: "#src-16"
+            - row [ref=f7e343]:
+              - cell "Deligne's theorem" [ref=f7e344]
+              - cell "Supergroup representation category" [ref=f7e345]
+              - cell "Char-0 symmetric tensor category of subexponential growth" [ref=f7e346]
+              - cell "Hypotheses essential" [ref=f7e347]
+              - cell [ref=f7e348]:
+                - strong [ref=f7e349]: PROVEN
+              - cell [ref=f7e350]:
+                - link "[13]" [ref=f7e351] [cursor=pointer]:
+                  - /url: "#src-13"
+            - row [ref=f7e352]:
+              - cell "Stinespring dilation" [ref=f7e353]
+              - cell "Minimal dilation (unique up to unitary)" [ref=f7e354]
+              - cell "Completely positive map" [ref=f7e355]
+              - cell "Normal form; not an isomorphism classification of channels" [ref=f7e356]
+              - cell [ref=f7e357]:
+                - strong [ref=f7e358]: PROVEN
+              - cell [ref=f7e359]:
+                - link "[10]" [ref=f7e360] [cursor=pointer]:
+                  - /url: "#src-10"
+                - link "[11]" [ref=f7e361] [cursor=pointer]:
+                  - /url: "#src-11"
+            - row [ref=f7e362]:
+              - cell "Classifying-space construction" [ref=f7e363]
+              - cell "Principal G-bundle from a map X → BG" [ref=f7e364]
+              - cell "Map to classifying space" [ref=f7e365]
+              - cell "Homotopy-classified; characteristic classes are pullbacks" [ref=f7e366]
+              - cell [ref=f7e367]:
+                - strong [ref=f7e368]: PROVEN
+              - cell [ref=f7e369]:
+                - link "[17]" [ref=f7e370] [cursor=pointer]:
+                  - /url: "#src-17"
+                - link "[18]" [ref=f7e371] [cursor=pointer]:
+                  - /url: "#src-18"
+            - row [ref=f7e372]:
+              - cell "Supermap representability" [ref=f7e373]
+              - cell "Concrete representation of categorical supermaps" [ref=f7e374]
+              - cell "Theory with suitable channel–state duality (2024–2026)" [ref=f7e375]
+              - cell [ref=f7e376]:
+                - text: Settings with channel–state duality; unification with Gelfand/Stone/Naimark
+                - strong [ref=f7e377]: open
+              - cell [ref=f7e378]:
+                - strong [ref=f7e379]: PROVEN
+                - text: in stated settings
+              - cell [ref=f7e380]:
+                - link "[40]" [ref=f7e381] [cursor=pointer]:
+                  - /url: "#src-40"
+                - link "[41]" [ref=f7e382] [cursor=pointer]:
+                  - /url: "#src-41"
+        - separator [ref=f7e383]
+        - heading "(d) Established equivalences and dualities" [level=2] [ref=f7e384]
+        - paragraph [ref=f7e385]:
+          - strong [ref=f7e386]: Standing warning (Etingof–Gelaki).
+          - text: Tensor-category equivalence
+          - strong [ref=f7e387]: without symmetric structure
+          - text: "provably fails to recover the group: non-isomorphic finite groups can carry equivalent plain tensor representation categories"
+          - link "[12]" [ref=f7e388] [cursor=pointer]:
+            - /url: "#src-12"
+          - text: . Any equivalence, duality, or classification in the series that forgets the monoidal/symmetric layer is
+          - strong [ref=f7e389]: "false"
+          - text: (DEF-018). The table marks this row
+          - strong [ref=f7e390]: IMPOSSIBLE
+          - text: as a recovery principle.
+        - table [ref=f7e391]:
+          - rowgroup [ref=f7e392]:
+            - row [ref=f7e393]:
+              - columnheader "Equivalence / duality" [ref=f7e394]
+              - columnheader "Identifies" [ref=f7e395]
+              - columnheader "Preserves" [ref=f7e396]
+              - columnheader "Status" [ref=f7e397]
+              - columnheader "Sources" [ref=f7e398]
+          - rowgroup [ref=f7e399]:
+            - row [ref=f7e400]:
+              - cell "Tensor-cat equivalence without symmetric structure → group recovery" [ref=f7e401]
+              - cell "—" [ref=f7e402]
+              - cell "nothing usable" [ref=f7e403]
+              - cell [ref=f7e404]:
+                - strong [ref=f7e405]: IMPOSSIBLE
+                - text: (Etingof–Gelaki isocategorical groups)
+              - cell [ref=f7e406]:
+                - link "[12]" [ref=f7e407] [cursor=pointer]:
+                  - /url: "#src-12"
+            - row [ref=f7e408]:
+              - 'cell "DR equivalence: symmetric tensor *-cat ≃ Rep(compact supergroup)" [ref=f7e409]'
+              - cell "Superselection data and compact supergroup" [ref=f7e410]
+              - cell "Symmetric tensor structure, conjugates, End(1)=C" [ref=f7e411]
+              - cell [ref=f7e412]:
+                - strong [ref=f7e413]: PROVEN
+              - cell [ref=f7e414]:
+                - link "[12]" [ref=f7e415] [cursor=pointer]:
+                  - /url: "#src-12"
+                - link "[16]" [ref=f7e416] [cursor=pointer]:
+                  - /url: "#src-16"
+            - row [ref=f7e417]:
+              - 'cell "Deligne equivalence: subexponential char-0 symmetric tensor cats ≃ supergroup reps" [ref=f7e418]'
+              - cell "Tensor category and supergroup representations" [ref=f7e419]
+              - cell "Symmetric structure, growth condition" [ref=f7e420]
+              - cell [ref=f7e421]:
+                - strong [ref=f7e422]: PROVEN
+              - cell [ref=f7e423]:
+                - link "[13]" [ref=f7e424] [cursor=pointer]:
+                  - /url: "#src-13"
+            - row [ref=f7e425]:
+              - cell "Gelfand duality" [ref=f7e426]
+              - cell "Commutative C*-algebras and compact Hausdorff spaces" [ref=f7e427]
+              - cell "Algebraic/topological structure" [ref=f7e428]
+              - cell [ref=f7e429]:
+                - strong [ref=f7e430]: PROVEN
+              - cell [ref=f7e431]:
+                - link "[43]" [ref=f7e432] [cursor=pointer]:
+                  - /url: "#src-43"
+            - row [ref=f7e433]:
+              - cell "Stone duality" [ref=f7e434]
+              - cell "Boolean algebras and zero-dimensional compact spectra" [ref=f7e435]
+              - cell "Boolean structure" [ref=f7e436]
+              - cell [ref=f7e437]:
+                - strong [ref=f7e438]: PROVEN
+              - cell [ref=f7e439]:
+                - link "[44]" [ref=f7e440] [cursor=pointer]:
+                  - /url: "#src-44"
+            - row [ref=f7e441]:
+              - cell [ref=f7e442]:
+                - emphasis [ref=f7e443]: "-isomorphism of finite-dim C"
+                - text: "-algebras"
+              - cell "Dimension vectors and algebras" [ref=f7e444]
+              - cell "*-algebra structure" [ref=f7e445]
+              - cell [ref=f7e446]:
+                - strong [ref=f7e447]: PROVEN
+              - cell [ref=f7e448]:
+                - link "[9]" [ref=f7e449] [cursor=pointer]:
+                  - /url: "#src-9"
+            - row [ref=f7e450]:
+              - cell "Channel equivalence via minimal Stinespring dilation" [ref=f7e451]
+              - cell "CP maps and dilations" [ref=f7e452]
+              - cell "Complete positivity; unitary freedom" [ref=f7e453]
+              - cell [ref=f7e454]:
+                - strong [ref=f7e455]: PROVEN
+                - text: (up to unitary)
+              - cell [ref=f7e456]:
+                - link "[10]" [ref=f7e457] [cursor=pointer]:
+                  - /url: "#src-10"
+            - row [ref=f7e458]:
+              - cell "Müger's Galois theory for braided tensor categories" [ref=f7e459]
+              - cell "Fixed-point-net representation categories" [ref=f7e460]
+              - cell [ref=f7e461]:
+                - text: Braided structure
+                - strong [ref=f7e462]: plus extra "soliton" data
+              - cell [ref=f7e463]:
+                - strong [ref=f7e464]: PROVEN
+                - text: ; extra data required
+              - cell [ref=f7e465]:
+                - link "[21]" [ref=f7e466] [cursor=pointer]:
+                  - /url: "#src-21"
+            - row [ref=f7e467]:
+              - cell "Holographic duality (AdS/CFT) as applied to RT" [ref=f7e468]
+              - cell "Bulk geometry and boundary entanglement" [ref=f7e469]
+              - cell "—" [ref=f7e470]
+              - cell [ref=f7e471]:
+                - strong [ref=f7e472]: OPEN
+                - text: — RT verified exactly only in AdS₃/2D CFT
+                - link "[45]" [ref=f7e473] [cursor=pointer]:
+                  - /url: "#src-45"
+                - text: ; entanglement-wedge reconstruction is a
+                - strong [ref=f7e474]: PROVEN
+                - text: quantum-information theorem
+                - link "[46]" [ref=f7e475] [cursor=pointer]:
+                  - /url: "#src-46"
+                - text: ; HaPPY codes are tensor-network toys, not AdS/CFT
+                - link "[48]" [ref=f7e476] [cursor=pointer]:
+                  - /url: "#src-48"
+              - cell [ref=f7e477]:
+                - link "[45]" [ref=f7e478] [cursor=pointer]:
+                  - /url: "#src-45"
+                - link "[46]" [ref=f7e479] [cursor=pointer]:
+                  - /url: "#src-46"
+                - link "[48]" [ref=f7e480] [cursor=pointer]:
+                  - /url: "#src-48"
+            - row [ref=f7e481]:
+              - cell "Yoneda embedding Hom(−, P)" [ref=f7e482]
+              - cell "Objects and their relational profiles" [ref=f7e483]
+              - cell "Categorical structure" [ref=f7e484]
+              - cell [ref=f7e485]:
+                - strong [ref=f7e486]: PROVEN
+                - text: "mathematically; the Yoneda qualification binds:"
+                - strong [ref=f7e487]: "\"Yoneda does not, by itself, establish physical equivalence, empirical adequacy, or a classification theorem.\""
+              - cell "Founding Document §5" [ref=f7e488]
+        - separator [ref=f7e489]
+        - heading "(e) Open classification problems" [level=2] [ref=f7e490]
+        - table [ref=f7e491]:
+          - rowgroup [ref=f7e492]:
+            - row [ref=f7e493]:
+              - columnheader "Problem" [ref=f7e494]
+              - columnheader "Region" [ref=f7e495]
+              - columnheader "What is known" [ref=f7e496]
+              - columnheader "Status" [ref=f7e497]
+              - columnheader "Sources" [ref=f7e498]
+          - rowgroup [ref=f7e499]:
+            - row [ref=f7e500]:
+              - cell "Fusion categories" [ref=f7e501]
+              - cell "Family VIII" [ref=f7e502]
+              - cell "Every fusion category is Rep of a weak Hopf algebra (Ostrik); ENO pivotal-structure conjecture (Annals 162, 2005)" [ref=f7e503]
+              - cell [ref=f7e504]:
+                - strong [ref=f7e505]: OPEN
+              - cell [ref=f7e506]:
+                - link "[14]" [ref=f7e507] [cursor=pointer]:
+                  - /url: "#src-14"
+            - row [ref=f7e508]:
+              - cell "Elliott program (simple nuclear C*-algebras, UCT)" [ref=f7e509]
+              - cell "Family II" [ref=f7e510]
+              - cell "Active unfinished program" [ref=f7e511]
+              - cell [ref=f7e512]:
+                - strong [ref=f7e513]: OPEN
+              - cell [ref=f7e514]:
+                - link "[9]" [ref=f7e515] [cursor=pointer]:
+                  - /url: "#src-9"
+            - row [ref=f7e516]:
+              - cell "Holographic entropy cone, n ≤ 5" [ref=f7e517]
+              - cell "Families III, VI" [ref=f7e518]
+              - cell [ref=f7e519]:
+                - text: Complete inequality sets for 2, 3, and 4 boundary regions follow from strong subadditivity and monogamy of mutual information
+                - link "[47]" [ref=f7e520] [cursor=pointer]:
+                  - /url: "#src-47"
+                - text: ; the five-region cone is completely constructed by exhibiting graph models for every extreme ray orbit of the cone defined by all proven inequalities, which settles the existence of further five-party inequalities in the negative (Hernández-Cuenca, Phys. Rev. D 100, 026004 (2019))
+              - cell [ref=f7e521]:
+                - strong [ref=f7e522]: PROVEN
+              - cell [ref=f7e523]:
+                - link "[47]" [ref=f7e524] [cursor=pointer]:
+                  - /url: "#src-47"
+                - text: ; Hernández-Cuenca 2019
+            - row [ref=f7e525]:
+              - cell "Holographic entropy cone, n ≥ 6" [ref=f7e526]
+              - cell "Families III, VI" [ref=f7e527]
+              - cell "For fixed n finitely many independent inequalities exist; only one infinite family known; a 2026 \"multi-entropy cone\" preprint is unverified" [ref=f7e528]
+              - cell [ref=f7e529]:
+                - strong [ref=f7e530]: OPEN
+              - cell [ref=f7e531]:
+                - link "[47]" [ref=f7e532] [cursor=pointer]:
+                  - /url: "#src-47"
+            - row [ref=f7e533]:
+              - cell "Lurie proof gap (extended TQFTs)" [ref=f7e534]
+              - cell "Family VI" [ref=f7e535]
+              - cell [ref=f7e536]:
+                - text: Baez–Dolan proposal
+                - link "[34]" [ref=f7e537] [cursor=pointer]:
+                  - /url: "#src-34"
+                - text: ; Lurie 2009 is an "informal sketch of a proof"
+                - link "[35]" [ref=f7e538] [cursor=pointer]:
+                  - /url: "#src-35"
+                - text: ; exact range of completed cases unverified
+              - cell [ref=f7e539]:
+                - strong [ref=f7e540]: OPEN
+                - text: (claim
+                - strong [ref=f7e541]: CLAIMED
+                - text: )
+              - cell [ref=f7e542]:
+                - link "[34]" [ref=f7e543] [cursor=pointer]:
+                  - /url: "#src-34"
+                - link "[35]" [ref=f7e544] [cursor=pointer]:
+                  - /url: "#src-35"
+            - row [ref=f7e545]:
+              - cell "Yang–Mills mass gap" [ref=f7e546]
+              - cell "Family VII/QFT" [ref=f7e547]
+              - 'cell "Clay: \"no proof of this property is known\"; explicitly not claimed in the 2026 announcements" [ref=f7e548]'
+              - cell [ref=f7e549]:
+                - strong [ref=f7e550]: OPEN
+              - cell [ref=f7e551]:
+                - link "[23]" [ref=f7e552] [cursor=pointer]:
+                  - /url: "#src-23"
+                - link "[25]" [ref=f7e553] [cursor=pointer]:
+                  - /url: "#src-25"
+                - link "[26]" [ref=f7e554] [cursor=pointer]:
+                  - /url: "#src-26"
+            - row [ref=f7e555]:
+              - cell "4D YM/QCD existence" [ref=f7e556]
+              - cell "Family VII/QFT" [ref=f7e557]
+              - cell "Existence claimed 2026-10-26 (QCD, GUT completion, pure YM subproblem, Balaban-based); 1147-page manuscript unpublished; claimed Lean formalization withheld; KITP verification pending" [ref=f7e558]
+              - cell [ref=f7e559]:
+                - strong [ref=f7e560]: CLAIMED
+                - text: — never conflated with mass gap
+              - cell [ref=f7e561]:
+                - link "[24]" [ref=f7e562] [cursor=pointer]:
+                  - /url: "#src-24"
+                - link "[25]" [ref=f7e563] [cursor=pointer]:
+                  - /url: "#src-25"
+                - link "[26]" [ref=f7e564] [cursor=pointer]:
+                  - /url: "#src-26"
+            - row [ref=f7e565]:
+              - cell "Quantum monotone metrics" [ref=f7e566]
+              - cell "Family V" [ref=f7e567]
+              - cell "Classified parametrically by operator monotone functions (Petz–Sudar) — not a finite list" [ref=f7e568]
+              - cell [ref=f7e569]:
+                - strong [ref=f7e570]: OPEN
+                - text: (classification not finite)
+              - cell [ref=f7e571]:
+                - link "[52]" [ref=f7e572] [cursor=pointer]:
+                  - /url: "#src-52"
+            - row [ref=f7e573]:
+              - cell "General II₁ / III factors" [ref=f7e574]
+              - cell "Family II" [ref=f7e575]
+              - cell "Coarse Connes-spectrum strata only; fundamental groups vary" [ref=f7e576]
+              - cell [ref=f7e577]:
+                - strong [ref=f7e578]: IMPOSSIBLE
+                - text: globally
+                - link "[8]" [ref=f7e579] [cursor=pointer]:
+                  - /url: "#src-8"
+                - text: ; residual strata
+                - strong [ref=f7e580]: OPEN
+              - cell [ref=f7e581]:
+                - link "[8]" [ref=f7e582] [cursor=pointer]:
+                  - /url: "#src-8"
+            - row [ref=f7e583]:
+              - cell "Uniform parameterization of finite simple groups" [ref=f7e584]
+              - cell "Group theory" [ref=f7e585]
+              - cell [ref=f7e586]:
+                - text: CFSG complete; "no clean uniform description… is known"
+                - link "[1]" [ref=f7e587] [cursor=pointer]:
+                  - /url: "#src-1"
+              - cell [ref=f7e588]:
+                - strong [ref=f7e589]: OPEN
+              - cell [ref=f7e590]:
+                - link "[1]" [ref=f7e591] [cursor=pointer]:
+                  - /url: "#src-1"
+            - row [ref=f7e592]:
+              - cell "Freed–Hopkins anomaly classification statement" [ref=f7e593]
+              - cell "Family IV" [ref=f7e594]
+              - cell "Cobordism-spectrum classification of topological anomalies; scope as stated in the cited source" [ref=f7e595]
+              - cell [ref=f7e596]:
+                - strong [ref=f7e597]: OPEN
+              - cell [ref=f7e598]:
+                - link "[19]" [ref=f7e599] [cursor=pointer]:
+                  - /url: "#src-19"
+                - text: context
+            - row [ref=f7e600]:
+              - cell "Type-III factor structure beyond Connes spectrum" [ref=f7e601]
+              - cell "Family II" [ref=f7e602]
+              - cell "Coarse strata; examples with countable and trivial fundamental groups" [ref=f7e603]
+              - cell [ref=f7e604]:
+                - strong [ref=f7e605]: OPEN
+              - cell [ref=f7e606]:
+                - link "[8]" [ref=f7e607] [cursor=pointer]:
+                  - /url: "#src-8"
+        - separator [ref=f7e608]
+        - heading "(f) Obstructions region — where no table exists" [level=2] [ref=f7e609]
+        - paragraph [ref=f7e610]:
+          - text: A periodic table must mark where no table can exist. Each entry below is a
+          - strong [ref=f7e611]: theorem
+          - text: ", not a difficulty."
+        - table [ref=f7e612]:
+          - rowgroup [ref=f7e613]:
+            - row [ref=f7e614]:
+              - columnheader "Obstruction" [ref=f7e615]
+              - columnheader "Statement" [ref=f7e616]
+              - columnheader "What it forbids" [ref=f7e617]
+              - columnheader "Status" [ref=f7e618]
+              - columnheader "Sources" [ref=f7e619]
+          - rowgroup [ref=f7e620]:
+            - row [ref=f7e621]:
+              - cell "Adyan–Rabin" [ref=f7e622]
+              - cell "Every Markov property of finitely presentable groups is algorithmically undecidable — including finiteness and simplicity (Collins extended beyond Markov properties)" [ref=f7e623]
+              - cell "Any uniform recognition procedure for group-flavored sectors" [ref=f7e624]
+              - cell [ref=f7e625]:
+                - strong [ref=f7e626]: IMPOSSIBLE
+              - cell [ref=f7e627]:
+                - link "[53]" [ref=f7e628] [cursor=pointer]:
+                  - /url: "#src-53"
+            - row [ref=f7e629]:
+              - cell "McDuff" [ref=f7e630]
+              - cell "Uncountably many non-isomorphic separable type II₁ factors" [ref=f7e631]
+              - cell "CFSG-style total classification of factors outside the amenable case" [ref=f7e632]
+              - cell [ref=f7e633]:
+                - strong [ref=f7e634]: IMPOSSIBLE
+              - cell [ref=f7e635]:
+                - link "[8]" [ref=f7e636] [cursor=pointer]:
+                  - /url: "#src-8"
+            - row [ref=f7e637]:
+              - cell "Wildness (derived-wild; Buchweitz–Leuschke; Grevstad–May)" [ref=f7e638]
+              - cell "Rank-2 isomorphism classes of the generic determinant's Cohen–Macaulay modules are not parametrizable by a finite-dimensional variety; \"no meaningful classification\" of compact C_p-equivariant HF_p-modules at odd primes; wildness is degeneration-robust" [ref=f7e639]
+              - cell "Finite-variety parameterization of wild representation categories" [ref=f7e640]
+              - cell [ref=f7e641]:
+                - strong [ref=f7e642]: IMPOSSIBLE
+              - cell [ref=f7e643]:
+                - link "[55]" [ref=f7e644] [cursor=pointer]:
+                  - /url: "#src-55"
+                - link "[56]" [ref=f7e645] [cursor=pointer]:
+                  - /url: "#src-56"
+                - link "[58]" [ref=f7e646] [cursor=pointer]:
+                  - /url: "#src-58"
+            - row [ref=f7e647]:
+              - cell "Tame/wild tractability boundary (Grochow–Qiao)" [ref=f7e648]
+              - cell "Polynomial-time group isomorphism for tame extensions; required bounds fail in the wild case" [ref=f7e649]
+              - cell "Algorithmic classification in wild regimes" [ref=f7e650]
+              - cell [ref=f7e651]:
+                - strong [ref=f7e652]: IMPOSSIBLE
+                - text: (wild side)
+              - cell [ref=f7e653]:
+                - link "[57]" [ref=f7e654] [cursor=pointer]:
+                  - /url: "#src-57"
+            - row [ref=f7e655]:
+              - cell "Borel reducibility / turbulence (Sasyk–Tørnquist)" [ref=f7e656]
+              - cell "Von Neumann algebra isomorphism admits no classification by countable invariants" [ref=f7e657]
+              - cell "Countable-invariant classifications of vN algebras" [ref=f7e658]
+              - cell [ref=f7e659]:
+                - strong [ref=f7e660]: IMPOSSIBLE
+                - text: "[single source; announcement-level]"
+              - cell [ref=f7e661]:
+                - link "[59]" [ref=f7e662] [cursor=pointer]:
+                  - /url: "#src-59"
+            - row [ref=f7e663]:
+              - cell "Dimension-4 unrecognizability (Tancer; Gordon)" [ref=f7e664]
+              - 'cell "#₉(S²×S²) homeomorphism is algorithmically unrecognizable (improving #₁₂)" [ref=f7e665]'
+              - cell "Effective classification of 4-manifolds in general" [ref=f7e666]
+              - cell [ref=f7e667]:
+                - strong [ref=f7e668]: IMPOSSIBLE
+              - cell [ref=f7e669]:
+                - link "[54]" [ref=f7e670] [cursor=pointer]:
+                  - /url: "#src-54"
+                - link "[60]" [ref=f7e671] [cursor=pointer]:
+                  - /url: "#src-60"
+            - row [ref=f7e672]:
+              - cell "Etingof–Gelaki" [ref=f7e673]
+              - 'cell "Isocategorical groups: tensor equivalence without symmetric structure does not determine the group" [ref=f7e674]'
+              - cell "Equivalence notions that discard the monoidal/symmetric layer" [ref=f7e675]
+              - cell [ref=f7e676]:
+                - strong [ref=f7e677]: IMPOSSIBLE
+              - cell [ref=f7e678]:
+                - link "[12]" [ref=f7e679] [cursor=pointer]:
+                  - /url: "#src-12"
+            - row [ref=f7e680]:
+              - cell "Unknotting problem" [ref=f7e681]
+              - cell "Unknot recognition is in NP and coNP; P-membership open" [ref=f7e682]
+              - cell "— (a \"decidable but unclassified\" middle regime)" [ref=f7e683]
+              - cell [ref=f7e684]:
+                - strong [ref=f7e685]: OPEN
+              - cell [ref=f7e686]:
+                - link "[61]" [ref=f7e687] [cursor=pointer]:
+                  - /url: "#src-61"
+            - row [ref=f7e688]:
+              - cell "Darboux triviality" [ref=f7e689]
+              - cell "Symplectic geometry has no local invariants" [ref=f7e690]
+              - cell "Local classification content on the symplectic side (classification must be global)" [ref=f7e691]
+              - cell [ref=f7e692]:
+                - strong [ref=f7e693]: PROVEN
+                - text: (trivially classified locally)
+              - cell [ref=f7e694]:
+                - link "[6]" [ref=f7e695] [cursor=pointer]:
+                  - /url: "#src-6"
+        - paragraph [ref=f7e696]:
+          - strong [ref=f7e697]: Regime contrast.
+          - text: Geometrization decomposes 3-manifolds into exactly 8 Thurston geometries
+          - link "[60]" [ref=f7e698] [cursor=pointer]:
+            - /url: "#src-60"
+          - text: — finite tables exist, but only in tame regimes (dimension 3, not 4
+          - link "[54]" [ref=f7e699] [cursor=pointer]:
+            - /url: "#src-54"
+          - link "[60]" [ref=f7e700] [cursor=pointer]:
+            - /url: "#src-60"
+          - text: ). The synthesis offered to the program is that one should expect restricted-class classification theorems plus explicit obstruction theorems, not one global periodic table; this synthesis is
+          - emphasis [ref=f7e701]: conjectural
+          - text: .
+        - separator [ref=f7e702]
+        - heading "Reading the table" [level=2] [ref=f7e703]
+        - list [ref=f7e704]:
+          - listitem [ref=f7e705]:
+            - strong [ref=f7e706]: PROVEN
+            - text: cells are citations to completed theorems;
+            - strong [ref=f7e707]: IMPOSSIBLE
+            - text: cells are citations to impossibility theorems — both are knowledge.
+          - listitem [ref=f7e708]:
+            - strong [ref=f7e709]: CLAIMED
+            - text: appears exactly once as a classification-status cell (4D YM/QCD existence)
+            - link "[24]" [ref=f7e710] [cursor=pointer]:
+              - /url: "#src-24"
+            - link "[25]" [ref=f7e711] [cursor=pointer]:
+              - /url: "#src-25"
+            - link "[26]" [ref=f7e712] [cursor=pointer]:
+              - /url: "#src-26"
+            - text: ; existence and mass gap are never conflated
+            - link "[23]" [ref=f7e713] [cursor=pointer]:
+              - /url: "#src-23"
+            - link "[26]" [ref=f7e714] [cursor=pointer]:
+              - /url: "#src-26"
+            - text: .
+          - listitem [ref=f7e715]:
+            - strong [ref=f7e716]: OPEN
+            - text: cells mark where the series' own conjecture (T-CMRPS-01) and its five obligations live; the table is the chart that conjecture would complete.
+          - listitem [ref=f7e717]:
+            - text: Every equivalences entry names the structure it preserves, or records the failure that follows from not naming it
+            - link "[12]" [ref=f7e718] [cursor=pointer]:
+              - /url: "#src-12"
+            - text: .
+        - generic [ref=f7e719]:
+          - heading "Sources" [level=2] [ref=f7e720]
+          - paragraph [ref=f7e721]:
+            - text: "[1] Classification of finite simple groups —"
+            - link "https://en.wikipedia.org/wiki/Classification_of_finite_simple_groups" [ref=f7e722] [cursor=pointer]:
+              - /url: https://en.wikipedia.org/wiki/Classification_of_finite_simple_groups
+            - text: (accessed 2026-10-29)
+          - paragraph [ref=f7e723]:
+            - text: "[2] Solomon, \"A brief history of the classification of the finite simple groups\", Bull. AMS 38 (2001) 315–352 —"
+            - link "https://www.ams.org/journals/bull/2001-38-03/S0273-0979-01-00909-0/" [ref=f7e724] [cursor=pointer]:
+              - /url: https://www.ams.org/journals/bull/2001-38-03/S0273-0979-01-00909-0/
+            - text: (published 2001-03-27, accessed 2026-10-29)
+          - paragraph [ref=f7e725]:
+            - text: "[3] ATLAS of Finite Groups —"
+            - link "https://en.wikipedia.org/wiki/ATLAS_of_Finite_Groups" [ref=f7e726] [cursor=pointer]:
+              - /url: https://en.wikipedia.org/wiki/ATLAS_of_Finite_Groups
+            - text: (accessed 2026-10-29)
+          - paragraph [ref=f7e727]:
+            - text: "[4] Simple Lie group —"
+            - link "https://en.wikipedia.org/wiki/Simple_Lie_group" [ref=f7e728] [cursor=pointer]:
+              - /url: https://en.wikipedia.org/wiki/Simple_Lie_group
+            - text: (accessed 2026-10-29)
+          - paragraph [ref=f7e729]:
+            - text: "[5] Theorem of the highest weight —"
+            - link "https://en.wikipedia.org/wiki/Theorem_of_the_highest_weight" [ref=f7e730] [cursor=pointer]:
+              - /url: https://en.wikipedia.org/wiki/Theorem_of_the_highest_weight
+            - text: (accessed 2026-10-29)
+          - paragraph [ref=f7e731]:
+            - text: "[6] Darboux's theorem —"
+            - link "https://en.wikipedia.org/wiki/Darboux%27s_theorem" [ref=f7e732] [cursor=pointer]:
+              - /url: https://en.wikipedia.org/wiki/Darboux%27s_theorem
+            - text: (accessed 2026-10-29)
+          - paragraph [ref=f7e733]:
+            - text: "[7] Poisson manifold (WikiJournal of Science 7(1):6, 2024) —"
+            - link "https://en.wikipedia.org/wiki/Poisson_manifold" [ref=f7e734] [cursor=pointer]:
+              - /url: https://en.wikipedia.org/wiki/Poisson_manifold
+            - text: (accessed 2026-10-29)
+          - paragraph [ref=f7e735]:
+            - text: "[8] Von Neumann algebra —"
+            - link "https://en.wikipedia.org/wiki/Von_Neumann_algebra" [ref=f7e736] [cursor=pointer]:
+              - /url: https://en.wikipedia.org/wiki/Von_Neumann_algebra
+            - text: (accessed 2026-10-29)
+          - paragraph [ref=f7e737]:
+            - text: "[9] C*-algebra —"
+            - link "https://en.wikipedia.org/wiki/C*-algebra" [ref=f7e738] [cursor=pointer]:
+              - /url: https://en.wikipedia.org/wiki/C*-algebra
+            - text: (accessed 2026-10-29)
+          - paragraph [ref=f7e739]:
+            - text: "[10] Stinespring dilation theorem —"
+            - link "https://en.wikipedia.org/wiki/Stinespring_dilation_theorem" [ref=f7e740] [cursor=pointer]:
+              - /url: https://en.wikipedia.org/wiki/Stinespring_dilation_theorem
+            - text: (accessed 2026-10-29)
+          - paragraph [ref=f7e741]:
+            - text: "[11] Quantum channel —"
+            - link "https://en.wikipedia.org/wiki/Quantum_channel" [ref=f7e742] [cursor=pointer]:
+              - /url: https://en.wikipedia.org/wiki/Quantum_channel
+            - text: (accessed 2026-10-29)
+          - paragraph [ref=f7e743]:
+            - text: "[12] Doplicher–Roberts reconstruction theorem (nLab) —"
+            - link "https://ncatlab.org/nlab/show/Doplicher-Roberts+reconstruction+theorem" [ref=f7e744] [cursor=pointer]:
+              - /url: https://ncatlab.org/nlab/show/Doplicher-Roberts+reconstruction+theorem
+            - text: (accessed 2026-10-29)
+          - paragraph [ref=f7e745]:
+            - text: "[13] Deligne's theorem on tensor categories (nLab) —"
+            - link "https://ncatlab.org/nlab/show/Deligne%27s+theorem+on+tensor_categories" [ref=f7e746] [cursor=pointer]:
+              - /url: https://ncatlab.org/nlab/show/Deligne%27s+theorem+on+tensor_categories
+            - text: (accessed 2026-10-29)
+          - paragraph [ref=f7e747]:
+            - text: "[14] Fusion category (nLab) —"
+            - link "https://ncatlab.org/nlab/show/fusion+category" [ref=f7e748] [cursor=pointer]:
+              - /url: https://ncatlab.org/nlab/show/fusion+category
+            - text: (accessed 2026-10-29)
+          - paragraph [ref=f7e749]:
+            - text: "[15] Haag–Kastler axioms (nLab) —"
+            - link "https://ncatlab.org/nlab/show/Haag-Kastler+axioms" [ref=f7e750] [cursor=pointer]:
+              - /url: https://ncatlab.org/nlab/show/Haag-Kastler+axioms
+            - text: (accessed 2026-10-29)
+          - paragraph [ref=f7e751]:
+            - text: "[16] DHR superselection theory (nLab) —"
+            - link "https://ncatlab.org/nlab/show/DHR+superselection+theory" [ref=f7e752] [cursor=pointer]:
+              - /url: https://ncatlab.org/nlab/show/DHR+superselection+theory
+            - text: (accessed 2026-10-29)
+          - paragraph [ref=f7e753]:
+            - text: "[17] Classifying space (nLab) —"
+            - link "https://ncatlab.org/nlab/show/classifying+space" [ref=f7e754] [cursor=pointer]:
+              - /url: https://ncatlab.org/nlab/show/classifying+space
+            - text: (accessed 2026-10-29)
+          - paragraph [ref=f7e755]:
+            - text: "[18] Characteristic class (nLab) —"
+            - link "https://ncatlab.org/nlab/show/characteristic+class" [ref=f7e756] [cursor=pointer]:
+              - /url: https://ncatlab.org/nlab/show/characteristic+class
+            - text: (accessed 2026-10-29)
+          - paragraph [ref=f7e757]:
+            - text: "[19] Quantum anomaly (nLab) —"
+            - link "https://ncatlab.org/nlab/show/quantum+anomaly" [ref=f7e758] [cursor=pointer]:
+              - /url: https://ncatlab.org/nlab/show/quantum+anomaly
+            - text: (accessed 2026-10-29)
+          - paragraph [ref=f7e759]:
+            - text: "[20] Casini–Magan, arXiv:2511.21810 —"
+            - link "https://arxiv.org/abs/2511.21810" [ref=f7e760] [cursor=pointer]:
+              - /url: https://arxiv.org/abs/2511.21810
+            - text: (published 2025-11-26, accessed 2026-10-29)
+          - paragraph [ref=f7e761]:
+            - text: "[21] Müger, arXiv:math-ph/0008027 —"
+            - link "http://export.arxiv.org/api/query?search_query=all:%22Doplicher-Roberts%22&start=0&max_results=15" [ref=f7e762] [cursor=pointer]:
+              - /url: http://export.arxiv.org/api/query?search_query=all:%22Doplicher-Roberts%22&start=0&max_results=15
+            - text: (entry arXiv:math-ph/0008027; published 2000-08-21, accessed 2026-10-29)
+          - paragraph [ref=f7e763]:
+            - text: "[22] Pinzari, arXiv:2502.06229 —"
+            - link "https://arxiv.org/abs/2502.06229" [ref=f7e764] [cursor=pointer]:
+              - /url: https://arxiv.org/abs/2502.06229
+            - text: (v8 2026-09-19, accessed 2026-10-29)
+          - paragraph [ref=f7e765]:
+            - text: "[23] Clay Mathematics Institute, Yang–Mills problem page —"
+            - link "https://www.claymath.org/millennium/yang-mills-the-maths-gap/" [ref=f7e766] [cursor=pointer]:
+              - /url: https://www.claymath.org/millennium/yang-mills-the-maths-gap/
+            - text: (accessed 2026-10-29)
+          - paragraph [ref=f7e767]:
+            - text: "[24] OpenAI, \"Building scientific understanding with academic communities\" —"
+            - link "https://openai.com/index/building-scientific-understanding-with-academic-communities/" [ref=f7e768] [cursor=pointer]:
+              - /url: https://openai.com/index/building-scientific-understanding-with-academic-communities/
+            - text: (published 2026-10-26, accessed 2026-10-29)
+          - paragraph [ref=f7e769]:
+            - text: "[25] KITP Yang–Mills working group statement —"
+            - link "https://www.kitp.ucsb.edu/sites/default/files/YM_working_group.pdf" [ref=f7e770] [cursor=pointer]:
+              - /url: https://www.kitp.ucsb.edu/sites/default/files/YM_working_group.pdf
+            - text: (published 2026-10, accessed 2026-10-29)
+          - paragraph [ref=f7e771]:
+            - text: "[26] Scientific American, \"Dueling proofs from OpenAI and Anthropic astound scientists\" —"
+            - link "https://www.scientificamerican.com/article/dueling-proofs-from-openai-and-anthropic-astound-scientists/" [ref=f7e772] [cursor=pointer]:
+              - /url: https://www.scientificamerican.com/article/dueling-proofs-from-openai-and-anthropic-astound-scientists/
+            - text: (published 2026-10-27, accessed 2026-10-29)
+          - paragraph [ref=f7e773]:
+            - text: "[27] Douglas, Nat. Rev. Phys. 8, 86–97 —"
+            - link "https://www.nature.com/articles/s42254-025-00909-2" [ref=f7e774] [cursor=pointer]:
+              - /url: https://www.nature.com/articles/s42254-025-00909-2
+            - text: (published 2026-01-12, accessed 2026-10-29)
+          - paragraph [ref=f7e775]:
+            - text: "[28] Faizal–Shabir, arXiv:2606.19362 —"
+            - link "https://arxiv.org/abs/2606.19362" [ref=f7e776] [cursor=pointer]:
+              - /url: https://arxiv.org/abs/2606.19362
+            - text: (published 2026-06-09, accessed 2026-10-29)
+          - paragraph [ref=f7e777]:
+            - text: "[29] Jacobsen, arXiv:2506.00284 (withdrawn) —"
+            - link "https://arxiv.org/abs/2506.00284" [ref=f7e778] [cursor=pointer]:
+              - /url: https://arxiv.org/abs/2506.00284
+            - text: (published 2025-05-30, accessed 2026-10-29)
+          - paragraph [ref=f7e779]:
+            - text: "[30] Nissim, arXiv:2510.22788 —"
+            - link "https://arxiv.org/abs/2510.22788" [ref=f7e780] [cursor=pointer]:
+              - /url: https://arxiv.org/abs/2510.22788
+            - text: (published 2025-10-26, accessed 2026-10-29)
+          - paragraph [ref=f7e781]:
+            - text: "[31] Cao–Nissim–Sheffield, arXiv:2509.04688 —"
+            - link "https://arxiv.org/abs/2509.04688" [ref=f7e782] [cursor=pointer]:
+              - /url: https://arxiv.org/abs/2509.04688
+            - text: (published 2025-09-04, accessed 2026-10-29)
+          - paragraph [ref=f7e783]:
+            - text: "[32] Faria da Veiga–O'Carroll, arXiv:2509.03513 —"
+            - link "https://arxiv.org/abs/2509.03513" [ref=f7e784] [cursor=pointer]:
+              - /url: https://arxiv.org/abs/2509.03513
+            - text: (published 2025-09-03, accessed 2026-10-29)
+          - paragraph [ref=f7e785]:
+            - text: "[33] Nair, arXiv:2608.10133 —"
+            - link "https://arxiv.org/abs/2608.10133" [ref=f7e786] [cursor=pointer]:
+              - /url: https://arxiv.org/abs/2608.10133
+            - text: (published 2026-08-10, accessed 2026-10-29)
+          - paragraph [ref=f7e787]:
+            - text: "[34] Baez–Dolan, arXiv:q-alg/9503002 —"
+            - link "https://arxiv.org/abs/q-alg/9503002" [ref=f7e788] [cursor=pointer]:
+              - /url: https://arxiv.org/abs/q-alg/9503002
+            - text: (published 1995-03-05, accessed 2026-10-29)
+          - paragraph [ref=f7e789]:
+            - text: "[35] Lurie, arXiv:0905.0465 —"
+            - link "https://arxiv.org/abs/0905.0465" [ref=f7e790] [cursor=pointer]:
+              - /url: https://arxiv.org/abs/0905.0465
+            - text: (published 2009-05-04, accessed 2026-10-29)
+          - paragraph [ref=f7e791]:
+            - text: "[36] Topological quantum field theory (nLab) —"
+            - link "https://ncatlab.org/nlab/show/topological+quantum+field+theory" [ref=f7e792] [cursor=pointer]:
+              - /url: https://ncatlab.org/nlab/show/topological+quantum+field+theory
+            - text: (accessed 2026-10-29)
+          - paragraph [ref=f7e793]:
+            - text: "[37] Butterfield–Isham, arXiv:quant-ph/9803055 —"
+            - link "https://arxiv.org/abs/quant-ph/9803055" [ref=f7e794] [cursor=pointer]:
+              - /url: https://arxiv.org/abs/quant-ph/9803055
+            - text: (published 1998-03-20, accessed 2026-10-29)
+          - paragraph [ref=f7e795]:
+            - text: "[38] Isham–Döring, arXiv:quant-ph/0703060 —"
+            - link "https://arxiv.org/abs/quant-ph/0703060" [ref=f7e796] [cursor=pointer]:
+              - /url: https://arxiv.org/abs/quant-ph/0703060
+            - text: (published 2007-03-07, accessed 2026-10-29)
+          - paragraph [ref=f7e797]:
+            - text: "[39] Isham, arXiv:1004.3564 —"
+            - link "https://arxiv.org/abs/1004.3564" [ref=f7e798] [cursor=pointer]:
+              - /url: https://arxiv.org/abs/1004.3564
+            - text: (published 2010-04-20, accessed 2026-10-29)
+          - paragraph [ref=f7e799]:
+            - text: "[40] Wilson–Hefford–Hoffreumon, arXiv:2602.23865 —"
+            - link "https://arxiv.org/abs/2602.23865" [ref=f7e800] [cursor=pointer]:
+              - /url: https://arxiv.org/abs/2602.23865
+            - text: (published 2026-02-27, accessed 2026-10-29)
+          - paragraph [ref=f7e801]:
+            - text: "[41] Hefford–Wilson, arXiv:2402.02997 —"
+            - link "https://arxiv.org/abs/2402.02997" [ref=f7e802] [cursor=pointer]:
+              - /url: https://arxiv.org/abs/2402.02997
+            - text: (published 2024-02-05, accessed 2026-10-29)
+          - paragraph [ref=f7e803]:
+            - text: "[42] Gelfand–Naimark theorem (nLab) —"
+            - link "https://ncatlab.org/nlab/show/Gelfand-Naimark+theorem" [ref=f7e804] [cursor=pointer]:
+              - /url: https://ncatlab.org/nlab/show/Gelfand-Naimark+theorem
+            - text: (accessed 2026-10-29)
+          - paragraph [ref=f7e805]:
+            - text: "[43] Gelfand duality (nLab) —"
+            - link "https://ncatlab.org/nlab/show/Gelfand+duality" [ref=f7e806] [cursor=pointer]:
+              - /url: https://ncatlab.org/nlab/show/Gelfand+duality
+            - text: (accessed 2026-10-29)
+          - paragraph [ref=f7e807]:
+            - text: "[44] Stone duality (nLab) —"
+            - link "https://ncatlab.org/nlab/show/Stone+duality" [ref=f7e808] [cursor=pointer]:
+              - /url: https://ncatlab.org/nlab/show/Stone+duality
+            - text: (accessed 2026-10-29)
+          - paragraph [ref=f7e809]:
+            - text: "[45] Ryu–Takayanagi, arXiv:hep-th/0603001 —"
+            - link "https://arxiv.org/abs/hep-th/0603001" [ref=f7e810] [cursor=pointer]:
+              - /url: https://arxiv.org/abs/hep-th/0603001
+            - text: (published 2006-02-28, accessed 2026-10-29)
+          - paragraph [ref=f7e811]:
+            - text: "[46] Dong–Harlow–Wall, arXiv:1601.05416 —"
+            - link "https://arxiv.org/abs/1601.05416" [ref=f7e812] [cursor=pointer]:
+              - /url: https://arxiv.org/abs/1601.05416
+            - text: (published 2016-01-20, accessed 2026-10-29)
+          - paragraph [ref=f7e813]:
+            - text: "[47] Bao–Nezami–Ooguri–Stoica–Sully–Walter, arXiv:1505.07839 —"
+            - link "https://arxiv.org/abs/1505.07839" [ref=f7e814] [cursor=pointer]:
+              - /url: https://arxiv.org/abs/1505.07839
+            - text: (published 2015-05-28, accessed 2026-10-29)
+          - paragraph [ref=f7e815]:
+            - text: "[48] Pastawski–Yoshida–Harlow–Preskill, arXiv:1503.06237 —"
+            - link "https://arxiv.org/abs/1503.06237" [ref=f7e816] [cursor=pointer]:
+              - /url: https://arxiv.org/abs/1503.06237
+            - text: (published 2015-03-20, accessed 2026-10-29)
+          - paragraph [ref=f7e817]:
+            - text: "[49] Van Raamsdonk, arXiv:1005.3035 —"
+            - link "https://arxiv.org/abs/1005.3035" [ref=f7e818] [cursor=pointer]:
+              - /url: https://arxiv.org/abs/1005.3035
+            - text: (published 2010-05-17, accessed 2026-10-29)
+          - paragraph [ref=f7e819]:
+            - text: "[50] Minguzzi–Sánchez, arXiv:gr-qc/0609119 —"
+            - link "https://arxiv.org/abs/gr-qc/0609119" [ref=f7e820] [cursor=pointer]:
+              - /url: https://arxiv.org/abs/gr-qc/0609119
+            - text: (published 2006-09-26, accessed 2026-10-29)
+          - paragraph [ref=f7e821]:
+            - text: "[51] Galaev, arXiv:1611.01551 —"
+            - link "https://arxiv.org/abs/1611.01551" [ref=f7e822] [cursor=pointer]:
+              - /url: https://arxiv.org/abs/1611.01551
+            - text: (published 2016-11-04, accessed 2026-10-29)
+          - paragraph [ref=f7e823]:
+            - text: "[52] Petz–Sudar, arXiv:quant-ph/0102132 —"
+            - link "https://arxiv.org/abs/quant-ph/0102132" [ref=f7e824] [cursor=pointer]:
+              - /url: https://arxiv.org/abs/quant-ph/0102132
+            - text: (published 2001-02-27, accessed 2026-10-29)
+          - paragraph [ref=f7e825]:
+            - text: "[53] Adyan–Rabin theorem —"
+            - link "https://en.wikipedia.org/wiki/Adian%E2%80%93Rabin_theorem" [ref=f7e826] [cursor=pointer]:
+              - /url: https://en.wikipedia.org/wiki/Adian%E2%80%93Rabin_theorem
+            - text: (accessed 2026-10-29)
+          - paragraph [ref=f7e827]:
+            - text: "[54] Tancer, arXiv:2310.07421 —"
+            - link "https://arxiv.org/abs/2310.07421" [ref=f7e828] [cursor=pointer]:
+              - /url: https://arxiv.org/abs/2310.07421
+            - text: (published 2023-10-11, accessed 2026-10-29)
+          - paragraph [ref=f7e829]:
+            - text: "[55] Bekkert–Drozd, arXiv:math/0310352 —"
+            - link "https://arxiv.org/abs/math/0310352" [ref=f7e830] [cursor=pointer]:
+              - /url: https://arxiv.org/abs/math/0310352
+            - text: (published 2003-10-22, accessed 2026-10-29)
+          - paragraph [ref=f7e831]:
+            - text: "[56] Buchweitz–Leuschke, arXiv:math/0505315 —"
+            - link "https://arxiv.org/abs/math/0505315" [ref=f7e832] [cursor=pointer]:
+              - /url: https://arxiv.org/abs/math/0505315
+            - text: (published 2005-05-15, accessed 2026-10-29)
+          - paragraph [ref=f7e833]:
+            - text: "[57] Grochow–Qiao, arXiv:1507.01917 —"
+            - link "https://arxiv.org/abs/1507.01917" [ref=f7e834] [cursor=pointer]:
+              - /url: https://arxiv.org/abs/1507.01917
+            - text: (published 2015-07-07, accessed 2026-10-29)
+          - paragraph [ref=f7e835]:
+            - text: "[58] Grevstad–May, arXiv:2509.17604 —"
+            - link "https://arxiv.org/abs/2509.17604" [ref=f7e836] [cursor=pointer]:
+              - /url: https://arxiv.org/abs/2509.17604
+            - text: (published 2025-09-22, accessed 2026-10-29)
+          - paragraph [ref=f7e837]:
+            - text: "[59] Sasyk–Tørnquist, arXiv:0909.2657 —"
+            - link "https://arxiv.org/abs/0909.2657" [ref=f7e838] [cursor=pointer]:
+              - /url: https://arxiv.org/abs/0909.2657
+            - text: (published 2009-09-14, accessed 2026-10-29)
+          - paragraph [ref=f7e839]:
+            - text: "[60] Geometrization conjecture —"
+            - link "https://en.wikipedia.org/wiki/Geometrization_conjecture" [ref=f7e840] [cursor=pointer]:
+              - /url: https://en.wikipedia.org/wiki/Geometrization_conjecture
+            - text: (accessed 2026-10-29)
+          - paragraph [ref=f7e841]:
+            - text: "[61] Unknotting problem —"
+            - link "https://en.wikipedia.org/wiki/Unknotting_problem" [ref=f7e842] [cursor=pointer]:
+              - /url: https://en.wikipedia.org/wiki/Unknotting_problem
+            - text: (accessed 2026-10-29)
+  - contentinfo [ref=f7e843]:
+    - generic [ref=f7e844]:
+      - generic [ref=f7e845]:
+        - heading "CMRPS" [level=3] [ref=f7e846]
+        - paragraph [ref=f7e847]: The Classification of Mathematical Representations of Physical Systems — a twelve-volume series with a structural synthesis. All results are stated relative to the admissibility axioms and preservation laws fixed in the series.
+        - paragraph [ref=f7e848]: Matthew Long / The YonedaAI Collaboration · YonedaAI Research Collective · Chicago, Illinois, USA
+      - generic [ref=f7e849]:
+        - heading "Read" [level=3] [ref=f7e850]
+        - list [ref=f7e851]:
+          - listitem [ref=f7e852]:
+            - link "All papers" [ref=f7e853] [cursor=pointer]:
+              - /url: /#papers
+          - listitem [ref=f7e854]:
+            - link "Periodic table" [ref=f7e855] [cursor=pointer]:
+              - /url: /periodic-table/
+          - listitem [ref=f7e856]:
+            - link "Structural synthesis" [ref=f7e857] [cursor=pointer]:
+              - /url: /papers/synthesis/
+      - generic [ref=f7e858]:
+        - heading "Series" [level=3] [ref=f7e859]
+        - list [ref=f7e860]:
+          - listitem [ref=f7e861]:
+            - link "Synthesis PDF" [ref=f7e862] [cursor=pointer]:
+              - /url: /pdf/synthesis.pdf
+          - listitem [ref=f7e863]:
+            - link "Principia Physica PDF" [ref=f7e864] [cursor=pointer]:
+              - /url: /pdf/vol-12-principia-physica.pdf
+          - listitem [ref=f7e865]:
+            - link "Foundations PDF" [ref=f7e866] [cursor=pointer]:
+              - /url: /pdf/vol-01-foundations.pdf
+  - alert [ref=f7e867]

@@ -1,9 +1,3 @@
-# The Periodic Table of Mathematical Physics
-
-**Program:** CMRPS, a 12-volume series by the YonedaAI Collaboration (PI Matthew Long).
-**Status date:** 2026-10-29.
-**Nature of this chart.** A research framework for classification, not a completed classification. Completeness is a theorem to investigate (Founding Document 02); the central conjecture it serves is registered as T-CMRPS-01 and remains a **conjecture**.
-
 **Status legend (used in every cell of every Status column).**
 
 | Token | Meaning |

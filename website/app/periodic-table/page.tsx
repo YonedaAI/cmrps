@@ -25,7 +25,7 @@ export default async function PeriodicTablePage() {
   const { html } = await getPeriodicTable();
 
   return (
-    <div className="paper-layout">
+    <div className="paper-layout paper-layout--solo">
       <article>
         <header className="paper-header">
           <p className="kicker">Program registry · CMRPS</p>

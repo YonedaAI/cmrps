@@ -1,0 +1,2627 @@
+- generic [active] [ref=f4e1]:
+  - banner [ref=f4e2]:
+    - generic [ref=f4e3]:
+      - link "CMRPS The Classification of Mathematical Representations of Physical Systems" [ref=f4e4] [cursor=pointer]:
+        - /url: /
+        - generic [ref=f4e5]: CMRPS
+        - generic [ref=f4e6]: The Classification of Mathematical Representations of Physical Systems
+      - navigation [ref=f4e7]:
+        - link "Papers" [ref=f4e8] [cursor=pointer]:
+          - /url: /#papers
+        - link "Periodic Table" [ref=f4e9] [cursor=pointer]:
+          - /url: /periodic-table/
+        - link "Series" [ref=f4e10] [cursor=pointer]:
+          - /url: /#series
+  - main [ref=f4e11]:
+    - generic [ref=f4e12]:
+      - article [ref=f4e13]:
+        - generic [ref=f4e14]:
+          - paragraph [ref=f4e15]: Synthesis · math-ph
+          - heading "Structural Synthesis" [level=1] [ref=f4e16]
+          - paragraph [ref=f4e17]: Synthesis of The Classification of Mathematical Representations of Physical Systems
+          - generic [ref=f4e18]:
+            - generic [ref=f4e19]: Matthew Long · The YonedaAI Collaboration
+            - generic [ref=f4e20]: October 2026
+            - generic [ref=f4e21]: 23 pages
+          - link "Download PDF" [ref=f4e22] [cursor=pointer]:
+            - /url: /pdf/synthesis.pdf
+        - generic [ref=f4e23]:
+          - generic [ref=f4e24]:
+            - heading "Abstract" [level=2] [ref=f4e25]
+            - text: "This paper states the structural picture formed by the twelve parts of the Classification of Mathematical Representations of Physical Systems, a program asking whether mathematical representations of physical systems admit a structural classification analogous to the Classification of Finite Simple Groups. One ontology of forty-two definitions, one dependency graph, and one equivalence discipline run through the series. Three kinds of result organize its classification content. Complete invariants appear wherever the invariant is finite or explicitly parameterized: dimension vectors for finite-dimensional"
+            - generic [ref=f4e27]:
+              - math [ref=f4e29]:
+                - generic [ref=f4e32]:
+                  - generic [ref=f4e33]: C
+                  - generic [ref=f4e34]: ∗
+              - generic [ref=f4e37]:
+                - text: C
+                - generic [ref=f4e38]: ∗
+            - text: "-algebras, Dynkin and Satake diagrams for semisimple Lie theory, classifying spaces for principal bundles, and the Murray-von Neumann and Connes data for amenable factors. Reconstruction theorems recover objects from probes under hypotheses that cannot be dropped. Seven obstruction theorems bound the scope of any classification, from uncountably many type"
+            - generic [ref=f4e44]:
+              - math [ref=f4e46]:
+                - generic [ref=f4e49]:
+                  - generic [ref=f4e50]:
+                    - generic [ref=f4e51]: I
+                    - generic [ref=f4e52]: I
+                  - generic [ref=f4e53]: "1"
+              - generic [ref=f4e56]:
+                - generic [ref=f4e57]: II
+                - generic [ref=f4e58]: "1"
+            - text: factors to algorithmic unrecognizability in dimension four. Every equivalence in the series declares the structure it preserves, and equivalences that forget the symmetric layer fail in a proved counterexample. The structural classification conjecture is stated as the program’s theorem target with its five proof obligations. The twelve parts share definitions, dependency discipline, and claim vocabulary without conflict.
+          - heading "Introduction" [level=2] [ref=f4e66]
+          - paragraph [ref=f4e67]: "The Classification of Mathematical Representations of Physical Systems asks whether the mathematical structures that represent physical systems admit a structural classification analogous to the Classification of Finite Simple Groups. The twelve parts of the series answer in pieces. This paper states the structural picture those pieces form: one ontology, one dependency discipline, one equivalence requirement, and one register of obstruction theorems, carried across classical mechanics, quantum theory, gauge fields, spacetime, and gravity."
+          - paragraph [ref=f4e68]:
+            - text: The target of the program is the identity
+            - generic [ref=f4e72]:
+              - math [ref=f4e74]:
+                - generic [ref=f4e76]:
+                  - generic [ref=f4e77]:
+                    - generic [ref=f4e78]:
+                      - generic [ref=f4e79]: P
+                      - generic [ref=f4e80]: h
+                      - generic [ref=f4e81]: "y"
+                      - generic [ref=f4e82]: s
+                    - generic [ref=f4e83]:
+                      - generic [ref=f4e84]: a
+                      - generic [ref=f4e85]: d
+                      - generic [ref=f4e86]: m
+                  - generic [ref=f4e87]: ≃
+                  - generic [ref=f4e88]: ⟨
+                  - generic [ref=f4e89]:
+                    - generic [ref=f4e90]: F
+                    - generic [ref=f4e91]: α
+                  - generic [ref=f4e92]:
+                    - generic [ref=f4e93]: ⟩
+                    - generic [ref=f4e94]: C
+                  - generic [ref=f4e95]: ","
+              - generic [aria-hidden] [ref=f4e96]:
+                - generic [ref=f4e97]:
+                  - generic [ref=f4e98]:
+                    - generic [ref=f4e99]: Phys
+                    - generic [ref=f4e100]: adm
+                  - text: ≃
+                - generic [ref=f4e110]:
+                  - text: ⟨
+                  - generic [ref=f4e111]:
+                    - text: F
+                    - generic [ref=f4e112]: α
+                  - generic [ref=f4e120]:
+                    - text: ⟩
+                    - generic [ref=f4e121]: C
+                  - text: ","
+            - text: in which every admissible physical system is generated from a collection of fundamental structural families under admissible constructions. The identity is the program’s theorem target and is stated in full in
+            - link "1" [ref=f4e130] [cursor=pointer]:
+              - /url: "#conj:cmrps"
+            - text: ". The results around it are of three kinds: classification theorems that supply complete invariants in restricted sectors, reconstruction theorems that recover objects from probes, and obstruction theorems that mark where no classification of the stated generality can exist."
+          - paragraph [ref=f4e131]:
+            - text: Complete invariants appear exactly where the invariant is finite or explicitly parameterized. Dimension vectors classify finite-dimensional
+            - generic [ref=f4e133]:
+              - math [ref=f4e135]:
+                - generic [ref=f4e138]:
+                  - generic [ref=f4e139]: C
+                  - generic [ref=f4e140]: ∗
+              - generic [ref=f4e143]:
+                - text: C
+                - generic [ref=f4e144]: ∗
+            - text: "-algebras"
+            - link "[1]" [ref=f4e149] [cursor=pointer]:
+              - /url: "#bib-corpus-9"
+            - text: ", Dynkin and Satake diagrams classify complex and real semisimple Lie algebras"
+            - link "[2]" [ref=f4e150] [cursor=pointer]:
+              - /url: "#bib-corpus-4"
+            - text: ", classifying spaces classify principal bundles"
+            - link "[3]" [ref=f4e151] [cursor=pointer]:
+              - /url: "#bib-corpus-17"
+            - text: ","
+            - link "[4]" [ref=f4e152] [cursor=pointer]:
+              - /url: "#bib-corpus-18"
+            - text: ", and the Murray-von Neumann and Connes data classify amenable factors"
+            - link "[5]" [ref=f4e153] [cursor=pointer]:
+              - /url: "#bib-corpus-62"
+            - text: ","
+            - link "[6]" [ref=f4e154] [cursor=pointer]:
+              - /url: "#bib-corpus-64"
+            - text: . Outside those regimes the series records either a parameterized family of answers or an obstruction theorem.
+          - paragraph [ref=f4e155]:
+            - text: Reconstruction is better developed than classification. Gelfand and Neumark
+            - link "[7]" [ref=f4e156] [cursor=pointer]:
+              - /url: "#bib-corpus-42"
+            - text: ", Gelfand duality"
+            - link "[8]" [ref=f4e157] [cursor=pointer]:
+              - /url: "#bib-corpus-43"
+            - text: ", Stone duality"
+            - link "[9]" [ref=f4e158] [cursor=pointer]:
+              - /url: "#bib-corpus-44"
+            - text: ", Doplicher and Roberts"
+            - link "[10]" [ref=f4e159] [cursor=pointer]:
+              - /url: "#bib-corpus-12"
+            - text: ","
+            - link "[11]" [ref=f4e160] [cursor=pointer]:
+              - /url: "#bib-corpus-67"
+            - text: ", and Deligne"
+            - link "[12]" [ref=f4e161] [cursor=pointer]:
+              - /url: "#bib-corpus-13"
+            - text: each recover an object from a category of probes, and each does so under hypotheses that cannot be dropped. The symmetric tensor structure, the growth condition, and the commutativity assumption are load-bearing in their respective statements.
+          - paragraph [ref=f4e162]:
+            - text: Nonclassifiability is a theorem. The construction of uncountably many type
+            - generic [ref=f4e164]:
+              - math [ref=f4e166]:
+                - generic [ref=f4e169]:
+                  - generic [ref=f4e170]:
+                    - generic [ref=f4e171]: I
+                    - generic [ref=f4e172]: I
+                  - generic [ref=f4e173]: "1"
+              - generic [ref=f4e176]:
+                - generic [ref=f4e177]: II
+                - generic [ref=f4e178]: "1"
+            - text: factors
+            - link "[13]" [ref=f4e186] [cursor=pointer]:
+              - /url: "#bib-corpus-65"
+            - text: ", the undecidability results for finitely presented groups"
+            - link "[14]" [ref=f4e187] [cursor=pointer]:
+              - /url: "#bib-corpus-53"
+            - text: ", the wildness theorems of representation theory"
+            - link "[15]" [ref=f4e188] [cursor=pointer]:
+              - /url: "#bib-corpus-55"
+            - text: ","
+            - link "[16]" [ref=f4e189] [cursor=pointer]:
+              - /url: "#bib-corpus-56"
+            - text: ","
+            - link "[17]" [ref=f4e190] [cursor=pointer]:
+              - /url: "#bib-corpus-58"
+            - text: ", and the algorithmic unrecognizability of certain four-manifolds"
+            - link "[18]" [ref=f4e191] [cursor=pointer]:
+              - /url: "#bib-corpus-54"
+            - text: each prove that no classification of the stated kind exists in the stated generality. These results are first-class content of the series. They mark the scope of the classification program rather than its failure.
+          - heading "The shared framework" [level=2] [ref=f4e192]
+          - paragraph [ref=f4e193]:
+            - text: Every part of the series works in one definitional substrate. The substrate is a category of representations of physical systems, a discipline of morphisms, a physical equivalence, a collection of structural families, and an invariant record. The definitions are stated once in the foundational part and reused across the series; later parts extend the list only by appending new identifiers. The identifiers and their roles appear in
+            - link "1" [ref=f4e194] [cursor=pointer]:
+              - /url: "#tab:ontology"
+            - text: .
+          - heading "Objects and components" [level=3] [ref=f4e195]
+          - paragraph [ref=f4e197]:
+            - strong [ref=f4e198]: Definition 1
+            - text: (Representation of a physical system). A representation of a physical system is a tuple
+            - generic [ref=f4e202]:
+              - math [ref=f4e204]:
+                - generic [ref=f4e206]:
+                  - generic [ref=f4e207]: P
+                  - generic [ref=f4e208]: =
+                  - generic [ref=f4e209]: (
+                  - generic [ref=f4e210]: X
+                  - generic [ref=f4e211]: ","
+                  - generic [ref=f4e212]: O
+                  - generic [ref=f4e213]: ","
+                  - generic [ref=f4e214]: D
+                  - generic [ref=f4e215]: ","
+                  - generic [ref=f4e216]: S
+                  - generic [ref=f4e217]: ","
+                  - generic [ref=f4e218]: C
+                  - generic [ref=f4e219]: )
+                  - generic [ref=f4e220]: ","
+              - generic [aria-hidden] [ref=f4e221]:
+                - generic [ref=f4e222]: P =
+                - generic [ref=f4e223]: (X, O, D, S, C),
+            - text: carrying a state space or geometric structure, an observable algebra or collection, dynamical laws, symmetry and constraint data, and composition and interaction rules.
+          - paragraph [ref=f4e224]:
+            - text: The five components of
+            - link "1" [ref=f4e225] [cursor=pointer]:
+              - /url: "#def:representation"
+            - text: record coordinate data whose concrete realization varies across physical regimes. State spaces instantiate as symplectic manifolds
+            - link "[19]" [ref=f4e226] [cursor=pointer]:
+              - /url: "#bib-corpus-6"
+            - text: ","
+            - link "[20]" [ref=f4e227] [cursor=pointer]:
+              - /url: "#bib-corpus-68"
+            - text: ", Hilbert spaces"
+            - link "[1]" [ref=f4e228] [cursor=pointer]:
+              - /url: "#bib-corpus-9"
+            - text: ", probability spaces, smooth manifolds"
+            - link "[21]" [ref=f4e229] [cursor=pointer]:
+              - /url: "#bib-corpus-50"
+            - text: ","
+            - link "[22]" [ref=f4e230] [cursor=pointer]:
+              - /url: "#bib-corpus-51"
+            - text: ", and lattice configurations; observable layers instantiate as function algebras,"
+            - generic [ref=f4e232]:
+              - math [ref=f4e234]:
+                - generic [ref=f4e237]:
+                  - generic [ref=f4e238]: C
+                  - generic [ref=f4e239]: ∗
+              - generic [ref=f4e242]:
+                - text: C
+                - generic [ref=f4e243]: ∗
+            - text: "-algebras"
+            - link "[1]" [ref=f4e248] [cursor=pointer]:
+              - /url: "#bib-corpus-9"
+            - text: ", von Neumann algebras"
+            - link "[23]" [ref=f4e249] [cursor=pointer]:
+              - /url: "#bib-corpus-8"
+            - text: ", and sheaf-theoretic observable atlases. The components need not be independent. The composition component"
+            - generic [ref=f4e251]:
+              - math [ref=f4e253]:
+                - generic [ref=f4e254]: C
+              - generic [ref=f4e258]: C
+            - text: determines the decomposition theory of the representation, because it defines irreducibility as the absence of a nontrivial factorization under the specified composition operation.
+          - paragraph [ref=f4e259]:
+            - text: Objects assemble into a category
+            - generic [ref=f4e261]:
+              - math [ref=f4e263]:
+                - generic [ref=f4e265]:
+                  - generic [ref=f4e266]: P
+                  - generic [ref=f4e267]: h
+                  - generic [ref=f4e268]: "y"
+                  - generic [ref=f4e269]: s
+              - generic [ref=f4e271]: Phys
+            - text: whose morphisms are admissible relationships between representations. The full subcategory of admissible objects is
+            - generic [ref=f4e274]:
+              - math [ref=f4e276]:
+                - generic [ref=f4e279]:
+                  - generic [ref=f4e280]:
+                    - generic [ref=f4e281]: P
+                    - generic [ref=f4e282]: h
+                    - generic [ref=f4e283]: "y"
+                    - generic [ref=f4e284]: s
+                  - generic [ref=f4e285]:
+                    - generic [ref=f4e286]: a
+                    - generic [ref=f4e287]: d
+                    - generic [ref=f4e288]: m
+              - generic [ref=f4e291]:
+                - generic [ref=f4e292]: Phys
+                - generic [ref=f4e293]: adm
+            - text: ", defined in"
+            - link "3" [ref=f4e303] [cursor=pointer]:
+              - /url: "#def:admissibility"
+            - text: . Theorems stated over the admissible subcategory are stated relative to the conditions of that definition.
+          - heading "Morphism kinds" [level=3] [ref=f4e304]
+          - paragraph [ref=f4e305]:
+            - text: Five kinds of relationship appear across the series, and they are not all arrows of one 1-category. Coarse-graining forgets microscopic detail while preserving macroscopic observables. Exact equivalence is invertible and represents identity of content up to the chosen relation. Embedding realizes a system as a subsystem, a subtheory, or a sub-structure. These three are arrows in the strict reading of
+            - generic [ref=f4e307]:
+              - math [ref=f4e309]:
+                - generic [ref=f4e311]:
+                  - generic [ref=f4e312]: P
+                  - generic [ref=f4e313]: h
+                  - generic [ref=f4e314]: "y"
+                  - generic [ref=f4e315]: s
+              - generic [ref=f4e317]: Phys
+            - text: ". Duality exchanges structure between differently presented theories and is a functor between category presentations, generally invertible only after passage to an opposite or dual category. Limiting procedures arise from limits and colimits: thermodynamic limits, infinite-volume limits, semiclassical limits, and continuum limits. These last two are universal constructions rather than arrows between two objects."
+          - paragraph [ref=f4e319]:
+            - text: The series therefore specifies morphism class by class. Each kind carries a preservation law, the explicit conditions it must satisfy together with the rule under which two such morphisms compose, and a part states which morphism classes are in force whenever it uses the category. The strict reading of
+            - generic [ref=f4e321]:
+              - math [ref=f4e323]:
+                - generic [ref=f4e325]:
+                  - generic [ref=f4e326]: P
+                  - generic [ref=f4e327]: h
+                  - generic [ref=f4e328]: "y"
+                  - generic [ref=f4e329]: s
+              - generic [ref=f4e331]: Phys
+            - text: takes coarse-grainings, embeddings, and exact equivalences as its arrows; dualities are realized as functors between category presentations and limiting procedures as universal constructions in
+            - generic [ref=f4e334]:
+              - math [ref=f4e336]:
+                - generic [ref=f4e337]: C
+              - generic [ref=f4e341]: C
+            - text: . That strict reading is the one in which the central conjecture is stated, and whether a single category carries all five kinds at once, or whether several related categories or a higher structure are required, is a research question of the program.
+          - paragraph [ref=f4e342]:
+            - text: Continuum limits are the load-bearing instance. Lattice theorems in restricted regimes
+            - link "[24]" [ref=f4e343] [cursor=pointer]:
+              - /url: "#bib-corpus-30"
+            - text: ","
+            - link "[25]" [ref=f4e344] [cursor=pointer]:
+              - /url: "#bib-corpus-31"
+            - text: ","
+            - link "[26]" [ref=f4e345] [cursor=pointer]:
+              - /url: "#bib-corpus-32"
+            - text: do not by themselves close the continuum limit, and the series keeps the two apart.
+          - heading "Equivalence" [level=3] [ref=f4e346]
+          - paragraph [ref=f4e347]: Physical equivalence is a chosen relation on objects; the classification problem is the problem of classifying admissible representations up to that relation. Mathematical equivalence, isomorphism of the five-component tuples in the ambient category of each component, is strictly finer in general. Two mathematical descriptions may be physically equivalent without being mathematically isomorphic.
+          - paragraph [ref=f4e348]:
+            - text: "The series binds every Yoneda-based argument to one constraint, quoted from the founding document: “Yoneda does not, by itself, establish physical equivalence, empirical adequacy, or a classification theorem.” The Yoneda embedding sends an object to its functor of relationships,"
+            - generic [ref=f4e352]:
+              - math [ref=f4e354]:
+                - generic [ref=f4e356]:
+                  - generic [ref=f4e357]: P
+                  - generic [ref=f4e358]: ⟼
+                  - generic [ref=f4e359]:
+                    - generic [ref=f4e360]:
+                      - generic [ref=f4e361]: H
+                      - generic [ref=f4e362]: o
+                      - generic [ref=f4e363]: m
+                    - generic [ref=f4e364]:
+                      - generic [ref=f4e365]: P
+                      - generic [ref=f4e366]: h
+                      - generic [ref=f4e367]: "y"
+                      - generic [ref=f4e368]: s
+                  - generic [ref=f4e369]: (
+                  - generic [ref=f4e370]: −
+                  - generic [ref=f4e371]: ","
+                  - generic [ref=f4e372]: P
+                  - generic [ref=f4e373]: )
+                  - generic [ref=f4e374]: ","
+              - generic [aria-hidden] [ref=f4e375]:
+                - generic [ref=f4e376]: P ⟼
+                - generic [ref=f4e377]:
+                  - generic [ref=f4e378]:
+                    - generic [ref=f4e379]: Hom
+                    - generic [ref=f4e380]: Phys
+                  - text: (−, P),
+            - text: and is faithful as mathematics. The physical interpretation of the resulting categorical structure is established separately.
+          - paragraph [ref=f4e390]:
+            - text: "A second constraint governs every equivalence used to identify systems. Any such equivalence must state which layer of structure it preserves. Equivalences that forget the monoidal or symmetric layer are provably insufficient: non-isomorphic finite groups carry equivalent representation categories as plain tensor categories"
+            - link "[27]" [ref=f4e391] [cursor=pointer]:
+              - /url: "#bib-corpus-74"
+            - text: . A classification that discards the symmetric structure is therefore false. This requirement is the discipline the series applies to every equivalence, duality, and identification it records.
+          - heading "Families and invariants" [level=3] [ref=f4e392]
+          - paragraph [ref=f4e393]: The series organizes mathematical structures into ten candidate families, each a full subcategory singled out by its underlying structure. Symplectic and Poisson structures represent classical mechanics. Hilbert spaces and operator algebras represent quantum mechanics. Smooth manifolds and geometric structures represent relativity. Principal bundles and connections represent gauge theories. Probability and measure-theoretic structures represent statistical physics. Topological and higher-categorical structures represent topological field theories. Dynamical systems and operator semigroups represent dissipative and open systems. Tensor categories and compositional structures represent quantum information. Discrete combinatorial structures represent lattice and network models. Derived and homotopical structures represent higher gauge and derived field theories. The families are candidates for the generating collection of the central identity, and the identity asserts that they suffice.
+          - paragraph [ref=f4e394]:
+            - text: For a theory
+            - generic [ref=f4e396]:
+              - math [ref=f4e398]:
+                - generic [ref=f4e399]: T
+              - generic [ref=f4e403]: T
+            - text: the series records an invariant tuple
+            - generic [ref=f4e407]:
+              - math [ref=f4e409]:
+                - generic [ref=f4e411]:
+                  - generic [ref=f4e412]: I
+                  - generic [ref=f4e413]: (
+                  - generic [ref=f4e414]: T
+                  - generic [ref=f4e415]: )
+                  - generic [ref=f4e416]: =
+                  - generic [ref=f4e417]: (
+                  - generic [ref=f4e418]:
+                    - generic [ref=f4e419]: S
+                    - generic [ref=f4e420]: T
+                  - generic [ref=f4e421]: ","
+                  - generic [ref=f4e422]:
+                    - generic [ref=f4e423]: O
+                    - generic [ref=f4e424]: T
+                  - generic [ref=f4e425]: ","
+                  - generic [ref=f4e426]:
+                    - generic [ref=f4e427]: D
+                    - generic [ref=f4e428]: T
+                  - generic [ref=f4e429]: ","
+                  - generic [ref=f4e430]:
+                    - generic [ref=f4e431]: G
+                    - generic [ref=f4e432]: T
+                  - generic [ref=f4e433]: ","
+                  - generic [ref=f4e434]:
+                    - generic [ref=f4e435]: R
+                    - generic [ref=f4e436]: T
+                  - generic [ref=f4e437]: )
+              - generic [aria-hidden] [ref=f4e438]:
+                - generic [ref=f4e439]: I(T) =
+                - generic [ref=f4e440]:
+                  - text: (
+                  - generic [ref=f4e441]:
+                    - text: S
+                    - generic [ref=f4e442]: T
+                  - text: ","
+                  - generic [ref=f4e450]:
+                    - text: O
+                    - generic [ref=f4e451]: T
+                  - text: ","
+                  - generic [ref=f4e459]:
+                    - text: D
+                    - generic [ref=f4e460]: T
+                  - text: ","
+                  - generic [ref=f4e468]:
+                    - text: G
+                    - generic [ref=f4e469]: T
+                  - text: ","
+                  - generic [ref=f4e477]:
+                    - text: R
+                    - generic [ref=f4e478]: T
+                  - text: )
+            - text: "describing states, observables, dynamics, symmetries, and representations. A classifying invariant is one whose value determines the object up to the chosen equivalence. The series uses the following: a Dynkin or Satake diagram"
+            - link "[2]" [ref=f4e486] [cursor=pointer]:
+              - /url: "#bib-corpus-4"
+            - text: ", a dominant integral weight"
+            - link "[28]" [ref=f4e487] [cursor=pointer]:
+              - /url: "#bib-corpus-5"
+            - text: ", a dimension vector"
+            - link "[1]" [ref=f4e488] [cursor=pointer]:
+              - /url: "#bib-corpus-9"
+            - text: ", a Murray-von Neumann type with Connes invariants"
+            - link "[5]" [ref=f4e489] [cursor=pointer]:
+              - /url: "#bib-corpus-62"
+            - text: ","
+            - link "[6]" [ref=f4e490] [cursor=pointer]:
+              - /url: "#bib-corpus-64"
+            - text: ", a homotopy class of maps to a classifying space"
+            - link "[3]" [ref=f4e491] [cursor=pointer]:
+              - /url: "#bib-corpus-17"
+            - text: ","
+            - link "[4]" [ref=f4e492] [cursor=pointer]:
+              - /url: "#bib-corpus-18"
+            - text: ", a fully dualizable object"
+            - link "[29]" [ref=f4e493] [cursor=pointer]:
+              - /url: "#bib-corpus-34"
+            - text: ","
+            - link "[30]" [ref=f4e494] [cursor=pointer]:
+              - /url: "#bib-corpus-35"
+            - text: ", a holonomy group"
+            - link "[22]" [ref=f4e495] [cursor=pointer]:
+              - /url: "#bib-corpus-51"
+            - text: ", a causal class"
+            - link "[21]" [ref=f4e496] [cursor=pointer]:
+              - /url: "#bib-corpus-50"
+            - text: ", a set of entropy inequalities"
+            - link "[31]" [ref=f4e497] [cursor=pointer]:
+              - /url: "#bib-corpus-47"
+            - text: ", and a Fisher metric up to constant"
+            - link "[32]" [ref=f4e498] [cursor=pointer]:
+              - /url: "#bib-corpus-52"
+            - text: .
+          - table [ref=f4e499]:
+            - caption [ref=f4e500]: Table 1. The shared ontology of the series, grouped by role. Identifiers are the stable definition numbers of the foundational part and are reused unchanged by every later part.
+            - rowgroup [ref=f4e501]:
+              - row [ref=f4e502]:
+                - columnheader "Identifiers" [ref=f4e503]
+                - columnheader "Content" [ref=f4e504]
+                - columnheader "Role in the series" [ref=f4e505]
+              - row [ref=f4e506]:
+                - cell "DEF-001 to DEF-007" [ref=f4e507]
+                - cell [ref=f4e508]:
+                  - text: The category
+                  - generic [ref=f4e510]:
+                    - math [ref=f4e512]:
+                      - generic [ref=f4e514]:
+                        - generic [ref=f4e515]: P
+                        - generic [ref=f4e516]: h
+                        - generic [ref=f4e517]: "y"
+                        - generic [ref=f4e518]: s
+                    - generic [ref=f4e520]: Phys
+                  - text: and the five components of an object
+                - cell "Definitional root. No part bypasses these definitions." [ref=f4e522]
+              - row [ref=f4e523]:
+                - cell "DEF-008 to DEF-014" [ref=f4e524]
+                - cell "Five morphism kinds and the preservation law" [ref=f4e525]
+                - cell "Fixes which relationships count as arrows and how they compose." [ref=f4e526]
+              - row [ref=f4e527]:
+                - cell "DEF-015 to DEF-018" [ref=f4e528]
+                - cell "Physical equivalence, mathematical equivalence, the Yoneda qualification, and the preserved-layer requirement" [ref=f4e529]
+                - cell "Governs every identification the series makes." [ref=f4e530]
+              - row [ref=f4e531]:
+                - cell "DEF-019 and DEF-020" [ref=f4e532]
+                - cell "Admissible physical systems and the conditions that define them" [ref=f4e533]
+                - cell "Domain of the central conjecture. Theorems over this domain are stated relative to these conditions." [ref=f4e534]
+              - row [ref=f4e535]:
+                - cell "DEF-021 to DEF-024" [ref=f4e536]
+                - cell "Irreducibles, decompositions, admissible constructions, and closure" [ref=f4e537]
+                - cell "Supplies the generation operation of the central identity." [ref=f4e538]
+              - row [ref=f4e539]:
+                - cell "DEF-025 to DEF-035" [ref=f4e540]
+                - cell "The ten structural families" [ref=f4e541]
+                - cell "Candidate generating collection for the central identity." [ref=f4e542]
+              - row [ref=f4e543]:
+                - cell "DEF-036 to DEF-038" [ref=f4e544]
+                - cell "Invariant records, classifying invariants, and the Yoneda embedding" [ref=f4e545]
+                - cell "Carries the data by which objects are recognized." [ref=f4e546]
+              - row [ref=f4e547]:
+                - cell "DEF-039 to DEF-042" [ref=f4e548]
+                - cell "The classification problem, the generation statement, the conjectural identity, and the three-layer architecture" [ref=f4e549]
+                - cell "States the problem the series attacks and the architecture that separates mathematics from realization and observation." [ref=f4e550]
+          - paragraph [ref=f4e551]:
+            - text: "The five components supply the bridge between the families. A cotangent bundle, a finite-dimensional operator algebra, and a principal bundle are instances of one tuple shape: each has a state space, an observable layer, a dynamics, a symmetry group, and a composition rule, and the invariant record"
+            - generic [ref=f4e553]:
+              - math [ref=f4e555]:
+                - generic [ref=f4e557]:
+                  - generic [ref=f4e558]: I
+                  - generic [ref=f4e559]: (
+                  - generic [ref=f4e560]: T
+                  - generic [ref=f4e561]: )
+              - generic [ref=f4e563]: I(T)
+            - text: reads the same five slots in every case. The families differ in what fills the slots rather than in the slots themselves, and that common shape is what makes a cross-family classification problem well posed at all.
+          - heading "Admissibility and constructions" [level=3] [ref=f4e564]
+          - paragraph [ref=f4e565]:
+            - link "Definition 3" [ref=f4e566] [cursor=pointer]:
+              - /url: "#def:admissibility"
+            - link "Definition 2" [ref=f4e567] [cursor=pointer]:
+              - /url: "#def:constructions"
+            - text: fix the domain and the generating operations of the structural classification conjecture. The admissible subcategory restricts the classification scope to mutually compatible components, and the construction set defines the inductive closure.
+          - paragraph [ref=f4e569]:
+            - strong [ref=f4e570]: Definition 2
+            - text: (Admissible constructions). The set
+            - generic [ref=f4e572]:
+              - math [ref=f4e574]:
+                - generic [ref=f4e575]: C
+              - generic [ref=f4e579]: C
+            - text: of admissible constructions consists of the tensor product, the direct sum, extension in the group, algebra, and field-theoretic senses, limits and colimits including the thermodynamic, infinite-volume, semiclassical, and continuum limits, and factorization of a representation into factors. These are operations on objects of
+            - generic [ref=f4e581]:
+              - math [ref=f4e583]:
+                - generic [ref=f4e585]:
+                  - generic [ref=f4e586]: P
+                  - generic [ref=f4e587]: h
+                  - generic [ref=f4e588]: "y"
+                  - generic [ref=f4e589]: s
+              - generic [ref=f4e591]: Phys
+            - text: ": each takes one or more systems and builds a new system, so each is a functor or a universal construction on the category rather than a component of any single system."
+          - paragraph [ref=f4e594]:
+            - strong [ref=f4e595]: Definition 3
+            - text: (Admissibility). An object
+            - generic [ref=f4e597]:
+              - math [ref=f4e599]:
+                - generic [ref=f4e601]:
+                  - generic [ref=f4e602]: P
+                  - generic [ref=f4e603]: =
+                  - generic [ref=f4e604]: (
+                  - generic [ref=f4e605]: X
+                  - generic [ref=f4e606]: ","
+                  - generic [ref=f4e607]: O
+                  - generic [ref=f4e608]: ","
+                  - generic [ref=f4e609]: D
+                  - generic [ref=f4e610]: ","
+                  - generic [ref=f4e611]: S
+                  - generic [ref=f4e612]: ","
+                  - generic [ref=f4e613]: C
+                  - generic [ref=f4e614]: )
+              - generic [aria-hidden] [ref=f4e615]:
+                - generic [ref=f4e616]: P =
+                - generic [ref=f4e617]: (X, O, D, S, C)
+            - text: "is admissible when the five components are mutually consistent. Explicitly: the domain of"
+            - generic [ref=f4e619]:
+              - math [ref=f4e621]:
+                - generic [ref=f4e622]: D
+              - generic [ref=f4e626]: D
+            - text: is the state space
+            - generic [ref=f4e628]:
+              - math [ref=f4e630]:
+                - generic [ref=f4e631]: X
+              - generic [ref=f4e635]: X
+            - text: and its flow preserves the observable algebra
+            - generic [ref=f4e637]:
+              - math [ref=f4e639]:
+                - generic [ref=f4e640]: O
+              - generic [ref=f4e644]: O
+            - text: ; the action of
+            - generic [ref=f4e646]:
+              - math [ref=f4e648]:
+                - generic [ref=f4e649]: S
+              - generic [ref=f4e653]: S
+            - text: "on"
+            - generic [ref=f4e655]:
+              - math [ref=f4e657]:
+                - generic [ref=f4e658]: X
+              - generic [ref=f4e662]: X
+            - text: preserves
+            - generic [ref=f4e664]:
+              - math [ref=f4e666]:
+                - generic [ref=f4e667]: D
+              - generic [ref=f4e671]: D
+            - text: ; and the internal composition rule
+            - generic [ref=f4e673]:
+              - math [ref=f4e675]:
+                - generic [ref=f4e676]: C
+              - generic [ref=f4e680]: C
+            - text: is closed under composition of its own morphisms. The component
+            - generic [ref=f4e682]:
+              - math [ref=f4e684]:
+                - generic [ref=f4e685]: C
+              - generic [ref=f4e689]: C
+            - text: is internal to a single system and records how that system composes with others; the construction set
+            - generic [ref=f4e691]:
+              - math [ref=f4e693]:
+                - generic [ref=f4e694]: C
+              - generic [ref=f4e698]: C
+            - text: of
+            - link "2" [ref=f4e699] [cursor=pointer]:
+              - /url: "#def:constructions"
+            - text: is external and builds new systems from old ones. The admissible objects form the full subcategory
+            - generic [ref=f4e701]:
+              - math [ref=f4e703]:
+                - generic [ref=f4e706]:
+                  - generic [ref=f4e707]:
+                    - generic [ref=f4e708]: P
+                    - generic [ref=f4e709]: h
+                    - generic [ref=f4e710]: "y"
+                    - generic [ref=f4e711]: s
+                  - generic [ref=f4e712]:
+                    - generic [ref=f4e713]: a
+                    - generic [ref=f4e714]: d
+                    - generic [ref=f4e715]: m
+              - generic [ref=f4e718]:
+                - generic [ref=f4e719]: Phys
+                - generic [ref=f4e720]: adm
+            - text: ", which is closed under every construction of"
+            - generic [ref=f4e731]:
+              - math [ref=f4e733]:
+                - generic [ref=f4e734]: C
+              - generic [ref=f4e738]: C
+            - text: .
+          - paragraph [ref=f4e739]:
+            - text: These two definitions fix the domain and the generating operation of the central conjecture. A part that uses
+            - generic [ref=f4e741]:
+              - math [ref=f4e743]:
+                - generic [ref=f4e746]:
+                  - generic [ref=f4e747]:
+                    - generic [ref=f4e748]: P
+                    - generic [ref=f4e749]: h
+                    - generic [ref=f4e750]: "y"
+                    - generic [ref=f4e751]: s
+                  - generic [ref=f4e752]:
+                    - generic [ref=f4e753]: a
+                    - generic [ref=f4e754]: d
+                    - generic [ref=f4e755]: m
+              - generic [ref=f4e758]:
+                - generic [ref=f4e759]: Phys
+                - generic [ref=f4e760]: adm
+            - text: works relative to the conditions of
+            - link "3" [ref=f4e770] [cursor=pointer]:
+              - /url: "#def:admissibility"
+            - text: ", and a part that decomposes a system uses the operations of"
+            - link "2" [ref=f4e771] [cursor=pointer]:
+              - /url: "#def:constructions"
+            - text: .
+          - heading "The structural classification conjecture" [level=2] [ref=f4e772]
+          - paragraph [ref=f4e774]:
+            - emphasis [ref=f4e775]: Conjecture 1
+            - text: (Structural classification of admissible physical systems). There exists a collection of fundamental structural families
+            - generic [ref=f4e777]:
+              - math [ref=f4e779]:
+                - generic [ref=f4e781]:
+                  - generic [ref=f4e782]: F
+                  - generic [ref=f4e783]: =
+                  - generic [ref=f4e784]: "{"
+                  - generic [ref=f4e785]:
+                    - generic [ref=f4e786]: F
+                    - generic [ref=f4e787]: α
+                  - generic [ref=f4e788]:
+                    - generic [ref=f4e789]: "}"
+                    - generic [ref=f4e790]:
+                      - generic [ref=f4e791]: α
+                      - generic [ref=f4e792]: ∈
+                      - generic [ref=f4e793]: A
+              - generic [aria-hidden] [ref=f4e794]:
+                - generic [ref=f4e795]: F =
+                - generic [ref=f4e796]:
+                  - text: "{"
+                  - generic [ref=f4e797]:
+                    - text: F
+                    - generic [ref=f4e798]: α
+                  - generic [ref=f4e806]:
+                    - text: "}"
+                    - generic [ref=f4e807]: α∈A
+            - text: such that
+            - generic [ref=f4e819]:
+              - math [ref=f4e821]:
+                - generic [ref=f4e823]:
+                  - generic [ref=f4e824]:
+                    - generic [ref=f4e825]:
+                      - generic [ref=f4e826]: P
+                      - generic [ref=f4e827]: h
+                      - generic [ref=f4e828]: "y"
+                      - generic [ref=f4e829]: s
+                    - generic [ref=f4e830]:
+                      - generic [ref=f4e831]: a
+                      - generic [ref=f4e832]: d
+                      - generic [ref=f4e833]: m
+                  - generic [ref=f4e834]: ≃
+                  - generic [ref=f4e835]: ⟨
+                  - generic [ref=f4e836]:
+                    - generic [ref=f4e837]: F
+                    - generic [ref=f4e838]: α
+                  - generic [ref=f4e839]:
+                    - generic [ref=f4e840]: ⟩
+                    - generic [ref=f4e841]: C
+                  - generic [ref=f4e842]: ","
+              - generic [aria-hidden] [ref=f4e843]:
+                - generic [ref=f4e844]:
+                  - generic [ref=f4e845]:
+                    - generic [ref=f4e846]: Phys
+                    - generic [ref=f4e847]: adm
+                  - text: ≃
+                - generic [ref=f4e857]:
+                  - text: ⟨
+                  - generic [ref=f4e858]:
+                    - text: F
+                    - generic [ref=f4e859]: α
+                  - generic [ref=f4e867]:
+                    - text: ⟩
+                    - generic [ref=f4e868]: C
+                  - text: ","
+            - text: the right side denoting closure of the families under the admissible constructions of
+            - link "2" [ref=f4e877] [cursor=pointer]:
+              - /url: "#def:constructions"
+            - text: .
+          - paragraph [ref=f4e878]:
+            - text: The closure
+            - generic [ref=f4e880]:
+              - math [ref=f4e882]:
+                - generic [ref=f4e884]:
+                  - generic [ref=f4e885]: ⟨
+                  - generic [ref=f4e886]: F
+                  - generic [ref=f4e887]:
+                    - generic [ref=f4e888]: ⟩
+                    - generic [ref=f4e889]: C
+              - generic [ref=f4e891]:
+                - text: ⟨F
+                - generic [ref=f4e892]:
+                  - text: ⟩
+                  - generic [ref=f4e893]: C
+            - text: is the smallest full subcategory of
+            - generic [ref=f4e903]:
+              - math [ref=f4e905]:
+                - generic [ref=f4e907]:
+                  - generic [ref=f4e908]: P
+                  - generic [ref=f4e909]: h
+                  - generic [ref=f4e910]: "y"
+                  - generic [ref=f4e911]: s
+              - generic [ref=f4e913]: Phys
+            - text: that contains every
+            - generic [ref=f4e916]:
+              - math [ref=f4e918]:
+                - generic [ref=f4e921]:
+                  - generic [ref=f4e922]: F
+                  - generic [ref=f4e923]: α
+              - generic [ref=f4e926]:
+                - text: F
+                - generic [ref=f4e927]: α
+            - text: and is closed under the constructions of
+            - link "2" [ref=f4e935] [cursor=pointer]:
+              - /url: "#def:constructions"
+            - text: . Its objects are exactly those obtained from the families by a finite iteration of those constructions, and no object outside that inductive closure is included. The conjecture is stated for the strict reading of
+            - generic [ref=f4e937]:
+              - math [ref=f4e939]:
+                - generic [ref=f4e941]:
+                  - generic [ref=f4e942]: P
+                  - generic [ref=f4e943]: h
+                  - generic [ref=f4e944]: "y"
+                  - generic [ref=f4e945]: s
+              - generic [ref=f4e947]: Phys
+            - text: described in
+            - link "2.2" [ref=f4e949] [cursor=pointer]:
+              - /url: "#sec:morphisms"
+            - text: ", whose arrows are coarse-grainings, embeddings, and exact equivalences. In that reading"
+            - generic [ref=f4e951]:
+              - math [ref=f4e953]:
+                - generic [ref=f4e954]: ≃
+              - generic [ref=f4e958]: ≃
+            - text: denotes an equivalence of categories in the symmetric monoidal structure given by the tensor product construction, so the equivalence preserves the composition data of
+            - generic [ref=f4e960]:
+              - math [ref=f4e962]:
+                - generic [ref=f4e963]: C
+              - generic [ref=f4e967]: C
+            - text: .
+          - paragraph [ref=f4e968]: The conjecture is the organizing statement of the series and enters every part as a declared hypothesis or as an object of study. It carries five proof obligations, each a theorem target.
+          - paragraph [ref=f4e969]:
+            - text: Completeness requires that every admissible physical system is represented in the closure
+            - generic [ref=f4e971]:
+              - math [ref=f4e973]:
+                - generic [ref=f4e975]:
+                  - generic [ref=f4e976]: ⟨
+                  - generic [ref=f4e977]: F
+                  - generic [ref=f4e978]:
+                    - generic [ref=f4e979]: ⟩
+                    - generic [ref=f4e980]: C
+              - generic [ref=f4e982]:
+                - text: ⟨F
+                - generic [ref=f4e983]:
+                  - text: ⟩
+                  - generic [ref=f4e984]: C
+            - text: . Soundness requires that every generated structure satisfies the admissibility conditions of
+            - link "3" [ref=f4e993] [cursor=pointer]:
+              - /url: "#def:admissibility"
+            - text: . Equivalence requires that different representations of the same physical system are identified correctly, which is where the preserved-layer requirement
+            - link "[27]" [ref=f4e994] [cursor=pointer]:
+              - /url: "#bib-corpus-74"
+            - text: constrains the choice of
+            - generic [ref=f4e996]:
+              - math [ref=f4e998]:
+                - generic [ref=f4e999]: ≃
+              - generic [ref=f4e1003]: ≃
+            - text: . Structural characterization requires that the fundamental families have precise mathematical definitions; the ten candidate families of
+            - link "1" [ref=f4e1004] [cursor=pointer]:
+              - /url: "#tab:ontology"
+            - text: are named, and the admissibility conditions of
+            - link "3" [ref=f4e1005] [cursor=pointer]:
+              - /url: "#def:admissibility"
+            - text: select among them. Decomposition requires that systems in the targeted classes can be constructed from the fundamental families by the operations of
+            - link "2" [ref=f4e1006] [cursor=pointer]:
+              - /url: "#def:constructions"
+            - text: ; restricted forms of this obligation are established for finite-dimensional
+            - generic [ref=f4e1008]:
+              - math [ref=f4e1010]:
+                - generic [ref=f4e1013]:
+                  - generic [ref=f4e1014]: C
+                  - generic [ref=f4e1015]: ∗
+              - generic [ref=f4e1018]:
+                - text: C
+                - generic [ref=f4e1019]: ∗
+            - text: "-algebras"
+            - link "[1]" [ref=f4e1024] [cursor=pointer]:
+              - /url: "#bib-corpus-9"
+            - text: ", amenable factors"
+            - link "[5]" [ref=f4e1025] [cursor=pointer]:
+              - /url: "#bib-corpus-62"
+            - text: ","
+            - link "[6]" [ref=f4e1026] [cursor=pointer]:
+              - /url: "#bib-corpus-64"
+            - text: ", and superselection categories"
+            - link "[10]" [ref=f4e1027] [cursor=pointer]:
+              - /url: "#bib-corpus-12"
+            - text: ","
+            - link "[11]" [ref=f4e1028] [cursor=pointer]:
+              - /url: "#bib-corpus-67"
+            - text: .
+          - paragraph [ref=f4e1029]: Delivering the five obligations would complete the mathematical classification layer of the architecture. It would leave physical realization and empirical selection as separate problems.
+          - heading "Composition of the twelve parts" [level=2] [ref=f4e1030]
+          - paragraph [ref=f4e1031]:
+            - text: The parts compose hierarchically. Each takes the registered definitions and the registered results of the parts before it and adds a structural layer.
+            - link "2" [ref=f4e1032] [cursor=pointer]:
+              - /url: "#tab:parts"
+            - text: states the contribution of each part and the dependency discipline that governs it.
+          - table [ref=f4e1033]:
+            - caption [ref=f4e1034]: Table 2. The twelve parts of the series, the structural contribution of each, and the hard prohibition that bounds its inputs.
+            - rowgroup [ref=f4e1035]:
+              - row [ref=f4e1036]:
+                - columnheader "Part" [ref=f4e1037]
+                - columnheader "Subject" [ref=f4e1038]
+                - columnheader "Structural contribution" [ref=f4e1039]
+                - columnheader "Hard prohibition on inputs" [ref=f4e1040]
+              - row [ref=f4e1041]:
+                - cell "I" [ref=f4e1042]
+                - cell "Foundations" [ref=f4e1043]
+                - cell [ref=f4e1044]:
+                  - text: The category
+                  - generic [ref=f4e1046]:
+                    - math [ref=f4e1048]:
+                      - generic [ref=f4e1050]:
+                        - generic [ref=f4e1051]: P
+                        - generic [ref=f4e1052]: h
+                        - generic [ref=f4e1053]: "y"
+                        - generic [ref=f4e1054]: s
+                    - generic [ref=f4e1056]: Phys
+                  - text: ", the morphism kinds, the equivalence discipline, admissibility, irreducibility, and the central conjecture"
+                - cell "Any theorem of the series and any claim that a universal classification exists" [ref=f4e1058]
+              - row [ref=f4e1059]:
+                - cell "II" [ref=f4e1060]
+                - cell "Structural families" [ref=f4e1061]
+                - cell "The invariant discipline and the ten family records" [ref=f4e1062]
+                - cell "A global periodic table of all physical structures and any completeness claim for the families" [ref=f4e1063]
+              - row [ref=f4e1064]:
+                - cell "III" [ref=f4e1065]
+                - cell "Irreducibility and decomposition" [ref=f4e1066]
+                - cell "Existence and scope of decomposition, normal forms, admissible constructions" [ref=f4e1067]
+                - cell "Unique decomposition of interacting systems and classification of general factors" [ref=f4e1068]
+              - row [ref=f4e1069]:
+                - cell "IV" [ref=f4e1070]
+                - cell "Yoneda classification" [ref=f4e1071]
+                - cell "Relational characterization, supermap representability, and the limits of probe-based identification" [ref=f4e1072]
+                - cell "Any conclusion of classification, physical equivalence, or empirical adequacy derived from Yoneda alone" [ref=f4e1073]
+              - row [ref=f4e1074]:
+                - cell "V" [ref=f4e1075]
+                - cell "Classical systems" [ref=f4e1076]
+                - cell "Local symplectic classification, Poisson splitting, global symplectic invariants, and classical information geometry" [ref=f4e1077]
+                - cell "An equivalence between classical and quantum families via deformation quantization" [ref=f4e1078]
+              - row [ref=f4e1079]:
+                - cell "VI" [ref=f4e1080]
+                - cell "Quantum systems" [ref=f4e1081]
+                - cell "Dimension-vector classification, the amenable factor list, channels and dilations, superselection categories" [ref=f4e1082]
+                - cell "The Elliott program, the fusion-category structure conjecture, and classification of non-amenable factors" [ref=f4e1083]
+              - row [ref=f4e1084]:
+                - cell "VII" [ref=f4e1085]
+                - cell "Gauge structures and quantum field theory" [ref=f4e1086]
+                - cell "Lie theory of gauge groups, bundles, characteristic classes, anomalies as obstructions, and superselection" [ref=f4e1087]
+                - cell "Four-dimensional existence as proved, the mass gap, and any conflation of the two" [ref=f4e1088]
+              - row [ref=f4e1089]:
+                - cell "VIII" [ref=f4e1090]
+                - cell "Spacetime" [ref=f4e1091]
+                - cell "Holonomy, the causal ladder, geometrization, the entropy cone, and reconstruction from probes" [ref=f4e1092]
+                - cell "Holographic entropy relations outside their proved range and tensor-network models as evidence for duality" [ref=f4e1093]
+              - row [ref=f4e1094]:
+                - cell "IX" [ref=f4e1095]
+                - cell "Gravity and information geometry" [ref=f4e1096]
+                - cell "Monotone metrics, information geometry as invariant data, and the proposed gravity-information correspondence" [ref=f4e1097]
+                - cell "Uniqueness of the quantum monotone metric and continuum convergence of nerve constructions" [ref=f4e1098]
+              - row [ref=f4e1099]:
+                - cell "X" [ref=f4e1100]
+                - cell "Observational equivalence" [ref=f4e1101]
+                - cell "Equivalence notions, preserved layers, observation functors, and distinguishability" [ref=f4e1102]
+                - cell "Tensor equivalence without symmetric structure as a criterion of physical equivalence" [ref=f4e1103]
+              - row [ref=f4e1104]:
+                - cell "XI" [ref=f4e1105]
+                - cell "Completeness and obstructions" [ref=f4e1106]
+                - cell "The obstruction register, the regime taxonomy, and nonclassification results" [ref=f4e1107]
+                - cell "The central conjecture as established and any uniform procedure in wild or undecidable sectors" [ref=f4e1108]
+              - row [ref=f4e1109]:
+                - cell "XII" [ref=f4e1110]
+                - cell "Principia Physica" [ref=f4e1111]
+                - cell "The three-layer assembly of mathematical classification, physical realization, and empirical selection" [ref=f4e1112]
+                - cell "Physical validation of the architecture and collapse of the three layers" [ref=f4e1113]
+          - heading "The dependency graph" [level=3] [ref=f4e1114]
+          - paragraph [ref=f4e1115]:
+            - text: The series organizes as a directed acyclic graph rooted at the foundational ontology of Part I and terminating at the assembly sink of Part XII, drawn in
+            - link "1" [ref=f4e1116] [cursor=pointer]:
+              - /url: "#fig:deps"
+            - text: . Every part has a directed path to Part XII, which takes registered inputs from all eleven earlier parts. No part bypasses the primitive ontology of Part I, and no part may cite a later one. A part may cite earlier parts for definitions and for registered results only, and no part may introduce an unproved result as a lemma.
+          - figure [ref=f4e1117]:
+            - generic [ref=f4e1118]:
+              - text: The permitted dependency edges among the twelve parts. Part I is the definitional root, Part XII is the assembly sink and takes registered inputs from all eleven earlier parts, and every edge carries the registered hypotheses of
+              - link "3" [ref=f4e1119] [cursor=pointer]:
+                - /url: "#tab:deps"
+              - text: .
+          - heading "Registered dependency records" [level=3] [ref=f4e1120]
+          - paragraph [ref=f4e1121]:
+            - text: Each permitted use of a registered result as an input to another part is recorded with its condition. A use is direct when the supplying result is a completed theorem in the literature, and a use is as hypothesis when the supplying statement is a conjecture, an open problem, or a conditional record. The series registers eight such uses, and each carries a constraint on how the supplying result may be used.
+            - link "3" [ref=f4e1122] [cursor=pointer]:
+              - /url: "#tab:deps"
+            - text: states the eight and their constraints.
+          - table [ref=f4e1123]:
+            - caption [ref=f4e1124]: Table 3. The registered dependency records of the series. Each row states a permitted use of a registered result and the constraint that use carries.
+            - rowgroup [ref=f4e1125]:
+              - row [ref=f4e1126]:
+                - columnheader "Supplying result" [ref=f4e1127]
+                - columnheader "Consuming parts" [ref=f4e1128]
+                - columnheader "Condition" [ref=f4e1129]
+                - columnheader "Rule enforced" [ref=f4e1130]
+              - row [ref=f4e1131]:
+                - cell [ref=f4e1132]:
+                  - text: Finite-dimensional
+                  - generic [ref=f4e1134]:
+                    - math [ref=f4e1136]:
+                      - generic [ref=f4e1139]:
+                        - generic [ref=f4e1140]: C
+                        - generic [ref=f4e1141]: ∗
+                    - generic [ref=f4e1144]:
+                      - text: C
+                      - generic [ref=f4e1145]: ∗
+                  - text: "-algebra decomposition"
+                  - link "[1]" [ref=f4e1150] [cursor=pointer]:
+                    - /url: "#bib-corpus-9"
+                - cell "III, VI" [ref=f4e1151]
+                - cell "Direct" [ref=f4e1152]
+                - cell "Decomposition by dimension vector is the first concrete theorem model of the series." [ref=f4e1153]
+              - row [ref=f4e1154]:
+                - cell [ref=f4e1155]:
+                  - text: Darboux normal form and Weinstein splitting
+                  - link "[19]" [ref=f4e1156] [cursor=pointer]:
+                    - /url: "#bib-corpus-6"
+                  - text: ","
+                  - link "[20]" [ref=f4e1157] [cursor=pointer]:
+                    - /url: "#bib-corpus-68"
+                - cell "V" [ref=f4e1158]
+                - cell "Direct" [ref=f4e1159]
+                - cell "Symplectic classification content is global and topological rather than local." [ref=f4e1160]
+              - row [ref=f4e1161]:
+                - cell [ref=f4e1162]:
+                  - text: Doplicher-Roberts and Deligne
+                  - link "[10]" [ref=f4e1163] [cursor=pointer]:
+                    - /url: "#bib-corpus-12"
+                  - text: ","
+                  - link "[12]" [ref=f4e1164] [cursor=pointer]:
+                    - /url: "#bib-corpus-13"
+                  - text: ","
+                  - link "[11]" [ref=f4e1165] [cursor=pointer]:
+                    - /url: "#bib-corpus-67"
+                - cell "VI, VII" [ref=f4e1166]
+                - cell "Direct, under the stated hypotheses" [ref=f4e1167]
+                - cell [ref=f4e1168]:
+                  - text: The symmetric structure, conjugates, and
+                  - generic [ref=f4e1170]:
+                    - math [ref=f4e1172]:
+                      - generic [ref=f4e1174]:
+                        - generic [ref=f4e1175]:
+                          - generic [ref=f4e1176]: E
+                          - generic [ref=f4e1177]: "n"
+                          - generic [ref=f4e1178]: d
+                        - generic [ref=f4e1179]: (
+                        - generic [ref=f4e1180]: "1"
+                        - generic [ref=f4e1181]: )
+                        - generic [ref=f4e1182]: =
+                        - generic [ref=f4e1183]: C
+                    - generic [aria-hidden] [ref=f4e1184]:
+                      - generic [ref=f4e1185]:
+                        - generic [ref=f4e1186]: End
+                        - text: (1) =
+                      - generic [ref=f4e1187]: C
+                  - text: are declared with the use.
+              - row [ref=f4e1188]:
+                - cell "The structural classification conjecture" [ref=f4e1189]
+                - cell "XI, XII" [ref=f4e1190]
+                - cell "As hypothesis only" [ref=f4e1191]
+                - cell "The conjecture enters as a declared hypothesis and never as a lemma." [ref=f4e1192]
+              - row [ref=f4e1193]:
+                - cell "The four-dimensional mass gap" [ref=f4e1194]
+                - cell "VII" [ref=f4e1195]
+                - cell "As an open problem" [ref=f4e1196]
+                - cell "Existence and mass gap are never conflated." [ref=f4e1197]
+              - row [ref=f4e1198]:
+                - cell [ref=f4e1199]:
+                  - text: The McDuff obstruction
+                  - link "[13]" [ref=f4e1200] [cursor=pointer]:
+                    - /url: "#bib-corpus-65"
+                - cell "VI, XI" [ref=f4e1201]
+                - cell "Direct" [ref=f4e1202]
+                - cell "No global factor classification may enter any part as a dependency." [ref=f4e1203]
+              - row [ref=f4e1204]:
+                - cell [ref=f4e1205]:
+                  - text: The isocategorical counterexample
+                  - link "[27]" [ref=f4e1206] [cursor=pointer]:
+                    - /url: "#bib-corpus-74"
+                - cell "IV, X" [ref=f4e1207]
+                - cell "Direct" [ref=f4e1208]
+                - cell "Every equivalence record must declare the structure it preserves." [ref=f4e1209]
+              - row [ref=f4e1210]:
+                - cell [ref=f4e1211]:
+                  - text: Chentsov and Petz-Sudar
+                  - link "[32]" [ref=f4e1212] [cursor=pointer]:
+                    - /url: "#bib-corpus-52"
+                - cell "IX, X" [ref=f4e1213]
+                - cell "Direct" [ref=f4e1214]
+                - cell "Quantum monotone metrics are parametric, and uniqueness may not be extended by dependency." [ref=f4e1215]
+          - paragraph [ref=f4e1216]: The series prohibits unproved statements from serving as proved dependencies. Unproved results enter the dependency structure exclusively as registered conjectures, as explicit hypotheses of conditional records, or as objects of study in Part XI.
+          - heading "Classification regimes" [level=2] [ref=f4e1217]
+          - paragraph [ref=f4e1218]: The classification content of the series sorts by the kind of data that classifies. The regimes below are the ones the twelve parts jointly establish, and they are the ones the periodic table of mathematical physics records.
+          - heading "Complete invariants" [level=3] [ref=f4e1219]
+          - paragraph [ref=f4e1220]:
+            - text: A sector carries a complete classification when a theorem classifies its objects up to the chosen equivalence and the classifying invariant is finite or explicitly parameterized. The objects classified in each entry of
+            - link "4" [ref=f4e1221] [cursor=pointer]:
+              - /url: "#tab:complete"
+            - text: are the objects named in the sector column, and the scope column states the equivalence relation in force.
+          - table [ref=f4e1222]:
+            - caption [ref=f4e1223]: Table 4. Sectors carrying a complete classification. Each entry names the classifying invariant and the scope in which the classification statement holds.
+            - rowgroup [ref=f4e1224]:
+              - row [ref=f4e1225]:
+                - columnheader "Sector" [ref=f4e1226]
+                - columnheader "Classifying invariant" [ref=f4e1227]
+                - columnheader "Scope of the classification" [ref=f4e1228]
+              - row [ref=f4e1229]:
+                - cell [ref=f4e1230]:
+                  - text: Finite simple groups
+                  - link "[33]" [ref=f4e1231] [cursor=pointer]:
+                    - /url: "#bib-corpus-1"
+                  - text: ","
+                  - link "[34]" [ref=f4e1232] [cursor=pointer]:
+                    - /url: "#bib-corpus-3"
+                - cell "Order, character table, Schur multiplier, and outer automorphism group" [ref=f4e1233]
+                - cell "Up to isomorphism, as families together with the sporadic groups. A uniform parameterization is not known." [ref=f4e1234]
+              - row [ref=f4e1235]:
+                - cell [ref=f4e1236]:
+                  - text: Complex semisimple Lie algebras
+                  - link "[2]" [ref=f4e1237] [cursor=pointer]:
+                    - /url: "#bib-corpus-4"
+                - cell "Dynkin diagram" [ref=f4e1238]
+                - cell "Up to isomorphism. Real simple algebras are classified by Satake diagrams, and a real semisimple algebra is a direct sum of simple ideals." [ref=f4e1239]
+              - row [ref=f4e1240]:
+                - cell [ref=f4e1241]:
+                  - text: Irreducible representations of semisimple Lie algebras
+                  - link "[28]" [ref=f4e1242] [cursor=pointer]:
+                    - /url: "#bib-corpus-5"
+                - cell "Dominant integral weight" [ref=f4e1243]
+                - cell "Finite-dimensional irreducibles up to isomorphism." [ref=f4e1244]
+              - row [ref=f4e1245]:
+                - cell [ref=f4e1246]:
+                  - text: Symplectic manifolds, locally
+                  - link "[19]" [ref=f4e1247] [cursor=pointer]:
+                    - /url: "#bib-corpus-6"
+                - cell [ref=f4e1248]:
+                  - text: Dimension
+                  - generic [ref=f4e1250]:
+                    - math [ref=f4e1252]:
+                      - generic [ref=f4e1254]:
+                        - generic [ref=f4e1255]: "2"
+                        - generic [ref=f4e1256]: "n"
+                    - generic [ref=f4e1258]: 2n
+                  - text: ", and no invariant beyond dimension"
+                - cell "Local germs up to symplectomorphism. Darboux normal form removes every local invariant beyond dimension, so all further classification content is global." [ref=f4e1259]
+              - row [ref=f4e1260]:
+                - cell [ref=f4e1261]:
+                  - text: Poisson manifolds, locally
+                  - link "[20]" [ref=f4e1262] [cursor=pointer]:
+                    - /url: "#bib-corpus-68"
+                - cell "Weinstein splitting and symplectic-leaf foliation" [ref=f4e1263]
+                - cell [ref=f4e1264]:
+                  - text: Local models near a point of rank
+                  - generic [ref=f4e1266]:
+                    - math [ref=f4e1268]:
+                      - generic [ref=f4e1270]:
+                        - generic [ref=f4e1271]: "2"
+                        - generic [ref=f4e1272]: k
+                    - generic [ref=f4e1274]: 2k
+                  - text: ", with global leaf structure."
+              - row [ref=f4e1275]:
+                - cell [ref=f4e1276]:
+                  - text: Finite-dimensional
+                  - generic [ref=f4e1278]:
+                    - math [ref=f4e1280]:
+                      - generic [ref=f4e1283]:
+                        - generic [ref=f4e1284]: C
+                        - generic [ref=f4e1285]: ∗
+                    - generic [ref=f4e1288]:
+                      - text: C
+                      - generic [ref=f4e1289]: ∗
+                  - text: "-algebras"
+                  - link "[1]" [ref=f4e1294] [cursor=pointer]:
+                    - /url: "#bib-corpus-9"
+                - cell "Dimension vector" [ref=f4e1295]
+                - cell [ref=f4e1296]:
+                  - text: Unital finite-dimensional complex algebras up to
+                  - generic [ref=f4e1298]:
+                    - math [ref=f4e1300]:
+                      - generic [ref=f4e1301]: ∗
+                    - generic [ref=f4e1305]: ∗
+                  - text: "-isomorphism."
+              - row [ref=f4e1306]:
+                - cell [ref=f4e1307]:
+                  - text: Amenable factors
+                  - link "[5]" [ref=f4e1308] [cursor=pointer]:
+                    - /url: "#bib-corpus-62"
+                  - text: ","
+                  - link "[6]" [ref=f4e1309] [cursor=pointer]:
+                    - /url: "#bib-corpus-64"
+                - cell "Murray-von Neumann type and Connes invariants" [ref=f4e1310]
+                - cell [ref=f4e1311]:
+                  - text: Types
+                  - generic [ref=f4e1313]:
+                    - math [ref=f4e1315]:
+                      - generic [ref=f4e1318]:
+                        - generic [ref=f4e1319]: I
+                        - generic [ref=f4e1320]: "n"
+                    - generic [ref=f4e1323]:
+                      - text: I
+                      - generic [ref=f4e1324]: "n"
+                  - text: ","
+                  - generic [ref=f4e1333]:
+                    - math [ref=f4e1335]:
+                      - generic [ref=f4e1338]:
+                        - generic [ref=f4e1339]: I
+                        - generic [ref=f4e1340]: ∞
+                    - generic [ref=f4e1343]:
+                      - text: I
+                      - generic [ref=f4e1344]: ∞
+                  - text: ","
+                  - generic [ref=f4e1353]:
+                    - math [ref=f4e1355]:
+                      - generic [ref=f4e1358]:
+                        - generic [ref=f4e1359]:
+                          - generic [ref=f4e1360]: I
+                          - generic [ref=f4e1361]: I
+                        - generic [ref=f4e1362]: "1"
+                    - generic [ref=f4e1365]:
+                      - generic [ref=f4e1366]: II
+                      - generic [ref=f4e1367]: "1"
+                  - text: ","
+                  - generic [ref=f4e1376]:
+                    - math [ref=f4e1378]:
+                      - generic [ref=f4e1381]:
+                        - generic [ref=f4e1382]:
+                          - generic [ref=f4e1383]: I
+                          - generic [ref=f4e1384]: I
+                        - generic [ref=f4e1385]: ∞
+                    - generic [ref=f4e1388]:
+                      - generic [ref=f4e1389]: II
+                      - generic [ref=f4e1390]: ∞
+                  - text: ", and"
+                  - generic [ref=f4e1399]:
+                    - math [ref=f4e1401]:
+                      - generic [ref=f4e1404]:
+                        - generic [ref=f4e1405]:
+                          - generic [ref=f4e1406]: I
+                          - generic [ref=f4e1407]: I
+                          - generic [ref=f4e1408]: I
+                        - generic [ref=f4e1409]: λ
+                    - generic [ref=f4e1412]:
+                      - generic [ref=f4e1413]: III
+                      - generic [ref=f4e1414]: λ
+                  - text: up to isomorphism.
+              - row [ref=f4e1422]:
+                - cell [ref=f4e1423]:
+                  - text: Principal
+                  - generic [ref=f4e1425]:
+                    - math [ref=f4e1427]:
+                      - generic [ref=f4e1428]: G
+                    - generic [ref=f4e1432]: G
+                  - text: "-bundles"
+                  - link "[3]" [ref=f4e1433] [cursor=pointer]:
+                    - /url: "#bib-corpus-17"
+                  - text: ","
+                  - link "[4]" [ref=f4e1434] [cursor=pointer]:
+                    - /url: "#bib-corpus-18"
+                - cell [ref=f4e1435]:
+                  - text: Homotopy class of maps to
+                  - generic [ref=f4e1437]:
+                    - math [ref=f4e1439]:
+                      - generic [ref=f4e1441]:
+                        - generic [ref=f4e1442]: B
+                        - generic [ref=f4e1443]: G
+                    - generic [ref=f4e1445]: BG
+                  - text: ", with characteristic classes"
+                - cell "Bundles over a base space up to isomorphism." [ref=f4e1446]
+              - row [ref=f4e1447]:
+                - cell [ref=f4e1448]:
+                  - text: Superselection sectors
+                  - link "[10]" [ref=f4e1449] [cursor=pointer]:
+                    - /url: "#bib-corpus-12"
+                  - text: ","
+                  - link "[35]" [ref=f4e1450] [cursor=pointer]:
+                    - /url: "#bib-corpus-16"
+                  - text: ","
+                  - link "[11]" [ref=f4e1451] [cursor=pointer]:
+                    - /url: "#bib-corpus-67"
+                - cell "Compact supergroup, unique up to isomorphism" [ref=f4e1452]
+                - cell "Sectors meeting the Doplicher-Roberts criteria." [ref=f4e1453]
+              - row [ref=f4e1454]:
+                - cell [ref=f4e1455]:
+                  - text: Symmetric tensor categories of subexponential growth
+                  - link "[12]" [ref=f4e1456] [cursor=pointer]:
+                    - /url: "#bib-corpus-13"
+                - cell "Supergroup representation category" [ref=f4e1457]
+                - cell "Characteristic-zero categories under the stated growth hypothesis." [ref=f4e1458]
+              - row [ref=f4e1459]:
+                - cell [ref=f4e1460]:
+                  - text: Connected Lorentzian holonomy groups
+                  - link "[22]" [ref=f4e1461] [cursor=pointer]:
+                    - /url: "#bib-corpus-51"
+                - cell "Holonomy group" [ref=f4e1462]
+                - cell [ref=f4e1463]:
+                  - text: Connected holonomy groups of irreducible and indecomposable Lorentzian structures in signature
+                  - generic [ref=f4e1465]:
+                    - math [ref=f4e1467]:
+                      - generic [ref=f4e1469]:
+                        - generic [ref=f4e1470]: (
+                        - generic [ref=f4e1471]: "1"
+                        - generic [ref=f4e1472]: ","
+                        - generic [ref=f4e1473]: "n"
+                        - generic [ref=f4e1474]: −
+                        - generic [ref=f4e1475]: "1"
+                        - generic [ref=f4e1476]: )
+                    - generic [aria-hidden] [ref=f4e1477]:
+                      - generic [ref=f4e1478]: (1, n −
+                      - generic [ref=f4e1479]: 1)
+                  - text: ", with realizing metrics constructed. A local and algebraic classification rather than a classification of Lorentzian manifolds up to isometry."
+              - row [ref=f4e1480]:
+                - cell [ref=f4e1481]:
+                  - text: Causality conditions
+                  - link "[21]" [ref=f4e1482] [cursor=pointer]:
+                    - /url: "#bib-corpus-50"
+                - cell "Position on the causal ladder" [ref=f4e1483]
+                - cell "The causality conditions themselves, up to the implication order of the ladder. The rung is a property of a spacetime and does not classify metrics up to isometry." [ref=f4e1484]
+              - row [ref=f4e1485]:
+                - cell [ref=f4e1486]:
+                  - text: Closed three-manifolds
+                  - link "[36]" [ref=f4e1487] [cursor=pointer]:
+                    - /url: "#bib-corpus-60"
+                  - text: ","
+                  - link "[37]" [ref=f4e1488] [cursor=pointer]:
+                    - /url: "#bib-corpus-70"
+                - cell "Thurston geometry type" [ref=f4e1489]
+                - cell "Up to homeomorphism, as exactly eight model geometries." [ref=f4e1490]
+              - row [ref=f4e1491]:
+                - cell [ref=f4e1492]:
+                  - text: Monotone metrics, classical
+                  - link "[32]" [ref=f4e1493] [cursor=pointer]:
+                    - /url: "#bib-corpus-52"
+                - cell "Fisher metric up to constant" [ref=f4e1494]
+                - cell "Metrics monotone under stochastic maps." [ref=f4e1495]
+              - row [ref=f4e1496]:
+                - cell [ref=f4e1497]:
+                  - text: Holographic entropy relations, five regions and fewer
+                  - link "[31]" [ref=f4e1498] [cursor=pointer]:
+                    - /url: "#bib-corpus-47"
+                  - text: ","
+                  - link "[38]" [ref=f4e1499] [cursor=pointer]:
+                    - /url: "#bib-corpus-73"
+                - cell "Extreme rays of the entropy cone" [ref=f4e1500]
+                - cell "Two, three, and four regions from subadditivity and monogamy of mutual information, and five regions from a complete graph construction." [ref=f4e1501]
+          - paragraph [ref=f4e1502]:
+            - text: Classification theorems and parameterization schemes are different achievements across the surveyed sectors. The finite simple groups admit an exhaustive classification without a uniform parameterization, so practical identification runs through companion data of the ATLAS kind
+            - link "[34]" [ref=f4e1503] [cursor=pointer]:
+              - /url: "#bib-corpus-3"
+            - text: ". Classification invariants can also be purely global: Darboux normal form removes every local symplectic invariant beyond dimension"
+            - link "[19]" [ref=f4e1504] [cursor=pointer]:
+              - /url: "#bib-corpus-6"
+            - text: ", which forces symplectic classification into the global topological regime, the opposite of the Riemannian situation where curvature supplies rich local data."
+          - heading "Parameterized and normal-form results" [level=3] [ref=f4e1505]
+          - paragraph [ref=f4e1506]:
+            - text: Some sectors admit a parameterized answer rather than a finite list. Monotone metrics on quantum state spaces are classified by operator monotone functions through the Morozova-Chentsov construction
+            - link "[32]" [ref=f4e1507] [cursor=pointer]:
+              - /url: "#bib-corpus-52"
+            - text: ": the answer is a family indexed by a function, and no member of the family is distinguished among all monotone metrics. Every fusion category is the representation category of a weak Hopf algebra"
+            - link "[39]" [ref=f4e1508] [cursor=pointer]:
+              - /url: "#bib-corpus-75"
+            - text: ", and the additional structure that supplies canonical traces is the subject of a conjecture of Etingof, Nikshych, and Ostrik"
+            - link "[40]" [ref=f4e1509] [cursor=pointer]:
+              - /url: "#bib-corpus-14"
+            - text: . Every finite-dimensional algebra over an algebraically closed field is derived-tame or derived-wild
+            - link "[15]" [ref=f4e1510] [cursor=pointer]:
+              - /url: "#bib-corpus-55"
+            - text: ", a dichotomy that sorts the field without classifying either side."
+          - paragraph [ref=f4e1511]:
+            - text: Other sectors carry a normal form rather than an isomorphism classification. Completely positive maps are classified up to minimal Stinespring dilation, unique up to unitary
+            - link "[41]" [ref=f4e1512] [cursor=pointer]:
+              - /url: "#bib-corpus-10"
+            - text: ", and the Choi-Kraus form is a normal form whose Kraus rank is an invariant of the form"
+            - link "[42]" [ref=f4e1513] [cursor=pointer]:
+              - /url: "#bib-corpus-11"
+            - text: . The series treats this data as a normal form and not as an isomorphism classification of channels.
+          - heading "The regime taxonomy" [level=3] [ref=f4e1514]
+          - paragraph [ref=f4e1515]: "Part XI sorts the surveyed domains by the kind of achievement each represents, and the sort is stable across the twelve parts: a domain keeps its regime when a different part studies it. Seven regimes cover the surveyed domains."
+          - generic [ref=f4e1516]:
+            - term [ref=f4e1517]: Complete finite invariant.
+            - definition [ref=f4e1518]:
+              - paragraph [ref=f4e1519]: A theorem classifies the objects up to the chosen equivalence and the classifying invariant takes finitely many values or is a finite combinatorial datum. The Killing-Cartan classification and the dimension-vector classification live here.
+            - term [ref=f4e1520]: Complete parameterized invariant.
+            - definition [ref=f4e1521]:
+              - paragraph [ref=f4e1522]: A theorem classifies the objects and the invariant ranges over an explicitly described family. The Petz-Sudar classification of monotone metrics lives here.
+            - term [ref=f4e1523]: Normal form.
+            - definition [ref=f4e1524]:
+              - paragraph [ref=f4e1525]: A canonical form exists with a stated uniqueness, and the form is not an isomorphism classification of the objects. Stinespring dilation and the Choi-Kraus form live here.
+            - term [ref=f4e1526]: Obstruction classification.
+            - definition [ref=f4e1527]:
+              - paragraph [ref=f4e1528]: A theorem classifies the obstruction to a property rather than the objects. Anomaly classes live here.
+            - term [ref=f4e1529]: Open regime.
+            - definition [ref=f4e1530]:
+              - paragraph [ref=f4e1531]: Partial or parametric results exist and no completeness statement is available. Fusion categories and the Elliott program live here.
+            - term [ref=f4e1532]: Claimed regime.
+            - definition [ref=f4e1533]:
+              - paragraph [ref=f4e1534]: A result has been announced and its supporting artifacts are not publicly checkable. The four-dimensional existence announcement lives here.
+            - term [ref=f4e1535]: Impossibility regime.
+            - definition [ref=f4e1536]:
+              - paragraph [ref=f4e1537]: A theorem forbids classification of the stated kind. The McDuff obstruction, wildness, and four-manifold unrecognizability live here.
+          - paragraph [ref=f4e1538]:
+            - text: The taxonomy records boundaries as well as contents. Tame and wild separates the algorithmically tractable domains from the intractable ones
+            - link "[43]" [ref=f4e1539] [cursor=pointer]:
+              - /url: "#bib-corpus-57"
+            - text: ", and dimension three separates from dimension four by the presence of a finite geometry table on one side and unrecognizable manifolds on the other"
+            - link "[18]" [ref=f4e1540] [cursor=pointer]:
+              - /url: "#bib-corpus-54"
+            - text: ","
+            - link "[36]" [ref=f4e1541] [cursor=pointer]:
+              - /url: "#bib-corpus-60"
+            - text: . Those two boundaries are the ones the regime sort reproduces most sharply.
+          - heading "The periodic table" [level=3] [ref=f4e1542]
+          - paragraph [ref=f4e1543]:
+            - text: The chart that assembles these regimes is the periodic table of mathematical physics, and
+            - link "5" [ref=f4e1544] [cursor=pointer]:
+              - /url: "#tab:periodic"
+            - text: states its six regions. A periodic table must mark where no table exists, so the sixth region is as much content as the first.
+          - table [ref=f4e1545]:
+            - caption [ref=f4e1546]: Table 5. The periodic table of mathematical physics in six regions. Each region names the content it charts and the mathematical status of that content.
+            - rowgroup [ref=f4e1547]:
+              - row [ref=f4e1548]:
+                - columnheader "Region" [ref=f4e1549]
+                - columnheader "Content" [ref=f4e1550]
+                - columnheader "Status of the content" [ref=f4e1551]
+              - row [ref=f4e1552]:
+                - cell "Families and invariants" [ref=f4e1553]
+                - cell "The ten structural families with their defining invariants and the regime each occupies" [ref=f4e1554]
+                - cell "Invariants are finite or parameterized where classification is complete" [ref=f4e1555]
+              - row [ref=f4e1556]:
+                - cell "Exceptional structures" [ref=f4e1557]
+                - cell [ref=f4e1558]:
+                  - text: The sporadic simple groups
+                  - link "[33]" [ref=f4e1559] [cursor=pointer]:
+                    - /url: "#bib-corpus-1"
+                  - text: ","
+                  - link "[34]" [ref=f4e1560] [cursor=pointer]:
+                    - /url: "#bib-corpus-3"
+                  - text: ", the exceptional Lie algebras and their real forms"
+                  - link "[2]" [ref=f4e1561] [cursor=pointer]:
+                    - /url: "#bib-corpus-4"
+                  - text: ", the amenable type"
+                  - generic [ref=f4e1563]:
+                    - math [ref=f4e1565]:
+                      - generic [ref=f4e1568]:
+                        - generic [ref=f4e1569]:
+                          - generic [ref=f4e1570]: I
+                          - generic [ref=f4e1571]: I
+                          - generic [ref=f4e1572]: I
+                        - generic [ref=f4e1573]: "0"
+                    - generic [ref=f4e1576]:
+                      - generic [ref=f4e1577]: III
+                      - generic [ref=f4e1578]: "0"
+                  - text: and
+                  - generic [ref=f4e1587]:
+                    - math [ref=f4e1589]:
+                      - generic [ref=f4e1592]:
+                        - generic [ref=f4e1593]:
+                          - generic [ref=f4e1594]: I
+                          - generic [ref=f4e1595]: I
+                          - generic [ref=f4e1596]: I
+                        - generic [ref=f4e1597]: "1"
+                    - generic [ref=f4e1600]:
+                      - generic [ref=f4e1601]: III
+                      - generic [ref=f4e1602]: "1"
+                  - text: factors
+                  - link "[6]" [ref=f4e1610] [cursor=pointer]:
+                    - /url: "#bib-corpus-64"
+                  - text: ", the eight Thurston geometries"
+                  - link "[36]" [ref=f4e1611] [cursor=pointer]:
+                    - /url: "#bib-corpus-60"
+                  - text: ", the isocategorical group pairs"
+                  - link "[27]" [ref=f4e1612] [cursor=pointer]:
+                    - /url: "#bib-corpus-74"
+                - cell "Each is proved to exist and to be exhaustive in its own domain" [ref=f4e1613]
+              - row [ref=f4e1614]:
+                - cell "Reconstruction relationships" [ref=f4e1615]
+                - cell [ref=f4e1616]:
+                  - text: Gelfand-Neumark, Gelfand and Stone duality, Doplicher-Roberts, Deligne, Stinespring, the classifying-space construction
+                  - link "[7]" [ref=f4e1617] [cursor=pointer]:
+                    - /url: "#bib-corpus-42"
+                  - text: ","
+                  - link "[8]" [ref=f4e1618] [cursor=pointer]:
+                    - /url: "#bib-corpus-43"
+                  - text: ","
+                  - link "[9]" [ref=f4e1619] [cursor=pointer]:
+                    - /url: "#bib-corpus-44"
+                  - text: ","
+                  - link "[10]" [ref=f4e1620] [cursor=pointer]:
+                    - /url: "#bib-corpus-12"
+                  - text: ","
+                  - link "[12]" [ref=f4e1621] [cursor=pointer]:
+                    - /url: "#bib-corpus-13"
+                  - text: ","
+                  - link "[41]" [ref=f4e1622] [cursor=pointer]:
+                    - /url: "#bib-corpus-10"
+                  - text: ","
+                  - link "[3]" [ref=f4e1623] [cursor=pointer]:
+                    - /url: "#bib-corpus-17"
+                  - text: ","
+                  - link "[4]" [ref=f4e1624] [cursor=pointer]:
+                    - /url: "#bib-corpus-18"
+                - cell [ref=f4e1625]:
+                  - text: Each holds under the hypotheses stated in
+                  - link "6" [ref=f4e1626] [cursor=pointer]:
+                    - /url: "#tab:reconstruction"
+              - row [ref=f4e1627]:
+                - cell "Equivalences and dualities" [ref=f4e1628]
+                - cell "The identifications the series records, each with the structure it preserves" [ref=f4e1629]
+                - cell [ref=f4e1630]:
+                  - text: The preserved layer is named in every entry, and the isocategorical counterexample
+                  - link "[27]" [ref=f4e1631] [cursor=pointer]:
+                    - /url: "#bib-corpus-74"
+                  - text: records what follows from not naming it
+              - row [ref=f4e1632]:
+                - cell "Open classification problems" [ref=f4e1633]
+                - cell [ref=f4e1634]:
+                  - text: Fusion categories
+                  - link "[40]" [ref=f4e1635] [cursor=pointer]:
+                    - /url: "#bib-corpus-14"
+                  - text: ", the Elliott program"
+                  - link "[23]" [ref=f4e1636] [cursor=pointer]:
+                    - /url: "#bib-corpus-8"
+                  - text: ", the holographic entropy cone from six regions"
+                  - link "[31]" [ref=f4e1637] [cursor=pointer]:
+                    - /url: "#bib-corpus-47"
+                  - text: ", the four-dimensional mass gap"
+                  - link "[46]" [ref=f4e1638] [cursor=pointer]:
+                    - /url: "#bib-corpus-23"
+                - cell "Partial and parametric results are on record and no completeness statement is available" [ref=f4e1639]
+              - row [ref=f4e1640]:
+                - cell "Obstructions" [ref=f4e1641]
+                - cell [ref=f4e1642]:
+                  - text: Adyan-Rabin
+                  - link "[14]" [ref=f4e1643] [cursor=pointer]:
+                    - /url: "#bib-corpus-53"
+                  - text: ", McDuff"
+                  - link "[13]" [ref=f4e1644] [cursor=pointer]:
+                    - /url: "#bib-corpus-65"
+                  - text: ", wildness"
+                  - link "[15]" [ref=f4e1645] [cursor=pointer]:
+                    - /url: "#bib-corpus-55"
+                  - text: ","
+                  - link "[16]" [ref=f4e1646] [cursor=pointer]:
+                    - /url: "#bib-corpus-56"
+                  - text: ","
+                  - link "[17]" [ref=f4e1647] [cursor=pointer]:
+                    - /url: "#bib-corpus-58"
+                  - text: ", tame and wild"
+                  - link "[43]" [ref=f4e1648] [cursor=pointer]:
+                    - /url: "#bib-corpus-57"
+                  - text: ", countable invariants"
+                  - link "[53]" [ref=f4e1649] [cursor=pointer]:
+                    - /url: "#bib-corpus-59"
+                  - text: ", dimension four"
+                  - link "[18]" [ref=f4e1650] [cursor=pointer]:
+                    - /url: "#bib-corpus-54"
+                  - text: ", Etingof-Gelaki"
+                  - link "[27]" [ref=f4e1651] [cursor=pointer]:
+                    - /url: "#bib-corpus-74"
+                - cell "Each is a theorem forbidding a classification of the stated kind" [ref=f4e1652]
+          - paragraph [ref=f4e1653]: "The existence of a finite list of exceptional objects in the finite-simple-group template does not transfer to physical theories in general, and the second region records the exceptions the mathematics actually supplies rather than a list the program expects to close. Reading the six regions together gives the summary of the series in one chart: families with invariants, exceptions the invariants must catch, recoveries from probes, identifications with declared scope, open problems, and proved limits."
+          - heading "Sectors outside a finite list" [level=3] [ref=f4e1654]
+          - paragraph [ref=f4e1655]:
+            - text: Three sectors sit outside any finite classification in their stated generality. General type
+            - generic [ref=f4e1657]:
+              - math [ref=f4e1659]:
+                - generic [ref=f4e1662]:
+                  - generic [ref=f4e1663]:
+                    - generic [ref=f4e1664]: I
+                    - generic [ref=f4e1665]: I
+                  - generic [ref=f4e1666]: "1"
+              - generic [ref=f4e1669]:
+                - generic [ref=f4e1670]: II
+                - generic [ref=f4e1671]: "1"
+            - text: and type
+            - generic [ref=f4e1680]:
+              - math [ref=f4e1682]:
+                - generic [ref=f4e1684]:
+                  - generic [ref=f4e1685]: I
+                  - generic [ref=f4e1686]: I
+                  - generic [ref=f4e1687]: I
+              - generic [ref=f4e1689]: III
+            - text: factors carry coarse Connes-spectrum strata and vary in their fundamental groups
+            - link "[23]" [ref=f4e1691] [cursor=pointer]:
+              - /url: "#bib-corpus-8"
+            - text: . Extended topological quantum field theories are classified by fully dualizable objects
+            - link "[29]" [ref=f4e1692] [cursor=pointer]:
+              - /url: "#bib-corpus-34"
+            - text: ", in a 2009 statement whose proof is an informal sketch"
+            - link "[30]" [ref=f4e1693] [cursor=pointer]:
+              - /url: "#bib-corpus-35"
+            - text: ", so the exact range of completed cases is a research question. The four-dimensional Yang-Mills existence problem is the subject of an announced result whose manuscript and formalization are withheld"
+            - link "[44]" [ref=f4e1694] [cursor=pointer]:
+              - /url: "#bib-corpus-24"
+            - text: ","
+            - link "[45]" [ref=f4e1695] [cursor=pointer]:
+              - /url: "#bib-corpus-25"
+            - text: ", and the mass gap is a separate open problem"
+            - link "[46]" [ref=f4e1696] [cursor=pointer]:
+              - /url: "#bib-corpus-23"
+            - text: . The series records the existence claim and the mass gap separately and never merges them.
+          - heading "Equivalence and preserved structure" [level=2] [ref=f4e1697]
+          - paragraph [ref=f4e1698]: Every equivalence in the series names the structure it preserves, and the reason is a theorem rather than a preference.
+          - heading "The preserved-layer requirement" [level=3] [ref=f4e1699]
+          - paragraph [ref=f4e1700]:
+            - text: Two finite groups that are not isomorphic can carry equivalent representation categories as plain tensor categories
+            - link "[27]" [ref=f4e1701] [cursor=pointer]:
+              - /url: "#bib-corpus-74"
+            - text: ". The equivalence is monoidal and does not respect the commutativity constraint, so the symmetric braiding is the layer it fails to preserve. Any criterion of identification that discards the monoidal or symmetric layer therefore identifies distinct groups. The series adopts the resulting requirement: an equivalence used to identify systems must state which layer of structure it preserves, and an equivalence that forgets the symmetric layer is rejected as a criterion."
+          - paragraph [ref=f4e1702]:
+            - text: The requirement is constructive as well as negative. The Doplicher-Roberts equivalence takes a symmetric tensor
+            - generic [ref=f4e1704]:
+              - math [ref=f4e1706]:
+                - generic [ref=f4e1707]: ∗
+              - generic [ref=f4e1711]: ∗
+            - text: "-category with conjugates, direct sums, subobjects, and"
+            - generic [ref=f4e1713]:
+              - math [ref=f4e1715]:
+                - generic [ref=f4e1717]:
+                  - generic [ref=f4e1718]:
+                    - generic [ref=f4e1719]: E
+                    - generic [ref=f4e1720]: "n"
+                    - generic [ref=f4e1721]: d
+                  - generic [ref=f4e1722]: (
+                  - generic [ref=f4e1723]: "1"
+                  - generic [ref=f4e1724]: )
+                  - generic [ref=f4e1725]: =
+                  - generic [ref=f4e1726]: C
+              - generic [aria-hidden] [ref=f4e1727]:
+                - generic [ref=f4e1728]:
+                  - generic [ref=f4e1729]: End
+                  - text: (1) =
+                - generic [ref=f4e1730]: C
+            - text: to the finite-dimensional unitary representations of a compact supergroup, unique up to isomorphism
+            - link "[10]" [ref=f4e1731] [cursor=pointer]:
+              - /url: "#bib-corpus-12"
+            - text: ","
+            - link "[11]" [ref=f4e1732] [cursor=pointer]:
+              - /url: "#bib-corpus-67"
+            - text: . Deligne’s theorem takes a characteristic-zero symmetric tensor category of subexponential growth to a supergroup representation category
+            - link "[12]" [ref=f4e1733] [cursor=pointer]:
+              - /url: "#bib-corpus-13"
+            - text: . Both statements preserve the symmetric structure and both state their hypotheses in full. Müger’s Galois theory for braided tensor categories recovers fixed-point data together with additional information that the braided structure alone does not supply
+            - link "[47]" [ref=f4e1734] [cursor=pointer]:
+              - /url: "#bib-corpus-21"
+            - text: .
+          - heading "Duality and the recovered data" [level=3] [ref=f4e1735]
+          - paragraph [ref=f4e1736]:
+            - text: Duality exchanges structure between differently presented theories, and each duality in the series states what the exchange recovers. Gelfand duality sends a commutative
+            - generic [ref=f4e1738]:
+              - math [ref=f4e1740]:
+                - generic [ref=f4e1743]:
+                  - generic [ref=f4e1744]: C
+                  - generic [ref=f4e1745]: ∗
+              - generic [ref=f4e1748]:
+                - text: C
+                - generic [ref=f4e1749]: ∗
+            - text: "-algebra to a compact Hausdorff space"
+            - link "[8]" [ref=f4e1754] [cursor=pointer]:
+              - /url: "#bib-corpus-43"
+            - text: . Stone duality sends a Boolean algebra to a zero-dimensional compact spectrum
+            - link "[9]" [ref=f4e1755] [cursor=pointer]:
+              - /url: "#bib-corpus-44"
+            - text: . The classifying-space construction sends a principal
+            - generic [ref=f4e1757]:
+              - math [ref=f4e1759]:
+                - generic [ref=f4e1760]: G
+              - generic [ref=f4e1764]: G
+            - text: "-bundle to a homotopy class of maps to"
+            - generic [ref=f4e1766]:
+              - math [ref=f4e1768]:
+                - generic [ref=f4e1770]:
+                  - generic [ref=f4e1771]: B
+                  - generic [ref=f4e1772]: G
+              - generic [ref=f4e1774]: BG
+            - text: ", with characteristic classes as pullbacks of universal classes"
+            - link "[3]" [ref=f4e1775] [cursor=pointer]:
+              - /url: "#bib-corpus-17"
+            - text: ","
+            - link "[4]" [ref=f4e1776] [cursor=pointer]:
+              - /url: "#bib-corpus-18"
+            - text: . The Yoneda embedding sends an object to its functor of relationships and is faithful as mathematics; the constraint that it does not by itself establish physical equivalence, empirical adequacy, or a classification theorem governs every use of it in the series.
+          - paragraph [ref=f4e1777]:
+            - text: "A duality is not automatically a physical equivalence. The series keeps the two apart: an identification of representations is a mathematical statement, and an identification of physical content requires its own definition and justification. The proposed gravity-information correspondence is a case in point. Ryu-Takayanagi relations are verified exactly in anti-de Sitter space in three dimensions with a two-dimensional conformal field theory dual"
+            - link "[48]" [ref=f4e1778] [cursor=pointer]:
+              - /url: "#bib-corpus-45"
+            - text: ", entanglement-wedge reconstruction holds as a physical dictionary result under the semiclassical AdS/CFT assumptions"
+            - link "[49]" [ref=f4e1779] [cursor=pointer]:
+              - /url: "#bib-corpus-46"
+            - text: ", and tensor-network models are toys rather than evidence for the duality itself"
+            - link "[50]" [ref=f4e1780] [cursor=pointer]:
+              - /url: "#bib-corpus-48"
+            - text: . The series states each of these at the strength the source supports.
+          - heading "Observation and distinguishability" [level=3] [ref=f4e1781]
+          - paragraph [ref=f4e1782]: "Observation functors formalize what an empirical procedure can separate. Applied to a pair of systems they induce an equivalence relation: systems are observationally equivalent relative to the procedure when no observation in its range separates them. The induced relation is coarse when the functor forgets detail and fine when it resolves it, and it behaves well under composition of procedures."
+          - paragraph [ref=f4e1783]:
+            - text: The metric content of distinguishability diverges between the classical and quantum cases. On a classical probability simplex the Fisher information metric is the unique Riemannian metric monotone under stochastic transitions up to a positive constant
+            - link "[32]" [ref=f4e1784] [cursor=pointer]:
+              - /url: "#bib-corpus-52"
+            - text: . On quantum state spaces the monotone metrics form a family parameterized by operator monotone functions, and no member of that family is distinguished
+            - link "[32]" [ref=f4e1785] [cursor=pointer]:
+              - /url: "#bib-corpus-52"
+            - text: . The series treats the classical uniqueness as the anchor and the quantum parameterization as the reality, and it does not extend uniqueness across the gap between them.
+          - paragraph [ref=f4e1786]: Mathematical isomorphism and observational indistinguishability are different relations. A mathematical classification would not by itself select a theory empirically, and several mathematically distinct theories produce identical predictions in an experimentally accessible regime. The three-layer architecture of the assembly keeps mathematical classification, physical realization, and empirical selection as separate maps, and no part of the series collapses them.
+          - heading "Reconstruction from probes" [level=2] [ref=f4e1787]
+          - paragraph [ref=f4e1788]:
+            - text: Reconstruction theorems recover an object from a category of probes. They are the pattern the series finds better developed than classification, and each carries hypotheses that cannot be dropped. The theorems on record and their hypotheses appear in
+            - link "6" [ref=f4e1789] [cursor=pointer]:
+              - /url: "#tab:reconstruction"
+            - text: .
+          - table [ref=f4e1790]:
+            - caption [ref=f4e1791]: Table 6. Reconstruction theorems on record. Each row names the object recovered, the probe data it is recovered from, and the hypotheses the statement requires.
+            - rowgroup [ref=f4e1792]:
+              - row [ref=f4e1793]:
+                - columnheader "Theorem" [ref=f4e1794]
+                - columnheader "Recovers" [ref=f4e1795]
+                - columnheader "From and under which hypotheses" [ref=f4e1796]
+              - row [ref=f4e1797]:
+                - cell [ref=f4e1798]:
+                  - text: Gelfand-Neumark
+                  - link "[7]" [ref=f4e1799] [cursor=pointer]:
+                    - /url: "#bib-corpus-42"
+                - cell [ref=f4e1800]:
+                  - text: A concrete representation in
+                  - generic [ref=f4e1802]:
+                    - math [ref=f4e1804]:
+                      - generic [ref=f4e1806]:
+                        - generic [ref=f4e1807]: B
+                        - generic [ref=f4e1808]: (
+                        - generic [ref=f4e1809]: H
+                        - generic [ref=f4e1810]: )
+                    - generic [ref=f4e1812]: B(H)
+                - cell [ref=f4e1813]:
+                  - text: An abstract
+                  - generic [ref=f4e1815]:
+                    - math [ref=f4e1817]:
+                      - generic [ref=f4e1820]:
+                        - generic [ref=f4e1821]: C
+                        - generic [ref=f4e1822]: ∗
+                    - generic [ref=f4e1825]:
+                      - text: C
+                      - generic [ref=f4e1826]: ∗
+                  - text: "-algebra, as a closed"
+                  - generic [ref=f4e1832]:
+                    - math [ref=f4e1834]:
+                      - generic [ref=f4e1835]: ∗
+                    - generic [ref=f4e1839]: ∗
+                  - text: "-subalgebra of"
+                  - generic [ref=f4e1841]:
+                    - math [ref=f4e1843]:
+                      - generic [ref=f4e1845]:
+                        - generic [ref=f4e1846]: B
+                        - generic [ref=f4e1847]: (
+                        - generic [ref=f4e1848]: H
+                        - generic [ref=f4e1849]: )
+                    - generic [ref=f4e1851]: B(H)
+                  - text: . A representation theorem; the classification statement it yields is the Gelfand duality of the commutative case.
+              - row [ref=f4e1852]:
+                - cell [ref=f4e1853]:
+                  - text: Gelfand duality
+                  - link "[8]" [ref=f4e1854] [cursor=pointer]:
+                    - /url: "#bib-corpus-43"
+                - cell "A compact Hausdorff space" [ref=f4e1855]
+                - cell [ref=f4e1856]:
+                  - text: A commutative
+                  - generic [ref=f4e1858]:
+                    - math [ref=f4e1860]:
+                      - generic [ref=f4e1863]:
+                        - generic [ref=f4e1864]: C
+                        - generic [ref=f4e1865]: ∗
+                    - generic [ref=f4e1868]:
+                      - text: C
+                      - generic [ref=f4e1869]: ∗
+                  - text: "-algebra. The commutative side only."
+              - row [ref=f4e1874]:
+                - cell [ref=f4e1875]:
+                  - text: Stone duality
+                  - link "[9]" [ref=f4e1876] [cursor=pointer]:
+                    - /url: "#bib-corpus-44"
+                - cell "A zero-dimensional compact spectrum" [ref=f4e1877]
+                - cell "A Boolean algebra. The Boolean side only." [ref=f4e1878]
+              - row [ref=f4e1879]:
+                - cell [ref=f4e1880]:
+                  - text: Doplicher-Roberts
+                  - link "[10]" [ref=f4e1881] [cursor=pointer]:
+                    - /url: "#bib-corpus-12"
+                  - text: ","
+                  - link "[11]" [ref=f4e1882] [cursor=pointer]:
+                    - /url: "#bib-corpus-67"
+                - cell "A compact supergroup, unique up to isomorphism" [ref=f4e1883]
+                - cell [ref=f4e1884]:
+                  - text: A symmetric tensor
+                  - generic [ref=f4e1886]:
+                    - math [ref=f4e1888]:
+                      - generic [ref=f4e1889]: ∗
+                    - generic [ref=f4e1893]: ∗
+                  - text: "-category with conjugates, direct sums, subobjects,"
+                  - generic [ref=f4e1895]:
+                    - math [ref=f4e1897]:
+                      - generic [ref=f4e1899]:
+                        - generic [ref=f4e1900]:
+                          - generic [ref=f4e1901]: E
+                          - generic [ref=f4e1902]: "n"
+                          - generic [ref=f4e1903]: d
+                        - generic [ref=f4e1904]: (
+                        - generic [ref=f4e1905]: "1"
+                        - generic [ref=f4e1906]: )
+                        - generic [ref=f4e1907]: =
+                        - generic [ref=f4e1908]: C
+                    - generic [aria-hidden] [ref=f4e1909]:
+                      - generic [ref=f4e1910]:
+                        - generic [ref=f4e1911]: End
+                        - text: (1) =
+                      - generic [ref=f4e1912]: C
+                  - text: ", and a symmetric braiding whose square is the identity on each object."
+              - row [ref=f4e1913]:
+                - cell [ref=f4e1914]:
+                  - text: Deligne
+                  - link "[12]" [ref=f4e1915] [cursor=pointer]:
+                    - /url: "#bib-corpus-13"
+                - cell "A supergroup representation category" [ref=f4e1916]
+                - cell "A characteristic-zero symmetric tensor category of subexponential growth." [ref=f4e1917]
+              - row [ref=f4e1918]:
+                - cell [ref=f4e1919]:
+                  - text: Stinespring
+                  - link "[41]" [ref=f4e1920] [cursor=pointer]:
+                    - /url: "#bib-corpus-10"
+                - cell "A minimal dilation, unique up to unitary" [ref=f4e1921]
+                - cell "A completely positive map. A normal form, and not an isomorphism classification of channels." [ref=f4e1922]
+              - row [ref=f4e1923]:
+                - cell [ref=f4e1924]:
+                  - text: Classifying-space construction
+                  - link "[3]" [ref=f4e1925] [cursor=pointer]:
+                    - /url: "#bib-corpus-17"
+                  - text: ","
+                  - link "[4]" [ref=f4e1926] [cursor=pointer]:
+                    - /url: "#bib-corpus-18"
+                - cell [ref=f4e1927]:
+                  - text: A principal
+                  - generic [ref=f4e1929]:
+                    - math [ref=f4e1931]:
+                      - generic [ref=f4e1932]: G
+                    - generic [ref=f4e1936]: G
+                  - text: "-bundle"
+                - cell [ref=f4e1937]:
+                  - text: A homotopy class of maps to
+                  - generic [ref=f4e1939]:
+                    - math [ref=f4e1941]:
+                      - generic [ref=f4e1943]:
+                        - generic [ref=f4e1944]: B
+                        - generic [ref=f4e1945]: G
+                    - generic [ref=f4e1947]: BG
+                  - text: . Homotopy-classified, with characteristic classes as pullbacks.
+              - row [ref=f4e1948]:
+                - cell [ref=f4e1949]:
+                  - text: Supermap representability
+                  - link "[51]" [ref=f4e1950] [cursor=pointer]:
+                    - /url: "#bib-corpus-40"
+                  - text: ","
+                  - link "[52]" [ref=f4e1951] [cursor=pointer]:
+                    - /url: "#bib-corpus-41"
+                - cell "A concrete representation of categorical supermaps" [ref=f4e1952]
+                - cell "A theory with suitable channel-state duality. Unification with the Gelfand and Stone pattern is a research question." [ref=f4e1953]
+              - row [ref=f4e1954]:
+                - cell [ref=f4e1955]:
+                  - text: Entanglement-wedge reconstruction
+                  - link "[49]" [ref=f4e1956] [cursor=pointer]:
+                    - /url: "#bib-corpus-46"
+                - cell "Bulk operators inside the entanglement wedge" [ref=f4e1957]
+                - cell "A physical dictionary reconstruction under the semiclassical AdS/CFT assumptions, stated as a quantum-information theorem with its hypotheses. Not an axiomatic reconstruction in the sense of the preceding rows." [ref=f4e1958]
+          - paragraph [ref=f4e1959]:
+            - text: Reconstruction theorems fail when the probe category loses the hypotheses that carry the determination. The Doplicher-Roberts recovery of a compact supergroup collapses without the symmetric braiding, as non-isomorphic groups with equivalent plain tensor categories show
+            - link "[27]" [ref=f4e1960] [cursor=pointer]:
+              - /url: "#bib-corpus-74"
+            - text: . Deligne’s classification fails without the subexponential growth condition on categorical dimensions
+            - link "[12]" [ref=f4e1961] [cursor=pointer]:
+              - /url: "#bib-corpus-13"
+            - text: . Gelfand duality ceases to recover a topological spectrum once commutativity is dropped
+            - link "[8]" [ref=f4e1962] [cursor=pointer]:
+              - /url: "#bib-corpus-43"
+            - text: . Each hypothesis is therefore a boundary of the theorem rather than a technical convenience.
+          - paragraph [ref=f4e1963]:
+            - text: Whether the 2024 to 2026 supermap-representability line
+            - link "[51]" [ref=f4e1964] [cursor=pointer]:
+              - /url: "#bib-corpus-40"
+            - text: ","
+            - link "[52]" [ref=f4e1965] [cursor=pointer]:
+              - /url: "#bib-corpus-41"
+            - text: unifies with the Gelfand, Stone, and Naimark pattern into a single relational principle is a research question. The series records the proved representability results at their stated strength and leaves the unification open.
+          - heading "Obstruction theorems" [level=2] [ref=f4e1966]
+          - paragraph [ref=f4e1967]:
+            - text: Obstruction theorems prove that no classification of a stated kind can exist in a stated generality. They are content of the series, and they are what a periodic table must mark in the places where no table exists. The register appears in
+            - link "7" [ref=f4e1968] [cursor=pointer]:
+              - /url: "#tab:obstructions"
+            - text: .
+          - table [ref=f4e1969]:
+            - caption [ref=f4e1970]: Table 7. The obstruction register of the series. Each theorem is a proved statement about the limits of classification in its regime.
+            - rowgroup [ref=f4e1971]:
+              - row [ref=f4e1972]:
+                - columnheader "Theorem" [ref=f4e1973]
+                - columnheader "Statement" [ref=f4e1974]
+                - columnheader "Consequence for classification" [ref=f4e1975]
+              - row [ref=f4e1976]:
+                - cell [ref=f4e1977]:
+                  - text: McDuff
+                  - link "[13]" [ref=f4e1978] [cursor=pointer]:
+                    - /url: "#bib-corpus-65"
+                - cell [ref=f4e1979]:
+                  - text: Uncountably many non-isomorphic separable type
+                  - generic [ref=f4e1981]:
+                    - math [ref=f4e1983]:
+                      - generic [ref=f4e1986]:
+                        - generic [ref=f4e1987]:
+                          - generic [ref=f4e1988]: I
+                          - generic [ref=f4e1989]: I
+                        - generic [ref=f4e1990]: "1"
+                    - generic [ref=f4e1993]:
+                      - generic [ref=f4e1994]: II
+                      - generic [ref=f4e1995]: "1"
+                  - text: factors exist
+                - cell "No total classification of factors outside the amenable case." [ref=f4e2003]
+              - row [ref=f4e2004]:
+                - cell [ref=f4e2005]:
+                  - text: Etingof-Gelaki
+                  - link "[27]" [ref=f4e2006] [cursor=pointer]:
+                    - /url: "#bib-corpus-74"
+                - cell "Non-isomorphic finite groups carry equivalent plain tensor representation categories" [ref=f4e2007]
+                - cell "Equivalence notions that discard the monoidal or symmetric layer do not determine the group." [ref=f4e2008]
+              - row [ref=f4e2009]:
+                - cell [ref=f4e2010]:
+                  - text: Adyan-Rabin
+                  - link "[14]" [ref=f4e2011] [cursor=pointer]:
+                    - /url: "#bib-corpus-53"
+                - cell "Every Markov property of finitely presentable groups is algorithmically undecidable, including finiteness and simplicity" [ref=f4e2012]
+                - cell "No uniform recognition procedure for group-flavored sectors." [ref=f4e2013]
+              - row [ref=f4e2014]:
+                - cell [ref=f4e2015]:
+                  - text: Wildness
+                  - link "[15]" [ref=f4e2016] [cursor=pointer]:
+                    - /url: "#bib-corpus-55"
+                  - text: ","
+                  - link "[16]" [ref=f4e2017] [cursor=pointer]:
+                    - /url: "#bib-corpus-56"
+                  - text: ","
+                  - link "[17]" [ref=f4e2018] [cursor=pointer]:
+                    - /url: "#bib-corpus-58"
+                - cell "Wild representation categories admit no finite-dimensional-variety parameterization, and wildness is preserved under degeneration" [ref=f4e2019]
+                - cell "No finite-variety parameterization of wild representation categories." [ref=f4e2020]
+              - row [ref=f4e2021]:
+                - cell [ref=f4e2022]:
+                  - text: Tame and wild tractability
+                  - link "[43]" [ref=f4e2023] [cursor=pointer]:
+                    - /url: "#bib-corpus-57"
+                - cell "Group isomorphism is polynomial-time for tame extensions, and the required bounds fail in the wild case" [ref=f4e2024]
+                - cell "Tame and wild separates algorithmically tractable from intractable regimes." [ref=f4e2025]
+              - row [ref=f4e2026]:
+                - cell [ref=f4e2027]:
+                  - text: Countable invariants
+                  - link "[53]" [ref=f4e2028] [cursor=pointer]:
+                    - /url: "#bib-corpus-59"
+                - cell "Von Neumann algebra isomorphism admits no classification by countable invariants" [ref=f4e2029]
+                - cell "No classification of von Neumann algebras by a countable list of invariants." [ref=f4e2030]
+              - row [ref=f4e2031]:
+                - cell [ref=f4e2032]:
+                  - text: Dimension four
+                  - link "[18]" [ref=f4e2033] [cursor=pointer]:
+                    - /url: "#bib-corpus-54"
+                - cell [ref=f4e2034]:
+                  - text: Deciding whether an arbitrary triangulated four-manifold is homeomorphic to the connected sum
+                  - generic [ref=f4e2036]:
+                    - math [ref=f4e2038]:
+                      - generic [ref=f4e2040]:
+                        - generic [ref=f4e2041]:
+                          - generic [ref=f4e2042]: "#"
+                          - generic [ref=f4e2043]: "9"
+                        - generic [ref=f4e2044]: (
+                        - generic [ref=f4e2045]:
+                          - generic [ref=f4e2046]: S
+                          - generic [ref=f4e2047]: "2"
+                        - generic [ref=f4e2048]: ×
+                        - generic [ref=f4e2049]:
+                          - generic [ref=f4e2050]: S
+                          - generic [ref=f4e2051]: "2"
+                        - generic [ref=f4e2052]: )
+                    - generic [aria-hidden] [ref=f4e2053]:
+                      - generic [ref=f4e2054]:
+                        - generic [ref=f4e2055]:
+                          - text: "#"
+                          - generic [ref=f4e2056]: "9"
+                        - text: (
+                        - generic [ref=f4e2064]:
+                          - text: S
+                          - generic [ref=f4e2065]: "2"
+                        - text: ×
+                      - generic [ref=f4e2070]:
+                        - generic [ref=f4e2071]:
+                          - text: S
+                          - generic [ref=f4e2072]: "2"
+                        - text: )
+                  - text: is algorithmically undecidable
+                - cell [ref=f4e2077]:
+                  - text: No effective classification of four-manifolds in general. The construction is in the lineage of Markov’s unrecognizable four-manifolds and improves the previous bound
+                  - generic [ref=f4e2079]:
+                    - math [ref=f4e2081]:
+                      - generic [ref=f4e2084]:
+                        - generic [ref=f4e2085]: "#"
+                        - generic [ref=f4e2086]: "12"
+                    - generic [ref=f4e2089]:
+                      - text: "#"
+                      - generic [ref=f4e2090]: "12"
+                  - text: .
+          - heading "Dimension three and dimension four" [level=3] [ref=f4e2099]
+          - paragraph [ref=f4e2100]:
+            - text: The clearest scope contrast in the series is dimensional. Closed three-manifolds decompose into exactly eight Thurston geometries
+            - link "[36]" [ref=f4e2101] [cursor=pointer]:
+              - /url: "#bib-corpus-60"
+            - text: ","
+            - link "[37]" [ref=f4e2102] [cursor=pointer]:
+              - /url: "#bib-corpus-70"
+            - text: ", a finite table with a complete decomposition theorem behind it. In dimension four the model geometries are countably infinite in one family"
+            - link "[36]" [ref=f4e2103] [cursor=pointer]:
+              - /url: "#bib-corpus-60"
+            - text: ", only restricted classes decompose, and homeomorphism of a specific four-manifold is algorithmically unrecognizable"
+            - link "[18]" [ref=f4e2104] [cursor=pointer]:
+              - /url: "#bib-corpus-54"
+            - text: . Finite classification tables exist in tame regimes and stop at the dimension where unrecognizability begins. The series states the contrast as a scope boundary and builds its regime taxonomy around it.
+          - heading "Scope effects" [level=3] [ref=f4e2105]
+          - paragraph [ref=f4e2106]:
+            - text: Each obstruction removes a possibility rather than adding a difficulty. The McDuff construction
+            - link "[13]" [ref=f4e2107] [cursor=pointer]:
+              - /url: "#bib-corpus-65"
+            - text: leaves the amenable classification intact and closes the non-amenable case. The isocategorical construction
+            - link "[27]" [ref=f4e2108] [cursor=pointer]:
+              - /url: "#bib-corpus-74"
+            - text: leaves the symmetric theory intact and closes the plain tensor case. The Adyan-Rabin results
+            - link "[14]" [ref=f4e2109] [cursor=pointer]:
+              - /url: "#bib-corpus-53"
+            - text: close uniform recognition while leaving individual presentations decidable. The wildness theorems
+            - link "[15]" [ref=f4e2110] [cursor=pointer]:
+              - /url: "#bib-corpus-55"
+            - text: ","
+            - link "[16]" [ref=f4e2111] [cursor=pointer]:
+              - /url: "#bib-corpus-56"
+            - text: ","
+            - link "[17]" [ref=f4e2112] [cursor=pointer]:
+              - /url: "#bib-corpus-58"
+            - text: close finite-variety parameterization while leaving the tame side open to classification. Reading the register this way is what allows a classification program to state restricted-class theorems with explicit scope instead of promising a single global table.
+          - heading "Worked examples" [level=2] [ref=f4e2113]
+          - paragraph [ref=f4e2114]: Three systems trace the shared framework end to end. Each is an object of the category, each carries an invariant record, and each sits in a regime of the taxonomy.
+          - heading "A finite-dimensional quantum system" [level=3] [ref=f4e2115]
+          - paragraph [ref=f4e2116]:
+            - text: Take a finite-dimensional quantum system whose observable algebra is a unital finite-dimensional complex
+            - generic [ref=f4e2118]:
+              - math [ref=f4e2120]:
+                - generic [ref=f4e2123]:
+                  - generic [ref=f4e2124]: C
+                  - generic [ref=f4e2125]: ∗
+              - generic [ref=f4e2128]:
+                - text: C
+                - generic [ref=f4e2129]: ∗
+            - text: "-algebra. The five components of the representation are immediate: the state space is the set of density operators on the underlying Hilbert space, the observable layer is the algebra"
+            - generic [ref=f4e2135]:
+              - math [ref=f4e2137]:
+                - generic [ref=f4e2138]: A
+              - generic [ref=f4e2142]: A
+            - text: ", the dynamics is a one-parameter group of"
+            - generic [ref=f4e2144]:
+              - math [ref=f4e2146]:
+                - generic [ref=f4e2147]: ∗
+              - generic [ref=f4e2151]: ∗
+            - text: "-automorphisms, the symmetry data is the group of automorphisms that preserve the dynamics, and the composition rule is the minimal tensor product of algebras."
+          - paragraph [ref=f4e2152]:
+            - text: The algebra decomposes as
+            - generic [ref=f4e2156]:
+              - math [ref=f4e2158]:
+                - generic [ref=f4e2160]:
+                  - generic [ref=f4e2161]: A
+                  - generic [ref=f4e2162]: ≅
+                  - generic [ref=f4e2163]:
+                    - generic [ref=f4e2164]: ⨁
+                    - generic [ref=f4e2165]:
+                      - generic [ref=f4e2166]: i
+                      - generic [ref=f4e2167]: =
+                      - generic [ref=f4e2168]: "1"
+                    - generic [ref=f4e2169]: k
+                  - generic [ref=f4e2170]:
+                    - generic [ref=f4e2171]: M
+                    - generic [ref=f4e2172]:
+                      - generic [ref=f4e2173]: "n"
+                      - generic [ref=f4e2174]: i
+                  - generic [ref=f4e2175]: (
+                  - generic [ref=f4e2176]: C
+                  - generic [ref=f4e2177]: )
+                  - generic [ref=f4e2178]: ","
+              - generic [aria-hidden] [ref=f4e2179]:
+                - generic [ref=f4e2180]: A ≅
+                - generic [ref=f4e2181]:
+                  - generic [ref=f4e2185]:
+                    - generic [ref=f4e2186]: i=1
+                    - generic [ref=f4e2188]: ⨁
+                    - generic [ref=f4e2189]: k
+                  - generic [ref=f4e2194]:
+                    - text: M
+                    - generic [ref=f4e2201]:
+                      - text: "n"
+                      - generic [ref=f4e2202]: i
+                  - text: (C),
+            - text: and the multiset of matrix sizes is the dimension vector. Two such algebras are
+            - generic [ref=f4e2214]:
+              - math [ref=f4e2216]:
+                - generic [ref=f4e2217]: ∗
+              - generic [ref=f4e2221]: ∗
+            - text: "-isomorphic exactly when their dimension vectors agree"
+            - link "[1]" [ref=f4e2222] [cursor=pointer]:
+              - /url: "#bib-corpus-9"
+            - text: ". The dimension vector is therefore a classifying invariant of regime one, and it is finite data. Irreducibility is relative to the composition rule: the simple blocks"
+            - generic [ref=f4e2224]:
+              - math [ref=f4e2226]:
+                - generic [ref=f4e2228]:
+                  - generic [ref=f4e2229]:
+                    - generic [ref=f4e2230]: M
+                    - generic [ref=f4e2231]:
+                      - generic [ref=f4e2232]: "n"
+                      - generic [ref=f4e2233]: i
+                  - generic [ref=f4e2234]: (
+                  - generic [ref=f4e2235]: C
+                  - generic [ref=f4e2236]: )
+              - generic [ref=f4e2238]:
+                - generic [ref=f4e2239]:
+                  - text: M
+                  - generic [ref=f4e2246]:
+                    - text: "n"
+                    - generic [ref=f4e2247]: i
+                - text: (C)
+            - text: are the irreducible objects under direct sum, and the decomposition into blocks is unique up to order.
+          - paragraph [ref=f4e2258]:
+            - text: Morphisms between such systems are
+            - generic [ref=f4e2260]:
+              - math [ref=f4e2262]:
+                - generic [ref=f4e2263]: ∗
+              - generic [ref=f4e2267]: ∗
+            - text: "-homomorphisms, and the equivalence that identifies representations is"
+            - generic [ref=f4e2269]:
+              - math [ref=f4e2271]:
+                - generic [ref=f4e2272]: ∗
+              - generic [ref=f4e2276]: ∗
+            - text: "-isomorphism, which preserves the full algebra structure. Channels between systems are completely positive maps; Stinespring dilation classifies them up to minimal dilation and unitary freedom"
+            - link "[41]" [ref=f4e2277] [cursor=pointer]:
+              - /url: "#bib-corpus-10"
+            - text: ", and the Kraus rank is an invariant of the normal form"
+            - link "[42]" [ref=f4e2278] [cursor=pointer]:
+              - /url: "#bib-corpus-11"
+            - text: . The example therefore exercises the invariant discipline, the decomposition discipline, and the normal-form regime at once.
+          - heading "A classical mechanical system" [level=3] [ref=f4e2279]
+          - paragraph [ref=f4e2280]:
+            - text: Take a cotangent bundle
+            - generic [ref=f4e2282]:
+              - math [ref=f4e2284]:
+                - generic [ref=f4e2286]:
+                  - generic [ref=f4e2287]:
+                    - generic [ref=f4e2288]: T
+                    - generic [ref=f4e2289]: ∗
+                  - generic [ref=f4e2290]: Q
+              - generic [ref=f4e2292]:
+                - generic [ref=f4e2293]:
+                  - text: T
+                  - generic [ref=f4e2294]: ∗
+                - text: Q
+            - text: with its canonical symplectic form. The state space is the symplectic manifold, the observable layer is the algebra of smooth functions with the Poisson bracket, the dynamics is a Hamiltonian vector field, the symmetry data is the group of canonical transformations preserving the Hamiltonian, and the composition rule is the product of symplectic manifolds.
+          - paragraph [ref=f4e2299]:
+            - text: Darboux normal form shows that all symplectic manifolds of the same dimension are locally symplectomorphic
+            - link "[19]" [ref=f4e2300] [cursor=pointer]:
+              - /url: "#bib-corpus-6"
+            - text: ". Local classification content on the symplectic side is therefore empty, and every invariant is global: the topology of the symplectic form, the Chern classes of the prequantum data, and the coadjoint orbits in the dual of a Lie algebra"
+            - link "[20]" [ref=f4e2301] [cursor=pointer]:
+              - /url: "#bib-corpus-68"
+            - text: . The example shows why the local and global regimes must be separated in the taxonomy. A Poisson manifold splits near a point of rank
+            - generic [ref=f4e2303]:
+              - math [ref=f4e2305]:
+                - generic [ref=f4e2307]:
+                  - generic [ref=f4e2308]: "2"
+                  - generic [ref=f4e2309]: k
+              - generic [ref=f4e2311]: 2k
+            - text: as a symplectic factor times a transverse Poisson factor
+            - link "[20]" [ref=f4e2312] [cursor=pointer]:
+              - /url: "#bib-corpus-68"
+            - text: ", which is the local model the classification uses."
+          - paragraph [ref=f4e2313]:
+            - text: For a statistical mechanical system the state space is a probability simplex and the invariant data is the Fisher metric, unique up to constant among metrics monotone under stochastic maps
+            - link "[32]" [ref=f4e2314] [cursor=pointer]:
+              - /url: "#bib-corpus-52"
+            - text: . The classical uniqueness is the anchor for the observational layer, and the quantum analogue is parameterized rather than unique.
+          - heading "A gauge theory" [level=3] [ref=f4e2315]
+          - paragraph [ref=f4e2316]:
+            - text: Take a principal
+            - generic [ref=f4e2318]:
+              - math [ref=f4e2320]:
+                - generic [ref=f4e2321]: G
+              - generic [ref=f4e2325]: G
+            - text: "-bundle"
+            - generic [ref=f4e2327]:
+              - math [ref=f4e2329]:
+                - generic [ref=f4e2330]: P
+              - generic [ref=f4e2334]: P
+            - text: over a base space
+            - generic [ref=f4e2336]:
+              - math [ref=f4e2338]:
+                - generic [ref=f4e2339]: X
+              - generic [ref=f4e2343]: X
+            - text: with a connection. The state space is the space of connections modulo gauge, the observable layer is the algebra of gauge-invariant functions, the dynamics is the Yang-Mills or Chern-Simons flow, the symmetry data is the gauge group, and the composition rule is the fiber product of bundles.
+          - paragraph [ref=f4e2344]:
+            - text: Isomorphism classes of principal
+            - generic [ref=f4e2346]:
+              - math [ref=f4e2348]:
+                - generic [ref=f4e2349]: G
+              - generic [ref=f4e2353]: G
+            - text: "-bundles over"
+            - generic [ref=f4e2355]:
+              - math [ref=f4e2357]:
+                - generic [ref=f4e2358]: X
+              - generic [ref=f4e2362]: X
+            - text: are homotopy classes of maps from
+            - generic [ref=f4e2364]:
+              - math [ref=f4e2366]:
+                - generic [ref=f4e2367]: X
+              - generic [ref=f4e2371]: X
+            - text: to the classifying space
+            - generic [ref=f4e2373]:
+              - math [ref=f4e2375]:
+                - generic [ref=f4e2377]:
+                  - generic [ref=f4e2378]: B
+                  - generic [ref=f4e2379]: G
+              - generic [ref=f4e2381]: BG
+            - link "[3]" [ref=f4e2382] [cursor=pointer]:
+              - /url: "#bib-corpus-17"
+            - text: ","
+            - link "[4]" [ref=f4e2383] [cursor=pointer]:
+              - /url: "#bib-corpus-18"
+            - text: ", and the characteristic classes are pullbacks of universal classes in the cohomology of"
+            - generic [ref=f4e2385]:
+              - math [ref=f4e2387]:
+                - generic [ref=f4e2389]:
+                  - generic [ref=f4e2390]: B
+                  - generic [ref=f4e2391]: G
+              - generic [ref=f4e2393]: BG
+            - text: . The classification is therefore complete and homotopy-theoretic. Anomalies are classified as obstruction classes in the Chevalley-Eilenberg cohomology of the gauge algebra
+            - link "[54]" [ref=f4e2394] [cursor=pointer]:
+              - /url: "#bib-corpus-19"
+            - text: ": quantization exists exactly when the relevant classes vanish. Superselection sectors of the associated quantum field theory form a symmetric tensor"
+            - generic [ref=f4e2396]:
+              - math [ref=f4e2398]:
+                - generic [ref=f4e2399]: ∗
+              - generic [ref=f4e2403]: ∗
+            - text: "-category, and the Doplicher-Roberts theorem recovers the compact gauge group from that category under its stated hypotheses"
+            - link "[10]" [ref=f4e2404] [cursor=pointer]:
+              - /url: "#bib-corpus-12"
+            - text: ","
+            - link "[11]" [ref=f4e2405] [cursor=pointer]:
+              - /url: "#bib-corpus-67"
+            - text: .
+          - paragraph [ref=f4e2406]:
+            - text: "The example is the one place in the series where the classification layer, the obstruction layer, and the reconstruction layer all appear in a single system. It also shows the load-bearing character of the preserved-layer requirement: the recovery of the gauge group uses the symmetric structure of the sector category, and discarding that structure admits the isocategorical counterexamples"
+            - link "[27]" [ref=f4e2407] [cursor=pointer]:
+              - /url: "#bib-corpus-74"
+            - text: .
+          - heading "Emergent structure" [level=2] [ref=f4e2408]
+          - paragraph [ref=f4e2409]: The twelve parts jointly establish several findings that no single part establishes alone. They are the emergent content of the composition.
+          - paragraph [ref=f4e2410]: "A scope law holds across the aggregate. Complete invariants concentrate where the invariant is finite or explicitly parameterized, and beyond that boundary the series records either a parameterized family or an obstruction theorem. The law is visible only in the aggregate: individual parts classify their own sectors, and the obstruction register appears as a separate part, while the correspondence between the two is a property of the whole."
+          - paragraph [ref=f4e2411]: "An asymmetry separates reconstruction from classification. Reconstruction theorems recur across the series, each recovering an object from probes, and each under hypotheses that cannot be dropped. Complete classifications recur much less often and never outside finite or parametric regimes. The asymmetry is a structural feature of the subject matter rather than an artifact of the survey: the probe categories that reconstruction uses are richer invariants than the finite data that classification needs."
+          - paragraph [ref=f4e2412]:
+            - text: A preserved-layer law governs the equivalence content. Every equivalence, duality, and identification the series records either states the structure it preserves or records the failure that follows from not stating it. The negative theorem of Etingof and Gelaki
+            - link "[27]" [ref=f4e2413] [cursor=pointer]:
+              - /url: "#bib-corpus-74"
+            - text: is the reason, and the discipline is uniform across all twelve parts.
+          - paragraph [ref=f4e2414]: A layer separation holds in the architecture. Mathematical classification, physical realization, and empirical selection are three maps with different domains and codomains. A complete mathematical classification would leave realization and selection unconstrained, because the latter two apply maps that classification does not compute. The separation is stated in the foundational part, instantiated in the observational-equivalence part, and preserved in the assembly part.
+          - paragraph [ref=f4e2415]: These findings fix the scope of any answer to the program’s question. Structural classification of physical systems is realizable as restricted-class classification theorems stated with their invariants and explicit scope, bounded by obstruction theorems that mark where no table exists. Complete classifications succeed where the classifying data reduce to finite invariants or tame parameterizations. Algorithmic undecidability in four-manifold topology and wild representation type rule out a single global table.
+          - heading "Contrasts the series maintains" [level=3] [ref=f4e2416]
+          - paragraph [ref=f4e2417]: Several pairs of results pull against each other, and the series keeps each pair apart rather than resolving it prematurely.
+          - paragraph [ref=f4e2418]:
+            - text: Classification and reconstruction are different achievements. Classification is sharp where the invariant is finite or parametric, and reconstruction routinely recovers an object from probes
+            - link "[7]" [ref=f4e2419] [cursor=pointer]:
+              - /url: "#bib-corpus-42"
+            - text: ","
+            - link "[8]" [ref=f4e2420] [cursor=pointer]:
+              - /url: "#bib-corpus-43"
+            - text: ","
+            - link "[9]" [ref=f4e2421] [cursor=pointer]:
+              - /url: "#bib-corpus-44"
+            - text: ","
+            - link "[10]" [ref=f4e2422] [cursor=pointer]:
+              - /url: "#bib-corpus-12"
+            - text: ","
+            - link "[12]" [ref=f4e2423] [cursor=pointer]:
+              - /url: "#bib-corpus-13"
+            - text: . The parts that study the two do not merge them.
+          - paragraph [ref=f4e2424]:
+            - text: Local and global classification content differ by subject. Darboux normal form empties the local symplectic invariant theory
+            - link "[19]" [ref=f4e2425] [cursor=pointer]:
+              - /url: "#bib-corpus-6"
+            - text: ", and Riemannian curvature supplies rich local data. Symplectic classification is therefore global, and the series states the difference as a property of the subject."
+          - paragraph [ref=f4e2426]:
+            - text: Classical uniqueness and quantum parameterization do not match. The Fisher metric is unique up to constant in the classical case
+            - link "[32]" [ref=f4e2427] [cursor=pointer]:
+              - /url: "#bib-corpus-52"
+            - text: ", and the quantum monotone metrics form a family indexed by operator monotone functions. No part of the series extends the classical uniqueness across that gap."
+          - paragraph [ref=f4e2428]: Relational determination and physical equivalence do not coincide. The Yoneda embedding determines an object by its relationships, and the qualification attached to every use of it records that physical equivalence, empirical adequacy, and classification do not follow from that determination alone.
+          - paragraph [ref=f4e2429]:
+            - text: Announcement and evidence are different things. The constructive quantum field theory frontier carries several announced results
+            - link "[44]" [ref=f4e2430] [cursor=pointer]:
+              - /url: "#bib-corpus-24"
+            - text: ","
+            - link "[45]" [ref=f4e2431] [cursor=pointer]:
+              - /url: "#bib-corpus-25"
+            - text: ", and the series records each at the strength of its publicly checkable evidence, keeping existence and the mass gap separate"
+            - link "[46]" [ref=f4e2432] [cursor=pointer]:
+              - /url: "#bib-corpus-23"
+            - text: .
+          - paragraph [ref=f4e2433]: Mathematical consistency and empirical selection are different layers. A consistency proof settles the first and leaves the second open, because the empirical layer applies an observation map that mathematical classification does not compute.
+          - heading "Cross-volume consistency" [level=2] [ref=f4e2434]
+          - paragraph [ref=f4e2435]: The twelve parts maintain uniform definition identifiers, respect the directed dependency discipline, and enforce the preserved-layer constraint throughout. The corpus satisfies the following eight structural properties.
+          - generic [ref=f4e2436]:
+            - term [ref=f4e2437]: Ontology identity.
+            - definition [ref=f4e2438]:
+              - paragraph [ref=f4e2439]: The forty-two definition identifiers are used with one meaning across all twelve parts, and later parts extend the list only by appending new identifiers.
+            - term [ref=f4e2440]: Definitional root.
+            - definition [ref=f4e2441]:
+              - paragraph [ref=f4e2442]: Every part works in the ontology of Part I, and no part redefines an object that Part I owns.
+            - term [ref=f4e2443]: Dependency discipline.
+            - definition [ref=f4e2444]:
+              - paragraph [ref=f4e2445]:
+                - text: Every cross-part use of a registered result is a permitted edge of
+                - link "1" [ref=f4e2446] [cursor=pointer]:
+                  - /url: "#fig:deps"
+                - text: ", and unproven statements enter only as declared hypotheses or as objects of study."
+            - term [ref=f4e2447]: Yoneda qualification.
+            - definition [ref=f4e2448]:
+              - paragraph [ref=f4e2449]: The constraint on Yoneda-based arguments appears in the same wording in every part that uses Yoneda methods.
+            - term [ref=f4e2450]: Preserved-layer requirement.
+            - definition [ref=f4e2451]:
+              - paragraph [ref=f4e2452]: Every equivalence and duality recorded across the series names the structure it preserves or records the failure of recovery.
+            - term [ref=f4e2453]: Notation.
+            - definition [ref=f4e2454]:
+              - paragraph [ref=f4e2455]: The five-component tuple, the invariant record, and the closure notation are used in one form throughout.
+            - term [ref=f4e2456]: Existence and mass gap.
+            - definition [ref=f4e2457]:
+              - paragraph [ref=f4e2458]: The announced four-dimensional existence result and the mass gap problem are recorded as separate items in every part that mentions them.
+            - term [ref=f4e2459]: Entropy cone range.
+            - definition [ref=f4e2460]:
+              - paragraph [ref=f4e2461]:
+                - text: The holographic entropy cone is completely characterized for five boundary regions and fewer
+                - link "[31]" [ref=f4e2462] [cursor=pointer]:
+                  - /url: "#bib-corpus-47"
+                - text: ","
+                - link "[38]" [ref=f4e2463] [cursor=pointer]:
+                  - /url: "#bib-corpus-73"
+                - text: ", and the open range begins at six regions. This entry is the correction."
+          - paragraph [ref=f4e2464]:
+            - text: "Four of these findings are load-bearing for the series as a whole. The definitional root is what makes the twelve parts one program rather than twelve adjacent papers: a definition introduced in Part I has one meaning everywhere. The dependency discipline is what makes the composition honest: a part that needs an unproven statement declares it as a hypothesis instead of using it as a lemma. The preserved-layer requirement is what makes the equivalence content of the series correct rather than merely plausible: the counterexample of Etingof and Gelaki"
+            - link "[27]" [ref=f4e2465] [cursor=pointer]:
+              - /url: "#bib-corpus-74"
+            - text: rules out the weaker discipline by theorem. The separation of existence from mass gap is what keeps the constructive quantum field theory material accurate
+            - link "[46]" [ref=f4e2466] [cursor=pointer]:
+              - /url: "#bib-corpus-23"
+            - text: ","
+            - link "[44]" [ref=f4e2467] [cursor=pointer]:
+              - /url: "#bib-corpus-24"
+            - text: ","
+            - link "[45]" [ref=f4e2468] [cursor=pointer]:
+              - /url: "#bib-corpus-25"
+            - text: .
+          - paragraph [ref=f4e2469]:
+            - text: "The corrected entry concerns the holographic entropy cone. The cone for five boundary regions is completely characterized: the cone defined by all proven inequalities admits graph models for every extreme ray orbit, which settles the existence of further five-party inequalities in the negative"
+            - link "[38]" [ref=f4e2470] [cursor=pointer]:
+              - /url: "#bib-corpus-73"
+            - text: . The cone is open from six regions onward
+            - link "[31]" [ref=f4e2471] [cursor=pointer]:
+              - /url: "#bib-corpus-47"
+            - text: ", and the periodic table of"
+            - link "5" [ref=f4e2472] [cursor=pointer]:
+              - /url: "#tab:periodic"
+            - text: records the corrected range.
+          - heading "Conclusion" [level=2] [ref=f4e2473]
+          - paragraph [ref=f4e2474]: The structural picture of the series is a classification program with a stated scope. One ontology of forty-two definitions organizes the objects, morphisms, equivalences, families, and invariants. One dependency graph composes the twelve parts. One equivalence requirement forces every identification to name the structure it preserves. Around the central conjecture, the mathematical content sorts into regimes with complete invariants, regimes with parameterized or normal-form answers, and regimes where obstruction theorems prove that no classification of the stated kind exists.
+          - paragraph [ref=f4e2475]:
+            - text: "The regime structure is the durable finding. Complete invariants appear where the invariant is finite or explicitly parameterized. Reconstruction from probes is better developed than classification and carries hypotheses that cannot be dropped. Obstruction theorems mark a sharp scope boundary: dimension three admits a finite table of geometries and dimension four contains unrecognizable manifolds, the amenable factors are classified and the general type"
+            - generic [ref=f4e2477]:
+              - math [ref=f4e2479]:
+                - generic [ref=f4e2482]:
+                  - generic [ref=f4e2483]:
+                    - generic [ref=f4e2484]: I
+                    - generic [ref=f4e2485]: I
+                  - generic [ref=f4e2486]: "1"
+              - generic [ref=f4e2489]:
+                - generic [ref=f4e2490]: II
+                - generic [ref=f4e2491]: "1"
+            - text: factors are not, the symmetric tensor categories of subexponential growth are classified and the plain tensor categories do not determine their groups.
+          - paragraph [ref=f4e2499]: The central conjecture states the program’s theorem target and carries the five obligations that would discharge it. Restricted forms of the decomposition obligation are established in the sectors where complete invariants exist. The remaining obligations are the research program.
+          - heading "References" [level=2] [ref=f4e2500]
+          - generic [ref=f4e2501]:
+            - paragraph [ref=f4e2502]:
+              - text: "[1] 54 G. J. Murphy,"
+              - generic [ref=f4e2504]:
+                - math [ref=f4e2506]:
+                  - generic [ref=f4e2509]:
+                    - generic [ref=f4e2510]: C
+                    - generic [ref=f4e2511]: ∗
+                - generic [ref=f4e2514]:
+                  - text: C
+                  - generic [ref=f4e2515]: ∗
+              - text: "-algebras and operator theory, Academic Press (1990). ISBN 978-0-12-511360-1."
+            - paragraph [ref=f4e2520]: "[2] J. E. Humphreys, Introduction to Lie algebras and representation theory, Springer (1972). ISBN 3-540-90052-7."
+            - paragraph [ref=f4e2521]: "[3] D. Husemoller, Fibre bundles, Springer (1966). ISBN 0-387-90103-5."
+            - paragraph [ref=f4e2522]: "[4] J. Milnor and J. Stasheff, Characteristic classes, Princeton University Press (1974). ISBN 1-4008-8182-X."
+            - paragraph [ref=f4e2523]:
+              - text: "[5] F. J. Murray and J. von Neumann, On rings of operators IV, Annals of Mathematics 44 (1943) 716-808."
+              - link "https://doi.org/10.2307/1969107" [ref=f4e2524] [cursor=pointer]:
+                - /url: https://doi.org/10.2307/1969107
+            - paragraph [ref=f4e2525]:
+              - text: "[6] A. Connes, Classification of injective factors, Annals of Mathematics 104 (1976) 73-115."
+              - link "https://doi.org/10.2307/1971057" [ref=f4e2526] [cursor=pointer]:
+                - /url: https://doi.org/10.2307/1971057
+            - paragraph [ref=f4e2527]:
+              - text: "[7] I. M. Gelfand and M. Neumark, On the imbedding of normed rings into the ring of operators in Hilbert space, Matematicheskii Sbornik 12 (1943) 197-213."
+              - link "https://doi.org/10.1090/conm/167/16" [ref=f4e2528] [cursor=pointer]:
+                - /url: https://doi.org/10.1090/conm/167/16
+            - paragraph [ref=f4e2529]: "[8] I. M. Gelfand, Normierte Ringe, Matematicheskii Sbornik 9 (1941) 3-24."
+            - paragraph [ref=f4e2530]:
+              - text: "[9] M. H. Stone, Applications of the theory of Boolean rings to general topology, Transactions of the American Mathematical Society 41 (1937) 375-481."
+              - link "https://doi.org/10.1090/s0002-9947-1937-1501905-7" [ref=f4e2531] [cursor=pointer]:
+                - /url: https://doi.org/10.1090/s0002-9947-1937-1501905-7
+            - paragraph [ref=f4e2532]:
+              - text: "[10] S. Doplicher and J. E. Roberts, Endomorphisms of"
+              - generic [ref=f4e2534]:
+                - math [ref=f4e2536]:
+                  - generic [ref=f4e2539]:
+                    - generic [ref=f4e2540]: C
+                    - generic [ref=f4e2541]: ∗
+                - generic [ref=f4e2544]:
+                  - text: C
+                  - generic [ref=f4e2545]: ∗
+              - text: "-algebras, cross products and duality for compact groups, Annals of Mathematics 130 (1989)."
+              - link "https://doi.org/10.2307/1971477" [ref=f4e2550] [cursor=pointer]:
+                - /url: https://doi.org/10.2307/1971477
+            - paragraph [ref=f4e2551]:
+              - text: "[11] S. Doplicher and J. E. Roberts, A new duality theory for compact groups, Inventiones Mathematicae 98 (1989) 157-218."
+              - link "https://doi.org/10.1007/bf01388849" [ref=f4e2552] [cursor=pointer]:
+                - /url: https://doi.org/10.1007/bf01388849
+            - paragraph [ref=f4e2553]: "[12] P. Etingof, S. Gelaki, D. Nikshych, and V. Ostrik, Tensor categories, Mathematical Surveys and Monographs 205, American Mathematical Society (2015). ISBN 978-1-4704-2024-6."
+            - paragraph [ref=f4e2554]:
+              - text: "[13] D. McDuff, Uncountably many"
+              - generic [ref=f4e2556]:
+                - math [ref=f4e2558]:
+                  - generic [ref=f4e2561]:
+                    - generic [ref=f4e2562]:
+                      - generic [ref=f4e2563]: I
+                      - generic [ref=f4e2564]: I
+                    - generic [ref=f4e2565]: "1"
+                - generic [ref=f4e2568]:
+                  - generic [ref=f4e2569]: II
+                  - generic [ref=f4e2570]: "1"
+              - text: factors, Annals of Mathematics 90 (1969) 361-371.
+              - link "https://doi.org/10.2307/1970730" [ref=f4e2578] [cursor=pointer]:
+                - /url: https://doi.org/10.2307/1970730
+            - paragraph [ref=f4e2579]:
+              - text: "[14] M. O. Rabin, Recursive unsolvability of group theoretic problems, Annals of Mathematics 67 (1958) 172-194."
+              - link "https://doi.org/10.2307/1969933" [ref=f4e2580] [cursor=pointer]:
+                - /url: https://doi.org/10.2307/1969933
+            - paragraph [ref=f4e2581]:
+              - text: "[15] V. Bekkert and Y. Drozd, Derived tame and derived wild algebras, arXiv:math/0310352 (2003)."
+              - link "https://arxiv.org/abs/math/0310352" [ref=f4e2582] [cursor=pointer]:
+                - /url: https://arxiv.org/abs/math/0310352
+            - paragraph [ref=f4e2583]:
+              - text: "[16] R.-O. Buchweitz and G. Leuschke, On the generic determinant’s Cohen-Macaulay modules, arXiv:math/0505315 (2005)."
+              - link "https://arxiv.org/abs/math/0505315" [ref=f4e2584] [cursor=pointer]:
+                - /url: https://arxiv.org/abs/math/0505315
+            - paragraph [ref=f4e2585]:
+              - text: "[17] J. Grevstad and J. May, On the classification of compact equivariant modules, arXiv:2509.17604 (2025)."
+              - link "https://arxiv.org/abs/2509.17604" [ref=f4e2586] [cursor=pointer]:
+                - /url: https://arxiv.org/abs/2509.17604
+            - paragraph [ref=f4e2587]:
+              - text: "[18] M. Tancer, Simpler algorithmically unrecognizable 4-manifolds, arXiv:2310.07421 (2023)."
+              - link "https://arxiv.org/abs/2310.07421" [ref=f4e2588] [cursor=pointer]:
+                - /url: https://arxiv.org/abs/2310.07421
+            - paragraph [ref=f4e2589]: "[19] V. I. Arnold, Mathematical methods of classical mechanics, Graduate Texts in Mathematics 60, Springer (1978). ISBN 0-387-90314-3."
+            - paragraph [ref=f4e2590]:
+              - text: "[20] A. Weinstein, The local structure of Poisson manifolds, Journal of Differential Geometry 18 (1983) 523-557."
+              - link "https://doi.org/10.4310/jdg/1214437787" [ref=f4e2591] [cursor=pointer]:
+                - /url: https://doi.org/10.4310/jdg/1214437787
+            - paragraph [ref=f4e2592]:
+              - text: "[21] E. Minguzzi and M. Sánchez, The causal hierarchy of spacetimes, arXiv:gr-qc/0609119 (2006)."
+              - link "https://arxiv.org/abs/gr-qc/0609119" [ref=f4e2593] [cursor=pointer]:
+                - /url: https://arxiv.org/abs/gr-qc/0609119
+            - paragraph [ref=f4e2594]:
+              - text: "[22] A. Galaev, The classification of connected holonomy groups of Lorentzian manifolds, arXiv:1611.01551 (2016)."
+              - link "https://arxiv.org/abs/1611.01551" [ref=f4e2595] [cursor=pointer]:
+                - /url: https://arxiv.org/abs/1611.01551
+            - paragraph [ref=f4e2596]: "[23] M. Takesaki, Theory of operator algebras I, Springer (2001). ISBN 3-540-42248-X."
+            - paragraph [ref=f4e2597]:
+              - text: "[24] A. Nissim, Lattice Yang-Mills in the ’t Hooft regime, arXiv:2510.22788 (2025)."
+              - link "https://arxiv.org/abs/2510.22788" [ref=f4e2598] [cursor=pointer]:
+                - /url: https://arxiv.org/abs/2510.22788
+            - paragraph [ref=f4e2599]:
+              - text: "[25] Y. Cao, A. Nissim, and S. Sheffield, Wilson area law in the ’t Hooft regime, arXiv:2509.04688 (2025)."
+              - link "https://arxiv.org/abs/2509.04688" [ref=f4e2600] [cursor=pointer]:
+                - /url: https://arxiv.org/abs/2509.04688
+            - paragraph [ref=f4e2601]:
+              - text: "[26] P. Faria da Veiga and M. O’Carroll, Partial results for four-dimensional lattice"
+              - generic [ref=f4e2603]:
+                - math [ref=f4e2605]:
+                  - generic [ref=f4e2607]:
+                    - generic [ref=f4e2608]:
+                      - generic [ref=f4e2609]: S
+                      - generic [ref=f4e2610]: U
+                    - generic [ref=f4e2611]: (
+                    - generic [ref=f4e2612]: "N"
+                    - generic [ref=f4e2613]: )
+                - generic [ref=f4e2615]:
+                  - generic [ref=f4e2616]: SU
+                  - text: (N)
+              - text: ", arXiv:2509.03513 (2025)."
+              - link "https://arxiv.org/abs/2509.03513" [ref=f4e2617] [cursor=pointer]:
+                - /url: https://arxiv.org/abs/2509.03513
+            - paragraph [ref=f4e2618]:
+              - text: "[27] P. Etingof and S. Gelaki, Isocategorical groups, arXiv:math/0007196 (2000)."
+              - link "https://arxiv.org/abs/math/0007196" [ref=f4e2619] [cursor=pointer]:
+                - /url: https://arxiv.org/abs/math/0007196
+            - paragraph [ref=f4e2620]: "[28] W. Fulton and J. Harris, Representation theory, Springer (1991). ISBN 978-1-4612-0979-9."
+            - paragraph [ref=f4e2621]:
+              - text: "[29] J. Baez and J. Dolan, Categorification, arXiv:q-alg/9503002 (1995)."
+              - link "https://arxiv.org/abs/q-alg/9503002" [ref=f4e2622] [cursor=pointer]:
+                - /url: https://arxiv.org/abs/q-alg/9503002
+            - paragraph [ref=f4e2623]:
+              - text: "[30] J. Lurie, On the classification of topological field theories, arXiv:0905.0465 (2009)."
+              - link "https://arxiv.org/abs/0905.0465" [ref=f4e2624] [cursor=pointer]:
+                - /url: https://arxiv.org/abs/0905.0465
+            - paragraph [ref=f4e2625]:
+              - text: "[31] N. Bao, S. Nezami, H. Ooguri, B. Stoica, M. Sully, and B. Walter, The holographic entropy cone, arXiv:1505.07839 (2015)."
+              - link "https://arxiv.org/abs/1505.07839" [ref=f4e2626] [cursor=pointer]:
+                - /url: https://arxiv.org/abs/1505.07839
+            - paragraph [ref=f4e2627]:
+              - text: "[32] D. Petz and C. Sudár, Geometries of quantum states, arXiv:quant-ph/0102132 (2001)."
+              - link "https://arxiv.org/abs/quant-ph/0102132" [ref=f4e2628] [cursor=pointer]:
+                - /url: https://arxiv.org/abs/quant-ph/0102132
+            - paragraph [ref=f4e2629]: "[33] D. Gorenstein, R. Lyons, and R. Solomon, The classification of the finite simple groups, Mathematical Surveys and Monographs 40.1, American Mathematical Society (1994). ISBN 0-8218-0960-1."
+            - paragraph [ref=f4e2630]: "[34] J. H. Conway, R. T. Curtis, S. P. Norton, R. A. Parker, and R. A. Wilson, Atlas of finite groups, Clarendon Press (1985). ISBN 0-19-853199-0."
+            - paragraph [ref=f4e2631]:
+              - text: "[35] S. Doplicher, R. Haag, and J. E. Roberts, Local observables and particle statistics I, Communications in Mathematical Physics 23 (1971) 199-230."
+              - link "https://doi.org/10.1007/bf01877742" [ref=f4e2632] [cursor=pointer]:
+                - /url: https://doi.org/10.1007/bf01877742
+            - paragraph [ref=f4e2633]:
+              - text: "[36] W. P. Thurston, Three dimensional manifolds, Kleinian groups and hyperbolic geometry, Bulletin of the American Mathematical Society 6 (1982) 357-381."
+              - link "https://doi.org/10.1090/s0273-0979-1982-15003-0" [ref=f4e2634] [cursor=pointer]:
+                - /url: https://doi.org/10.1090/s0273-0979-1982-15003-0
+            - paragraph [ref=f4e2635]:
+              - text: "[37] G. Perelman, The entropy formula for the Ricci flow and its geometric applications, arXiv:math/0211159 (2002)."
+              - link "https://arxiv.org/abs/math/0211159" [ref=f4e2636] [cursor=pointer]:
+                - /url: https://arxiv.org/abs/math/0211159
+            - paragraph [ref=f4e2637]:
+              - text: "[38] S. Hernández-Cuenca, The holographic entropy cone for five regions, Physical Review D 100 (2019) 026004."
+              - link "https://doi.org/10.1103/PhysRevD.100.026004" [ref=f4e2638] [cursor=pointer]:
+                - /url: https://doi.org/10.1103/PhysRevD.100.026004
+            - paragraph [ref=f4e2639]: "[39] V. Ostrik, Module categories over weak Hopf algebras and Stone’s duality transformation, Mathematical Research Letters 9 (2002) 589-605. arXiv:math/0111139."
+            - paragraph [ref=f4e2640]:
+              - text: "[40] P. Etingof, D. Nikshych, and V. Ostrik, On fusion categories, Annals of Mathematics 162 (2005) 581-642."
+              - link "https://doi.org/10.4007/annals.2005.162.581" [ref=f4e2641] [cursor=pointer]:
+                - /url: https://doi.org/10.4007/annals.2005.162.581
+            - paragraph [ref=f4e2642]:
+              - text: "[41] W. F. Stinespring, Positive functions on"
+              - generic [ref=f4e2644]:
+                - math [ref=f4e2646]:
+                  - generic [ref=f4e2649]:
+                    - generic [ref=f4e2650]: C
+                    - generic [ref=f4e2651]: ∗
+                - generic [ref=f4e2654]:
+                  - text: C
+                  - generic [ref=f4e2655]: ∗
+              - text: "-algebras, Proceedings of the American Mathematical Society 6 (1955) 211-216."
+              - link "https://doi.org/10.2307/2032342" [ref=f4e2660] [cursor=pointer]:
+                - /url: https://doi.org/10.2307/2032342
+            - paragraph [ref=f4e2661]: "[42] A. S. Holevo, Quantum systems, channels, information, De Gruyter (2012). ISBN 3-11-027340-3."
+            - paragraph [ref=f4e2662]:
+              - text: "[43] J. Grochow and Y. Qiao, Algorithms and lower bounds for group isomorphism, arXiv:1507.01917 (2015)."
+              - link "https://arxiv.org/abs/1507.01917" [ref=f4e2663] [cursor=pointer]:
+                - /url: https://arxiv.org/abs/1507.01917
+            - paragraph [ref=f4e2664]:
+              - text: "[44] Building scientific understanding with academic communities, OpenAI (2026)."
+              - link "https://openai.com/index/building-scientific-understanding-with-academic-communities/" [ref=f4e2665] [cursor=pointer]:
+                - /url: https://openai.com/index/building-scientific-understanding-with-academic-communities/
+            - paragraph [ref=f4e2666]:
+              - text: "[45] Yang-Mills working group statement, Kavli Institute for Theoretical Physics (2026)."
+              - link "https://www.kitp.ucsb.edu/sites/default/files/YM_working_group.pdf" [ref=f4e2667] [cursor=pointer]:
+                - /url: https://www.kitp.ucsb.edu/sites/default/files/YM_working_group.pdf
+            - paragraph [ref=f4e2668]:
+              - text: "[46] Yang-Mills and the mass gap, Clay Mathematics Institute, Millennium Prize Problems (retrieved 2026)."
+              - link "https://www.claymath.org/millennium/yang-mills-the-maths-gap/" [ref=f4e2669] [cursor=pointer]:
+                - /url: https://www.claymath.org/millennium/yang-mills-the-maths-gap/
+            - paragraph [ref=f4e2670]:
+              - text: "[47] M. Müger, Galois theory for braided tensor categories and the modular closure, arXiv:math-ph/0008027 (2000)."
+              - link "https://arxiv.org/abs/math-ph/0008027" [ref=f4e2671] [cursor=pointer]:
+                - /url: https://arxiv.org/abs/math-ph/0008027
+            - paragraph [ref=f4e2672]:
+              - text: "[48] S. Ryu and T. Takayanagi, Holographic derivation of entanglement entropy from AdS/CFT, arXiv:hep-th/0603001 (2006)."
+              - link "https://arxiv.org/abs/hep-th/0603001" [ref=f4e2673] [cursor=pointer]:
+                - /url: https://arxiv.org/abs/hep-th/0603001
+            - paragraph [ref=f4e2674]:
+              - text: "[49] X. Dong, D. Harlow, and A. Wall, Reconstruction of bulk operators within the entanglement wedge in gauge-gravity duality, arXiv:1601.05416 (2016)."
+              - link "https://arxiv.org/abs/1601.05416" [ref=f4e2675] [cursor=pointer]:
+                - /url: https://arxiv.org/abs/1601.05416
+            - paragraph [ref=f4e2676]:
+              - text: "[50] F. Pastawski, H. Yoshida, D. Harlow, and J. Preskill, Holographic quantum error-correcting codes: toy models for the bulk/boundary correspondence, arXiv:1503.06237 (2015)."
+              - link "https://arxiv.org/abs/1503.06237" [ref=f4e2677] [cursor=pointer]:
+                - /url: https://arxiv.org/abs/1503.06237
+            - paragraph [ref=f4e2678]:
+              - text: "[51] M. Wilson, J. Hefford, and T. Hoffreumon, Supermaps on generalised theories, arXiv:2602.23865 (2026)."
+              - link "https://arxiv.org/abs/2602.23865" [ref=f4e2679] [cursor=pointer]:
+                - /url: https://arxiv.org/abs/2602.23865
+            - paragraph [ref=f4e2680]:
+              - text: "[52] J. Hefford and M. Wilson, A profunctorial semantics for quantum supermaps, arXiv:2402.02997 (2024)."
+              - link "https://arxiv.org/abs/2402.02997" [ref=f4e2681] [cursor=pointer]:
+                - /url: https://arxiv.org/abs/2402.02997
+            - paragraph [ref=f4e2682]:
+              - text: "[53] R. Sasyk and A. Tørnquist, The classification problem for von Neumann algebras, arXiv:0909.2657 (2009)."
+              - link "https://arxiv.org/abs/0909.2657" [ref=f4e2683] [cursor=pointer]:
+                - /url: https://arxiv.org/abs/0909.2657
+            - paragraph [ref=f4e2684]: "[54] R. A. Bertlmann, Anomalies in quantum field theory, Clarendon Press (1996). ISBN 978-0-19-852047-4."
+        - navigation [ref=f4e2685]:
+          - link "← Previous · Part 12 Principia Physica" [ref=f4e2686] [cursor=pointer]:
+            - /url: /papers/vol-12-principia-physica/
+            - generic [ref=f4e2687]: ← Previous · Part 12
+            - generic [ref=f4e2688]: Principia Physica
+      - complementary [ref=f4e2689]:
+        - button "Contents ▸" [ref=f4e2691] [cursor=pointer]
+    - link "PDF" [ref=f4e2692] [cursor=pointer]:
+      - /url: /pdf/synthesis.pdf
+  - contentinfo [ref=f4e2693]:
+    - generic [ref=f4e2694]:
+      - generic [ref=f4e2695]:
+        - heading "CMRPS" [level=3] [ref=f4e2696]
+        - paragraph [ref=f4e2697]: The Classification of Mathematical Representations of Physical Systems — a twelve-volume series with a structural synthesis. All results are stated relative to the admissibility axioms and preservation laws fixed in the series.
+        - paragraph [ref=f4e2698]: Matthew Long / The YonedaAI Collaboration · YonedaAI Research Collective · Chicago, Illinois, USA
+      - generic [ref=f4e2699]:
+        - heading "Read" [level=3] [ref=f4e2700]
+        - list [ref=f4e2701]:
+          - listitem [ref=f4e2702]:
+            - link "All papers" [ref=f4e2703] [cursor=pointer]:
+              - /url: /#papers
+          - listitem [ref=f4e2704]:
+            - link "Periodic table" [ref=f4e2705] [cursor=pointer]:
+              - /url: /periodic-table/
+          - listitem [ref=f4e2706]:
+            - link "Structural synthesis" [ref=f4e2707] [cursor=pointer]:
+              - /url: /papers/synthesis/
+      - generic [ref=f4e2708]:
+        - heading "Series" [level=3] [ref=f4e2709]
+        - list [ref=f4e2710]:
+          - listitem [ref=f4e2711]:
+            - link "Synthesis PDF" [ref=f4e2712] [cursor=pointer]:
+              - /url: /pdf/synthesis.pdf
+          - listitem [ref=f4e2713]:
+            - link "Principia Physica PDF" [ref=f4e2714] [cursor=pointer]:
+              - /url: /pdf/vol-12-principia-physica.pdf
+          - listitem [ref=f4e2715]:
+            - link "Foundations PDF" [ref=f4e2716] [cursor=pointer]:
+              - /url: /pdf/vol-01-foundations.pdf
+  - alert [ref=f4e2717]

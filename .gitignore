@@ -14,3 +14,16 @@ sources/*.pdf
 *.hi
 .ghc.environment.*
 lean/.lake/
+.vercel
+output/playwright/
+playwright-report/
+test-results/
+.wrangler/
+.vercel/
+workflow-run.log
+recompile.status
+run-args.json
+ui-*.png
+live-*.png
+.review.slot.*/
+.codex.slot.*/

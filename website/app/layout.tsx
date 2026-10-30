@@ -51,6 +51,7 @@ export default function RootLayout({
               <a href="/#papers">Papers</a>
               <a href="/periodic-table/">Periodic Table</a>
               <a href="/#series">Series</a>
+              <a href="https://github.com/YonedaAI/cmrps" target="_blank" rel="noopener noreferrer">GitHub</a>
             </nav>
           </div>
         </header>
@@ -76,6 +77,7 @@ export default function RootLayout({
                 <li><a href="/#papers">All papers</a></li>
                 <li><a href="/periodic-table/">Periodic table</a></li>
                 <li><a href="/papers/synthesis/">Structural synthesis</a></li>
+                <li><a href="https://github.com/YonedaAI/cmrps" target="_blank" rel="noopener noreferrer">GitHub repository</a></li>
               </ul>
             </div>
             <div>

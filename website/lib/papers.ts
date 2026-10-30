@@ -20,6 +20,12 @@ export type Heading = { id: string; text: string; level: number };
 
 const CONTENT_DIR = path.join(process.cwd(), 'content');
 
+// give every table a horizontal-scroll wrapper so it can span the full
+// content column without overflowing the page on narrow screens
+function wrapTables(html: string): string {
+  return html.replace(/<table\b[\s\S]*?<\/table>/g, (t) => `<div class="table-scroll">${t}</div>`);
+}
+
 export function getPapers(): Paper[] {
   const raw = fs.readFileSync(path.join(CONTENT_DIR, 'manifest.json'), 'utf8');
   return JSON.parse(raw) as Paper[];
@@ -44,7 +50,7 @@ function extractHeadings(html: string): Heading[] {
 export function getPaperHTML(slug: string): { html: string; headings: Heading[] } {
   const file = path.join(CONTENT_DIR, 'papers', `${slug}.html`);
   const raw = fs.readFileSync(file, 'utf8');
-  const html = renderMath(raw);
+  const html = wrapTables(renderMath(raw));
   return { html, headings: extractHeadings(html) };
 }
 
@@ -84,6 +90,6 @@ export async function getPeriodicTable(): Promise<{ html: string; headings: Head
     ADD_TAGS: ['span', 'table', 'thead', 'tbody', 'tr', 'th', 'td', 'caption'],
     ADD_ATTR: ['class', 'id'],
   });
-  const html = renderMath(linkifyCitations(clean)) + sourcesSection();
+  const html = wrapTables(renderMath(linkifyCitations(clean))) + sourcesSection();
   return { html, headings: extractHeadings(html) };
 }

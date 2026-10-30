@@ -1,0 +1,299 @@
+- generic [active] [ref=f1e1]:
+  - banner [ref=f1e2]:
+    - generic [ref=f1e3]:
+      - link "CMRPS The Classification of Mathematical Representations of Physical Systems" [ref=f1e4] [cursor=pointer]:
+        - /url: /
+        - generic [ref=f1e5]: CMRPS
+        - generic [ref=f1e6]: The Classification of Mathematical Representations of Physical Systems
+      - navigation [ref=f1e7]:
+        - link "Papers" [ref=f1e8] [cursor=pointer]:
+          - /url: /#papers
+        - link "Periodic Table" [ref=f1e9] [cursor=pointer]:
+          - /url: /periodic-table/
+        - link "Series" [ref=f1e10] [cursor=pointer]:
+          - /url: /#series
+  - main [ref=f1e11]:
+    - generic [ref=f1e13]:
+      - paragraph [ref=f1e14]: A research series in structural mathematics
+      - heading "The Classification of Mathematical Representations of Physical Systems" [level=1] [ref=f1e15]
+      - paragraph [ref=f1e16]: A representation is recorded as a five-part tuple of state space, observables, dynamics, symmetries, and composition rules. The series fixes a morphism vocabulary with explicit preservation laws, classifies restricted classes in full, and states the structural classification conjecture with its five proof obligations. Twelve volumes, one synthesis.
+      - generic [ref=f1e17]:
+        - generic [ref=f1e18]: 13 papers
+        - generic [ref=f1e19]: 272 pages
+        - generic [ref=f1e20]: Matthew Long · The YonedaAI Collaboration
+        - generic [ref=f1e21]: October 2026
+      - generic [ref=f1e22]:
+        - link "Read the papers" [ref=f1e23] [cursor=pointer]:
+          - /url: "#papers"
+        - link "Periodic table" [ref=f1e24] [cursor=pointer]:
+          - /url: /periodic-table/
+    - generic [ref=f1e25]:
+      - generic [ref=f1e26]:
+        - heading "Papers" [level=2] [ref=f1e27]
+        - generic [ref=f1e28]: Twelve volumes and a structural synthesis
+      - generic [ref=f1e29]:
+        - article [ref=f1e30]:
+          - generic [ref=f1e31]:
+            - generic [ref=f1e32]: Part 1
+            - generic [ref=f1e33]: math.CT
+          - heading [level=3] [ref=f1e34]:
+            - link "Foundations of Structural Classification" [ref=f1e35] [cursor=pointer]:
+              - /url: /papers/vol-01-foundations/
+          - paragraph [ref=f1e36]: Part 1 of The Classification of Mathematical Representations of Physical Systems
+          - paragraph [ref=f1e37]: The classification of mathematical representations of physical systems is a structural problem before it is a physical one, and this paper establishes…
+          - generic [ref=f1e38]:
+            - link "Read →" [ref=f1e39] [cursor=pointer]:
+              - /url: /papers/vol-01-foundations/
+            - link "PDF" [ref=f1e40] [cursor=pointer]:
+              - /url: /pdf/vol-01-foundations.pdf
+            - generic [ref=f1e41]: 21 pp
+        - article [ref=f1e42]:
+          - generic [ref=f1e43]:
+            - generic [ref=f1e44]: Part 2
+            - generic [ref=f1e45]: math.CT
+          - heading [level=3] [ref=f1e46]:
+            - link "Fundamental Structural Families of Mathematical Physics" [ref=f1e47] [cursor=pointer]:
+              - /url: /papers/vol-02-structural-families/
+          - paragraph [ref=f1e48]: Part 2 of The Classification of Mathematical Representations of Physical Systems
+          - paragraph [ref=f1e49]: This paper develops the family-level taxonomy that a classification of mathematical representations of physical systems requires. Ten structural famil…
+          - generic [ref=f1e50]:
+            - link "Read →" [ref=f1e51] [cursor=pointer]:
+              - /url: /papers/vol-02-structural-families/
+            - link "PDF" [ref=f1e52] [cursor=pointer]:
+              - /url: /pdf/vol-02-structural-families.pdf
+            - generic [ref=f1e53]: 24 pp
+        - article [ref=f1e54]:
+          - generic [ref=f1e55]:
+            - generic [ref=f1e56]: Part 3
+            - generic [ref=f1e57]: math-ph
+          - heading [level=3] [ref=f1e58]:
+            - link "Irreducibility and Decomposition" [ref=f1e59] [cursor=pointer]:
+              - /url: /papers/vol-03-irreducibility-decomposition/
+          - paragraph [ref=f1e60]: Part 3 of The Classification of Mathematical Representations of Physical Systems
+          - paragraph [ref=f1e61]: "Structural classification of physical systems requires a precise account of irreducibility: the objects counted as basic, the constructions that assem…"
+          - generic [ref=f1e62]:
+            - link "Read →" [ref=f1e63] [cursor=pointer]:
+              - /url: /papers/vol-03-irreducibility-decomposition/
+            - link "PDF" [ref=f1e64] [cursor=pointer]:
+              - /url: /pdf/vol-03-irreducibility-decomposition.pdf
+            - generic [ref=f1e65]: 20 pp
+        - article [ref=f1e66]:
+          - generic [ref=f1e67]:
+            - generic [ref=f1e68]: Part 4
+            - generic [ref=f1e69]: math.CT
+          - heading [level=3] [ref=f1e70]:
+            - link "The Yoneda Classification Principle" [ref=f1e71] [cursor=pointer]:
+              - /url: /papers/vol-04-yoneda-classification/
+          - paragraph [ref=f1e72]: Part 4 of The Classification of Mathematical Representations of Physical Systems
+          - paragraph [ref=f1e73]: The Yoneda embedding sends each object of a category to the functor it represents through its relationships with all other objects. This paper develop…
+          - generic [ref=f1e74]:
+            - link "Read →" [ref=f1e75] [cursor=pointer]:
+              - /url: /papers/vol-04-yoneda-classification/
+            - link "PDF" [ref=f1e76] [cursor=pointer]:
+              - /url: /pdf/vol-04-yoneda-classification.pdf
+            - generic [ref=f1e77]: 20 pp
+        - article [ref=f1e78]:
+          - generic [ref=f1e79]:
+            - generic [ref=f1e80]: Part 5
+            - generic [ref=f1e81]: math.SG
+          - heading [level=3] [ref=f1e82]:
+            - link "Classification of Classical Physical Systems" [ref=f1e83] [cursor=pointer]:
+              - /url: /papers/vol-05-classical-systems/
+          - paragraph [ref=f1e84]: Part 5 of The Classification of Mathematical Representations of Physical Systems
+          - paragraph [ref=f1e85]: "This paper classifies restricted classes of classical physical systems: symplectic and Poisson systems and classical statistical systems. The central …"
+          - generic [ref=f1e86]:
+            - link "Read →" [ref=f1e87] [cursor=pointer]:
+              - /url: /papers/vol-05-classical-systems/
+            - link "PDF" [ref=f1e88] [cursor=pointer]:
+              - /url: /pdf/vol-05-classical-systems.pdf
+            - generic [ref=f1e89]: 20 pp
+        - article [ref=f1e90]:
+          - generic [ref=f1e91]:
+            - generic [ref=f1e92]: Part 6
+            - generic [ref=f1e93]: math-ph
+          - heading [level=3] [ref=f1e94]:
+            - link "Classification of Quantum Physical Systems" [ref=f1e95] [cursor=pointer]:
+              - /url: /papers/vol-06-quantum-systems/
+          - paragraph [ref=f1e96]: Part VI of The Classification of Mathematical Representations of Physical Systems
+          - paragraph [ref=f1e97]: Quantum physical systems admit a complete structural classification only in restricted regimes, and this paper records where those regimes begin and e…
+          - generic [ref=f1e98]:
+            - link "Read →" [ref=f1e99] [cursor=pointer]:
+              - /url: /papers/vol-06-quantum-systems/
+            - link "PDF" [ref=f1e100] [cursor=pointer]:
+              - /url: /pdf/vol-06-quantum-systems.pdf
+            - generic [ref=f1e101]: 20 pp
+        - article [ref=f1e102]:
+          - generic [ref=f1e103]:
+            - generic [ref=f1e104]: Part 7
+            - generic [ref=f1e105]: math-ph
+          - heading [level=3] [ref=f1e106]:
+            - link "Gauge Structures and Quantum Field Theories" [ref=f1e107] [cursor=pointer]:
+              - /url: /papers/vol-07-gauge-qft/
+          - paragraph [ref=f1e108]: Part 7 of The Classification of Mathematical Representations of Physical Systems
+          - paragraph [ref=f1e109]: We develop the classification of gauge structures and quantum field theories within the CMRPS program. The subject divides into two territories of une…
+          - generic [ref=f1e110]:
+            - link "Read →" [ref=f1e111] [cursor=pointer]:
+              - /url: /papers/vol-07-gauge-qft/
+            - link "PDF" [ref=f1e112] [cursor=pointer]:
+              - /url: /pdf/vol-07-gauge-qft.pdf
+            - generic [ref=f1e113]: 20 pp
+        - article [ref=f1e114]:
+          - generic [ref=f1e115]:
+            - generic [ref=f1e116]: Part 8
+            - generic [ref=f1e117]: gr-qc
+          - heading [level=3] [ref=f1e118]:
+            - link "Classification and Reconstruction of Spacetime" [ref=f1e119] [cursor=pointer]:
+              - /url: /papers/vol-08-spacetime-reconstruction/
+          - paragraph [ref=f1e120]: Part 8 of The Classification of Mathematical Representations of Physical Systems
+          - paragraph [ref=f1e121]: This paper classifies and reconstructs spacetime and separates what is proved from what is proposed. Four results are complete within their stated hyp…
+          - generic [ref=f1e122]:
+            - link "Read →" [ref=f1e123] [cursor=pointer]:
+              - /url: /papers/vol-08-spacetime-reconstruction/
+            - link "PDF" [ref=f1e124] [cursor=pointer]:
+              - /url: /pdf/vol-08-spacetime-reconstruction.pdf
+            - generic [ref=f1e125]: 21 pp
+        - article [ref=f1e126]:
+          - generic [ref=f1e127]:
+            - generic [ref=f1e128]: Part 9
+            - generic [ref=f1e129]: math-ph
+          - heading [level=3] [ref=f1e130]:
+            - link "Gravity, Information, and Geometric Correspondence" [ref=f1e131] [cursor=pointer]:
+              - /url: /papers/vol-09-gravity-information-geometry/
+          - paragraph [ref=f1e132]: Part 9 of The Classification of Mathematical Representations of Physical Systems
+          - paragraph [ref=f1e133]: "This paper examines the relationship between information geometry and gravity from the viewpoint of classification: which geometric structures on stat…"
+          - generic [ref=f1e134]:
+            - link "Read →" [ref=f1e135] [cursor=pointer]:
+              - /url: /papers/vol-09-gravity-information-geometry/
+            - link "PDF" [ref=f1e136] [cursor=pointer]:
+              - /url: /pdf/vol-09-gravity-information-geometry.pdf
+            - generic [ref=f1e137]: 21 pp
+        - article [ref=f1e138]:
+          - generic [ref=f1e139]:
+            - generic [ref=f1e140]: Part 10
+            - generic [ref=f1e141]: math.CT
+          - heading [level=3] [ref=f1e142]:
+            - link "Observational Equivalence and Physical Distinguishability" [ref=f1e143] [cursor=pointer]:
+              - /url: /papers/vol-10-observational-equivalence/
+          - paragraph [ref=f1e144]: Part 10 of The Classification of Mathematical Representations of Physical Systems
+          - paragraph [ref=f1e145]: "The classification problem of mathematical representations of physical systems is a quotient: classify objects of a category of systems up to an equiv…"
+          - generic [ref=f1e146]:
+            - link "Read →" [ref=f1e147] [cursor=pointer]:
+              - /url: /papers/vol-10-observational-equivalence/
+            - link "PDF" [ref=f1e148] [cursor=pointer]:
+              - /url: /pdf/vol-10-observational-equivalence.pdf
+            - generic [ref=f1e149]: 20 pp
+        - article [ref=f1e150]:
+          - generic [ref=f1e151]:
+            - generic [ref=f1e152]: Part 11
+            - generic [ref=f1e153]: math.CT
+          - heading [level=3] [ref=f1e154]:
+            - link "Completeness and Obstructions" [ref=f1e155] [cursor=pointer]:
+              - /url: /papers/vol-11-completeness-obstructions/
+          - paragraph [ref=f1e156]: Part 11 of The Classification of Mathematical Representations of Physical Systems
+          - paragraph [ref=f1e157]: This paper determines what can be established about the completeness of a classification of mathematical representations of physical systems. Seven pr…
+          - generic [ref=f1e158]:
+            - link "Read →" [ref=f1e159] [cursor=pointer]:
+              - /url: /papers/vol-11-completeness-obstructions/
+            - link "PDF" [ref=f1e160] [cursor=pointer]:
+              - /url: /pdf/vol-11-completeness-obstructions.pdf
+            - generic [ref=f1e161]: 21 pp
+        - article [ref=f1e162]:
+          - generic [ref=f1e163]:
+            - generic [ref=f1e164]: Part 12
+            - generic [ref=f1e165]: math-ph
+          - heading [level=3] [ref=f1e166]:
+            - link "Principia Physica" [ref=f1e167] [cursor=pointer]:
+              - /url: /papers/vol-12-principia-physica/
+          - paragraph [ref=f1e168]: Volume 12 of The Classification of Mathematical Representations of Physical Systems
+          - paragraph [ref=f1e169]: This paper assembles the registered results of the Classification of Mathematical Representations of Physical Systems into the three-layer architectur…
+          - generic [ref=f1e170]:
+            - link "Read →" [ref=f1e171] [cursor=pointer]:
+              - /url: /papers/vol-12-principia-physica/
+            - link "PDF" [ref=f1e172] [cursor=pointer]:
+              - /url: /pdf/vol-12-principia-physica.pdf
+            - generic [ref=f1e173]: 21 pp
+        - article [ref=f1e174]:
+          - generic [ref=f1e175]:
+            - generic [ref=f1e176]: Synthesis
+            - generic [ref=f1e177]: math-ph
+          - heading [level=3] [ref=f1e178]:
+            - link "Structural Synthesis" [ref=f1e179] [cursor=pointer]:
+              - /url: /papers/synthesis/
+          - paragraph [ref=f1e180]: Synthesis of The Classification of Mathematical Representations of Physical Systems
+          - paragraph [ref=f1e181]: This paper states the structural picture formed by the twelve parts of the Classification of Mathematical Representations of Physical Systems, a progr…
+          - generic [ref=f1e182]:
+            - link "Read →" [ref=f1e183] [cursor=pointer]:
+              - /url: /papers/synthesis/
+            - link "PDF" [ref=f1e184] [cursor=pointer]:
+              - /url: /pdf/synthesis.pdf
+            - generic [ref=f1e185]: 23 pp
+    - generic [ref=f1e186]:
+      - heading "Program" [level=2] [ref=f1e188]
+      - generic [ref=f1e189]:
+        - article [ref=f1e190]:
+          - generic [ref=f1e191]:
+            - generic [ref=f1e192]: Registry
+            - generic [ref=f1e193]: PROVEN · CLAIMED · OPEN · IMPOSSIBLE
+          - heading [level=3] [ref=f1e194]:
+            - link "The Periodic Table of Mathematical Physics" [ref=f1e195] [cursor=pointer]:
+              - /url: /periodic-table/
+          - paragraph [ref=f1e196]: "The classification chart of the program: ten candidate structural families with their defining invariants, exceptional structures, proven reconstruction relationships, and the claim status of every row."
+          - link "Open the table →" [ref=f1e198] [cursor=pointer]:
+            - /url: /periodic-table/
+        - article [ref=f1e199]:
+          - generic [ref=f1e200]:
+            - generic [ref=f1e201]: Synthesis
+            - generic [ref=f1e202]: math-ph
+          - heading [level=3] [ref=f1e203]:
+            - link "Structural Synthesis" [ref=f1e204] [cursor=pointer]:
+              - /url: /papers/synthesis/
+          - paragraph [ref=f1e205]: "The structural picture formed by the twelve parts: the registered results, the dependency structure among the volumes, and the obligations the classification conjecture still carries."
+          - generic [ref=f1e206]:
+            - link "Read →" [ref=f1e207] [cursor=pointer]:
+              - /url: /papers/synthesis/
+            - link "PDF" [ref=f1e208] [cursor=pointer]:
+              - /url: /pdf/synthesis.pdf
+        - article [ref=f1e209]:
+          - generic [ref=f1e210]:
+            - generic [ref=f1e211]: Method
+            - generic [ref=f1e212]: admissibility
+          - heading [level=3] [ref=f1e213]:
+            - link "Foundations of Structural Classification" [ref=f1e214] [cursor=pointer]:
+              - /url: /papers/vol-01-foundations/
+          - paragraph [ref=f1e215]: "The definitional root of the series: the system record schema, five morphism kinds with preservation laws, admissibility conditions, and three restricted classifications proved in full."
+          - generic [ref=f1e216]:
+            - link "Read →" [ref=f1e217] [cursor=pointer]:
+              - /url: /papers/vol-01-foundations/
+            - link "PDF" [ref=f1e218] [cursor=pointer]:
+              - /url: /pdf/vol-01-foundations.pdf
+  - contentinfo [ref=f1e219]:
+    - generic [ref=f1e220]:
+      - generic [ref=f1e221]:
+        - heading "CMRPS" [level=3] [ref=f1e222]
+        - paragraph [ref=f1e223]: The Classification of Mathematical Representations of Physical Systems — a twelve-volume series with a structural synthesis. All results are stated relative to the admissibility axioms and preservation laws fixed in the series.
+        - paragraph [ref=f1e224]: Matthew Long / The YonedaAI Collaboration · YonedaAI Research Collective · Chicago, Illinois, USA
+      - generic [ref=f1e225]:
+        - heading "Read" [level=3] [ref=f1e226]
+        - list [ref=f1e227]:
+          - listitem [ref=f1e228]:
+            - link "All papers" [ref=f1e229] [cursor=pointer]:
+              - /url: /#papers
+          - listitem [ref=f1e230]:
+            - link "Periodic table" [ref=f1e231] [cursor=pointer]:
+              - /url: /periodic-table/
+          - listitem [ref=f1e232]:
+            - link "Structural synthesis" [ref=f1e233] [cursor=pointer]:
+              - /url: /papers/synthesis/
+      - generic [ref=f1e234]:
+        - heading "Series" [level=3] [ref=f1e235]
+        - list [ref=f1e236]:
+          - listitem [ref=f1e237]:
+            - link "Synthesis PDF" [ref=f1e238] [cursor=pointer]:
+              - /url: /pdf/synthesis.pdf
+          - listitem [ref=f1e239]:
+            - link "Principia Physica PDF" [ref=f1e240] [cursor=pointer]:
+              - /url: /pdf/vol-12-principia-physica.pdf
+          - listitem [ref=f1e241]:
+            - link "Foundations PDF" [ref=f1e242] [cursor=pointer]:
+              - /url: /pdf/vol-01-foundations.pdf
+  - alert [ref=f1e243]
