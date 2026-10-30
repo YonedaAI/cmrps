@@ -48,7 +48,8 @@ Do not change the font size, the margins, or the paragraph settings. Do not add 
 \author{$RESEARCH_AUTHOR_NAME\\
   \small $RESEARCH_COLLABORATION, $RESEARCH_INSTITUTION\\
   \small $RESEARCH_LOCATION\\
-  \small \texttt{$RESEARCH_AUTHOR_EMAIL}}
+  \small \texttt{$RESEARCH_AUTHOR_EMAIL}\\
+  \small \texttt{$RESEARCH_AUTHOR_URL}}
 \date{Month YYYY}
 ```
 
@@ -56,7 +57,7 @@ Title rules: a noun phrase of two to six words, in Title Case, that a working sc
 
 ## Abstract
 
-Use the standard `abstract` environment. One paragraph, 150 to 250 words, no citations, no lists, no line breaks. It states the question, the approach, the main findings with their numbers where the paper has them, and the limitation that matters most. It does not narrate the paper's sections and it does not contain definitions.
+Use the standard `abstract` environment. One paragraph, 150 to 250 words, no citations, no lists, no line breaks. It states the question, the approach, and the main findings with their numbers where the paper has them. Scope bounds (e.g. results relative to stated axioms) may appear as one clause in mathematical register. Never a confession-style limitation ("the chief limitation is...", "none of them proved") — that register lives in the claim ledger, not the paper. It does not narrate the paper's sections and it does not contain definitions.
 
 ## Headings
 

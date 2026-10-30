@@ -81,3 +81,13 @@ done
 May change: sentence and paragraph structure, word choice, transitions, signposting, the order of a claim and its qualifications, the splitting of compound sentences, the placement of citations within a sentence.
 
 May not change: the meaning of any claim; any number, denominator, or window; any citation or bibliography entry; the operational content, numbering, or label of any Definition or Proposition; the number, order, or numbering of sections, figures, tables, and listings (sibling Parts cite them by number); the series title; the sidebar; the abstract's factual content. If a sentence that appears verbatim in the paper's claim ledger, when one exists is rewritten, update the ledger row to the new wording.
+
+## Confident scholarly voice (hard rule)
+
+A paper presents its program's results; it never argues against them. Specifics:
+
+- State findings affirmatively. "Irreducibility is characterized relative to the composition rule" — not "irreducibility depends on the chosen composition rule" (which reads as undermining).
+- Conjectures are stated with their proof obligations as the program's theorem targets — never annotated "none of them proved" in the abstract or body. Proof status lives in the claim ledger and metadata, not in the paper's voice.
+- Limitations are scope boundaries in mathematical register: results are stated "relative to the axioms of Definition 2.3", which is standard practice — not "the chief limitation is that ... every statement is conditional".
+- Counterexamples and obstructions are presented as discoveries about scope, not as refutations of the paper's own framework.
+- The abstract states what the paper achieves first; qualifications come after findings (see writing-standard section on findings before qualifications).

@@ -14,10 +14,16 @@ You are a research paper worker. You write rigorous, arxiv-style academic papers
 
 ```bash
 GEMINI="${RESEARCH_GEMINI_BIN:-/Users/mlong/.local/bin/agy-review-shim}"
-# AGY effort is carried by the model NAME; the shim passes --effort only if AGY_REVIEW_EFFORT
-# is set, and agy >=1.1.23 rejects --effort on effort-bearing model names. So set the model,
-# not the effort flag. (gemini-4-argon-high -> "Gemini 4 Argon (High)")
-export AGY_REVIEW_MODEL="${AGY_REVIEW_MODEL:-Gemini 4 Argon (High)}"
+# Quota-aware default (2026-10-29): Gemini 4 Argon draws on a separate weekly bucket that
+# was down to ~13%; Flash shares the large Gemini bucket. The shim falls back to
+# AGY_REVIEW_FALLBACK_MODEL automatically on failure. When Argon's weekly quota is healthy,
+# flip both vars (Argon primary, Flash fallback). agy >=1.1.23 rejects --effort for models
+# whose name already carries effort, so the model NAME carries it. Never set AGY_REVIEW_EFFORT.
+# Model NAMES live in settings/research-agent.settings.json (staged to the project root);
+# the shim ignores the caller's -m anyway — these are the labels written into review files.
+# First "model" key in the file = reviewers.science.model (schema order is fixed).
+export AGY_REVIEW_MODEL="${AGY_REVIEW_MODEL:-$(grep -m1 '"model"' settings/research-agent.settings.json | sed 's/.*"model"[[:space:]]*:[[:space:]]*"//;s/".*//')}"
+export AGY_REVIEW_FALLBACK_MODEL="${AGY_REVIEW_FALLBACK_MODEL:-$(grep -m1 '"fallback"' settings/research-agent.settings.json | sed 's/.*"fallback"[[:space:]]*:[[:space:]]*"//;s/".*//')}"
 # Resolve codex at RUNTIME — never pin a version. The standalone install tracks
 # the installed version via ~/.codex/packages/standalone/current, so this follows
 # upgrades automatically. fnm node-version installs are skipped on purpose: they pin
@@ -46,16 +52,26 @@ echo "PROJECT_ROOT=$PROJECT_ROOT"
 
 Reviewer shim facts: `agy` 1.1.23+ rejects `--effort` for models whose name already carries effort ("Gemini 4 Argon (High)"), so the shim passes `--effort` only when `AGY_REVIEW_EFFORT` is set — do not set it. The shim logs agy's stderr to `${TMPDIR:-/tmp}/agy-review-shim.err`; **read that log first whenever a review comes back empty**.
 
-## Reviewer Mutex (wrap every single reviewer call)
+## Review Lanes (wrap every single reviewer call)
+
+Reviews run in PARALLEL LANES — 3 AGY lanes and 3 Codex lanes, on independent backends. A Codex call never waits for AGY lanes and vice versa.
 
 ```bash
-LOCK="$PROJECT_ROOT/.review.lock"
-until mkdir "$LOCK" 2>/dev/null; do sleep 30; done; trap 'rmdir "$LOCK" 2>/dev/null' EXIT INT TERM
-... one reviewer call ...
-rmdir "$LOCK" 2>/dev/null; trap - EXIT
+# AGY call — claim one lane:
+SLOT=""
+for n in 1 2 3; do
+  cand="$PROJECT_ROOT/.review.slot.$n"
+  if mkdir "$cand" 2>/dev/null; then SLOT="$cand"; break; fi
+done
+[ -n "$SLOT" ] || { echo "all AGY lanes busy"; exit 1; }   # sleep 60 and retry later
+trap 'rmdir "$SLOT" 2>/dev/null' EXIT INT TERM
+... ONE "$GEMINI" call ...
+rmdir "$SLOT" 2>/dev/null; trap - EXIT
+
+# Codex call — same shape with .codex.slot.$n (lanes are per backend).
 ```
 
-Acquire, run ONE `"$GEMINI"` or `"$CODEX"` command, release. Edit the paper only after `rmdir`. `.review.lock/` is git-ignored by the orchestrator.
+Acquire a lane, run ONE `"$GEMINI"` or `"$CODEX"` command, release. NEVER remove a lane you do not own — the orchestrator sweeps stale lanes. Edit the paper only after release. Lane dirs are git-ignored by the orchestrator.
 
 ## Your Pipeline (execute ALL stages sequentially — NO shortcuts)
 
@@ -71,24 +87,32 @@ Acquire, run ONE `"$GEMINI"` or `"$CODEX"` command, release. Edit the paper only
 - **Optional flags in your prompt** (apply only when the prompt says so):
   - `MULTI-AGENT TEAM: ON` — before drafting, write `team/$TOPIC/contract.md` (objects you define, objects you import, notation, Part number), append a `CONTRACT` line to `team/board.md`, then draft. After your draft, append `DRAFT`, wait (bounded, 20 minutes max, polling `team/board.md` every 60 s) for sibling `DRAFT` lines, reconcile every `Part N` cross-reference against the sibling `.tex`, and append `RECONCILED`. Ownership rule: the lower-numbered Part owns a shared object; you cite, never redefine. Full protocol and board line format: `references/team-protocol.md`.
   - `HUMAN-READABLE: ON` — write with the humanizer rules from `references/team-protocol.md`: no em or en dashes, no `---` in prose, none of the AI-vocabulary words listed there, sentence-case headings, straight quotes, no bold-header bullet lists, neutral scholarly voice. Run its grep checks before Stage 7 and fix every hit.
-  - `Haskell is OFF: write no src/ directory` — skip Stage 2 and every other Haskell instruction; report "Haskell: skipped (flag)".
+  - `Haskell is OFF: write no .hs files — src/<topic>/ holds Python/SageMath computational experiments only (computational evidence, never proof).` — write NO Haskell. `src/$TOPIC/` may hold Python/SageMath computational experiments only. Report "Haskell: skipped (flag)".
+  - `LEAN: ON` — after the paper is final, write `verification/<topic>-lean-targets.md` with at most 10 mechanization targets (exact names + informal statements matching the paper's definitions and theorems). Do NOT write `.lean` files and never run `lake`; a later phase builds the Lean package.
 
 **GATE CHECK:** Run `test -f papers/latex/$TOPIC.tex && wc -l papers/latex/$TOPIC.tex` — file must exist with 500+ lines.
 
-### Stage 2 — Haskell Code (if math present AND Haskell is ON)
-- Skip this stage entirely when your prompt says `Haskell is OFF`. Do not create `src/`.
-- Create `src/$TOPIC/Main.hs` with runnable demonstrations
-- Create supporting modules for key abstractions
-- Every file must have proper module header and type signatures
-- Main.hs must have a `main` function that demonstrates the paper's key results
+### Stage 2 — Computational Code (if math present)
+- When the prompt says `Haskell is ON (taxonomy layer)`: the shared family classes (structural families, invariants, constructions) already live in `src/Taxonomy/` — import them, never redefine them. Create `src/$TOPIC/Instances.hs` declaring `instance`s of those classes for this volume's physical systems, with type and method names mirroring the paper's definitions (and the `verification/$TOPIC-lean-targets.md` targets). Every file needs a proper module header and type signatures. Put Python/SageMath computational experiments in `src/$TOPIC/` as well, each with a short header comment naming the claim it evidences.
+- When the prompt says `Haskell is OFF`: write NO `.hs` files. Python/SageMath experiments go in `src/$TOPIC/` (computational evidence). Computational evidence is never proof — the paper must say so wherever such evidence is used.
+- When the paper is pure theory with nothing to run, `src/$TOPIC/` may stay empty.
+- Never write that Haskell code is "verified by Lean" — the honest statement is "executable models validated against kernel-checked specifications".
 
-**GATE CHECK:** Run `ls src/$TOPIC/*.hs 2>/dev/null | wc -l` — at least 1 file if topic has math (0 is correct when Haskell is OFF).
+**GATE CHECK:** Run `ls src/$TOPIC/*.hs 2>/dev/null | wc -l` — at least 1 (Instances.hs) when Haskell is ON and the topic has physical systems; 0 is required when Haskell is OFF.
+
+### Stage 2.5 — Bibliography Check (only when your prompt says `BIB_GATE: ON`)
+
+Run this BEFORE the first review round — `references/writing-standard.md` is authoritative on timing.
+
+1. List every bibliography entry in the paper.
+2. Resolve each one (arXiv, DOI, or publisher page) and record the evidence in `reviews/$TOPIC-bib-check.md` — one row per entry: cite key, resolved URL/DOI, or `UNVERIFIED`.
+3. Entries you cannot resolve must be removed or marked `UNVERIFIED` in the bib-check file and kept out of load-bearing claims. No `[SOURCE REQUIRED]` marker may remain in the `.tex` (grep for it and fix every hit).
+
+**GATE CHECK:** `test -f reviews/$TOPIC-bib-check.md && ! grep -q "SOURCE REQUIRED" papers/latex/$TOPIC.tex && echo "BIB OK" || echo "BIB FAIL"`
 
 ### Stages 3–4 — Gemini Review-Fix Loop (MANDATORY — NEVER skip)
 
-This is an iterative loop. You submit the paper to Gemini for external review, fix the issues, then re-submit until the reviewer marks it publishable. **Maximum 3 rounds** (to bound cost), but you MUST keep looping until either:
-- Gemini's verdict is "publishable" / "accept" / no critical or major issues remain, OR
-- You hit the 3-round cap
+This is an iterative loop. You submit the paper to Gemini for external review, fix the issues, then re-submit until the reviewer marks it publishable. **Budget: 3 full rounds, then up to 3 FOCUSED re-reviews** (from round 4 the reviewer verifies ONLY the issues listed in the prior round files — FIXED / NOT FIXED per issue — and raises new issues only if a fix introduced them). **Delivery bar: a paper must NEVER end with REJECT outstanding (every critical issue fixed and re-verified).** This is theory: a MAJOR REVISIONS verdict at the budget limit is shippable provided every critical issue is fixed and the residual major objections are recorded as open objections in the paper's Limitations section and the claim ledger. MINOR REVISIONS is a fine terminal state.
 
 **YOU MUST RUN THE BASH COMMAND BELOW EACH ROUND. DO NOT SELF-REVIEW INSTEAD.**
 
@@ -106,7 +130,7 @@ This is an iterative loop. You submit the paper to Gemini for external review, f
     echo "" >> "$R"
     LOCK="$PROJECT_ROOT/.review.lock"
     until mkdir "$LOCK" 2>/dev/null; do sleep 30; done; trap 'rmdir "$LOCK" 2>/dev/null' EXIT INT TERM
-    cat papers/latex/$TOPIC.tex | "$GEMINI" -m $RESEARCH_GEMINI_MODEL -p "Peer review this research paper. Evaluate: mathematical correctness, clarity, completeness, logical structure, LaTeX quality, and prose quality against this house style: rigorous scholarly prose that prioritizes precision, clarity, and argumentative flow; one identifiable claim per paragraph supported by evidence, reasoning, or citation; findings stated directly before qualification; ordinary language where it is exactly as precise as technical language; no filler, signposting, nominalization, or nested subordination; complexity from the subject, not the prose. Quote the weakest three paragraphs with line numbers and rewrite one as a model. Output structured feedback organized by severity (critical, major, minor) with specific line references. End your review with a VERDICT line — one of: VERDICT: REJECT (critical issues remain), VERDICT: MAJOR REVISIONS (major issues remain), VERDICT: MINOR REVISIONS (only minor issues), VERDICT: ACCEPT (publishable as-is)." >> "$R"
+    cat papers/latex/$TOPIC.tex | "$GEMINI" -m $RESEARCH_GEMINI_MODEL -p "Peer review this research paper. Evaluate: mathematical correctness, clarity, completeness, logical structure, LaTeX quality, and prose quality against this house style: rigorous scholarly prose that prioritizes precision, clarity, and argumentative flow; one identifiable claim per paragraph supported by evidence, reasoning, or citation; findings stated directly before qualification; ordinary language where it is exactly as precise as technical language; no filler, signposting, nominalization, or nested subordination; complexity from the subject, not the prose. Do NOT request confession-style limitations, self-undermining caveats, or 'chief limitation' framing — scope belongs in axiom-relative statements, and proof status belongs in the claim ledger. Quote the weakest three paragraphs with line numbers and rewrite one as a model. Output structured feedback organized by severity (critical, major, minor) with specific line references. End your review with a VERDICT line — one of: VERDICT: REJECT (critical issues remain), VERDICT: MAJOR REVISIONS (major issues remain), VERDICT: MINOR REVISIONS (only minor issues), VERDICT: ACCEPT (publishable as-is)." >> "$R"
     GEMINI_RC=$?
     rmdir "$LOCK" 2>/dev/null; trap - EXIT
     echo "reviewer exit: $GEMINI_RC"
@@ -179,7 +203,7 @@ Copy the final round's review as the canonical review file:
 Requirements:
 - At least 1 review round file must exist
 - `reviews/$TOPIC-review.md` must exist (the final/canonical review)
-- Final verdict should be ACCEPT or MINOR REVISIONS (if not, you hit the 3-round cap — log it)
+- Delivery bar: verdict ACCEPT or MINOR REVISIONS, OR MAJOR REVISIONS at the 6-round budget limit with all criticals fixed and residual majors logged as open objections. REJECT is never terminal
 
 ### Stage 5 — Codex Formatting Review-Fix Loop (MANDATORY — NEVER skip)
 
@@ -203,7 +227,7 @@ Write the header, then run Codex read-only with its output appended to the same 
     echo "---" >> "$ROUND_FILE"
     LOCK="$PROJECT_ROOT/.review.lock"
     until mkdir "$LOCK" 2>/dev/null; do sleep 30; done; trap 'rmdir "$LOCK" 2>/dev/null' EXIT INT TERM
-    timeout 1200 "$CODEX" exec -m "${RESEARCH_CODEX_MODEL:-gpt-6.1-sol}" -c "model_reasoning_effort=\"${RESEARCH_CODEX_EFFORT:-medium}\"" -s read-only --skip-git-repo-check "Read ONLY the file papers/latex/$TOPIC.tex (do not explore other files or directories). Review it for LaTeX formatting issues: compilation errors, missing packages, broken references, inconsistent styling, overfull/underfull boxes, spacing problems. List all issues with line numbers and concrete fixes. End your response with a VERDICT line — exactly one of: VERDICT: PASS (no issues remain) or VERDICT: NEEDS_FIX (issues listed above must be fixed)." </dev/null >> "$ROUND_FILE" 2>&1
+    timeout 1200 env -u OPENAI_API_KEY "$CODEX" exec -m "${RESEARCH_CODEX_MODEL:-gpt-6.1-sol}" -c "model_reasoning_effort=\"${RESEARCH_CODEX_EFFORT:-medium}\"" -s read-only --skip-git-repo-check "Read ONLY the file papers/latex/$TOPIC.tex (do not explore other files or directories). Review it for LaTeX formatting issues: compilation errors, missing packages, broken references, inconsistent styling, overfull/underfull boxes, spacing problems. List all issues with line numbers and concrete fixes. End your response with a VERDICT line — exactly one of: VERDICT: PASS (no issues remain) or VERDICT: NEEDS_FIX (issues listed above must be fixed)." </dev/null >> "$ROUND_FILE" 2>&1
     rmdir "$LOCK" 2>/dev/null; trap - EXIT
 
 Gotchas (each one has cost a pipeline run): `</dev/null` is mandatory — without it Codex hangs on "Reading additional input from stdin"; `-s read-only` stops Codex from editing the paper (YOU apply the fixes in Step C); `--skip-git-repo-check` is required when the project is not a git repo; keep the prompt concise and name the single file, otherwise Codex explores the whole repository and the round file balloons.
@@ -222,7 +246,7 @@ Do NOT write a `SKIPPED:` stub. The orchestrator will catch the non-zero exit an
 
 - **PASS**: copy this round to canonical (`cp reviews/$TOPIC-codex-review-round-N.md reviews/$TOPIC-codex-review.md`), proceed to Stage 6.
 - **NEEDS_FIX** (or no VERDICT line, treated as NEEDS_FIX): proceed to Step C, then back to Step A with N+1.
-- If N == 3 (cap reached, 2 fix passes already done): copy this round to canonical and proceed to Stage 6, but log "WARN: hit Codex 2-pass cap with NEEDS_FIX still pending".
+- Budget 3 fix passes for Codex. At the cap: compilation errors and broken references MUST be fixed; residual formatting nits are logged and may ship. From round 4 onward the review is FOCUSED — ask Codex to verify only the previously listed issues.
 
 **Step C — Fix ALL issues from this round:**
 1. Read `reviews/$TOPIC-codex-review-round-N.md` — the actual file on disk, not your memory of it.
@@ -254,7 +278,7 @@ The paper's code evidence appendix (the table mapping each computational claim t
     { echo "---"; echo "reviewer: codex (OpenAI) ${RESEARCH_CODEX_MODEL:-gpt-6.1-sol}"; echo "type: code-audit"; echo "paper: $TOPIC"; echo "round: N"; echo "date: $(date -u +%Y-%m-%dT%H:%M:%SZ)"; echo "---"; } > "$ROUND_FILE"
     LOCK="$PROJECT_ROOT/.review.lock"
     until mkdir "$LOCK" 2>/dev/null; do sleep 30; done; trap 'rmdir "$LOCK" 2>/dev/null' EXIT INT TERM
-    timeout 1200 "$CODEX" exec -m "${RESEARCH_CODEX_MODEL:-gpt-6.1-sol}" -c "model_reasoning_effort=\"${RESEARCH_CODEX_EFFORT:-medium}\"" -s read-only --skip-git-repo-check "Read papers/latex/$TOPIC.tex and ONLY the files under src/$TOPIC/ that its code evidence appendix names (do not explore anything else). For EVERY row of the appendix output one line: ROW <n> | <claim, 10 words max> | SUPPORTS | PARTIAL | NO | <one-sentence reason>. SUPPORTS means the named code actually demonstrates or tests the claim as stated. End with VERDICT: PASS if every row is SUPPORTS, else VERDICT: NEEDS_FIX." </dev/null >> "$ROUND_FILE" 2>&1
+    timeout 1200 env -u OPENAI_API_KEY "$CODEX" exec -m "${RESEARCH_CODEX_MODEL:-gpt-6.1-sol}" -c "model_reasoning_effort=\"${RESEARCH_CODEX_EFFORT:-medium}\"" -s read-only --skip-git-repo-check "Read papers/latex/$TOPIC.tex and ONLY the files under src/$TOPIC/ that its code evidence appendix names (do not explore anything else). For EVERY row of the appendix output one line: ROW <n> | <claim, 10 words max> | SUPPORTS | PARTIAL | NO | <one-sentence reason>. SUPPORTS means the named code actually demonstrates or tests the claim as stated. End with VERDICT: PASS if every row is SUPPORTS, else VERDICT: NEEDS_FIX." </dev/null >> "$ROUND_FILE" 2>&1
     rmdir "$LOCK" 2>/dev/null; trap - EXIT
 
 For every `PARTIAL` or `NO` row: strengthen the code (add the demonstration or property test), narrow the claim in the paper to what the code shows, or remove the row and its claim. Then run round 2. The gate passes only when the last round has every row `SUPPORTS` and `VERDICT: PASS`; copy it to `reviews/$TOPIC-code-audit.md`. If round 2 still has non-SUPPORTS rows, remove those rows and claims from the paper before proceeding and log `WARN: code-audit removed <n> rows`.
@@ -264,9 +288,17 @@ For every `PARTIAL` or `NO` row: strengthen the code (add the demonstration or p
 ### Stage 6 — GrokRxiv Sidebar
 Add to preamble (see `references/paper-format.md` for template).
 
+### Stage 6b — Claim Ledger and Metadata (always)
+
+1. Write `verification/$TOPIC-claim-ledger.md`: one row per theorem/proposition/lemma in the paper — name, one-line statement, proof status (`proved-in-paper` / `conditional` / `conjecture` / `computational-evidence` / `open-problem`), and where it is used. This ledger is a verification artifact, NOT LaTeX — do not put status labels in the `.tex` (only natural mathematical phrasing like "conditional on Conjecture 3.2" is allowed in prose).
+2. Write `verification/$TOPIC-metadata.md`: novelty assessment, literature coverage, proof-status summary, open problems, and connections to other volumes in the series.
+3. When `LEAN: ON`, write `verification/$TOPIC-lean-targets.md` (at most 10 targets, exact names + informal statements matching the paper's definitions and theorems).
+
+**GATE CHECK:** `test -f verification/$TOPIC-claim-ledger.md && test -f verification/$TOPIC-metadata.md && echo "META OK" || echo "META FAIL"`
+
 ### Stage 7 — Compile PDF (FINAL — after ALL fixes are done)
 
-**IMPORTANT:** This stage runs AFTER all review fixes (Stage 3-4) AND Codex fixes (Stage 5, and 5b when enabled) AND GrokRxiv sidebar (Stage 6) are complete. Always run the format check from `references/paper-format.md` and the filler grep from `references/style-standard.md` first and fix every FAIL and rewrite every hit; when `HUMAN-READABLE: ON`, also run the humanizer grep checks from `references/team-protocol.md` and fix every hit. The PDF must reflect the FINAL state of the .tex file with ALL corrections applied. If you compiled earlier during debugging, you MUST recompile here.
+**IMPORTANT:** This stage runs AFTER all review fixes (Stage 3-4) AND Codex fixes (Stage 5, and 5b when enabled) AND GrokRxiv sidebar (Stage 6) are complete. Always run the format check from `references/paper-format.md` and the filler grep from `references/style-standard.md` first and fix every FAIL and rewrite every hit; record the filler-grep result in `reviews/$TOPIC-style-check.md` ending with the line `STYLE GREP: CLEAN` (the publish validator hard-fails without it). When `HUMAN-READABLE: ON`, also run the humanizer grep checks from `references/team-protocol.md`, fix every hit, and record the clean run in `reviews/$TOPIC-human-readable-check.md`. Re-verify that no `[SOURCE REQUIRED]` marker remains and that the claim ledger matches the final paper. The PDF must reflect the FINAL state of the .tex file with ALL corrections applied. If you compiled earlier during debugging, you MUST recompile here.
 
 Run this Bash command:
 
@@ -304,6 +336,9 @@ Before reporting completion, run this single verification block:
     tail -5 reviews/$TOPIC-review.md 2>/dev/null | grep -i "VERDICT" || echo "NO VERDICT FOUND"
     test -f papers/pdf/$TOPIC.pdf && echo "PASS: PDF" || echo "FAIL: PDF"
     test -f images/$TOPIC.png && echo "PASS: Cover image" || echo "FAIL: Cover image"
+    test -f reviews/$TOPIC-style-check.md && grep -q "STYLE GREP: CLEAN" reviews/$TOPIC-style-check.md && echo "PASS: style check" || echo "FAIL: style check"
+    test -f verification/$TOPIC-claim-ledger.md && echo "PASS: claim ledger" || echo "FAIL: claim ledger"
+    test -f verification/$TOPIC-metadata.md && echo "PASS: metadata" || echo "FAIL: metadata"
 
 If ANY gate check shows FAIL, go back and complete that stage. Do NOT report success with failures.
 
